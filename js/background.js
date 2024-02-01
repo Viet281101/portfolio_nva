@@ -61,6 +61,7 @@ function applyBackgroundStyles(element, imageUrl, zIndex) {
 	element.style.left = '0';
 	element.style.width = '100%';
 	element.style.height = '100vh';
+	// element.style.marginLeft = '10%';
 	element.style.backgroundImage = 'url(' + imageUrl + ')';
 	element.style.backgroundSize = 'cover';
 	element.style.backgroundRepeat = 'no-repeat';

@@ -1,11 +1,11 @@
 
 const canvas = document.getElementById('backgroundCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
+canvas.width = window.innerWidth - 200;
 canvas.height = window.innerHeight;
 canvas.style.position = 'fixed';
 canvas.style.top = '0';
-canvas.style.left = '0';
+canvas.style.left = '200px';
 canvas.style.zIndex = '-1';
 
 const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
@@ -116,7 +116,7 @@ class Effect {
 		window.addEventListener('mousemove', e => {
 			// console.log(e.x, e.y);
 			if (this.mouse.pressed) {
-				this.mouse.x = e.x;
+				this.mouse.x = e.x - 200;
 				this.mouse.y = e.y;
 				// console.log(this.mouse.x, this.mouse.y);
 			}
@@ -124,7 +124,7 @@ class Effect {
 
 		window.addEventListener('mousedown', e => {
 			this.mouse.pressed = true;
-			this.mouse.x = e.x;
+			this.mouse.x = e.x - 200;
 			this.mouse.y = e.y;
 		});
 
