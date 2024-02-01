@@ -1,0 +1,127 @@
+
+/* General styles */
+@charset "utf-8";
+@font-face {
+	font-family:"Pixel";
+	src: url("../assets/Pixel_Font_free.ttf") format("truetype");
+}
+body {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	background: black;
+	min-height: 100vh;
+	font-family:"Pixel";
+	overflow: hidden;
+	user-select: none;
+}
+
+/* Header & Navigation styles */
+header {
+	padding: 10px 0px;
+	text-align: right;
+}
+nav ul li {
+	display: inline;
+	margin: 0 30px;
+}
+nav ul li a {
+	color: #919090;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size: 1.5em;
+	padding: 7px 10px;
+}
+
+/* Section styles */
+section {
+	padding: 8px;
+	text-align: center;
+	min-height: 100vh;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+section.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+h1, p { text-align: left; }
+h1 {
+	font-size: 2.5em;
+	padding: 0;
+	margin: 0;
+	font-weight: 500;
+	text-align: left;
+}
+p {
+	margin-top: 30px;
+	font-size: 1.5em;
+	font-weight: 100;
+	color: rgb(163, 163, 163);
+	text-align: left;
+}
+.content {
+	max-width: 1200px;
+	margin: auto;
+	padding: 16px 48px;
+}
+.hero-title {
+	padding-top: 60px;
+	display: flex;
+	flex-direction: row;
+}
+.gradient-text {
+	background-image: linear-gradient(-45deg, rgb(177, 8, 189), rgb(88, 186, 255));
+	background-clip: text;
+	color: transparent;
+}
+
+#avatar-container {
+	height: 500px;
+	margin-top: 32px;
+	margin-bottom: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#avatar-loading {
+	font-size: 3em;
+}
+
+canvas#backgroundCanvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}  
+#home {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#home .intro-title, #home #avatar-container {
+	flex: 1;
+	padding: 10px;
+}
+#home .intro-title { order: 1; height: 600px;}
+#home #avatar-container { order: 2; }
+@media (max-width: 800px) {
+	#home {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	#home .intro-title, #home #avatar-container {
+		flex: none;
+		order: unset;
+	}
+	h1, p {
+		text-align: center;
+	}
+}
+
+
