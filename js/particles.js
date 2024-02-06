@@ -1,12 +1,19 @@
 
 const canvas = document.getElementById('backgroundCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth - 200;
-canvas.height = window.innerHeight;
 canvas.style.position = 'fixed';
 canvas.style.top = '0';
-canvas.style.left = '200px';
 canvas.style.zIndex = '-1';
+if (window.innerWidth < 768) {
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	canvas.style.left = '0';
+} else {
+	canvas.width = window.innerWidth - 200;
+	canvas.height = window.innerHeight;
+	canvas.style.left = '200px';
+}
+
 
 const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
 gradient.addColorStop(0, 'blue');
@@ -98,7 +105,11 @@ class Effect {
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;
 		this.particles = [];
-		this.numberOfParticles = 250;
+		if (this.canvas.width < 768) {
+			this.numberOfParticles = 50;
+		} else {
+			this.numberOfParticles = 250;
+		}
 		this.createParticles();
 
 		this.mouse = {
@@ -116,7 +127,11 @@ class Effect {
 		window.addEventListener('mousemove', e => {
 			// console.log(e.x, e.y);
 			if (this.mouse.pressed) {
-				this.mouse.x = e.x - 200;
+				if (canvas.width < 768) {
+					this.mouse.x = e.x;
+				} else {
+					this.mouse.x = e.x - 200;
+				}
 				this.mouse.y = e.y;
 				// console.log(this.mouse.x, this.mouse.y);
 			}
@@ -124,7 +139,11 @@ class Effect {
 
 		window.addEventListener('mousedown', e => {
 			this.mouse.pressed = true;
-			this.mouse.x = e.x - 200;
+			if (canvas.width < 768) {
+				this.mouse.x = e.x;
+			} else {
+				this.mouse.x = e.x - 200;
+			}
 			this.mouse.y = e.y;
 		});
 

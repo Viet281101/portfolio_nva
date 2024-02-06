@@ -26,33 +26,35 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.body.appendChild(backgroundLayer2);
 
 	//////*  Background mouse mask   *//////
-	setTimeout(() => {
-		document.addEventListener('mousemove', function(e) {
-			updateBackgroundMask(
-				backgroundLayer2, 
-				e.clientX, e.clientY, 
-				radius
-			);
-			influenceArea.x = e.clientX - influenceArea.width / 2;
-			influenceArea.y = e.clientY - influenceArea.height / 2;
-		});
-		document.addEventListener('mousedown', function(e) {
-			radius = 180;
-			updateMouseMask(
-				backgroundLayer2, 
-				e.clientX, e.clientY, 
-				radius
-			);
-		});
-		document.addEventListener('mouseup', function(e) {
-			radius = 70;
-			updateMouseMask(
-				backgroundLayer2, 
-				e.clientX, e.clientY, 
-				radius
-			);
-		});
-	}, 1000);
+	if (window.innerWidth > 768) {
+		setTimeout(() => {
+			document.addEventListener('mousemove', function(e) {
+				updateBackgroundMask(
+					backgroundLayer2, 
+					e.clientX, e.clientY, 
+					radius
+				);
+				influenceArea.x = e.clientX - influenceArea.width / 2;
+				influenceArea.y = e.clientY - influenceArea.height / 2;
+			});
+			document.addEventListener('mousedown', function(e) {
+				radius = 180;
+				updateMouseMask(
+					backgroundLayer2, 
+					e.clientX, e.clientY, 
+					radius
+				);
+			});
+			document.addEventListener('mouseup', function(e) {
+				radius = 70;
+				updateMouseMask(
+					backgroundLayer2, 
+					e.clientX, e.clientY, 
+					radius
+				);
+			});
+		}, 1000);
+	}
 });
 //////*  Create & Update Background Effects  *//////
 function applyBackgroundStyles(element, imageUrl, zIndex) {
