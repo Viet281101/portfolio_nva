@@ -20,7 +20,14 @@ function load_js_files() {
 load_js_files();
 
 document.addEventListener('DOMContentLoaded', function() {
-	$("#fullpage").fullpage();
+	$("#fullpage").fullpage({
+		onLeave: function(index, nextIndex, direction) {
+			console.log("Leaving section: " + index);
+		},
+		afterLoad: function(anchorLink, index) {
+			console.log("Loaded section: " + index);
+		},
+	});
 
 	//////*  Create Section Home   *//////
 	createHomeContent();

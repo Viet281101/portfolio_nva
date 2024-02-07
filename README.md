@@ -1,17 +1,19 @@
 
 # Portfolio website
 
-
-## Sources crédit:
-
-1. Animations sur Mixamo:
-- Waving:
-- Idle Drunk Variation:
+Simple portfolio website to showcase my study projects and skills.
 
 
-2. Avatar sur Avaturn:
+## Sources and Credits:
 
-3. Fonts:
+1. Animations Avatar from [Mixamo](https://www.mixamo.com/#/):
+- Waving: [Mixamo Waving Animation](https://www.mixamo.com/#/?page=1&query=waving)
+- Idle Drunk Variation: [Drunk Idle Variation ON CH35_NONPBR](https://www.mixamo.com/#/?page=1&query=drunk+idle+variation&type=Motion%2CMotionPack)
+
+
+2. Avatar from [Avaturn](https://avaturn.me/)
+
+3. Fonts: [Minecraftia](https://www.dafont.com/minecraftia.font)
 
 
 

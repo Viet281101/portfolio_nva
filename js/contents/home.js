@@ -104,6 +104,11 @@ function applyHomeStyles() {
 				max-width: 100%;
 				min-height: 500px;
 				max-height: 500px;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			section {
+				padding: 0;
 			}
 			h1, .hero-description {
 				text-align: center;
