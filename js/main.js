@@ -1,9 +1,11 @@
 
 let js_files = [
 	'background.js',
-	'lightslider.js',
-	'particles.js',
+	'effects/lightslider.js',
+	'effects/particles.js',
 	'sidebar.js',
+	'contents/home.js',
+	'contents/about.js',
 ];
 
 function load_js_files() {
@@ -19,4 +21,15 @@ load_js_files();
 
 document.addEventListener('DOMContentLoaded', function() {
 	$("#fullpage").fullpage();
+
+	//////*  Create Section Home   *//////
+	createHomeContent();
+	applyHomeStyles();
+
+	//////*  Create Section About   *//////
+	createAboutContent();
+
+	//////*  Create Sidebar   *//////
+	createSidebar();
+	applySidebarStyles();
 });

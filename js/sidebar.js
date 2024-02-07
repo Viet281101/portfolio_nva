@@ -61,8 +61,9 @@ function applySidebarStyles() {
 			padding-bottom: 50px;
 		}
 		label div ul li a img {
-			scale: 0.6;
+			scale: 0.7;
 			padding: 0;
+			margin-right: 2px;
 		}
 		label div ul {
 			list-style-type: none;
@@ -73,7 +74,8 @@ function applySidebarStyles() {
 			list-style: none;
 		}
 		label div ul li a {
-			display: inline-block;
+			display: flex;
+			align-items: center;
 			padding: 6px;
 			text-decoration: none;
 			color: white;
@@ -81,13 +83,14 @@ function applySidebarStyles() {
 			vertical-align: middle;
 			width: 100%;
 			font-size: 20px;
+			border: 1.5px solid #555;
 		}
 		label input {
 			display: none;
 			visibility: hidden;
 			appearance: none;
 		}
-		@media screen and (max-width: 1200px) {
+		@media screen and (max-width: 1000px) {
 			.sidebar {
 				width: 0;
 				visibility: hidden;
@@ -102,18 +105,13 @@ function applySidebarStyles() {
 	var sectionStyle = document.createElement('style');
 	sectionStyle.type = 'text/css';
 	sectionStyle.innerHTML = `
-		@media screen and (min-width: 1201px) {
+		@media screen and (min-width: 1001px) {
 			section {
 				margin-left: 200px;
 			}
 		}
 	`;
 	document.head.appendChild(sectionStyle);
-}
+};
 
 
-document.addEventListener('DOMContentLoaded', function() {
-	//////*  Create Sidebar   *//////
-	createSidebar();
-	applySidebarStyles();
-});
