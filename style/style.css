@@ -19,55 +19,9 @@ body, html {
 	height: 100%;
 	margin: 0;
 }
-
-/* Sidebar & Navigation styles */
-.sidebar {
-	position: fixed;
-	height: 100%;
-	width: 200px;
-	background-color: #333;
-	padding-top: 20px;
-	left: 0;
-	top: 0;
-	overflow-x: hidden;
-	transition: 0.5s;
-	z-index: 10;
-}
-label div h1 {
-	text-align: center;
-	padding-bottom: 50px;
-}
-label div ul li a img {
-	scale: 0.6;
-	padding: 0;
-}
-label div ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-label div ul li {
-	list-style: none;
-}
-label div ul li a {
-	display: inline-block;
-	padding: 6px;
-	text-decoration: none;
-	color: white;
-	text-align: left;
-	vertical-align: middle;
-	width: 100%;
-	font-size: 20px;
-}
-label input {
-	display: none;
-	visibility: hidden;
-	appearance: none;
-}
 /* Section styles */
 section {
 	padding: 8px;
-	margin-left: 10%;
 	text-align: center;
 	min-height: 100vh;
 	opacity: 0;
@@ -146,15 +100,4 @@ p {
 		text-align: center;
 	}
 }
-@media screen and (max-width: 1200px) {
-	.sidebar {
-		width: 0;
-		visibility: hidden;
-	}
-	.content {
-		margin-left: 0;
-	}
-}
-
-
 

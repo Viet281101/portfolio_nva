@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 canvas.style.position = 'fixed';
 canvas.style.top = '0';
 canvas.style.zIndex = '-1';
-if (window.innerWidth < 768) {
+if (window.innerWidth < 1000) {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 	canvas.style.left = '0';
@@ -105,7 +105,7 @@ class Effect {
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;
 		this.particles = [];
-		if (this.canvas.width < 768) {
+		if (this.canvas.width < 1000) {
 			this.numberOfParticles = 50;
 		} else {
 			this.numberOfParticles = 250;
@@ -127,7 +127,7 @@ class Effect {
 		window.addEventListener('mousemove', e => {
 			// console.log(e.x, e.y);
 			if (this.mouse.pressed) {
-				if (canvas.width < 768) {
+				if (canvas.width < 1000) {
 					this.mouse.x = e.x;
 				} else {
 					this.mouse.x = e.x - 200;
@@ -139,7 +139,7 @@ class Effect {
 
 		window.addEventListener('mousedown', e => {
 			this.mouse.pressed = true;
-			if (canvas.width < 768) {
+			if (canvas.width < 1000) {
 				this.mouse.x = e.x;
 			} else {
 				this.mouse.x = e.x - 200;
@@ -192,10 +192,18 @@ class Effect {
 	}
 
 	resize(width, height) {
-		this.canvas.width = width;
-		this.canvas.height = height;
-		this.width = width;
-		this.height = height;
+		if (width < 1000) {
+			this.canvas.width = width;
+			this.canvas.height = height;
+			this.canvas.style.left = '0';
+		}
+		else {
+			this.canvas.width = width - 200;
+			this.canvas.height = height;
+			this.canvas.style.left = '200px';
+		}
+		this.width = this.canvas.width;
+		this.height = this.canvas.height;
 
 		const gradient = this.context.createLinearGradient(0, 0, width, height);
 		gradient.addColorStop(0, 'blue');
