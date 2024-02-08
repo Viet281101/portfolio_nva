@@ -11,7 +11,6 @@ body {
 	background: black;
 	min-height: 100vh;
 	font-family:"Pixel";
-	overflow: hidden;
 	user-select: none;
 }
 body, html {

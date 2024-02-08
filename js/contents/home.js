@@ -1,7 +1,7 @@
 
 function createHomeContent() {
 	const section = document.getElementById('home');
-	section.innerHTML = ''; // Clear any existing content
+	section.innerHTML = ''; //// Clear any existing content
 
 	const avatarContainer = document.createElement('div');
 	avatarContainer.id = 'avatar-container';

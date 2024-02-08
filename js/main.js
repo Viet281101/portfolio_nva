@@ -8,6 +8,14 @@ let js_files = [
 	'contents/about.js',
 ];
 
+let sections = [
+	'home',
+	'about',
+	'projects',
+	'contact',
+];
+let current_section = 0;
+
 function load_js_files() {
 	for (let i = 0; i < js_files.length; i++) {
 		let script = document.createElement('script');
@@ -17,17 +25,37 @@ function load_js_files() {
 	}
 };
 
-load_js_files();
+function load_fullpage() {
+	if (window.innerWidth > 1000) {
+		document.body.style.overflow = 'hidden';
+		$("#fullpage").fullpage({
+			onLeave: function(index, nextIndex, direction) {
+				console.log("Leaving section: " + index);
+				console.log("Going to section: " + nextIndex);
+				console.log("Direction: " + direction);
+				current_section = nextIndex - 1;
+				console.log("Current section: " + sections[current_section]);
+			},
+			afterLoad: function(anchorLink, index) {
+				console.log("Loaded section: " + index);
+				current_section = index - 1;
+				console.log("Current section: " + sections[current_section]);
+			},
+		});
+	} else {
+		document.body.style.overflow = 'auto';
+		$("#fullpage").fullpage({
+			autoScrolling: false,
+			scrollBar: true,
+		});
+	}
+}
 
+
+load_js_files();
 document.addEventListener('DOMContentLoaded', function() {
-	$("#fullpage").fullpage({
-		onLeave: function(index, nextIndex, direction) {
-			console.log("Leaving section: " + index);
-		},
-		afterLoad: function(anchorLink, index) {
-			console.log("Loaded section: " + index);
-		},
-	});
+	//////*  Load Fullpage   *//////
+	load_fullpage();
 
 	//////*  Create Section Home   *//////
 	createHomeContent();
@@ -39,4 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	//////*  Create Sidebar   *//////
 	createSidebar();
 	applySidebarStyles();
+});
+window.addEventListener('resize', function() {
+	load_fullpage();
 });

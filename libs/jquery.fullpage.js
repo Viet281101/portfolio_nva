@@ -91,7 +91,7 @@
 			
 					// Call afterLoad callback if defined
 					if(typeof that.options.afterLoad === 'function'){
-						that.options.afterLoad.call(that, targetIndex);
+						that.options.afterLoad.call(that, targetIndex + 1, targetIndex + 1);
 					}
 				});
 				children.css({
