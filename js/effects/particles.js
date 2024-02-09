@@ -9,9 +9,9 @@ if (window.innerWidth < 1000) {
 	canvas.height = window.innerHeight;
 	canvas.style.left = '0';
 } else {
-	canvas.width = window.innerWidth - 200;
+	canvas.width = window.innerWidth - 220;
 	canvas.height = window.innerHeight;
-	canvas.style.left = '200px';
+	canvas.style.left = '220px';
 }
 
 
@@ -119,7 +119,7 @@ class Effect {
 				if (canvas.width < 1000) {
 					this.mouse.x = e.x;
 				} else {
-					this.mouse.x = e.x - 200;
+					this.mouse.x = e.x - 220;
 				}
 				this.mouse.y = e.y;
 				// console.log(this.mouse.x, this.mouse.y);
@@ -131,7 +131,7 @@ class Effect {
 			if (canvas.width < 1000) {
 				this.mouse.x = e.x;
 			} else {
-				this.mouse.x = e.x - 200;
+				this.mouse.x = e.x - 220;
 			}
 			this.mouse.y = e.y;
 		});
@@ -187,9 +187,9 @@ class Effect {
 			this.canvas.style.left = '0';
 		}
 		else {
-			this.canvas.width = width - 200;
+			this.canvas.width = width - 220;
 			this.canvas.height = height;
-			this.canvas.style.left = '200px';
+			this.canvas.style.left = '220px';
 		}
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;

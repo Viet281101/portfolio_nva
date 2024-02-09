@@ -23,6 +23,7 @@ function createSidebar() {
 		let img = document.createElement('img');
 
 		a.setAttribute('href', item.href);
+		a.id = 'nav-' + item.text.toLowerCase();
 		img.setAttribute('src', item.icon);
 		img.setAttribute('alt', item.text.toLowerCase() + " icon");
 
@@ -30,6 +31,15 @@ function createSidebar() {
 		a.append(item.text);
 		li.appendChild(a);
 		ul.appendChild(li);
+
+		a.addEventListener('click', function(e) {
+			e.preventDefault();
+			const sectionIndex = sections.indexOf(item.text.toLowerCase());
+			if (sectionIndex !== -1) {
+				updateActiveNavItem(sectionIndex + 1);
+				$("#fullpage").data('fullpage').moveTo(sectionIndex + 1);
+			}
+		});
 	});
 
 	divSidebar.appendChild(h1);
@@ -40,6 +50,17 @@ function createSidebar() {
 	document.body.insertBefore(label, document.body.firstChild);
 };
 
+function updateActiveNavItem(nextIndex) {
+	document.querySelectorAll('.sidebar a').forEach(function(navItem) {
+		navItem.classList.remove('active');
+	});
+
+	const activeNavItem = document.getElementById('nav-' + sections[nextIndex - 1]);
+	if (activeNavItem) {
+		activeNavItem.classList.add('active');
+	}
+};
+
 function applySidebarStyles() {
 	var style = document.createElement('style');
 	style.type = 'text/css';
@@ -47,7 +68,7 @@ function applySidebarStyles() {
 		.sidebar {
 			position: fixed;
 			height: 100%;
-			width: 200px;
+			width: 220px;
 			background-color: #333;
 			padding-top: 20px;
 			left: 0;
@@ -56,14 +77,17 @@ function applySidebarStyles() {
 			transition: 0.5s;
 			z-index: 10;
 		}
+		.sidebar a.active {
+			background-color: #555;
+		}
 		label div h1 {
 			text-align: center;
-			padding-bottom: 50px;
+			padding-bottom: 100px;
 		}
 		label div ul li a img {
 			scale: 0.7;
 			padding: 0;
-			margin-right: 2px;
+			margin-right: 3px;
 		}
 		label div ul {
 			list-style-type: none;
@@ -76,14 +100,16 @@ function applySidebarStyles() {
 		label div ul li a {
 			display: flex;
 			align-items: center;
-			padding: 6px;
+			padding-top: 14px;
+			padding-bottom: 14px;
 			text-decoration: none;
 			color: white;
 			text-align: left;
 			vertical-align: middle;
 			width: 100%;
-			font-size: 20px;
-			border: 1.5px solid #555;
+			font-size: 24px;
+			border-top: 1.5px solid #555;
+			border-bottom: 1.5px solid #555;
 		}
 		label input {
 			display: none;
@@ -107,7 +133,7 @@ function applySidebarStyles() {
 	sectionStyle.innerHTML = `
 		@media screen and (min-width: 1001px) {
 			section {
-				margin-left: 200px;
+				margin-left: 220px;
 			}
 		}
 	`;

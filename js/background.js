@@ -6,6 +6,12 @@ var influenceArea = {
 	width: radius * 2,
 	height: radius * 2
 };
+var sectionBackgrounds = [
+	'./assets/background/space_px_bg_8.png',
+	'./assets/background/space_px_bg_10.png',
+	'./assets/background/space_px_bg_11.png',
+	'./assets/background/space_px_bg_4.png',
+];
 document.addEventListener('DOMContentLoaded', function() {
 
 	//////*  Background Layers   *//////
@@ -15,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		'./assets/background/space_px_bg_8.png', 
 		-2
 	);
+	backgroundLayer1.className = 'backgroundLayer1';
 	document.body.appendChild(backgroundLayer1);
 
 	var backgroundLayer2 = document.createElement('div');
@@ -68,6 +75,7 @@ function applyBackgroundStyles(element, imageUrl, zIndex) {
 	element.style.backgroundSize = 'cover';
 	element.style.backgroundRepeat = 'no-repeat';
 	element.style.zIndex = zIndex;
+	element.style.transition = 'background-image 1s ease-in-out';
 };
 function updateMouseMask(backgroundLayer, x, y, radius) {
 	influenceArea.width = radius * 2;
@@ -78,4 +86,9 @@ function updateBackgroundMask(element, x, y, maskSize) {
 	element.style.webkitMaskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
 	element.style.maskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
 };
+function updateBackgroundForSection(sectionIndex) {
+	var backgroundLayer1 = document.querySelector('.backgroundLayer1');
+	backgroundLayer1.style.backgroundImage = 'url(' + sectionBackgrounds[sectionIndex - 1] + ')';
+};
+
 

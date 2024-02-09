@@ -25,7 +25,12 @@ function createHomeContent() {
 
 	const description = document.createElement('p');
 	description.className = 'hero-description';
-	description.textContent = "A computer science student with a passion for creating interactive, graphic effects.";
+	// description.textContent = "A computer science student with a passion for creating interactive, graphic effects.";
+	new Typewriter(description, {
+		strings: ['A computer science student with a passion for creating interactive, graphic effects.'],
+		autoStart: true,
+		loop: true,
+	});
 
 	introTitle.appendChild(greeting);
 	introTitle.appendChild(introduction);

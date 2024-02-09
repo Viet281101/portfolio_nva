@@ -33,13 +33,11 @@ function load_fullpage() {
 				console.log("Leaving section: " + index);
 				console.log("Going to section: " + nextIndex);
 				console.log("Direction: " + direction);
-				current_section = nextIndex - 1;
-				console.log("Current section: " + sections[current_section]);
 			},
 			afterLoad: function(anchorLink, index) {
 				console.log("Loaded section: " + index);
-				current_section = index - 1;
-				console.log("Current section: " + sections[current_section]);
+				updateActiveNavItem(index);
+				updateBackgroundForSection(index);
 			},
 		});
 	} else {
@@ -67,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	//////*  Create Sidebar   *//////
 	createSidebar();
 	applySidebarStyles();
+
+	updateActiveNavItem(1);
+	updateBackgroundForSection(1);
 });
 window.addEventListener('resize', function() {
 	load_fullpage();

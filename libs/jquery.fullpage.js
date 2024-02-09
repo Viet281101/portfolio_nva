@@ -103,12 +103,23 @@
 			}
 		};
 
+		Fullpage.prototype.moveTo = function(sectionIndex) {
+			if (sectionIndex < 1 || sectionIndex > this.$el.children().length) {
+				console.error('Section index out of bounds');
+				return;
+			}
+			var targetIndex = sectionIndex - 1;
+			this.gotoTarget(targetIndex);
+		};
+		
+
 		return Fullpage;
 	})();
 
 	$.fn.fullpage = function(options){
 		this.each(function(){
-			new Fullpage($(this),options);
+			var fullpage = new Fullpage($(this), options);
+			$(this).data('fullpage', fullpage);
 		});
 		return this;
 	};
