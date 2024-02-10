@@ -80,6 +80,10 @@ function applySidebarStyles() {
 		.sidebar a.active {
 			background-color: #555;
 		}
+		.sidebar a:hover {
+			transform: scale(1.05);
+			transition: 0.3s;
+		}
 		label div h1 {
 			text-align: center;
 			padding-bottom: 100px;

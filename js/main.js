@@ -47,7 +47,7 @@ function load_fullpage() {
 			scrollBar: true,
 		});
 	}
-}
+};
 
 
 load_js_files();
@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	applySidebarStyles();
 
 	updateActiveNavItem(1);
-	updateBackgroundForSection(1);
 });
 window.addEventListener('resize', function() {
 	load_fullpage();

@@ -14,7 +14,17 @@ function createHomeContent() {
 
 	const greeting = document.createElement('h1');
 	greeting.className = 'hero-title';
-	greeting.textContent = 'Hello World !';
+	var greetingWriting = new Typewriter(greeting, {
+		autoStart: true,
+		loop: true,
+	});
+	greetingWriting.typeString('Hello, World !')
+		.pauseFor(3000)
+		.deleteAll()
+		.typeString('Hi there,')
+		.pauseFor(3000)
+		.deleteAll()
+		.start();
 
 	const introduction = document.createElement('h1');
 	const nameSpan = document.createElement('span');
@@ -25,12 +35,7 @@ function createHomeContent() {
 
 	const description = document.createElement('p');
 	description.className = 'hero-description';
-	// description.textContent = "A computer science student with a passion for creating interactive, graphic effects.";
-	new Typewriter(description, {
-		strings: ['A computer science student with a passion for creating interactive, graphic effects.'],
-		autoStart: true,
-		loop: true,
-	});
+	description.textContent = "A computer science student with a passion for creating interactive, graphic effects.";
 
 	introTitle.appendChild(greeting);
 	introTitle.appendChild(introduction);
