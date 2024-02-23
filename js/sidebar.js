@@ -23,6 +23,7 @@ function createSidebar() {
 		let img = document.createElement('img');
 
 		a.setAttribute('href', item.href);
+		a.setAttribute('class', 'section-btn');
 		a.id = 'nav-' + item.text.toLowerCase();
 		img.setAttribute('src', item.icon);
 		img.setAttribute('alt', item.text.toLowerCase() + " icon");

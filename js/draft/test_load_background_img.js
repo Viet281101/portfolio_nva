@@ -6,6 +6,12 @@ var influenceArea = {
 	width: radius * 2,
 	height: radius * 2
 };
+var sectionBackgroundsPlaceholder = [
+	'./assets/background/placeholder_space_px_bg_8.png',
+	'./assets/background/placeholder_space_px_bg_10.png',
+	'./assets/background/placeholder_space_px_bg_11.png',
+	'./assets/background/placeholder_space_px_bg_4.png',
+];
 var sectionBackgrounds = [
 	'./assets/background/space_px_bg_8.png',
 	'./assets/background/space_px_bg_10.png',
@@ -15,13 +21,22 @@ var sectionBackgrounds = [
 document.addEventListener('DOMContentLoaded', function() {
 
 	//////*  Background Layers   *//////
+	var backgroundPlaceholder = document.createElement('div');
+	backgroundPlaceholder.className = 'backgroundPlaceholder';
+	applyBackgroundStyles(
+		backgroundPlaceholder, 
+		sectionBackgroundsPlaceholder[0], 
+		-3
+	);
+	document.body.appendChild(backgroundPlaceholder);
+
 	var backgroundLayer1 = document.createElement('div');
+	backgroundLayer1.className = 'backgroundLayer1';
 	applyBackgroundStyles(
 		backgroundLayer1, 
-		'./assets/background/space_px_bg_8.png', 
-		-2
+		sectionBackgrounds[0], 
+		-2, 0
 	);
-	backgroundLayer1.className = 'backgroundLayer1';
 	document.body.appendChild(backgroundLayer1);
 
 	var backgroundLayer2 = document.createElement('div');
@@ -31,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		-1
 	);
 	document.body.appendChild(backgroundLayer2);
+
+	updateBackgroundForSection(1);
 
 	//////*  Background mouse mask   *//////
 	if (window.innerWidth > 768) {
@@ -64,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 });
 //////*  Create & Update Background Effects  *//////
-function applyBackgroundStyles(element, imageUrl, zIndex) {
+function applyBackgroundStyles(element, imageUrl, zIndex, opacity = 1) {
 	element.style.position = 'fixed';
 	element.style.top = '0';
 	element.style.left = '0';
@@ -74,7 +91,8 @@ function applyBackgroundStyles(element, imageUrl, zIndex) {
 	element.style.backgroundSize = 'cover';
 	element.style.backgroundRepeat = 'no-repeat';
 	element.style.zIndex = zIndex;
-	element.style.transition = 'background-image 1s ease-in-out';
+	element.style.opacity = opacity;
+	element.style.transition = 'opacity 1s ease-in-out';
 };
 function updateMouseMask(backgroundLayer, x, y, radius) {
 	influenceArea.width = radius * 2;
@@ -86,7 +104,21 @@ function updateBackgroundMask(element, x, y, maskSize) {
 	element.style.maskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
 };
 function updateBackgroundForSection(sectionIndex) {
-	var backgroundLayer1 = document.querySelector('.backgroundLayer1');
-	backgroundLayer1.style.backgroundImage = 'url(' + sectionBackgrounds[sectionIndex - 1] + ')';
-};
+    var backgroundLayer1 = document.querySelector('.backgroundLayer1');
 
+	if ( document.querySelector('.backgroundPlaceholder') ) {
+		var backgroundPlaceholder = document.querySelector('.backgroundPlaceholder');
+    	backgroundPlaceholder.style.backgroundImage = 'url(' + sectionBackgroundsPlaceholder[sectionIndex - 1] + ')';
+	}
+
+    backgroundLayer1.style.opacity = '0';
+    backgroundLayer1.style.backgroundImage = 'url(' + sectionBackgrounds[sectionIndex - 1] + ')';
+
+    setTimeout(() => {
+        backgroundLayer1.style.opacity = '1';
+
+		if ( document.querySelector('.backgroundPlaceholder') ) {
+			backgroundPlaceholder.remove();
+		}
+    }, 1000);
+};

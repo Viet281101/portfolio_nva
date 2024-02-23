@@ -6,6 +6,8 @@ let js_files = [
 	'sidebar.js',
 	'contents/home.js',
 	'contents/about.js',
+	'contents/project.js',
+	'contents/contact.js',
 ];
 
 let sections = [
