@@ -113,11 +113,11 @@
 	padding-left: 0;
 	margin: 0;
 	overflow: hidden;
-	transform: translate3d(0px, 0px, 0px);
 	-moz-transform: translate3d(0px, 0px, 0px);
 	-ms-transform: translate3d(0px, 0px, 0px);
 	-webkit-transform: translate3d(0px, 0px, 0px);
 	-o-transform: translate3d(0px, 0px, 0px);
+	transform: translate3d(0px, 0px, 0px);
 	-webkit-transition-property: -webkit-transform;
 	-moz-transition-property: -moz-transform;
 	-webkit-touch-callout: none;

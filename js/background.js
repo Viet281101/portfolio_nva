@@ -72,6 +72,7 @@ function applyBackgroundStyles(element, imageUrl, zIndex) {
 	element.style.height = '100vh';
 	element.style.backgroundImage = 'url(' + imageUrl + ')';
 	element.style.backgroundSize = 'cover';
+	element.style.backgroundPosition = 'center';
 	element.style.backgroundRepeat = 'no-repeat';
 	element.style.zIndex = zIndex;
 	element.style.transition = 'background-image 1s ease-in-out';
