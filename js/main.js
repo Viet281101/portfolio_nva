@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	//////*  Create Section About   *//////
 	createAboutContent();
+	applyAboutStyles();
 
 	//////*  Create Sidebar   *//////
 	createSidebar();

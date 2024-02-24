@@ -56,3 +56,65 @@ function createAboutContent() {
 };
 
 
+function applyAboutStyles() {
+	const css = `
+		/* About section styles */
+		#about {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding-top: 50px;
+		}
+		.about-title {
+			text-align: center;
+			padding-bottom: 100px;
+		}
+		.about-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 80%;
+		}
+		.about-content-left, .about-content-right {
+			flex: 1;
+			padding: 10px;
+		}
+		.about-content-left {
+			order: 1;
+		}
+		.about-content-right {
+			order: 2;
+		}
+		.about-content-left-title, .about-content-right-title {
+			padding-bottom: 20px;
+		}
+		.about-content-left-content, .about-content-right-content {
+			text-align: left;
+		}
+		.about-content-left-content p, .about-content-right-content p {
+			font-size: 1.2em;
+		}
+
+		@media screen and (max-width: 1000px) {
+			#about .about-content {
+				flex-direction: column;
+				align-items: center;
+			}
+			.about-content-left, .about-content-right {
+				order: 1;
+				width: 100%;
+				padding: 0;
+			}
+			.about-content-left {
+				padding-bottom: 50px;
+			}
+		}
+	`;
+	const style = document.createElement('style');
+	style.type = 'text/css';
+	style.innerHTML = css;
+	document.head.appendChild(style);
+};
+
+
