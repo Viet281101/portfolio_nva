@@ -96,7 +96,7 @@ function applySidebarStyles() {
 			padding-bottom: 100px;
 		}
 		label div ul li a img {
-			scale: 0.7;
+			transform: scale(0.7);
 			padding: 0;
 			margin-right: 3px;
 		}
