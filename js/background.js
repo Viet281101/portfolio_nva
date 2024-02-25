@@ -10,6 +10,7 @@ var sectionBackgrounds = [
 	'./assets/background/space_px_bg_8.png',
 	'./assets/background/space_px_bg_10.png',
 	'./assets/background/space_px_bg_11.png',
+	'./assets/background/space_px_bg_6.png',
 	'./assets/background/space_px_bg_4.png',
 ];
 document.addEventListener('DOMContentLoaded', function() {

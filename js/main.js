@@ -7,6 +7,7 @@ let js_files = [
 	'contents/home.js',
 	'contents/about.js',
 	'contents/project.js',
+	'contents/courses.js',
 	'contents/contact.js',
 ];
 
@@ -14,6 +15,7 @@ let sections = [
 	'home',
 	'about',
 	'projects',
+	'courses',
 	'contact',
 ];
 let current_section = 0;

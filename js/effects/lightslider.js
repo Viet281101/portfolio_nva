@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				entry.target.classList.remove('in-view');
 			}
 		});
+		observer.thresholds = [options.threshold];
 	}, options);
 
 	sections.forEach(section => {
