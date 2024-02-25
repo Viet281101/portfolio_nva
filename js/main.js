@@ -18,7 +18,13 @@ let sections = [
 ];
 let current_section = 0;
 
-function load_js_files() {
+function load_files() {
+	let style = document.createElement('link');
+	style.rel = 'stylesheet';
+	style.type = 'text/css';
+	style.href = './style/style.css';
+	document.head.appendChild(style);
+
 	for (let i = 0; i < js_files.length; i++) {
 		let script = document.createElement('script');
 		script.src = './js/' + js_files[i];
@@ -30,6 +36,13 @@ function load_js_files() {
 function load_fullpage() {
 	if (window.innerWidth > 1000) {
 		document.body.style.overflow = 'hidden';
+		
+		let lightslider = document.createElement('link');
+		lightslider.rel = 'stylesheet';
+		lightslider.type = 'text/css';
+		lightslider.href = './style/lightslider.css';
+		document.head.appendChild(lightslider);
+
 		$("#fullpage").fullpage({
 			onLeave: function(index, nextIndex, direction) {
 				console.log("Leaving section: " + index);
@@ -43,7 +56,7 @@ function load_fullpage() {
 			},
 		});
 	} else {
-		document.body.style.overflow = 'auto';
+		document.body.style.overflowX = 'hidden';
 		$("#fullpage").fullpage({
 			autoScrolling: false,
 			scrollBar: true,
@@ -52,7 +65,7 @@ function load_fullpage() {
 };
 
 
-load_js_files();
+load_files();
 document.addEventListener('DOMContentLoaded', function() {
 	//////*  Load Fullpage   *//////
 	load_fullpage();

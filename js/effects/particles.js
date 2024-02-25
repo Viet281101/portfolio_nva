@@ -3,7 +3,7 @@ const canvas = document.getElementById('backgroundCanvas');
 const ctx = canvas.getContext('2d');
 canvas.style.position = 'fixed';
 canvas.style.top = '0';
-canvas.style.zIndex = '-1';
+canvas.style.zIndex = '2';
 if (window.innerWidth < 1000) {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;

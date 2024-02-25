@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	applyBackgroundStyles(
 		backgroundLayer1, 
 		'./assets/background/space_px_bg_8.png', 
-		-2
+		1
 	);
 	backgroundLayer1.className = 'backgroundLayer1';
 	document.body.appendChild(backgroundLayer1);
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	applyBackgroundStyles(
 		backgroundLayer2, 
 		'./assets/background/black_bg.png', 
-		-1
+		2
 	);
 	document.body.appendChild(backgroundLayer2);
 
@@ -76,6 +76,12 @@ function applyBackgroundStyles(element, imageUrl, zIndex) {
 	element.style.backgroundRepeat = 'no-repeat';
 	element.style.zIndex = zIndex;
 	element.style.transition = 'background-image 1s ease-in-out';
+	//// loading lazy
+	element.style.filter = 'blur(10px)';
+	element.style.transition = 'filter 0.5s ease-in-out';
+	setTimeout(() => {
+		element.style.filter = 'blur(0)';
+	}, 1000);
 };
 function updateMouseMask(backgroundLayer, x, y, radius) {
 	influenceArea.width = radius * 2;

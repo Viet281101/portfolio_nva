@@ -33,6 +33,7 @@
 	-ms-transform: translate(0px, 0px);
 	transform: translate(0px, 0px);
 	-webkit-transition: all 1s;
+	transition: all 1s;
 	-webkit-transition-property: -webkit-transform,height;
 	-moz-transition-property: -moz-transform,height;
 	transition-property: transform,height;
@@ -119,6 +120,7 @@
 	-o-transform: translate3d(0px, 0px, 0px);
 	transform: translate3d(0px, 0px, 0px);
 	-webkit-transition-property: -webkit-transform;
+	transition-property: transform;
 	-moz-transition-property: -moz-transform;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;

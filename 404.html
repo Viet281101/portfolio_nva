@@ -12,7 +12,7 @@
 	<!-- ICON -->
 	<link rel="shortcut icon" href="./assets/icon.png">
 	<style>
-		.content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+		.content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 3;}
 		.content h1 { font-size: 4em; }
 		.content p { font-size: 1.5em; }
 		.content a { font-size: 1.2em;text-decoration: none; padding: 4px; }
@@ -26,7 +26,7 @@
 		<p>Click  <a href="./index.html"> here </a>  to go back to the home page.</p>
 	</div>
 	<script type="text/javascript">
-		$("#fullpage").fullpage();
+		document.body.style.overflow = 'hidden';$("#fullpage").fullpage();
 	</script>
 </body>
 </html>

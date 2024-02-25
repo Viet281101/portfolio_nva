@@ -21,6 +21,7 @@ function createSidebar() {
 		let li = document.createElement('li');
 		let a = document.createElement('a');
 		let img = document.createElement('img');
+		img.setAttribute('loading', 'lazy');
 
 		a.setAttribute('href', item.href);
 		a.setAttribute('class', 'section-btn');

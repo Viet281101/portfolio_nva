@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	applyBackgroundStyles(
 		backgroundLayer1, 
 		'./assets/background/space_px_bg_8.png', 
-		-2
+		1
 	);
 	backgroundLayer1.className = 'backgroundLayer1';
 	document.body.appendChild(backgroundLayer1);
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	applyBackgroundStyles(
 		backgroundLayer2, 
 		'./assets/background/black_bg.png', 
-		-1
+		2
 	);
 	document.body.appendChild(backgroundLayer2);
 
