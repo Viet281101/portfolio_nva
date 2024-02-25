@@ -1,5 +1,4 @@
 <filesMatch ".(html|css|js|png|jpg)$">
 	Header set Cache-Control "max-age=2592000, must-revalidate"
 </filesMatch>
-ErrorDocument 404 /error/404.html
-ErrorDocument 403 /error/403.html
+ErrorDocument 404 /404.html

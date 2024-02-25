@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var backgroundLayer1 = document.createElement('div');
 	applyBackgroundStyles(
 		backgroundLayer1, 
-		'../assets/background/space_px_bg_8.png', 
+		'./assets/background/space_px_bg_8.png', 
 		-2
 	);
 	backgroundLayer1.className = 'backgroundLayer1';
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var backgroundLayer2 = document.createElement('div');
 	applyBackgroundStyles(
 		backgroundLayer2, 
-		'../assets/background/black_bg.png', 
+		'./assets/background/black_bg.png', 
 		-1
 	);
 	document.body.appendChild(backgroundLayer2);
