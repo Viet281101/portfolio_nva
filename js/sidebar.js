@@ -8,7 +8,7 @@ function createSidebar() {
 	let liItems = [
 		{href: "#home", icon: "./assets/icons/home.png", text: "Home"},
 		{href: "#about", icon: "./assets/icons/about.png", text: "About"},
-		{href: "#projects", icon: "./assets/icons/github.png", text: "Projects"},
+		{href: "#projects", icon: "./assets/icons/project.png", text: "Projects"},
 		{href: "#courses", icon: "./assets/icons/courses.png", text: "Courses"},
 		{href: "#contact", icon: "./assets/icons/info.png", text: "Contact"},
 	];
