@@ -1,13 +1,13 @@
 
-function createProjectContent() {
+function createCoursesContent() {
 	const section = document.getElementById('courses');
 	section.innerHTML = '';
 
-	section.appendChild();
+	// section.appendChild();
 };
 
 
-function applyProjectStyles() {
+function applyCoursesStyles() {
 	const css = `
 
 	`;
@@ -15,4 +15,4 @@ function applyProjectStyles() {
 	style.type = 'text/css';
 	style.appendChild(document.createTextNode(css));
 	document.head.appendChild(style);
-}
+};

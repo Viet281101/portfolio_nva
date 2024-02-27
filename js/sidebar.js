@@ -68,6 +68,7 @@ function applySidebarStyles() {
 	var style = document.createElement('style');
 	style.type = 'text/css';
 	style.innerHTML = `
+		@charset "UTF-8";
 		.sidebar {
 			position: fixed;
 			height: 100%;

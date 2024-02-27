@@ -13,6 +13,7 @@ var sectionBackgrounds = [
 	'./assets/background/space_px_bg_6.png',
 	'./assets/background/space_px_bg_4.png',
 ];
+var mouseMarkEnabled = true;
 document.addEventListener('DOMContentLoaded', function() {
 
 	//////*  Background Layers   *//////
@@ -34,34 +35,46 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.body.appendChild(backgroundLayer2);
 
 	//////*  Background mouse mask   *//////
-	if (window.innerWidth > 768) {
+	if (window.innerWidth > 768){
 		setTimeout(() => {
 			document.addEventListener('mousemove', function(e) {
-				updateBackgroundMask(
-					backgroundLayer2, 
-					e.clientX, e.clientY, 
-					radius
-				);
-				influenceArea.x = e.clientX - influenceArea.width / 2;
-				influenceArea.y = e.clientY - influenceArea.height / 2;
+				if (mouseMarkEnabled) {
+					updateBackgroundMask(
+						backgroundLayer2, 
+						e.clientX, e.clientY, 
+						radius
+					);
+					influenceArea.x = e.clientX - influenceArea.width / 2;
+					influenceArea.y = e.clientY - influenceArea.height / 2;
+				} else {
+					backgroundLayer2.style.webkitMaskImage = 'none';
+				}
 			});
 			document.addEventListener('mousedown', function(e) {
-				radius = 180;
-				updateMouseMask(
-					backgroundLayer2, 
-					e.clientX, e.clientY, 
-					radius
-				);
+				if (mouseMarkEnabled) {
+					radius = 180;
+					updateMouseMask(
+						backgroundLayer2, 
+						e.clientX, e.clientY, 
+						radius
+					);
+				} else {
+					backgroundLayer2.style.webkitMaskImage = 'none';
+				}
 			});
 			document.addEventListener('mouseup', function(e) {
-				radius = 70;
-				updateMouseMask(
-					backgroundLayer2, 
-					e.clientX, e.clientY, 
-					radius
-				);
+				if (mouseMarkEnabled) {
+					radius = 70;
+					updateMouseMask(
+						backgroundLayer2, 
+						e.clientX, e.clientY, 
+						radius
+					);
+				} else {
+					backgroundLayer2.style.webkitMaskImage = 'none';
+				}
 			});
-		}, 1000);
+		}, 2000);
 	}
 });
 //////*  Create & Update Background Effects  *//////
@@ -94,6 +107,7 @@ function updateBackgroundMask(element, x, y, maskSize) {
 	element.style.maskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
 };
 function updateBackgroundForSection(sectionIndex) {
+	mouseMarkEnabled = sectionIndex !== 3; // Disable mouse mask for the project section
 	var backgroundLayer1 = document.querySelector('.backgroundLayer1');
 	backgroundLayer1.style.backgroundImage = 'url(' + sectionBackgrounds[sectionIndex - 1] + ')';
 };

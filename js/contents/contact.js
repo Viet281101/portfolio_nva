@@ -13,4 +13,4 @@ function applyContactStyles() {
 	style.type = 'text/css';
 	style.appendChild(document.createTextNode(css));
 	document.head.appendChild(style);
-}
+};

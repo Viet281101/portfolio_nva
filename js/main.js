@@ -80,12 +80,33 @@ document.addEventListener('DOMContentLoaded', function() {
 	createAboutContent();
 	applyAboutStyles();
 
+	//////*  Create Section Project   *//////
+	createProjectContent();
+	applyProjectStyles();
+
+	//////*  Create Section Courses   *//////
+	// createCoursesContent();
+	// applyCoursesStyles();
+	
+	//////*  Create Section Contact   *//////
+	// createContactContent();
+	// applyContactStyles();
+	
 	//////*  Create Sidebar   *//////
 	createSidebar();
 	applySidebarStyles();
-
 	updateActiveNavItem(1);
+
+	//////*  Create Background   *//////
+	if (window.innerWidth < 768) {
+		mouseMarkEnabled = false;
+	}
 });
 window.addEventListener('resize', function() {
 	load_fullpage();
+	if (window.innerWidth < 768) {
+		mouseMarkEnabled = false;
+	} else {
+		mouseMarkEnabled = true;
+	}
 });
