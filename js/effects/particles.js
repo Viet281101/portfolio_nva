@@ -95,7 +95,7 @@ class Effect {
 		if (this.canvas.width < 1000) {
 			this.numberOfParticles = 50;
 		} else {
-			this.numberOfParticles = 250;
+			this.numberOfParticles = 150;
 		}
 		this.createParticles();
 
@@ -154,7 +154,7 @@ class Effect {
 	}
 
 	connectParticles(context) {
-		const maxDistance = 100;
+		const maxDistance = 80;
 		for (let a = 0; a < this.particles.length; a++) {
 			for (let b = a; b < this.particles.length; b++) {
 				const dx = this.particles[a].x - this.particles[b].x;

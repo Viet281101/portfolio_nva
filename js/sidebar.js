@@ -9,18 +9,24 @@ class Sidebar {
 			{href: "#courses", icon: "./assets/icons/courses.png", text: "Courses"},
 			{href: "#contact", icon: "./assets/icons/info.png", text: "Contact"},
 		];
+		this.connectItems = [
+			{href: "https://www.linkedin.com/in/viet-nguyen-99a171258/", icon: "./assets/icons/linkedin.png", text: "LinkedIn"},
+			{href: "https://github.com/Viet281101/", icon: "./assets/icons/github.png", text: "GitHub"},
+			{href: "https://www.facebook.com/profile.php?id=100021927990218", icon: "./assets/icons/facebook.png", text: "Facebook"},
+			{href: "https://twitter.com/VietAnh15458684", icon: "./assets/icons/twitter.png", text: "Twitter"},
+		];
 	};
 
 	createSidebar() {
-		let label = document.createElement('label');
+		this.label = document.createElement('label');
 		let input = document.createElement('input');
-		let divSidebar = document.createElement('div');
+		this.divSidebar = document.createElement('div');
 		let h1 = document.createElement('h1');
 		let ul = document.createElement('ul');
 
 		input.setAttribute('type', 'checkbox');
 		input.setAttribute('id', 'sidebar-toggle');
-		divSidebar.classList.add('sidebar');
+		this.divSidebar.classList.add('sidebar');
 		h1.textContent = 'VIET';
 
 		this.liItems.forEach(item => {
@@ -50,12 +56,35 @@ class Sidebar {
 			});
 		});
 
-		divSidebar.appendChild(h1);
-		divSidebar.appendChild(ul);
-		label.appendChild(input);
-		label.appendChild(divSidebar);
+		this.divSidebar.appendChild(h1);
+		this.divSidebar.appendChild(ul);
+		this.label.appendChild(input);
+		this.label.appendChild(this.divSidebar);
 
-		document.body.insertBefore(label, document.body.firstChild);
+		document.body.insertBefore(this.label, document.body.firstChild);
+	};
+
+	createConnectItems() {
+		let connectContainer = document.createElement('div');
+		connectContainer.classList.add('connect-container');
+
+		this.connectItems.forEach(item => {
+			let a = document.createElement('a');
+			let img = document.createElement('img');
+			img.setAttribute('loading', 'lazy');
+
+			a.setAttribute('href', item.href);
+			a.setAttribute('target', '_blank');
+			img.setAttribute('src', item.icon);
+			img.setAttribute('alt', item.text.toLowerCase() + " icon");
+			img.classList.add('connect-icon');
+
+			a.appendChild(img);
+			connectContainer.appendChild(a);
+		});
+
+		this.divSidebar.appendChild(connectContainer);
+		document.body.insertBefore(this.label, document.body.firstChild);
 	};
 
 	updateActiveNavItem(nextIndex) {
@@ -132,6 +161,19 @@ class Sidebar {
 				display: none;
 				visibility: hidden;
 				appearance: none;
+			}
+			.connect-container {
+				position: absolute;
+				bottom: 20px;
+				left: 0;
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.connect-icon {
+				width: 30px;
+				height: 30px;
 			}
 			@media screen and (max-width: 1000px) {
 				.sidebar {

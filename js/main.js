@@ -83,8 +83,6 @@ function load_fullpage() {
 load_files();
 document.addEventListener('DOMContentLoaded', function() {
 	load_fullpage();
-	background = new Background();
-	background.init();
 
 	let home = new Home();
 	home.createHomeContent();
@@ -104,8 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	sidebar = new Sidebar();
 	sidebar.createSidebar();
 	sidebar.updateActiveNavItem(1);
+	sidebar.createConnectItems();
 	sidebar.applyStyles();
 
+	background = new Background();
+	background.init();
 	if (window.innerWidth < 768) {
 		mouseMarkEnabled = false;
 		animationActive = false;
