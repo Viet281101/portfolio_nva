@@ -1,16 +1,25 @@
 
-function createContactContent() {
-	const section = document.getElementById('contact');
-	section.innerHTML = '';
+class Contact {
+	constructor() {
+		this.section = document.getElementById('contact');	
+	};
 
-};
+	createContactContent() {
+		this.section.innerHTML = '';
+		this.applyContactStyles();
+	};
 
-function applyContactStyles() {
-	const css = `
-		/* Contact section styles */
-	`;
-	const style = document.createElement('style');
-	style.type = 'text/css';
-	style.appendChild(document.createTextNode(css));
-	document.head.appendChild(style);
+	applyContactStyles() {
+		const css = `
+			/* Contact section styles */
+			@charset "UTF-8";
+			
+			`;
+		const head = document.head;
+		const style = document.createElement('style');
+
+		head.appendChild(style);
+		style.type = 'text/css';
+		style.innerHTML = css;
+	};
 };

@@ -1,112 +1,102 @@
+// Purpose: Background class to handle the background layers and mouse events.
+class Background {
+	constructor() {
+		this.radius = 70;
+		this.influenceArea = {
+			x: 100,
+			y: 100,
+			width: this.radius * 2,
+			height: this.radius * 2
+		};
+		this.sectionBackgrounds = [
+			'./assets/background/space_px_bg_8.png',
+			'./assets/background/space_px_bg_10.png',
+			'./assets/background/space_px_bg_11.png',
+			'./assets/background/space_px_bg_6.png',
+			'./assets/background/space_px_bg_4.png',
+		];
+	};
 
-var radius = 70;
-var influenceArea = {
-	x: 100,
-	y: 100,
-	width: radius * 2,
-	height: radius * 2
-};
-var sectionBackgrounds = [
-	'./assets/background/space_px_bg_8.png',
-	'./assets/background/space_px_bg_10.png',
-	'./assets/background/space_px_bg_11.png',
-	'./assets/background/space_px_bg_6.png',
-	'./assets/background/space_px_bg_4.png',
-];
-document.addEventListener('DOMContentLoaded', function() {
+	init() {
+		this.createBackgroundLayers();
+		this.setupEventListeners();
+	};
 
-	//////*  Background Layers   *//////
-	var backgroundLayer1 = document.createElement('div');
-	applyBackgroundStyles(
-		backgroundLayer1, 
-		'./assets/background/space_px_bg_8.png', 
-		1
-	);
-	backgroundLayer1.className = 'backgroundLayer1';
-	document.body.appendChild(backgroundLayer1);
+	createBackgroundLayers() {
+		this.backgroundLayer1 = document.createElement('div');
+		this.applyBackgroundStyles(this.backgroundLayer1, './assets/background/space_px_bg_8.png', 1);
+		document.body.appendChild(this.backgroundLayer1);
 
-	var backgroundLayer2 = document.createElement('div');
-	applyBackgroundStyles(
-		backgroundLayer2, 
-		'./assets/background/black_bg.png', 
-		2
-	);
-	document.body.appendChild(backgroundLayer2);
+		this.backgroundLayer2 = document.createElement('div');
+		this.applyBackgroundStyles(this.backgroundLayer2, './assets/background/black_bg.png', 2);
+		document.body.appendChild(this.backgroundLayer2);
+	};
 
-	//////*  Background mouse mask   *//////
-	if (window.innerWidth > 768){
+	applyBackgroundStyles(element, imageUrl, zIndex) {
+		element.style.position = 'fixed';
+		element.style.top = '0';
+		element.style.left = '0';
+		element.style.width = '100%';
+		element.style.height = '100vh';
+		element.style.backgroundImage = 'url(' + imageUrl + ')';
+		element.style.backgroundSize = 'cover';
+		element.style.backgroundPosition = 'center';
+		element.style.backgroundRepeat = 'no-repeat';
+		element.style.zIndex = zIndex;
+		element.style.transition = 'background-image 1s ease-in-out';
+		//// loading lazy
+		element.style.filter = 'blur(10px)';
+		element.style.transition = 'filter 0.5s ease-in-out';
 		setTimeout(() => {
-			document.addEventListener('mousemove', function(e) {
-				if (mouseMarkEnabled) {
-					updateBackgroundMask(
-						backgroundLayer2, 
-						e.clientX, e.clientY, 
-						radius
-					);
-					influenceArea.x = e.clientX - influenceArea.width / 2;
-					influenceArea.y = e.clientY - influenceArea.height / 2;
-				} else {
-					backgroundLayer2.style.webkitMaskImage = 'none';
-				}
-			});
-			document.addEventListener('mousedown', function(e) {
-				if (mouseMarkEnabled) {
-					radius = 180;
-					updateMouseMask(
-						backgroundLayer2, 
-						e.clientX, e.clientY, 
-						radius
-					);
-				} else {
-					backgroundLayer2.style.webkitMaskImage = 'none';
-				}
-			});
-			document.addEventListener('mouseup', function(e) {
-				if (mouseMarkEnabled) {
-					radius = 70;
-					updateMouseMask(
-						backgroundLayer2, 
-						e.clientX, e.clientY, 
-						radius
-					);
-				} else {
-					backgroundLayer2.style.webkitMaskImage = 'none';
-				}
-			});
-		}, 2000);
-	}
-});
-//////*  Create & Update Background Effects  *//////
-function applyBackgroundStyles(element, imageUrl, zIndex) {
-	element.style.position = 'fixed';
-	element.style.top = '0';
-	element.style.left = '0';
-	element.style.width = '100%';
-	element.style.height = '100vh';
-	element.style.backgroundImage = 'url(' + imageUrl + ')';
-	element.style.backgroundSize = 'cover';
-	element.style.backgroundPosition = 'center';
-	element.style.backgroundRepeat = 'no-repeat';
-	element.style.zIndex = zIndex;
-	element.style.transition = 'background-image 1s ease-in-out';
-	//// loading lazy
-	element.style.filter = 'blur(10px)';
-	element.style.transition = 'filter 0.5s ease-in-out';
-	setTimeout(() => {
-		element.style.filter = 'blur(0)';
-	}, 1000);
-};
-function updateMouseMask(backgroundLayer, x, y, radius) {
-	influenceArea.width = radius * 2;
-	influenceArea.height = radius * 2;
-	updateBackgroundMask(backgroundLayer, x, y, radius);
-};
-function updateBackgroundMask(element, x, y, maskSize) {
-	element.style.webkitMaskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
-	element.style.maskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
-};
-function updateBackgroundForSection(sectionIndex) {
-	var backgroundLayer1 = document.querySelector('.backgroundLayer1');
-	backgroundLayer1.style.backgroundImage = 'url(' + sectionBackgrounds[sectionIndex - 1] + ')';
+			element.style.filter = 'blur(0)';
+		}, 1000);
+	};
+
+	setupEventListeners() {
+		if (window.innerWidth > 768) {
+			setTimeout(() => {
+				document.addEventListener('mousemove', (e) => this.handleMouseMove(e));
+				document.addEventListener('mousedown', (e) => this.handleMouseDown(e));
+				document.addEventListener('mouseup', (e) => this.handleMouseUp(e));
+			}, 2000);
+		}
+	};
+
+	handleMouseMove(e) {
+		if (mouseMarkEnabled) {
+			this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
+			this.influenceArea.x = e.clientX - this.influenceArea.width / 2;
+			this.influenceArea.y = e.clientY - this.influenceArea.height / 2;
+		} else {
+			this.backgroundLayer2.style.webkitMaskImage = 'none';
+		}
+	};
+
+	handleMouseDown(e) {
+		if (mouseMarkEnabled) {
+			this.radius = 180;
+			this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
+		} else {
+			this.backgroundLayer2.style.webkitMaskImage = 'none';
+		}
+	};
+
+	handleMouseUp(e) {
+		if (mouseMarkEnabled) {
+			this.radius = 70;
+			this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
+		} else {
+			this.backgroundLayer2.style.webkitMaskImage = 'none';
+		}
+	};
+
+	updateBackgroundMask(element, x, y, maskSize) {
+		element.style.webkitMaskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
+		element.style.maskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
+	};
+
+	updateBackgroundForSection(sectionIndex) {
+		this.backgroundLayer1.style.backgroundImage = 'url(' + this.sectionBackgrounds[sectionIndex - 1] + ')';
+	};
 };
 

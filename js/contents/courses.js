@@ -1,18 +1,23 @@
 
-function createCoursesContent() {
-	const section = document.getElementById('courses');
-	section.innerHTML = '';
+class Courses {
+	constructor() {
+		this.section = document.getElementById('courses');
+	};
 
-	// section.appendChild();
-};
+	createCoursesContent() {
+		this.section.innerHTML = '';
+		this.applyCoursesStyles();
+	};
 
+	applyCoursesStyles() {
+		const css = `
+			/* Courses section styles */
+			@charset "UTF-8";
 
-function applyCoursesStyles() {
-	const css = `
-
-	`;
-	const style = document.createElement('style');
-	style.type = 'text/css';
-	style.appendChild(document.createTextNode(css));
-	document.head.appendChild(style);
+			`;
+		const style = document.createElement('style');
+		style.type = 'text/css';
+		style.appendChild(document.createTextNode(css));
+		document.head.appendChild(style);
+	};
 };

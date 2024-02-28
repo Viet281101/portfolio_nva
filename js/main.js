@@ -10,7 +10,6 @@ let js_files = [
 	'contents/courses.js',
 	'contents/contact.js',
 ];
-
 let sections = [
 	'home',
 	'about',
@@ -18,6 +17,8 @@ let sections = [
 	'courses',
 	'contact',
 ];
+var sidebar;
+var background;
 let current_section = 0;
 var mouseMarkEnabled = true;
 var animationActive = true;
@@ -55,8 +56,8 @@ function load_fullpage() {
 			},
 			afterLoad: function(anchorLink, index) {
 				console.log("Loaded section: " + index);
-				updateActiveNavItem(index);
-				updateBackgroundForSection(index);
+				if (sidebar) sidebar.updateActiveNavItem(index);
+				if (background) background.updateBackgroundForSection(index);
 				if (sections[index - 1] == 'projects' || 
 					sections[index - 1] == 'home' ||
 					sections[index - 1] == 'courses'
@@ -81,35 +82,30 @@ function load_fullpage() {
 
 load_files();
 document.addEventListener('DOMContentLoaded', function() {
-	//////*  Load Fullpage   *//////
 	load_fullpage();
+	background = new Background();
+	background.init();
 
-	//////*  Create Section Home   *//////
-	createHomeContent();
-	applyHomeStyles();
+	let home = new Home();
+	home.createHomeContent();
 
-	//////*  Create Section About   *//////
-	createAboutContent();
-	applyAboutStyles();
+	let about = new About();
+	about.createAboutContent();
 
-	//////*  Create Section Project   *//////
-	createProjectContent();
-	applyProjectStyles();
+	let project = new Project();
+	project.createProjectContent();
 
-	//////*  Create Section Courses   *//////
-	// createCoursesContent();
-	// applyCoursesStyles();
+	let courses = new Courses();
+	courses.createCoursesContent();
 	
-	//////*  Create Section Contact   *//////
-	// createContactContent();
-	// applyContactStyles();
+	let contact = new Contact();
+	contact.createContactContent();
 	
-	//////*  Create Sidebar   *//////
-	createSidebar();
-	applySidebarStyles();
-	updateActiveNavItem(1);
+	sidebar = new Sidebar();
+	sidebar.createSidebar();
+	sidebar.updateActiveNavItem(1);
+	sidebar.applyStyles();
 
-	//////*  Create Background   *//////
 	if (window.innerWidth < 768) {
 		mouseMarkEnabled = false;
 		animationActive = false;
