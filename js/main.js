@@ -19,6 +19,8 @@ let sections = [
 	'contact',
 ];
 let current_section = 0;
+var mouseMarkEnabled = true;
+var animationActive = true;
 
 function load_files() {
 	let style = document.createElement('link');
@@ -55,6 +57,12 @@ function load_fullpage() {
 				console.log("Loaded section: " + index);
 				updateActiveNavItem(index);
 				updateBackgroundForSection(index);
+				if (sections[index - 1] == 'projects') {
+					animationActive = false;
+				} else {
+					animationActive = true;
+					animate();
+				}
 			},
 		});
 	} else {
@@ -100,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	//////*  Create Background   *//////
 	if (window.innerWidth < 768) {
 		mouseMarkEnabled = false;
+		animationActive = false;
 	}
 });
 window.addEventListener('resize', function() {

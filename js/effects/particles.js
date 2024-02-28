@@ -14,7 +14,6 @@ if (window.innerWidth < 1000) {
 	canvas.style.left = '220px';
 }
 
-
 const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
 gradient.addColorStop(0, 'blue');
 gradient.addColorStop(0.5, 'pink');
@@ -212,9 +211,11 @@ const effect = new Effect(canvas, ctx);
 
 
 function animate() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	effect.handleParticles(ctx);
-	requestAnimationFrame(animate);
+	if (animationActive) {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		effect.handleParticles(ctx);
+		requestAnimationFrame(animate);
+	}
 };
 
 animate();

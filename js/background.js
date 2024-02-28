@@ -13,7 +13,6 @@ var sectionBackgrounds = [
 	'./assets/background/space_px_bg_6.png',
 	'./assets/background/space_px_bg_4.png',
 ];
-var mouseMarkEnabled = true;
 document.addEventListener('DOMContentLoaded', function() {
 
 	//////*  Background Layers   *//////
