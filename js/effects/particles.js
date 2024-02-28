@@ -85,7 +85,6 @@ class Particle {
 	}
 };
 
-
 class Effect {
 	constructor(canvas, context) {
 		this.canvas = canvas;
@@ -206,9 +205,7 @@ class Effect {
 	}
 };
 
-
 const effect = new Effect(canvas, ctx);
-
 
 function animate() {
 	if (animationActive) {
@@ -218,4 +215,3 @@ function animate() {
 	}
 };
 
-animate();

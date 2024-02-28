@@ -57,9 +57,14 @@ function load_fullpage() {
 				console.log("Loaded section: " + index);
 				updateActiveNavItem(index);
 				updateBackgroundForSection(index);
-				if (sections[index - 1] == 'projects') {
+				if (sections[index - 1] == 'projects' || 
+					sections[index - 1] == 'home' ||
+					sections[index - 1] == 'courses'
+				) {
+					mouseMarkEnabled = false;
 					animationActive = false;
 				} else {
+					mouseMarkEnabled = true;
 					animationActive = true;
 					animate();
 				}
@@ -73,7 +78,6 @@ function load_fullpage() {
 		});
 	}
 };
-
 
 load_files();
 document.addEventListener('DOMContentLoaded', function() {
@@ -110,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		mouseMarkEnabled = false;
 		animationActive = false;
 	}
+	animate();
 });
 window.addEventListener('resize', function() {
 	load_fullpage();

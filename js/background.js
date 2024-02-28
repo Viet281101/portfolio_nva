@@ -106,7 +106,6 @@ function updateBackgroundMask(element, x, y, maskSize) {
 	element.style.maskImage = `radial-gradient(circle ${maskSize}px at ${x}px ${y}px, transparent 100%, black 100%)`;
 };
 function updateBackgroundForSection(sectionIndex) {
-	mouseMarkEnabled = sectionIndex !== 3; // Disable mouse mask for the project section
 	var backgroundLayer1 = document.querySelector('.backgroundLayer1');
 	backgroundLayer1.style.backgroundImage = 'url(' + sectionBackgrounds[sectionIndex - 1] + ')';
 };
