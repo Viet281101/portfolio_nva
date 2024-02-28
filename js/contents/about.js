@@ -2,6 +2,7 @@
 class About {
 	constructor() {
 		this.section = document.getElementById('about');
+		this.myCV = './assets/doc/Viet_Nguyen_CV.pdf';
 	};
 
 	createAboutContent() {
@@ -30,6 +31,9 @@ class About {
 		// Append to the section
 		this.section.appendChild(aboutTitle);
 		this.section.appendChild(aboutContent);
+
+		const cvButton = this.createCVButton();
+		this.section.appendChild(cvButton);
 
 		this.applyAboutStyles();
 	};
@@ -72,6 +76,16 @@ class About {
 		return aboutRight;
 	};
 
+	createCVButton() {
+		const cvButton = document.createElement('a');
+		cvButton.href = this.myCV;
+		// cvButton.download = 'Viet_NGUYEN_CV.pdf';
+		cvButton.textContent = 'Resume';
+		cvButton.className = 'cv-button';
+		cvButton.target = '_blank';
+		return cvButton;
+	};
+
 	applyAboutStyles() {
 		const css = `
 			/* About section styles */
@@ -81,11 +95,10 @@ class About {
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				padding-top: 50px;
 			}
 			.about-title {
 				text-align: center;
-				padding-bottom: 100px;
+				padding-bottom: 60px;
 			}
 			.about-content {
 				display: flex;
@@ -112,19 +125,36 @@ class About {
 			.about-content-left-content p, .about-content-right-content p {
 				font-size: 1.2em;
 			}
-
+			.cv-button {
+				display: block;
+				margin: 20px auto;
+				padding: 10px 20px;
+				text-transform: uppercase;
+				font-size: 24px;
+				text-align: center;
+				border-radius: 5px;
+				border: 2px solid #00D7FF;
+				text-decoration: none;
+				color: #fff;
+			}
+			.cv-button:hover {
+				color: #00D7FF;
+			}
 			@media screen and (max-width: 1000px) {
 				#about .about-content {
 					flex-direction: column;
 					align-items: center;
+					font-size: 12px;
 				}
+				.about-title { padding-bottom: 20px; }
+				.about-content-left-title, .about-content-right-title { padding-bottom: 5px;}
 				.about-content-left, .about-content-right {
 					order: 1;
 					width: 100%;
 					padding: 0;
 				}
 				.about-content-left {
-					padding-bottom: 50px;
+					padding-bottom: 20px;
 				}
 			}
 		`;

@@ -7,6 +7,12 @@ class Project {
 			"Chess Engine",
 			"Secure Chat",
 			"Detection App",
+			"Music Virap",
+			"Colt Express",
+			"Castlevania",
+			"Polyominos",
+			"Teleporter",
+			"Movies Website"
 		];
 		this.project_tool = [
 			"C, GLUT, SDL2, Minimax Algo",
@@ -14,6 +20,12 @@ class Project {
 			"JavaScript, HTML, CSS",
 			"Python, Tkinter, AES",
 			"Python, OpenCV, Mediapipe",
+			"Kotlin, Android Studio",
+			"Pygame, Tkinter, PIL",
+			"JavaScript, Canvas, HTML",
+			"JavaScript, HTML, CSS",
+			"Godot Engine, GDScript",
+			"React, JQuery, HTML, CSS"
 		];
 		this.projects_images = [
 			"othello_ai",
@@ -21,6 +33,12 @@ class Project {
 			"chess_engine",
 			"chat_app",
 			"screen_detection",
+			"music_player_virap",
+			"colt_express",
+			"castlevania",
+			"polyominos",
+			"teleporter",
+			"movies_web"
 		];
 		this.project_descript = [
 			"Othello AI Game with simple interface and AI using Minimax/Alphabeta Algorithm",
@@ -28,6 +46,12 @@ class Project {
 			"Chess Engine with simple web interface and AI using Minimax Algorithm",
 			"Simple Securite Chat App with AES encryption, Socket server and client using Tkinter GUI",
 			"Simple Detection Apps Collection for screen, face, hand, object, sec, etc",
+			"Music Player mobile app for Android with simple interface and features",
+			"Colt Express board game with simple interface by Pygame and Tkinter library",
+			"2D platformer game with castlevania style using vanilla JS and Canvas API",
+			"Website solving Polyominos Puzzle with algorithm and simple interface",
+			"2D rpg pixel game make by Godot Engine 3.5.1 with GDScript language",
+			"Movies Website with simple interface of movie list and search feature"
 		];
 		this.prev_slide = "./assets/icons/left_arrow.png";
 		this.next_slide = "./assets/icons/right_arrow.png";
@@ -36,6 +60,12 @@ class Project {
 
 	createProjectContent() {
 		this.section.innerHTML = '';
+
+		let title = document.createElement('div');
+		title.className = "project-title";
+		title.innerHTML = "Projects";
+		this.section.appendChild(title);
+
 		this.loadSliderCSS();
 		this.createSliderCarousel();
 		this.setupCarouselOptions();
@@ -60,6 +90,11 @@ class Project {
 			slider_owl_carousel.appendChild(projectElement);
 		});
 		this.section.appendChild(slider_owl_carousel);
+
+		let projectSummary = document.createElement('div');
+		projectSummary.className = "project-summary";
+		projectSummary.innerHTML = `Currently showcasing <strong>${this.projects.length}</strong> projects.`;
+		this.section.appendChild(projectSummary);
 	};
 
 	createProjectElement(index) {
@@ -169,6 +204,12 @@ class Project {
 				// display: flex;
 				width: 100%;
 			}
+			.project-title {
+				text-align: center;
+				padding: 30px;
+				font-size: 36px;
+				color: #ffffff;
+			}
 			.slider {
 				display: flex;
 				flex-direction: column;
@@ -246,6 +287,15 @@ class Project {
 			}
 			.nav-prev-slider:hover, .nav-next-slider:hover {
 				transform: scale(1.1);
+			}
+			.project-summary {
+				text-align: center;
+				padding: 20px;
+				font-size: 24px;
+				color: #ffffff;
+			}
+			.project-summary strong {
+				color: #00D7FF;
 			}
 		`;
 		const head = document.head;

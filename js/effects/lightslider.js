@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	const sections = document.querySelectorAll('section');
 	const options = {
 		root: null,
-		threshold: 0.7,
+		threshold: 0.6,
 	};
 
 	const observer = new IntersectionObserver((entries, observer) => {

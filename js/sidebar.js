@@ -164,7 +164,7 @@ class Sidebar {
 			}
 			.connect-container {
 				position: absolute;
-				bottom: 20px;
+				bottom: 30px;
 				left: 0;
 				width: 100%;
 				display: flex;
