@@ -83,6 +83,13 @@ class About {
 		cvButton.textContent = 'Resume';
 		cvButton.className = 'cv-button';
 		cvButton.target = '_blank';
+		cvButton.title = 'Download my CV';
+		cvButton.addEventListener("mouseover", function() {
+			mouseMarkEnabled = false;
+		});
+		cvButton.addEventListener("mouseout", function() {
+			mouseMarkEnabled = true;
+		});
 		return cvButton;
 	};
 
