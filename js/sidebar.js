@@ -56,6 +56,13 @@ class Sidebar {
 			});
 		});
 
+		this.label.addEventListener("mouseover", function() {
+			app.mouseMarkEnabled = false;
+		});
+		this.label.addEventListener("mouseout", function() {
+			app.mouseMarkEnabled = true;
+		});
+
 		this.divSidebar.appendChild(h1);
 		this.divSidebar.appendChild(ul);
 		this.label.appendChild(input);

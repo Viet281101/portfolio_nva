@@ -25,6 +25,11 @@ class MainApp {
 	};
 
 	loadFiles() {
+		let icon_page = document.createElement('link');
+		icon_page.rel = 'shortcut icon';
+		icon_page.href = './assets/icon.png';
+		document.head.appendChild(icon_page);
+
 		let style = document.createElement('link');
 		style.rel = 'stylesheet';
 		style.type = 'text/css';

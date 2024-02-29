@@ -69,9 +69,9 @@ class Project {
 		this.loadSliderCSS();
 		this.createSliderCarousel();
 		this.setupCarouselOptions();
-		this.applyProjectStyles();
 		this.addEventListeners();
 		this.setupNavigationButtons();
+		this.applyProjectStyles();
 	};
 
 	loadSliderCSS() {
