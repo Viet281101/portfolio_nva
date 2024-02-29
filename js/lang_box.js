@@ -24,7 +24,12 @@ class LangBox {
 			app.mouseMarkEnabled = false;
 		});
 		languageSelector.addEventListener('mouseout', (event) => {
-			app.mouseMarkEnabled = true;
+			if (app.sections[app.currentSection] !== 'projects' && 
+				app.sections[app.currentSection] !== 'home' && 
+				app.sections[app.currentSection] !== 'courses') 
+			{
+				app.mouseMarkEnabled = true;
+			}
 		});
 
 		languageSelector.appendChild(select);

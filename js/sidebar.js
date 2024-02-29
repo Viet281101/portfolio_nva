@@ -70,7 +70,12 @@ class Sidebar {
 			app.mouseMarkEnabled = false;
 		});
 		this.label.addEventListener("mouseout", function() {
-			app.mouseMarkEnabled = true;
+			if (app.sections[app.currentSection] !== 'projects' && 
+				app.sections[app.currentSection] !== 'home' && 
+				app.sections[app.currentSection] !== 'courses') 
+			{
+				app.mouseMarkEnabled = true;
+			}
 		});
 
 		this.divSidebar.appendChild(h1);

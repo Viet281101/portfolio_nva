@@ -4,6 +4,8 @@ class Home {
 		this.section = document.getElementById('home');
 		this.contentData = {};
 		this.loadContentData();
+		this.createAvatarContent();
+		this.applyHomeStyles();
 	};
 
 	loadContentData() {
@@ -16,18 +18,23 @@ class Home {
 			.catch(error => console.error('Error loading the home content:', error));
 	};
 
+	createAvatarContent() {
+		if (!document.getElementById('avatar-container')) {
+			const avatarContainer = document.createElement('div');
+			avatarContainer.id = 'avatar-container';
+			const avatarLoading = document.createElement('div');
+			avatarLoading.id = 'avatar-loading';
+			avatarContainer.appendChild(avatarLoading);
+			this.section.appendChild(avatarContainer);
+		}
+	};
+
 	createHomeContent() {
 		if (Object.keys(this.contentData).length === 0) return;
 
 		this.lang = app.lang;
 		
-		this.section.innerHTML = '';
-
-		const avatarContainer = document.createElement('div');
-		avatarContainer.id = 'avatar-container';
-		const avatarLoading = document.createElement('div');
-		avatarLoading.id = 'avatar-loading';
-		avatarContainer.appendChild(avatarLoading);
+		this.clearContentExceptAvatar();
 
 		const introTitle = document.createElement('div');
 		introTitle.className = 'intro-title';
@@ -61,10 +68,15 @@ class Home {
 		introTitle.appendChild(introduction);
 		introTitle.appendChild(description);
 
-		this.section.appendChild(avatarContainer);
 		this.section.appendChild(introTitle);
+	};
 
-		this.applyHomeStyles();
+	clearContentExceptAvatar() {
+		Array.from(this.section.children).forEach(child => {
+			if (child.id !== 'avatar-container') {
+				this.section.removeChild(child);
+			}
+		});
 	};
 
 	updateContent(lang) {

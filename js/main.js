@@ -70,6 +70,7 @@ class MainApp {
 				},
 				afterLoad: (anchorLink, index) => {
 					console.log("Loaded section: " + index);
+					this.currentSection = index - 1;
 					if (this.sidebar) this.sidebar.updateActiveNavItem(index);
 					if (this.background) this.background.updateBackgroundForSection(index);
 					this.handleSectionChange(index);
