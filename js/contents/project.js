@@ -149,7 +149,8 @@ class Project {
 				responsive: {
 					0: { items: 1 },
 					600: { items: 2 },
-					1200: { items: 3 },
+					1400: { items: 3 },
+					1800: { items: 4 },
 				},
 			});
 	  	});
@@ -181,7 +182,7 @@ class Project {
 			$('.owl-prev').html('<img class="nav-prev-slider" src="' + this.prev_slide + '" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
 				"top": "50%",
-				"left": "-25px",
+				"left": "-40px",
 				"transform": "translateY(-50%)",
 				"border": "none",
 				"background": "none"
@@ -189,7 +190,7 @@ class Project {
 			$('.owl-next').html('<img class="nav-next-slider" src="' + this.next_slide + '" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
 				"top": "50%",
-				"right": "-25px",
+				"right": "-40px",
 				"transform": "translateY(-50%)",
 				"border": "none",
 				"background": "none"
@@ -281,6 +282,7 @@ class Project {
 				font-family: 'Pixel', sans-serif;
 				cursor: pointer;
 				border-radius: 5px;
+				overflow-wrap: break-word;
 			}
 			.btn button:hover {
 				background-color: #0056b3;

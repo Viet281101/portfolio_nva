@@ -17,6 +17,16 @@ class Sidebar {
 		];
 	};
 
+	loadContentData() {
+		fetch('./js/data/sidebar.json')
+		.then(response => response.json())
+		.then(data => {
+			this.contentData = data;
+			this.createSidebar();
+		})
+		.catch(error => console.error('Error loading the sidebar content:', error));
+	};
+
 	createSidebar() {
 		this.label = document.createElement('label');
 		let input = document.createElement('input');

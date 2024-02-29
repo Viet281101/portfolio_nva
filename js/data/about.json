@@ -1,0 +1,21 @@
+
+{
+	"en" : {
+		"title" : "About Me",
+		"whoAmI": "Who am I ?",
+		"whoAmIDesc": "I'm a computer science student at the University of Paris 8, Saint Denis. I am passionate about creating interactive, graphic effects. I am also interested in web development and machine learning.",
+		"whatIDo": "What I do ?",
+		"whatIDoDesc": "I am currently working on a project to create a website to showcase my projects. I am also learning about machine learning and deep learning.",
+		"cvButton": "Resume",
+		"cvButtonTitle": "Download my CV"
+	},
+	"fr" : {
+		"title" : "A propos de moi",
+		"whoAmI": "Qui suis-je ?",
+		"whoAmIDesc": "Je suis étudiant en informatique à l'Université de Paris 8, Saint Denis. Je suis passionné par la création d'effets graphiques interactifs. Je m'intéresse également au développement web et à l'apprentissage automatique.",
+		"whatIDo": "Que fais-je ?",
+		"whatIDoDesc": "Je travaille actuellement sur un projet de création d'un site web pour présenter mes projets. J'apprends également sur l'apprentissage automatique et le deep learning.",
+		"cvButton": "CV",
+		"cvButtonTitle": "Télécharger mon CV"
+	}
+}

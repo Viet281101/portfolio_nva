@@ -12,6 +12,7 @@ class About {
 		const aboutTitle = document.createElement('div');
 		aboutTitle.className = 'about-title';
 		const title = document.createElement('h1');
+		title.lang = "en";
 		title.textContent = 'About Me';
 		aboutTitle.appendChild(title);
 
@@ -44,11 +45,13 @@ class About {
 		const leftTitle = document.createElement('div');
 		leftTitle.className = 'about-content-left-title';
 		const whoAmI = document.createElement('h2');
+		whoAmI.lang = "en";
 		whoAmI.textContent = 'Who am I ?';
 		leftTitle.appendChild(whoAmI);
 		const leftContent = document.createElement('div');
 		leftContent.className = 'about-content-left-content';
 		const p1 = document.createElement('p');
+		p1.lang = "en";
 		p1.textContent = "I'm a computer science student at the University of Paris 8, Saint Denis. I am passionate about creating interactive, graphic effects. I am also interested in web development and machine learning.";
 		leftContent.appendChild(p1);
 
@@ -63,11 +66,13 @@ class About {
 		const rightTitle = document.createElement('div');
 		rightTitle.className = 'about-content-right-title';
 		const whatIDo = document.createElement('h2');
+		whatIDo.lang = "en";
 		whatIDo.textContent = 'What I do ?';
 		rightTitle.appendChild(whatIDo);
 		const rightContent = document.createElement('div');
 		rightContent.className = 'about-content-right-content';
 		const p2 = document.createElement('p');
+		p2.lang = "en";
 		p2.textContent = "I am currently working on a project to create a website to showcase my projects. I am also learning about machine learning and deep learning.";
 		rightContent.appendChild(p2);
 
@@ -80,6 +85,7 @@ class About {
 		const cvButton = document.createElement('a');
 		cvButton.href = this.myCV;
 		// cvButton.download = 'Viet_NGUYEN_CV.pdf';
+		cvButton.lang = "en";
 		cvButton.textContent = 'Resume';
 		cvButton.className = 'cv-button';
 		cvButton.target = '_blank';

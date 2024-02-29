@@ -1,5 +1,5 @@
 // Author: Viet NGUYEN
-// Dependencies: Sidebar.js, Background.js, Home.js, About.js, Project.js, Courses.js, Contact.js
+// Dependencies: Sidebar, LangBox, Background, Particles, Lightslider, Home, About, Project, Courses, Contact
 class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
@@ -8,6 +8,7 @@ class MainApp {
 			'effects/lightslider.js',
 			'effects/particles.js',
 			'sidebar.js',
+			'lang_box.js',
 			'contents/home.js',
 			'contents/about.js',
 			'contents/project.js',
@@ -16,9 +17,16 @@ class MainApp {
 		];
 		this.sidebar = null;
 		this.background = null;
+		this.home = null;
+		this.about = null;
+		this.project = null;
+		this.courses = null;
+		this.contact = null;
+		this.langBox = null;
 		this.currentSection = 0;
 		this.mouseMarkEnabled = true;
 		this.animationActive = true;
+		this.lang = 'en';
 
 		this.loadFiles();
 		this.addEventListeners();
@@ -76,6 +84,11 @@ class MainApp {
 		}
 	};
 
+	updateLanguage(lang) {
+		this.lang = lang;
+		this.home.updateContent(lang);
+	};
+
 	handleSectionChange(index) {
 		if (this.sections[index - 1] === 'projects' || 
 			this.sections[index - 1] === 'home' || 
@@ -113,11 +126,23 @@ class MainApp {
 		this.background = new Background();
 		this.background.init();
 
-		new Home().createHomeContent();
-		new About().createAboutContent();
-		new Project().createProjectContent();
-		new Courses().createCoursesContent();
-		new Contact().createContactContent();
+		this.langBox = new LangBox();
+		this.langBox.createLanguageSelector();
+
+		this.home = new Home();
+		this.home.createHomeContent();
+
+		this.about = new About();
+		this.about.createAboutContent();
+
+		this.project = new Project();
+		this.project.createProjectContent();
+
+		this.courses = new Courses();
+		this.courses.createCoursesContent();
+
+		this.contact = new Contact();
+		this.contact.createContactContent();
 
 		if (window.innerWidth < 768) {
 			this.mouseMarkEnabled = false;

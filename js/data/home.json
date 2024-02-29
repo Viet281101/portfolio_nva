@@ -1,0 +1,17 @@
+
+{
+	"en" : {
+		"greeting" : "Hello, World!",
+		"greeting2": "Hi there,",
+		"nameSpan" : "Viet NGUYEN",
+		"intro": "I'm ",
+		"desc" : "A computer science student with a passion for creating interactive, graphic effects."
+	},
+	"fr" : {
+		"greeting" : "Bonjour !",
+		"greeting2": "Salut,",
+		"nameSpan" : "Viet NGUYEN",
+		"intro": "Je suis ",
+		"desc" : "Un étudiant en informatique avec une passion pour la création d'effets graphiques interactifs."
+	}
+}

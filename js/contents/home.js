@@ -1,11 +1,27 @@
-// Dependencies: Typewriter.js
+// Dependencies: Typewriter.js home.json
 class Home {
 	constructor() {
 		this.section = document.getElementById('home');
-	}
+		this.contentData = {};
+		this.loadContentData();
+	};
+
+	loadContentData() {
+		fetch('./js/data/home.json')
+			.then(response => response.json())
+			.then(data => {
+				this.contentData = data;
+				this.createHomeContent();
+			})
+			.catch(error => console.error('Error loading the home content:', error));
+	};
 
 	createHomeContent() {
-		this.section.innerHTML = ''; // Clear any existing content
+		if (Object.keys(this.contentData).length === 0) return;
+
+		this.lang = app.lang;
+		
+		this.section.innerHTML = '';
 
 		const avatarContainer = document.createElement('div');
 		avatarContainer.id = 'avatar-container';
@@ -22,10 +38,10 @@ class Home {
 			autoStart: true,
 			loop: true,
 		});
-		greetingWriting.typeString('Hello, World !')
+		greetingWriting.typeString(this.contentData[this.lang].greeting)
 			.pauseFor(3000)
 			.deleteAll()
-			.typeString('Hi there,')
+			.typeString(this.contentData[this.lang].greeting2)
 			.pauseFor(3000)
 			.deleteAll()
 			.start();
@@ -33,13 +49,13 @@ class Home {
 		const introduction = document.createElement('h1');
 		const nameSpan = document.createElement('span');
 		nameSpan.className = 'gradient-text';
-		nameSpan.textContent = 'Viet NGUYEN';
-		introduction.textContent = "I'm ";
+		nameSpan.textContent = this.contentData[this.lang].nameSpan;
+		introduction.textContent = this.contentData[this.lang].intro;
 		introduction.appendChild(nameSpan);
 
 		const description = document.createElement('p');
 		description.className = 'hero-description';
-		description.textContent = "A computer science student with a passion for creating interactive, graphic effects.";
+		description.textContent = this.contentData[this.lang].desc;
 
 		introTitle.appendChild(greeting);
 		introTitle.appendChild(introduction);
@@ -49,6 +65,11 @@ class Home {
 		this.section.appendChild(introTitle);
 
 		this.applyHomeStyles();
+	};
+
+	updateContent(lang) {
+		this.lang = lang;
+		this.loadContentData();
 	};
 
 	applyHomeStyles() {
