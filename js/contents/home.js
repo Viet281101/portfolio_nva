@@ -114,6 +114,7 @@ class Home {
 				#home .intro-title, #home #avatar-container {
 					flex: none;
 					order: unset;
+					padding: 0;
 				}
 				#avatar-container {
 					min-width: 100%;
@@ -126,9 +127,12 @@ class Home {
 				section {
 					padding: 0;
 				}
+				hero-title {
+					padding-top: 0;
+				}
 				h1, .hero-description {
 					text-align: center;
-					font-size: 0.9em;
+					font-size: 18px;
 					margin: 0;
 				}
 			}

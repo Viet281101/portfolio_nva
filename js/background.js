@@ -63,7 +63,7 @@ class Background {
 	};
 
 	handleMouseMove(e) {
-		if (mouseMarkEnabled) {
+		if (app.mouseMarkEnabled) {
 			this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
 			this.influenceArea.x = e.clientX - this.influenceArea.width / 2;
 			this.influenceArea.y = e.clientY - this.influenceArea.height / 2;
@@ -73,7 +73,7 @@ class Background {
 	};
 
 	handleMouseDown(e) {
-		if (mouseMarkEnabled) {
+		if (app.mouseMarkEnabled) {
 			this.radius = 180;
 			this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
 		} else {
@@ -82,7 +82,7 @@ class Background {
 	};
 
 	handleMouseUp(e) {
-		if (mouseMarkEnabled) {
+		if (app.mouseMarkEnabled) {
 			this.radius = 70;
 			this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
 		} else {

@@ -85,10 +85,10 @@ class About {
 		cvButton.target = '_blank';
 		cvButton.title = 'Download my CV';
 		cvButton.addEventListener("mouseover", function() {
-			mouseMarkEnabled = false;
+			app.mouseMarkEnabled = false;
 		});
 		cvButton.addEventListener("mouseout", function() {
-			mouseMarkEnabled = true;
+			app.mouseMarkEnabled = true;
 		});
 		return cvButton;
 	};

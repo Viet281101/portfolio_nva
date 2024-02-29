@@ -41,7 +41,6 @@ class Particle {
 		context.beginPath();
 		context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
 		context.fill();
-		// context.stroke();
 	}
 
 	update() {
@@ -93,9 +92,9 @@ class Effect {
 		this.height = this.canvas.height;
 		this.particles = [];
 		if (this.canvas.width < 1000) {
-			this.numberOfParticles = 50;
+			this.numberOfParticles = 20;
 		} else {
-			this.numberOfParticles = 150;
+			this.numberOfParticles = 120;
 		}
 		this.createParticles();
 
@@ -207,11 +206,15 @@ class Effect {
 
 const effect = new Effect(canvas, ctx);
 
+let lastFrameTime = Date.now();
 function animate() {
-	if (animationActive) {
+	const now = Date.now();
+	const elapsed = now - lastFrameTime;
+	if (elapsed > (1000 / 30) && app.animationActive) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		effect.handleParticles(ctx);
-		requestAnimationFrame(animate);
+		lastFrameTime = now;
 	}
+	requestAnimationFrame(animate);
 };
 
