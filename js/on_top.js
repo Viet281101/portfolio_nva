@@ -11,9 +11,16 @@ class scrollOnTop {
 			alt="Scroll to top" 
 			style="width: 30px; height: 30px;">`;
 		document.body.appendChild(btn);
-	
+
 		btn.addEventListener('click', () => {
-			$("#fullpage").data('fullpage').moveTo(1);
+			if (window.innerWidth > 800) {
+				$("#fullpage").data('fullpage').moveTo(1);
+			} else {
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			}
 		});
 		btn.addEventListener('mouseover', () => {
 			app.mouseMarkEnabled = false;
@@ -26,7 +33,7 @@ class scrollOnTop {
 				app.mouseMarkEnabled = true;
 			}
 		});
-	
+
 		this.styleScrollOnTopBtn();
 	};	
 
@@ -50,6 +57,22 @@ class scrollOnTop {
 			}
 			#scrollOnTopBtn:hover {
 				background-color: #555;
+			}
+			@media (max-width: 1000px) {
+				#scrollOnTopBtn {
+					right: 10px;
+					padding: 10px;
+				}
+			}
+			@media (max-width: 800px) {
+				#scrollOnTopBtn {
+					padding: 8px;
+				}
+			}
+			@media (max-width: 600px) {
+				#scrollOnTopBtn {
+					bottom: 40px;
+				}
 			}
 		`;
 		document.head.appendChild(style);

@@ -55,7 +55,6 @@ class MainApp {
 	};
 
 	loadFullPage() {
-		const scrollBtn = document.getElementById('scrollOnTopBtn');
 		if (window.innerWidth > 1000) {
 			document.body.style.overflow = 'hidden';
 
@@ -77,6 +76,7 @@ class MainApp {
 					if (this.sidebar) this.sidebar.updateActiveNavItem(index);
 					if (this.background) this.background.updateBackgroundForSection(index);
 					this.handleSectionChange(index);
+					const scrollBtn = document.getElementById('scrollOnTopBtn');
 					if (scrollBtn) {
 						if (index === 1) {
 							scrollBtn.style.display = 'none';
@@ -125,6 +125,15 @@ class MainApp {
 		window.addEventListener('resize', () => {
 			this.loadFullPage();
 			this.mouseMarkEnabled = window.innerWidth >= 768;
+		});
+
+		window.addEventListener('scroll', () => {
+			const scrollBtn = document.getElementById('scrollOnTopBtn');
+			if (window.scrollY > 150) {
+				scrollBtn.style.display = 'block';
+			} else {
+				scrollBtn.style.display = 'none';
+			}
 		});
 	};
 

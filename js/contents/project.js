@@ -98,7 +98,7 @@ class Project {
 		card_content.appendChild(description);
 		card_content.appendChild(btn);
 		btn.appendChild(button);
-		
+
 		project.appendChild(project_image);
 		project.appendChild(card_content);
 

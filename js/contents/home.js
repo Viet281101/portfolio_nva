@@ -33,7 +33,7 @@ class Home {
 		if (Object.keys(this.contentData).length === 0) return;
 
 		this.lang = app.lang;
-		
+
 		this.clearContentExceptAvatar();
 
 		const introTitle = document.createElement('div');
@@ -113,7 +113,6 @@ class Home {
 			#avatar-loading {
 				font-size: 3em;
 			}
-
 			h1, .hero-description {
 				text-align: left;
 			}

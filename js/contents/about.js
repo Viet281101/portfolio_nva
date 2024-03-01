@@ -40,7 +40,7 @@ class About {
 		aboutContent.appendChild(aboutRight);
 
 		const cvButton = this.createCVButton();
-		
+
 		this.section.appendChild(aboutTitle);
 		this.section.appendChild(aboutContent);
 		this.section.appendChild(cvButton);
