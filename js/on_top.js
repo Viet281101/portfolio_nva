@@ -6,6 +6,7 @@ class scrollOnTop {
 
 	createScrollOnTopBtn() {
 		const btn = document.createElement('button');
+		btn.title = 'Scroll to top';
 		btn.id = 'scrollOnTopBtn';
 		btn.innerHTML = `<img src="${this.scrollOnTopBtn}" 
 			alt="Scroll to top" 

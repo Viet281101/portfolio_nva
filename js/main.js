@@ -94,6 +94,7 @@ class MainApp {
 
 	updateLanguage(lang) {
 		this.lang = lang;
+		document.documentElement.lang = lang;
 		this.sidebar.updateLanguage(lang);
 		this.home.updateContent(lang);
 		this.about.updateContent(lang);
