@@ -1,13 +1,14 @@
 // Dependencies: jquery, fullpage.js
 class Sidebar {
 	constructor() {
+		this.lang = app.lang;
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
 		this.liItems = [
-			{href: "#home", icon: "./assets/icons/home.png", text: "Home"},
-			{href: "#about", icon: "./assets/icons/about.png", text: "About"},
-			{href: "#projects", icon: "./assets/icons/project.png", text: "Projects"},
-			{href: "#courses", icon: "./assets/icons/courses.png", text: "Courses"},
-			{href: "#contact", icon: "./assets/icons/info.png", text: "Contact"},
+			{href: "#home", icon: "./assets/icons/home.png", text: "Home", texte: "Accueil"},
+			{href: "#about", icon: "./assets/icons/about.png", text: "About", texte: "À propos"},
+			{href: "#projects", icon: "./assets/icons/project.png", text: "Projects", texte: "Projets"},
+			{href: "#courses", icon: "./assets/icons/courses.png", text: "Courses", texte: "Cours"},
+			{href: "#contact", icon: "./assets/icons/info.png", text: "Contact", texte: "Contact"},
 		];
 		this.connectItems = [
 			{href: "https://www.linkedin.com/in/viet-nguyen-99a171258/", icon: "./assets/icons/linkedin.png", text: "LinkedIn"},
@@ -32,17 +33,24 @@ class Sidebar {
 		this.liItems.forEach(item => {
 			let li = document.createElement('li');
 			let a = document.createElement('a');
-			let img = document.createElement('img');
-			img.setAttribute('loading', 'lazy');
+			this.img = document.createElement('img');
+			this.img.setAttribute('loading', 'lazy');
 
 			a.setAttribute('href', item.href);
 			a.setAttribute('class', 'section-btn');
 			a.id = 'nav-' + item.text.toLowerCase();
-			img.setAttribute('src', item.icon);
-			img.setAttribute('alt', item.text.toLowerCase() + " icon");
+			this.img.setAttribute('src', item.icon);
+			this.img.setAttribute('alt', item.text.toLowerCase() + " icon");
 
-			a.appendChild(img);
-			a.append(item.text);
+			let textSpan = document.createElement('span');
+			if (this.lang === 'en') {
+				textSpan.textContent = item.text;
+			} else {
+				textSpan.textContent = item.texte;
+			}
+
+			a.appendChild(this.img);
+			a.appendChild(textSpan);
 			li.appendChild(a);
 			ul.appendChild(li);
 
@@ -75,6 +83,22 @@ class Sidebar {
 
 		document.body.insertBefore(this.label, document.body.firstChild);
 	};
+
+	updateLanguage(lang) {
+		this.lang = lang;
+		this.liItems.forEach((item) => {
+			let a = document.getElementById('nav-' + item.text.toLowerCase());
+			if (a) {
+				let textSpan = a.querySelector('span');
+				textSpan.textContent = "";
+				if (lang === 'en') {
+					textSpan.textContent = item.text;
+				} else {
+					textSpan.textContent = item.texte;
+				}
+			}
+		});
+	};	
 
 	createConnectItems() {
 		let connectContainer = document.createElement('div');

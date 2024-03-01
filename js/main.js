@@ -9,6 +9,7 @@ class MainApp {
 			'effects/particles.js',
 			'sidebar.js',
 			'lang_box.js',
+			'on_top.js',
 			'contents/home.js',
 			'contents/about.js',
 			'contents/project.js',
@@ -23,6 +24,7 @@ class MainApp {
 		this.courses = null;
 		this.contact = null;
 		this.langBox = null;
+		this.btnOnTop = null;
 		this.currentSection = 0;
 		this.mouseMarkEnabled = true;
 		this.animationActive = true;
@@ -53,6 +55,7 @@ class MainApp {
 	};
 
 	loadFullPage() {
+		const scrollBtn = document.getElementById('scrollOnTopBtn');
 		if (window.innerWidth > 1000) {
 			document.body.style.overflow = 'hidden';
 
@@ -74,6 +77,13 @@ class MainApp {
 					if (this.sidebar) this.sidebar.updateActiveNavItem(index);
 					if (this.background) this.background.updateBackgroundForSection(index);
 					this.handleSectionChange(index);
+					if (scrollBtn) {
+						if (index === 1) {
+							scrollBtn.style.display = 'none';
+						} else {
+							scrollBtn.style.display = 'block';
+						}
+					}
 				},
 			});
 		} else {
@@ -87,6 +97,7 @@ class MainApp {
 
 	updateLanguage(lang) {
 		this.lang = lang;
+		this.sidebar.updateLanguage(lang);
 		this.home.updateContent(lang);
 		this.about.updateContent(lang);
 		this.project.updateContent(lang);
@@ -131,6 +142,9 @@ class MainApp {
 
 		this.langBox = new LangBox();
 		this.langBox.createLanguageSelector();
+
+		this.btnOnTop = new scrollOnTop();
+		this.btnOnTop.createScrollOnTopBtn();
 
 		this.home = new Home();
 		this.home.createHomeContent();
