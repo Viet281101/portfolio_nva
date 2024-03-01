@@ -65,7 +65,7 @@ class LangBox {
 				appearance: none;
 				background-image: url('assets/icons/down_arrow.png');
 				background-repeat: no-repeat;
-				background-position: right 10px center;
+				background-position: right 3px center;
 				background-size: 20px;
 				background-color: #333;
 				padding: 5px 30px 5px 10px;
