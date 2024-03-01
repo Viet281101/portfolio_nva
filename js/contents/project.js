@@ -92,6 +92,7 @@ class Project {
 		btn.className = "btn";
 		let button = document.createElement("button");
 		button.innerHTML = buttonText;
+		button.title = "See more about " + projectName;
 
 		card_content.appendChild(title);
 		card_content.appendChild(sub_title);
@@ -150,7 +151,7 @@ class Project {
 
 	setupNavigationButtons() {
 		$(document).ready(() => {
-			$('.owl-prev').html('<img class="nav-prev-slider" src="./assets/icons/' + this.prev_slide + '.png" style="width: 50px; height: 50px;">').css({
+			$('.owl-prev').html('<img title="Scroll Left" class="nav-prev-slider" src="./assets/icons/' + this.prev_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
 				"top": "50%",
 				"left": "-40px",
@@ -158,7 +159,7 @@ class Project {
 				"border": "none",
 				"background": "none"
 			});
-			$('.owl-next').html('<img class="nav-next-slider" src="./assets/icons/' + this.next_slide + '.png" style="width: 50px; height: 50px;">').css({
+			$('.owl-next').html('<img title="Scroll Right" class="nav-next-slider" src="./assets/icons/' + this.next_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
 				"top": "50%",
 				"right": "-40px",
@@ -238,6 +239,7 @@ class Project {
 			.card-content p {
 				text-align: center;
 				padding: 5px;
+				overflow-wrap: break-word;
 			}
 			.btn {
 				text-align: center;
@@ -253,7 +255,6 @@ class Project {
 				font-family: 'Pixel', sans-serif;
 				cursor: pointer;
 				border-radius: 5px;
-				overflow-wrap: break-word;
 			}
 			.btn button:hover {
 				background-color: #0056b3;

@@ -6,7 +6,7 @@
 			"Othello AI Game" : {
 				"tools": "C, GLUT, SDL2, Minimax Algo",
 				"image": "othello_ai",
-				"desc" : "Othello AI Game with simple interface and AI using Minimax/Alphabeta Algorithm"
+				"desc" : "Othello AI Game with simple interface and AI using Minimax/Alphabeta"
 			},
 			"Demo Graphic" : {
 				"tools": "C, OpenGL, GL4Dummies, SDL2",
@@ -59,7 +59,7 @@
 				"desc" : "Movies Website with simple interface of movie list and search feature"
 			}
 		},
-		"button" : "View",
+		"button" : "See More",
 		"summary": "Currently showcasing {0} projects."
 	},
 	"fr" : {
@@ -121,7 +121,7 @@
 				"desc" : "Site Web de films avec une interface simple de liste de films et une fonction de recherche"
 			}
 		},
-		"button" : "Voir",
+		"button" : "Voir Plus",
 		"summary": "Actuellement, {0} projets sont présentés."
 	}
 }
