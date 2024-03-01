@@ -50,6 +50,7 @@ class MainApp {
 			let script = document.createElement('script');
 			script.src = './js/' + this.jsFiles[i];
 			script.setAttribute("type", "text/javascript");
+			script.defer = true;
 			document.head.appendChild(script);
 		}
 	};

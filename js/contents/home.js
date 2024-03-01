@@ -168,6 +168,14 @@ class Home {
 					margin: 0;
 				}
 			}
+			@media (max-width: 500px) {
+				#avatar-container {
+					min-height: 400px;
+					max-height: 400px;
+					min-width: 100%;
+					max-width: 100%;
+				}
+			}
 		`;
 
 		const head = document.head;
