@@ -88,6 +88,8 @@ class MainApp {
 	updateLanguage(lang) {
 		this.lang = lang;
 		this.home.updateContent(lang);
+		this.about.updateContent(lang);
+		this.project.updateContent(lang);
 	};
 
 	handleSectionChange(index) {

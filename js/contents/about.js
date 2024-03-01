@@ -3,37 +3,46 @@ class About {
 	constructor() {
 		this.section = document.getElementById('about');
 		this.myCV = './assets/doc/Viet_Nguyen_CV.pdf';
+		this.contentData = {};
+		this.loadContentData();
+	};
+
+	loadContentData() {
+		fetch('./js/data/about.json')
+			.then(response => response.json())
+			.then(data => {
+				this.contentData = data;
+				this.createAboutContent();
+			})
+			.catch(error => console.error('Error loading the about content:', error));
 	};
 
 	createAboutContent() {
+		if (Object.keys(this.contentData).length === 0) return;
+
+		this.lang = app.lang;
+
 		this.section.innerHTML = ''; // Clear any existing content
 
-		// Create title
 		const aboutTitle = document.createElement('div');
 		aboutTitle.className = 'about-title';
 		const title = document.createElement('h1');
-		title.lang = "en";
-		title.textContent = 'About Me';
+		title.textContent = this.contentData[this.lang].title;
 		aboutTitle.appendChild(title);
 
-		// Create content containers
 		const aboutContent = document.createElement('div');
 		aboutContent.className = 'about-content';
 
-		// Left content
 		const aboutLeft = this.createAboutLeftContent();
-		// Right content
 		const aboutRight = this.createAboutRightContent();
 
-		// Construct the content
 		aboutContent.appendChild(aboutLeft);
 		aboutContent.appendChild(aboutRight);
 
-		// Append to the section
+		const cvButton = this.createCVButton();
+		
 		this.section.appendChild(aboutTitle);
 		this.section.appendChild(aboutContent);
-
-		const cvButton = this.createCVButton();
 		this.section.appendChild(cvButton);
 
 		this.applyAboutStyles();
@@ -42,18 +51,10 @@ class About {
 	createAboutLeftContent() {
 		const aboutLeft = document.createElement('div');
 		aboutLeft.className = 'about-content-left';
-		const leftTitle = document.createElement('div');
-		leftTitle.className = 'about-content-left-title';
-		const whoAmI = document.createElement('h2');
-		whoAmI.lang = "en";
-		whoAmI.textContent = 'Who am I ?';
-		leftTitle.appendChild(whoAmI);
-		const leftContent = document.createElement('div');
-		leftContent.className = 'about-content-left-content';
-		const p1 = document.createElement('p');
-		p1.lang = "en";
-		p1.textContent = "I'm a computer science student at the University of Paris 8, Saint Denis. I am passionate about creating interactive, graphic effects. I am also interested in web development and machine learning.";
-		leftContent.appendChild(p1);
+		const leftTitle = document.createElement('h2');
+		leftTitle.textContent = this.contentData[this.lang].whoAmI;
+		const leftContent = document.createElement('p');
+		leftContent.textContent = this.contentData[this.lang].whoAmIDesc;
 
 		aboutLeft.appendChild(leftTitle);
 		aboutLeft.appendChild(leftContent);
@@ -63,18 +64,10 @@ class About {
 	createAboutRightContent() {
 		const aboutRight = document.createElement('div');
 		aboutRight.className = 'about-content-right';
-		const rightTitle = document.createElement('div');
-		rightTitle.className = 'about-content-right-title';
-		const whatIDo = document.createElement('h2');
-		whatIDo.lang = "en";
-		whatIDo.textContent = 'What I do ?';
-		rightTitle.appendChild(whatIDo);
-		const rightContent = document.createElement('div');
-		rightContent.className = 'about-content-right-content';
-		const p2 = document.createElement('p');
-		p2.lang = "en";
-		p2.textContent = "I am currently working on a project to create a website to showcase my projects. I am also learning about machine learning and deep learning.";
-		rightContent.appendChild(p2);
+		const rightTitle = document.createElement('h2');
+		rightTitle.textContent = this.contentData[this.lang].whatIDo;
+		const rightContent = document.createElement('p');
+		rightContent.textContent = this.contentData[this.lang].whatIDoDesc;
 
 		aboutRight.appendChild(rightTitle);
 		aboutRight.appendChild(rightContent);
@@ -84,19 +77,27 @@ class About {
 	createCVButton() {
 		const cvButton = document.createElement('a');
 		cvButton.href = this.myCV;
-		// cvButton.download = 'Viet_NGUYEN_CV.pdf';
-		cvButton.lang = "en";
-		cvButton.textContent = 'Resume';
+		cvButton.textContent = this.contentData[this.lang].cvButton;
 		cvButton.className = 'cv-button';
 		cvButton.target = '_blank';
-		cvButton.title = 'Download my CV';
-		cvButton.addEventListener("mouseover", function() {
+		cvButton.title = this.contentData[this.lang].cvButtonTitle;
+		cvButton.addEventListener('mouseover', (event) => {
 			app.mouseMarkEnabled = false;
 		});
-		cvButton.addEventListener("mouseout", function() {
-			app.mouseMarkEnabled = true;
+		cvButton.addEventListener('mouseout', (event) => {
+			if (app.sections[app.currentSection] !== 'projects' && 
+				app.sections[app.currentSection] !== 'home' && 
+				app.sections[app.currentSection] !== 'courses') 
+			{
+				app.mouseMarkEnabled = true;
+			}
 		});
 		return cvButton;
+	};
+
+	updateContent(lang) {
+		this.lang = lang;
+		this.createAboutContent();
 	};
 
 	applyAboutStyles() {

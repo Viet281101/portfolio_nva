@@ -59,7 +59,8 @@
 				"desc" : "Movies Website with simple interface of movie list and search feature"
 			}
 		},
-		"button" : "View"
+		"button" : "View",
+		"summary": "Currently showcasing {0} projects."
 	},
 	"fr" : {
 		"title" : "Projets",
@@ -120,7 +121,8 @@
 				"desc" : "Site Web de films avec une interface simple de liste de films et une fonction de recherche"
 			}
 		},
-		"button" : "Voir"
+		"button" : "Voir",
+		"summary": "Actuellement, {0} projets sont présentés."
 	}
 }
 

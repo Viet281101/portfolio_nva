@@ -1,73 +1,36 @@
 // Dependencies: owl.carousel.css, owl.carousel.js
 class Project {
 	constructor() {
-		this.projects = [
-			"Othello AI Game",
-			"Demo Graphic",
-			"Chess Engine",
-			"Secure Chat",
-			"Detection App",
-			"Music Virap",
-			"Colt Express",
-			"Castlevania",
-			"Polyominos",
-			"Teleporter",
-			"Movies Website"
-		];
-		this.project_tool = [
-			"C, GLUT, SDL2, Minimax Algo",
-			"C, OpenGL, GL4Dummies, SDL2",
-			"JavaScript, HTML, CSS",
-			"Python, Tkinter, AES",
-			"Python, OpenCV, Mediapipe",
-			"Kotlin, Android Studio",
-			"Pygame, Tkinter, PIL",
-			"JavaScript, Canvas, HTML",
-			"JavaScript, HTML, CSS",
-			"Godot Engine, GDScript",
-			"React, JQuery, HTML, CSS"
-		];
-		this.projects_images = [
-			"othello_ai",
-			"demo_graphic",
-			"chess_engine",
-			"chat_app",
-			"screen_detection",
-			"music_player_virap",
-			"colt_express",
-			"castlevania",
-			"polyominos",
-			"teleporter",
-			"movies_web"
-		];
-		this.project_descript = [
-			"Othello AI Game with simple interface and AI using Minimax/Alphabeta Algorithm",
-			"Small video graphic demo using OpenGL, SDL2 and GL4Dummies library",
-			"Chess Engine with simple web interface and AI using Minimax Algorithm",
-			"Simple Securite Chat App with AES encryption, Socket server and client using Tkinter GUI",
-			"Simple Detection Apps Collection for screen, face, hand, object, sec, etc",
-			"Music Player mobile app for Android with simple interface and features",
-			"Colt Express board game with simple interface by Pygame and Tkinter library",
-			"2D platformer game with castlevania style using vanilla JS and Canvas API",
-			"Website solving Polyominos Puzzle with algorithm and simple interface",
-			"2D rpg pixel game make by Godot Engine 3.5.1 with GDScript language",
-			"Movies Website with simple interface of movie list and search feature"
-		];
-		this.prev_slide = "./assets/icons/left_arrow.png";
-		this.next_slide = "./assets/icons/right_arrow.png";
 		this.section = document.getElementById('projects');
+		this.contentData = {};
+		this.prev_slide = 'left_arrow';
+		this.next_slide = 'right_arrow';
+		this.loadContentData();
 	};
 
-	createProjectContent() {
+	loadContentData() {
+		fetch('./js/data/project_info.json')
+			.then(response => response.json())
+			.then(data => {
+				this.contentData = data;
+				this.createProjectContent(app.lang);
+			})
+			.catch(error => console.error('Error loading the project content:', error));
+	};
+
+	createProjectContent(lang) {
+		if (!this.contentData[lang]) return;
+
+		const data = this.contentData[lang];
 		this.section.innerHTML = '';
 
 		let title = document.createElement('div');
 		title.className = "project-title";
-		title.innerHTML = "Projects";
+		title.innerHTML = data.title;
 		this.section.appendChild(title);
 
 		this.loadSliderCSS();
-		this.createSliderCarousel();
+		this.createSliderCarousel(data);
 		this.setupCarouselOptions();
 		this.addEventListeners();
 		this.setupNavigationButtons();
@@ -82,60 +45,68 @@ class Project {
 		document.head.appendChild(lightslider);
 	};
 
-	createSliderCarousel() {
+	createSliderCarousel(data) {
 		let slider_owl_carousel = document.createElement('div');
 		slider_owl_carousel.className = "slider owl-carousel";
-		this.projects.forEach((project, index) => {
-			let projectElement = this.createProjectElement(index);
+		Object.entries(data.projects).forEach(([projectName, projectData]) => {
+			let projectElement = this.createProjectElement(projectName, projectData, data.button);
 			slider_owl_carousel.appendChild(projectElement);
 		});
 		this.section.appendChild(slider_owl_carousel);
 
 		let projectSummary = document.createElement('div');
 		projectSummary.className = "project-summary";
-		projectSummary.innerHTML = `Currently showcasing <strong>${this.projects.length}</strong> projects.`;
+		let totalProjects = Object.keys(data.projects).length;
+		projectSummary.innerHTML = data.summary.replace('{0}', `<strong>${totalProjects}</strong>`);
 		this.section.appendChild(projectSummary);
 	};
 
-	createProjectElement(index) {
+	createProjectElement(projectName, projectData, buttonText) {
 		let project = document.createElement('div');
 		project.className = "card";
-		project.id = this.projects[index];
 
+		// Image
 		let project_image = document.createElement('div');
 		project_image.className = "img";
 		let img = document.createElement('img');
-		img.src = './assets/project/' + this.projects_images[index] + '.png';
-		img.alt = this.projects_images[index];
+		img.src = './assets/project/' + projectData.image + '.png';
+		img.alt = projectName;
 		project_image.appendChild(img);
 
+		// Content
 		let card_content = document.createElement('div');
 		card_content.className = "card-content";
-		project.appendChild(project_image);
-		project.appendChild(card_content);
 
 		let title = document.createElement('div');
 		title.className = "title";
-		title.innerHTML = this.projects[index];
-		card_content.appendChild(title);
+		title.innerHTML = projectName;
 
 		let sub_title = document.createElement('div');
 		sub_title.className = "sub-title";
-		sub_title.innerHTML = this.project_tool[index];
-		card_content.appendChild(sub_title);
+		sub_title.innerHTML = projectData.tools;
 
 		let description = document.createElement('p');
-		description.innerHTML = this.project_descript[index];
-		card_content.appendChild(description);
+		description.innerHTML = projectData.desc;
 
 		let btn = document.createElement("div");
 		btn.className = "btn";
 		let button = document.createElement("button");
-		button.innerHTML = "View";
-		btn.appendChild(button);
+		button.innerHTML = buttonText;
+
+		card_content.appendChild(title);
+		card_content.appendChild(sub_title);
+		card_content.appendChild(description);
 		card_content.appendChild(btn);
+		btn.appendChild(button);
+		
+		project.appendChild(project_image);
+		project.appendChild(card_content);
 
 		return project;
+	};
+
+	updateContent(lang) {
+		this.createProjectContent(lang);
 	};
 
 	setupCarouselOptions() {
@@ -179,7 +150,7 @@ class Project {
 
 	setupNavigationButtons() {
 		$(document).ready(() => {
-			$('.owl-prev').html('<img class="nav-prev-slider" src="' + this.prev_slide + '" style="width: 50px; height: 50px;">').css({
+			$('.owl-prev').html('<img class="nav-prev-slider" src="./assets/icons/' + this.prev_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
 				"top": "50%",
 				"left": "-40px",
@@ -187,7 +158,7 @@ class Project {
 				"border": "none",
 				"background": "none"
 			});
-			$('.owl-next').html('<img class="nav-next-slider" src="' + this.next_slide + '" style="width: 50px; height: 50px;">').css({
+			$('.owl-next').html('<img class="nav-next-slider" src="./assets/icons/' + this.next_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
 				"top": "50%",
 				"right": "-40px",
