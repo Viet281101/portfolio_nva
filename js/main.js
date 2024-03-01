@@ -78,11 +78,8 @@ class MainApp {
 					this.handleSectionChange(index);
 					const scrollBtn = document.getElementById('scrollOnTopBtn');
 					if (scrollBtn) {
-						if (index === 1) {
-							scrollBtn.style.display = 'none';
-						} else {
-							scrollBtn.style.display = 'block';
-						}
+						if (index === 1) { scrollBtn.style.display = 'none'; } 
+						else { scrollBtn.style.display = 'block'; }
 					}
 				},
 			});
@@ -129,11 +126,8 @@ class MainApp {
 
 		window.addEventListener('scroll', () => {
 			const scrollBtn = document.getElementById('scrollOnTopBtn');
-			if (window.scrollY > 150) {
-				scrollBtn.style.display = 'block';
-			} else {
-				scrollBtn.style.display = 'none';
-			}
+			if (window.scrollY > 150) { scrollBtn.style.display = 'block'; } 
+			else { scrollBtn.style.display = 'none'; }
 		});
 	};
 
