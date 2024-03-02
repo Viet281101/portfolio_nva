@@ -55,7 +55,7 @@ class LangBox {
 				position: fixed;
 				top: 0;
 				left: 230px;
-				z-index: 20;
+				z-index: 10;
 				padding: 10px;
 			}
 			#language-selector select {
@@ -71,7 +71,7 @@ class LangBox {
 				background-color: #333;
 				padding: 5px 30px 5px 10px;
 				color: white;
-				font-family: 'Pixel', sans-serif;
+				font-family:'Pixel', sans-serif;
 				font-size: 14px;
 			}
 			#language-selector select:hover {

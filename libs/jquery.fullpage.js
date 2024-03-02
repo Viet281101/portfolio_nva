@@ -109,10 +109,6 @@
 				}
 			}
 		};
-
-
-		
-
 		return Fullpage;
 	})();
 

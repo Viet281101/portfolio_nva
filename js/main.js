@@ -4,6 +4,7 @@ class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
 		this.jsFiles = [
+			'load_progress.js',
 			'background.js',
 			'effects/lightslider.js',
 			'effects/particles.js',
@@ -117,20 +118,20 @@ class MainApp {
 	};
 
 	addEventListeners() {
-		document.addEventListener('DOMContentLoaded', () => {
-			this.initializeComponents();
-		});
+		document.addEventListener('DOMContentLoaded', this.initializeComponents.bind(this));
+		window.addEventListener('resize', this.onResize.bind(this));
+		window.addEventListener('scroll', this.onScroll.bind(this));
+	};
 
-		window.addEventListener('resize', () => {
-			this.loadFullPage();
-			this.mouseMarkEnabled = window.innerWidth >= 768;
-		});
+	onResize() {
+		this.loadFullPage();
+		this.mouseMarkEnabled = window.innerWidth >= 768;
+		this.animationActive = window.innerWidth >= 768;	
+	};
 
-		window.addEventListener('scroll', () => {
-			const scrollBtn = document.getElementById('scrollOnTopBtn');
-			if (window.scrollY > 150) { scrollBtn.style.display = 'block'; } 
-			else { scrollBtn.style.display = 'none'; }
-		});
+	onScroll() {
+		const scrollBtn = document.getElementById('scrollOnTopBtn');
+		scrollBtn.style.display = window.scrollY > 150 ? 'block' : 'none';
 	};
 
 	initializeComponents() {

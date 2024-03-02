@@ -178,10 +178,12 @@ class Project {
 				width: 100%;
 			}
 			.project-title {
+				font-weight: bold;
 				text-align: center;
 				padding: 30px;
 				font-size: 36px;
 				color: #ffffff;
+				text-shadow: 4px 4px 4px #0056b3;
 			}
 			.slider {
 				display: flex;

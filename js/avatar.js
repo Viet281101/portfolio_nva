@@ -3,7 +3,9 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/OrbitControls.js';
 
-window.onload = () => loadModel();
+window.addEventListener('avatarContainerReady', function() {
+    loadModel();
+});
 
 function loadModel() {
 	const loader = new GLTFLoader();

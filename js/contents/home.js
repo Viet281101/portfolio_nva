@@ -26,6 +26,7 @@ class Home {
 			avatarLoading.id = 'avatar-loading';
 			avatarContainer.appendChild(avatarLoading);
 			this.section.appendChild(avatarContainer);
+			window.dispatchEvent(new CustomEvent('avatarContainerReady'));
 		}
 	};
 
@@ -132,11 +133,6 @@ class Home {
 				padding-top: 60px;
 				display: flex;
 				flex-direction: row;
-			}
-			.gradient-text {
-				background-image: linear-gradient(-45deg, rgb(177, 8, 189), rgb(88, 186, 255));
-				background-clip: text;
-				color: transparent;
 			}
 			@media (max-width: 800px) {
 				#home {

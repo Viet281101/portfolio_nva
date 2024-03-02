@@ -1,13 +1,9 @@
 
 class LoadPopupPage {
-	constructor(totalRessources) {
-		this.totalRessources = totalRessources;
-		this.loadedRessources = 0;
+	constructor() {
 		this.popupElement = null;
 		this.progressElement = null;
 		this.progressValue = 0;
-		this.createPopupPage();
-		this.stylePopupPage();
 	};
 
 	createPopupPage() {
@@ -21,19 +17,7 @@ class LoadPopupPage {
 		`;
 		document.body.appendChild(this.popupElement);
 		this.progressElement = document.getElementById('progressValue');
-	};
-
-	updateProgress() {
-		this.progressValue = Math.floor((this.loadedRessources / this.totalRessources) * 100);
-		this.progressElement.textContent = this.progressValue + '%';
-		if (this.progressValue === 100) {
-			this.hidePopup();
-		}
-	};
-
-	ressourceLoaded() {
-		this.loadedRessources++;
-		this.updateProgress();
+		this.stylePopupPage();
 	};
 
 	hidePopup() {
@@ -50,14 +34,15 @@ class LoadPopupPage {
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-color: rgba(0, 0, 0, 0.7);
+				background-color: rgba(0, 0, 0, 0.3);
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				z-index: 9;
+				z-index: 11;
 			}
 			.popup-content h2 {
 				color: white;
+				font-size: 50px;
 				margin-bottom: 20px;
 			}
 			#progressBar {
@@ -65,10 +50,10 @@ class LoadPopupPage {
 				background-color: #ddd;
 			}
 			#progressValue {
-				height: 20px;
-				background-color: green;
+				height: 30px;
+				background-image: linear-gradient(-45deg, rgb(177, 8, 189), rgb(88, 186, 255));
 				text-align: center;
-				line-height: 20px;
+				line-height: 30px;
 				color: white;
 			}
 		`;
