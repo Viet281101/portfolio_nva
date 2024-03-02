@@ -80,9 +80,10 @@ class LangBox {
 			@media screen and (max-width: 1000px) {
 				#language-selector {
 					left: 5px;
+					top: 5px;
 				}
 				#language-selector select {
-					font-size: 8px;
+					font-size: 10px;
 				}
 			}
 		`;

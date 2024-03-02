@@ -9,6 +9,7 @@ class MainApp {
 			'effects/lightslider.js',
 			'effects/particles.js',
 			'sidebar.js',
+			'nav_bar.js',
 			'lang_box.js',
 			'on_top.js',
 			'contents/home.js',
@@ -18,6 +19,7 @@ class MainApp {
 			'contents/contact.js',
 		];
 		this.sidebar = null;
+		this.navBar = null;
 		this.background = null;
 		this.home = null;
 		this.about = null;
@@ -101,6 +103,7 @@ class MainApp {
 		this.home.updateContent(lang);
 		this.about.updateContent(lang);
 		this.project.updateContent(lang);
+		if (this.navBar) this.navBar.updateLanguage(lang);
 	};
 
 	handleSectionChange(index) {
@@ -127,6 +130,7 @@ class MainApp {
 		this.loadFullPage();
 		this.mouseMarkEnabled = window.innerWidth >= 768;
 		this.animationActive = window.innerWidth >= 768;	
+		if (this.navBar) this.navBar.updateMenuButtonVisibility();
 	};
 
 	onScroll() {
@@ -142,6 +146,12 @@ class MainApp {
 		this.sidebar.updateActiveNavItem(1);
 		this.sidebar.createConnectItems();
 		this.sidebar.applyStyles();
+
+		if (window.innerWidth < 800) {
+			this.navBar = new NavBar();
+			this.navBar.createNavBar();
+			this.navBar.updateMenuButtonVisibility();
+		}
 
 		this.background = new Background();
 		this.background.init();

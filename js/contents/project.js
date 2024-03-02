@@ -254,7 +254,7 @@ class Project {
 				background: transparent;
 				color: white;
 				text-transform: uppercase;
-				font-family: 'Pixel', sans-serif;
+				font-family:'Pixel', sans-serif;
 				cursor: pointer;
 				border-radius: 5px;
 			}
