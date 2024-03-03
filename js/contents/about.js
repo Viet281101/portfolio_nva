@@ -1,8 +1,10 @@
-// Dependencies: none
+
 class About {
 	constructor() {
 		this.section = document.getElementById('about');
 		this.myCV = './assets/doc/Viet_Nguyen_CV.pdf';
+		this.leftArrow = './assets/icons/arrow_left.png';
+		this.rightArrow = './assets/icons/arrow_right.png';
 		this.contentData = {};
 		this.loadContentData();
 	};
@@ -17,30 +19,44 @@ class About {
 	createAboutContent() {
 		if (Object.keys(this.contentData).length === 0) return;
 		this.lang = app.lang;
-		this.section.innerHTML = '';
+		this.section.innerHTML = '<div class="slides-container">';
+		const slidesContainer = this.section.querySelector('.slides-container');
+		
+		const slide1 = document.createElement('div');
+		slide1.className = 'slide';
+		const aboutContent = this.createAboutContentDOM();
+		slide1.appendChild(aboutContent);
 
-		const aboutTitle = document.createElement('div');
-		aboutTitle.className = 'about-title';
-		const title = document.createElement('h1');
-		title.textContent = this.contentData[this.lang].title;
-		aboutTitle.appendChild(title);
+		const slide2 = document.createElement('div');
+		slide2.className = 'slide';
+		slide2.innerHTML = '<h1>More about myself</h1>';
 
+		slidesContainer.appendChild(slide1);
+		slidesContainer.appendChild(slide2);
+
+		this.appendNavigationButtons();
+		slidesContainer.addEventListener('scroll', () => this.updateButtonVisibility());
+
+		this.applyAboutStyles();
+	};
+
+	createAboutContentDOM() {
 		const aboutContent = document.createElement('div');
 		aboutContent.className = 'about-content';
+
+		const aboutTitle = document.createElement('h1');
+		aboutTitle.textContent = this.contentData[this.lang].title;
+		aboutTitle.className = 'about-title';
 
 		const aboutLeft = this.createAboutLeftContent();
 		const aboutRight = this.createAboutRightContent();
 
+		aboutContent.appendChild(aboutTitle);
 		aboutContent.appendChild(aboutLeft);
 		aboutContent.appendChild(aboutRight);
+		aboutContent.appendChild(this.createCVButton());
 
-		const cvButton = this.createCVButton();
-
-		this.section.appendChild(aboutTitle);
-		this.section.appendChild(aboutContent);
-		this.section.appendChild(cvButton);
-
-		this.applyAboutStyles();
+		return aboutContent;
 	};
 
 	createAboutLeftContent() {
@@ -90,38 +106,112 @@ class About {
 		this.createAboutContent();
 	};
 
+	appendNavigationButtons() {
+		const leftNavButton = document.createElement('img');
+		leftNavButton.src = this.leftArrow;
+		leftNavButton.className = 'scroll-left-btn';
+		leftNavButton.style.display = 'none';
+
+		const rightNavButton = document.createElement('img');
+		rightNavButton.src = this.rightArrow;
+		rightNavButton.className = 'scroll-right-btn';
+
+		rightNavButton.onclick = () => this.scrollSlides('right');
+		leftNavButton.onclick = () => this.scrollSlides('left');
+
+		rightNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; rightNavButton.style.opacity = 0.5; });
+		rightNavButton.addEventListener('mouseout', (event) => {
+			if (app.sections[app.currentSection] !== 'projects' && 
+				app.sections[app.currentSection] !== 'home' && 
+				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; rightNavButton.style.opacity = 1;}
+		});
+		leftNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; leftNavButton.style.opacity = 0.5;});
+		leftNavButton.addEventListener('mouseout', (event) => {
+			if (app.sections[app.currentSection] !== 'projects' && 
+				app.sections[app.currentSection] !== 'home' && 
+				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; leftNavButton.style.opacity = 1;}
+		});
+
+		this.section.appendChild(leftNavButton);
+		this.section.appendChild(rightNavButton);
+	};
+
+	scrollSlides(direction) {
+		const slidesContainer = this.section.querySelector('.slides-container');
+		const slideWidth = this.section.querySelector('.slide').offsetWidth;
+		if (direction === 'right') slidesContainer.scrollLeft += slideWidth;
+		else if (direction === 'left') slidesContainer.scrollLeft -= slideWidth;
+		setTimeout(() => this.updateButtonVisibility(), 50);
+	};
+
+	updateButtonVisibility() {
+		const slidesContainer = this.section.querySelector('.slides-container');
+		const leftNavButton = this.section.querySelector('.scroll-left-btn');
+		const rightNavButton = this.section.querySelector('.scroll-right-btn');
+		const maxScrollLeft = slidesContainer.scrollWidth - slidesContainer.clientWidth;
+		leftNavButton.style.display = slidesContainer.scrollLeft > 0 ? 'block' : 'none';
+		rightNavButton.style.display = slidesContainer.scrollLeft < maxScrollLeft ? 'block' : 'none';
+	};
+
 	applyAboutStyles() {
 		const css = `
-			/* About section styles */
-			@charset "UTF-8";
-			#about {
+			/* About section and slide styles */
+			.slides-container {
 				display: flex;
-				flex-direction: column;
+				overflow-x: hidden;
+				scroll-behavior: smooth;
+				width: 100%;
+				height: 100%;
+			}
+			.slide {
+				width: 100%;
+				height: 100%;
+				flex-shrink: 0;
+				display: flex;
+				overflow: hidden;
 				justify-content: center;
 				align-items: center;
+				text-align: center;
 			}
+			/* Styles for navigation buttons */
+			.scroll-left-btn, .scroll-right-btn {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+			}
+			.scroll-left-btn { left: -35px; }
+			.scroll-right-btn { right: -35px; }
+			.slides-container::-webkit-scrollbar { display: none; }
 			.about-title {
 				text-align: center;
-				padding-bottom: 60px;
+				margin-bottom: 40px;
+				font-size: 44px;
+				color: #fff;
 			}
 			.about-content {
 				display: flex;
-				justify-content: space-between;
+				flex-direction: column;
+				justify-content: space-around;
 				align-items: center;
-				width: 80%;
+				padding: 20px;
+				gap: 20px;
 			}
 			.about-content-left, .about-content-right {
-				flex: 1;
+				flex-basis: 50%;
 				padding: 10px;
+				font-size: 18px;
+				color: #fff;
 			}
-			.about-content-left { order: 1; }
-			.about-content-right { order: 2; }
-			.about-content-left-title, .about-content-right-title { padding-bottom: 20px; }
-			.about-content-left-content, .about-content-right-content { text-align: left; }
-			.about-content-left-content p, .about-content-right-content p { font-size: 1.2em; }
+			.about-content-left h2, .about-content-right h2 {
+				margin-bottom: 10px;
+				font-size: 26px;
+			}
 			.cv-button {
 				display: block;
-				margin: 20px auto;
+				margin: 20px;
 				padding: 10px 20px;
 				text-transform: uppercase;
 				font-size: 24px;
@@ -133,27 +223,28 @@ class About {
 			}
 			.cv-button:hover { color: #00D7FF; }
 			@media screen and (max-width: 1000px) {
-				#about .about-content {
-					flex-direction: column;
-					align-items: center;
-					font-size: 12px;
-				}
-				.about-title { padding-bottom: 20px; }
-				.about-content-left-title, .about-content-right-title { padding-bottom: 5px;}
-				.about-content-left, .about-content-right {
-					order: 1;
-					width: 100%;
-					padding: 0;
-				}
-				.about-content-left { padding-bottom: 20px; }
+			/* Adjustments for mobile screens */
+			.about-content {
+				flex-direction: column;
+				gap: 5px;
 			}
+			.about-title { font-size: 28px; }
+			.about-content-left h2, .about-content-right h2 { font-size: 20px; }
+			.about-content-left, .about-content-right {
+				width: 100%;
+				text-align: center;
+				font-size: 14px;
+			}
+			.cv-button {
+				width: 80%; /* Make the button wider on mobile */
+			}
+			.scroll-left-btn, .scroll-right-btn { width: 35px; height: 35px; }
+		}
 		`;
 		const head = document.head;
 		const style = document.createElement('style');
-
-		head.appendChild(style);
 		style.type = 'text/css';
-		style.innerHTML = css;
+		style.appendChild(document.createTextNode(css));
+		head.appendChild(style);
 	};
 };
-

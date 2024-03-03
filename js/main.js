@@ -105,6 +105,7 @@ class MainApp {
 			switch (event.key) {
 				case 'ArrowUp': this.moveSectionUp(); break;
 				case 'ArrowDown': this.moveSectionDown(); break;
+				default: break;
 			}
 		});
 	};
