@@ -86,6 +86,7 @@ class MainApp {
 		if (this.about) this.about.updateContent(lang);
 		if (this.project) this.project.updateContent(lang);
 		if (this.navBar) this.navBar.updateLanguage(lang);
+		if (this.btnOnTop) this.btnOnTop.updateContent(lang);
 	};
 
 	handleSectionChange(index) {

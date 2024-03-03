@@ -103,17 +103,43 @@ class About {
 
 	updateContent(lang) {
 		this.lang = lang;
-		this.createAboutContent();
+		const aboutTitle = this.section.querySelector('.about-title');
+		aboutTitle.textContent = this.contentData[this.lang].title;
+
+		const aboutLeft = this.section.querySelector('.about-content-left');
+		const leftTitle = aboutLeft.querySelector('h2');
+		leftTitle.textContent = this.contentData[this.lang].whoAmI;
+		const leftContent = aboutLeft.querySelector('p');
+		leftContent.textContent = this.contentData[this.lang].whoAmIDesc;
+
+		const aboutRight = this.section.querySelector('.about-content-right');
+		const rightTitle = aboutRight.querySelector('h2');
+		rightTitle.textContent = this.contentData[this.lang].whatIDo;
+		const rightContent = aboutRight.querySelector('p');
+		rightContent.textContent = this.contentData[this.lang].whatIDoDesc;
+
+		const cvButton = this.section.querySelector('.cv-button');
+		cvButton.textContent = this.contentData[this.lang].cvButton;
+		cvButton.title = this.contentData[this.lang].cvButtonTitle;
+
+		const scrollLeftBtn = this.section.querySelector('.scroll-left-btn');
+		const scrollRightBtn = this.section.querySelector('.scroll-right-btn');
+		scrollLeftBtn.title = this.contentData[this.lang].leftBtn;
+		scrollRightBtn.title = this.contentData[this.lang].rightBtn;
+
+		this.updateButtonVisibility();
 	};
 
 	appendNavigationButtons() {
 		const leftNavButton = document.createElement('img');
 		leftNavButton.src = this.leftArrow;
+		leftNavButton.title = this.contentData[this.lang].leftBtn;
 		leftNavButton.className = 'scroll-left-btn';
 		leftNavButton.style.display = 'none';
 
 		const rightNavButton = document.createElement('img');
 		rightNavButton.src = this.rightArrow;
+		rightNavButton.title = this.contentData[this.lang].rightBtn;
 		rightNavButton.className = 'scroll-right-btn';
 
 		rightNavButton.onclick = () => this.scrollSlides('right');
@@ -222,22 +248,22 @@ class About {
 				color: #fff;
 			}
 			.cv-button:hover { color: #00D7FF; }
-			@media screen and (max-width: 1000px) {
+			@media screen and (max-width: 900px) {
 			/* Adjustments for mobile screens */
 			.about-content {
 				flex-direction: column;
-				gap: 5px;
+				gap: 0;
 			}
-			.about-title { font-size: 28px; }
-			.about-content-left h2, .about-content-right h2 { font-size: 20px; }
+			.about-title { font-size: 24px; margin-bottom: 15px; }
+			.about-content-left h2, .about-content-right h2 { font-size: 18px; }
 			.about-content-left, .about-content-right {
 				width: 100%;
 				text-align: center;
+				padding: 5px;
 				font-size: 14px;
+				word-wrap: break-word;
 			}
-			.cv-button {
-				width: 80%; /* Make the button wider on mobile */
-			}
+			.cv-button { width: 80%; }
 			.scroll-left-btn, .scroll-right-btn { width: 35px; height: 35px; }
 		}
 		`;

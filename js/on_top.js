@@ -22,7 +22,13 @@ class ScrollOnTop {
 				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
 		});
 		this.styleScrollOnTopBtn();
-	};	
+	};
+
+	updateContent(lang) {
+		const btn = document.getElementById('scrollOnTopBtn');
+		if (lang === 'en') btn.title = 'Scroll to top';
+		else if (lang === 'fr') btn.title = 'Haut de page';
+	};
 
 	styleScrollOnTopBtn() {
 		const style = document.createElement('style');
