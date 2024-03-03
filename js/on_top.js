@@ -8,33 +8,19 @@ class ScrollOnTop {
 		const btn = document.createElement('button');
 		btn.title = 'Scroll to top';
 		btn.id = 'scrollOnTopBtn';
-		btn.innerHTML = `<img src="${this.scrollOnTopBtn}" 
-			alt="Scroll to top" 
-			style="width: 30px; height: 30px;">`;
+		btn.innerHTML = `<img src="${this.scrollOnTopBtn}" alt="Scroll to top" style="width: 30px; height: 30px;">`;
 		document.body.appendChild(btn);
 
 		btn.addEventListener('click', () => {
-			if (window.innerWidth > 800) {
-				$("#fullpage").data('fullpage').moveTo(1);
-			} else {
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
-				});
-			}
+			if (window.innerWidth > 800) $("#fullpage").data('fullpage').moveTo(1);
+			else window.scrollTo({ top: 0, behavior: 'smooth' });
 		});
-		btn.addEventListener('mouseover', () => {
-			app.mouseMarkEnabled = false;
-		});
+		btn.addEventListener('mouseover', () => { app.mouseMarkEnabled = false; });
 		btn.addEventListener('mouseout', () => {
 			if (app.sections[app.currentSection] !== 'projects' && 
 				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') 
-			{
-				app.mouseMarkEnabled = true;
-			}
+				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
 		});
-
 		this.styleScrollOnTopBtn();
 	};	
 
@@ -56,24 +42,15 @@ class ScrollOnTop {
 				padding: 15px;
 				border-radius: 50%;
 			}
-			#scrollOnTopBtn:hover {
-				background-color: #555;
-			}
+			#scrollOnTopBtn:hover { background-color: #555; }
 			@media (max-width: 1000px) {
-				#scrollOnTopBtn {
-					right: 10px;
-					padding: 10px;
-				}
+				#scrollOnTopBtn { right: 10px; padding: 10px; }
 			}
 			@media (max-width: 800px) {
-				#scrollOnTopBtn {
-					padding: 8px;
-				}
+				#scrollOnTopBtn { padding: 8px; }
 			}
 			@media (max-width: 600px) {
-				#scrollOnTopBtn {
-					bottom: 40px;
-				}
+				#scrollOnTopBtn { bottom: 40px; }
 			}
 		`;
 		document.head.appendChild(style);

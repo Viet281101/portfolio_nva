@@ -10,19 +10,14 @@ class About {
 	loadContentData() {
 		fetch('./js/data/about.json')
 			.then(response => response.json())
-			.then(data => {
-				this.contentData = data;
-				this.createAboutContent();
-			})
+			.then(data => { this.contentData = data; this.createAboutContent(); })
 			.catch(error => console.error('Error loading the about content:', error));
 	};
 
 	createAboutContent() {
 		if (Object.keys(this.contentData).length === 0) return;
-
 		this.lang = app.lang;
-
-		this.section.innerHTML = ''; // Clear any existing content
+		this.section.innerHTML = '';
 
 		const aboutTitle = document.createElement('div');
 		aboutTitle.className = 'about-title';
@@ -81,16 +76,11 @@ class About {
 		cvButton.className = 'cv-button';
 		cvButton.target = '_blank';
 		cvButton.title = this.contentData[this.lang].cvButtonTitle;
-		cvButton.addEventListener('mouseover', (event) => {
-			app.mouseMarkEnabled = false;
-		});
+		cvButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
 		cvButton.addEventListener('mouseout', (event) => {
 			if (app.sections[app.currentSection] !== 'projects' && 
 				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') 
-			{
-				app.mouseMarkEnabled = true;
-			}
+				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
 		});
 		return cvButton;
 	};
@@ -124,21 +114,11 @@ class About {
 				flex: 1;
 				padding: 10px;
 			}
-			.about-content-left {
-				order: 1;
-			}
-			.about-content-right {
-				order: 2;
-			}
-			.about-content-left-title, .about-content-right-title {
-				padding-bottom: 20px;
-			}
-			.about-content-left-content, .about-content-right-content {
-				text-align: left;
-			}
-			.about-content-left-content p, .about-content-right-content p {
-				font-size: 1.2em;
-			}
+			.about-content-left { order: 1; }
+			.about-content-right { order: 2; }
+			.about-content-left-title, .about-content-right-title { padding-bottom: 20px; }
+			.about-content-left-content, .about-content-right-content { text-align: left; }
+			.about-content-left-content p, .about-content-right-content p { font-size: 1.2em; }
 			.cv-button {
 				display: block;
 				margin: 20px auto;
@@ -151,9 +131,7 @@ class About {
 				text-decoration: none;
 				color: #fff;
 			}
-			.cv-button:hover {
-				color: #00D7FF;
-			}
+			.cv-button:hover { color: #00D7FF; }
 			@media screen and (max-width: 1000px) {
 				#about .about-content {
 					flex-direction: column;
@@ -167,9 +145,7 @@ class About {
 					width: 100%;
 					padding: 0;
 				}
-				.about-content-left {
-					padding-bottom: 20px;
-				}
+				.about-content-left { padding-bottom: 20px; }
 			}
 		`;
 		const head = document.head;

@@ -11,10 +11,7 @@ class Project {
 	loadContentData() {
 		fetch('./js/data/project_info.json')
 			.then(response => response.json())
-			.then(data => {
-				this.contentData = data;
-				this.createProjectContent(app.lang);
-			})
+			.then(data => { this.contentData = data; this.createProjectContent(app.lang); })
 			.catch(error => console.error('Error loading the project content:', error));
 	};
 
@@ -173,11 +170,9 @@ class Project {
 	applyProjectStyles() {
 		const css = `
 			@charset "UTF-8";
-			#projects {
-				// display: flex;
-				width: 100%;
-			}
+			#projects { width: 100%;}
 			.project-title {
+				margin-top: 70px;
 				font-weight: bold;
 				text-align: center;
 				padding: 30px;
@@ -223,9 +218,7 @@ class Project {
 				height: 100%;
 				object-fit: cover;
 			}
-			.card-content {
-				padding: 2px 16px;
-			}
+			.card-content { padding: 2px 16px; }
 			.title {
 				font-weight: bold;
 				text-align: center;
@@ -258,21 +251,15 @@ class Project {
 				cursor: pointer;
 				border-radius: 5px;
 			}
-			.btn button:hover {
-				background-color: #0056b3;
-			}
-			.nav-prev-slider:hover, .nav-next-slider:hover {
-				transform: scale(1.1);
-			}
+			.btn button:hover { background-color: #0056b3; }
+			.nav-prev-slider:hover, .nav-next-slider:hover { transform: scale(1.1); }
 			.project-summary {
 				text-align: center;
 				padding: 20px;
 				font-size: 24px;
 				color: #ffffff;
 			}
-			.project-summary strong {
-				color: #00D7FF;
-			}
+			.project-summary strong { color: #00D7FF; }
 		`;
 		const head = document.head;
 		const style = document.createElement('style');

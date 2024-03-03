@@ -11,10 +11,7 @@ class Home {
 	loadContentData() {
 		fetch('./js/data/home.json')
 			.then(response => response.json())
-			.then(data => {
-				this.contentData = data;
-				this.createHomeContent();
-			})
+			.then(data => { this.contentData = data; this.createHomeContent(); })
 			.catch(error => console.error('Error loading the home content:', error));
 	};
 
@@ -111,12 +108,8 @@ class Home {
 				align-items: center;
 				justify-content: center;
 			}
-			#avatar-loading {
-				font-size: 3em;
-			}
-			h1, .hero-description {
-				text-align: left;
-			}
+			#avatar-loading { font-size: 3em; }
+			h1, .hero-description { text-align: left; }
 			h1 {
 				font-size: 2.5em;
 				padding: 0;
@@ -152,12 +145,8 @@ class Home {
 					margin-top: 0;
 					margin-bottom: 0;
 				}
-				section {
-					padding: 0;
-				}
-				hero-title {
-					padding-top: 0;
-				}
+				section { padding: 0; }
+				hero-title { padding-top: 0; }
 				h1, .hero-description {
 					text-align: center;
 					font-size: 18px;

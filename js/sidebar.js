@@ -43,12 +43,8 @@ class Sidebar {
 			this.img.setAttribute('alt', item.text.toLowerCase() + " icon");
 
 			let textSpan = document.createElement('span');
-			if (this.lang === 'en') {
-				textSpan.textContent = item.text;
-			} else {
-				textSpan.textContent = item.texte;
-			}
-
+			if (this.lang === 'en') textSpan.textContent = item.text;
+			else textSpan.textContent = item.texte;
 			a.appendChild(this.img);
 			a.appendChild(textSpan);
 			li.appendChild(a);
@@ -63,24 +59,16 @@ class Sidebar {
 				}
 			});
 		});
-
-		this.label.addEventListener("mouseover", function() {
-			app.mouseMarkEnabled = false;
-		});
+		this.label.addEventListener("mouseover", function() { app.mouseMarkEnabled = false; });
 		this.label.addEventListener("mouseout", function() {
 			if (app.sections[app.currentSection] !== 'projects' && 
 				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') 
-			{
-				app.mouseMarkEnabled = true;
-			}
+				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
 		});
-
 		this.divSidebar.appendChild(h1);
 		this.divSidebar.appendChild(ul);
 		this.label.appendChild(input);
 		this.label.appendChild(this.divSidebar);
-
 		document.body.insertBefore(this.label, document.body.firstChild);
 	};
 
@@ -91,11 +79,8 @@ class Sidebar {
 			if (a) {
 				let textSpan = a.querySelector('span');
 				textSpan.textContent = "";
-				if (lang === 'en') {
-					textSpan.textContent = item.text;
-				} else {
-					textSpan.textContent = item.texte;
-				}
+				if (this.lang === 'en') textSpan.textContent = item.text;
+				else textSpan.textContent = item.texte;
 			}
 		});
 	};	
@@ -103,12 +88,10 @@ class Sidebar {
 	createConnectItems() {
 		let connectContainer = document.createElement('div');
 		connectContainer.classList.add('connect-container');
-
 		this.connectItems.forEach(item => {
 			let a = document.createElement('a');
 			let img = document.createElement('img');
 			img.setAttribute('loading', 'lazy');
-
 			a.setAttribute('href', item.href);
 			a.setAttribute('target', '_blank');
 			img.setAttribute('src', item.icon);
@@ -118,7 +101,6 @@ class Sidebar {
 			a.appendChild(img);
 			connectContainer.appendChild(a);
 		});
-
 		this.divSidebar.appendChild(connectContainer);
 		document.body.insertBefore(this.label, document.body.firstChild);
 	};
@@ -127,7 +109,6 @@ class Sidebar {
 		document.querySelectorAll('.sidebar a').forEach((navItem) => {
 			navItem.classList.remove('active');
 		});
-
 		const activeNavItem = document.getElementById('nav-' + this.sections[nextIndex - 1]);
 		if (activeNavItem) {
 			activeNavItem.classList.add('active');
@@ -155,13 +136,8 @@ class Sidebar {
 				-ms-box-sizing: border-box;
 				box-sizing: border-box;
 			}
-			.sidebar a.active {
-				background-color: #555;
-			}
-			.sidebar a:hover {
-				transform: scale(1.05);
-				transition: 0.3s;
-			}
+			.sidebar a.active { background-color: #555; }
+			.sidebar a:hover { transform: scale(1.05); transition: 0.3s; }
 			label div h1 {
 				text-align: center;
 				padding-bottom: 100px;
@@ -176,9 +152,7 @@ class Sidebar {
 				margin: 0;
 				padding: 0;
 			}
-			label div ul li {
-				list-style: none;
-			}
+			label div ul li { list-style: none; }
 			label div ul li a {
 				display: flex;
 				align-items: center;
@@ -207,32 +181,19 @@ class Sidebar {
 				justify-content: space-around;
 				align-items: center;
 			}
-			.connect-icon {
-				width: 35px;
-				height: 35px;
-			}
+			.connect-icon { width: 35px; height: 35px; }
 			@media screen and (max-width: 1000px) {
 				.sidebar {
 					width: 0;
 					visibility: hidden;
 				}
-				.content {
-					margin-left: 0;
-				}
+				.content { margin-left: 0; }
+			}
+			@media screen and (min-width: 1001px) {
+				section { margin-left: 220px; }
 			}
 		`;
 		document.head.appendChild(style);
-
-		var sectionStyle = document.createElement('style');
-		sectionStyle.type = 'text/css';
-		sectionStyle.innerHTML = `
-			@media screen and (min-width: 1001px) {
-				section {
-					margin-left: 220px;
-				}
-			}
-		`;
-		document.head.appendChild(sectionStyle);
 	};
 };
 

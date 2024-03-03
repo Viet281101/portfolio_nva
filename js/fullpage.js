@@ -8,18 +8,18 @@
 				this.animating = false;
 				this.options = options;
 				this.init();
-			}
+			};
 			init() {
 				this.initHTML();
 				this.bindEvent();
-			}
+			};
 			initHTML() {
 				this.$el.children().css({
 					'height': '100vh',
 					'transition': 'all 0.7s',
 					'-webkit-transition': 'all 0.7s'
 				});
-			}
+			};
 			bindEvent() {
 				var that = this;
 				var targetIndex, x0, y0, xDiff, yDiff, delta;
@@ -47,7 +47,32 @@
 					targetIndex = that.currIndex + (yDiff > 0 ? -1 : 1);
 					that.gotoTarget(targetIndex);
 				}, 16));
-			}
+				this.handleHorizontalScroll();
+			};
+			handleHorizontalScroll() {
+				const horizontalSections = this.$el.find('.fp-scroll-horizontal');
+				horizontalSections.each((index, section) => {
+					const slides = $(section).find('.slide');
+					let currentSlideIndex = 0;
+					$(section).find('.scroll-right-btn').on('click', () => {
+						if (currentSlideIndex < slides.length - 1) {
+							currentSlideIndex++;
+							this.moveToSlide(section, currentSlideIndex);
+						}
+					});
+					$(section).find('.scroll-left-btn').on('click', () => {
+						if (currentSlideIndex > 0) {
+							currentSlideIndex--;
+							this.moveToSlide(section, currentSlideIndex);
+						}
+					});
+				});
+			};
+			moveToSlide(section, slideIndex) {
+				const slides = $(section).find('.slide');
+				const newLeft = -(slideIndex * 100) + '%';
+				$(section).animate({scrollLeft: newLeft}, 700);
+			};
 			gotoTarget(targetIndex) {
 				var children = this.$el.children();
 				var that = this;
@@ -77,7 +102,7 @@
 				});
 
 				this.currIndex = targetIndex;
-			}
+			};
 			moveTo(sectionIndex) {
 				if (sectionIndex < 1 || sectionIndex > this.$el.children().length) {
 					console.error('Section index out of bounds');
@@ -85,8 +110,8 @@
 				}
 				var targetIndex = sectionIndex - 1;
 				this.gotoTarget(targetIndex);
-			}
-		}
+			};
+		};
 
 		var utils = {
 			throttle:function(callback,delayTime,maxTime){

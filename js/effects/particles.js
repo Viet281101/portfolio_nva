@@ -207,7 +207,7 @@ class Effect {
 const effect = new Effect(canvas, ctx);
 
 let lastFrameTime = Date.now();
-function animate() {
+function animateParticles() {
 	const now = Date.now();
 	const elapsed = now - lastFrameTime;
 	if (elapsed > (1000 / 30) && app.animationActive) {
@@ -215,6 +215,6 @@ function animate() {
 		effect.handleParticles(ctx);
 		lastFrameTime = now;
 	}
-	requestAnimationFrame(animate);
+	requestAnimationFrame(animateParticles);
 };
 

@@ -3,8 +3,7 @@ class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
 		this.jsFiles = [
-			'load_progress.js',
-			'background.js',
+			'load_progress.js', 'background.js',
 			'effects/lightslider.js',
 			'effects/particles.js',
 			'sidebar.js', 'nav_bar.js',
@@ -29,7 +28,6 @@ class MainApp {
 		this.mouseMarkEnabled = true;
 		this.animationActive = true;
 		this.lang = 'en';
-
 		this.loadFiles();
 		this.addEventListeners();
 	};
@@ -39,13 +37,11 @@ class MainApp {
 		icon_page.rel = 'shortcut icon';
 		icon_page.href = './assets/icon.png';
 		document.head.appendChild(icon_page);
-
 		let style = document.createElement('link');
 		style.rel = 'stylesheet';
 		style.type = 'text/css';
 		style.href = './style/style.css';
 		document.head.appendChild(style);
-
 		for (let i = 0; i < this.jsFiles.length; i++) {
 			let script = document.createElement('script');
 			script.src = './js/' + this.jsFiles[i];
@@ -58,19 +54,12 @@ class MainApp {
 	loadFullPage() {
 		if (window.innerWidth > 1000) {
 			document.body.style.overflow = 'hidden';
-
 			let lightslider = document.createElement('link');
 			lightslider.rel = 'stylesheet';
 			lightslider.type = 'text/css';
 			lightslider.href = './style/lightslider.css';
 			document.head.appendChild(lightslider);
-
 			$("#fullpage").fullpage({
-				onLeave: (index, nextIndex, direction) => {
-					console.log("Leaving section: " + index);
-					console.log("Going to section: " + nextIndex);
-					console.log("Direction: " + direction);
-				},
 				afterLoad: (anchorLink, index) => {
 					console.log("Loaded section: " + index);
 					this.currentSection = index - 1;
@@ -86,16 +75,12 @@ class MainApp {
 			});
 		} else {
 			document.body.style.overflowX = 'hidden';
-			$("#fullpage").fullpage({
-				autoScrolling: false,
-				scrollBar: true,
-			});
+			$("#fullpage").fullpage({ autoScrolling: false, scrollBar: true, fitToSection: false});
 		}
 	};
 
 	updateLanguage(lang) {
-		this.lang = lang;
-		document.documentElement.lang = lang;
+		document.documentElement.lang = lang; this.lang = lang;
 		if (this.sidebar) this.sidebar.updateLanguage(lang);
 		if (this.home) this.home.updateContent(lang);
 		if (this.about) this.about.updateContent(lang);
@@ -107,10 +92,7 @@ class MainApp {
 		if (this.sections[index - 1] === 'projects' || 
 			this.sections[index - 1] === 'home' || 
 			this.sections[index - 1] === 'courses') this.mouseMarkEnabled = this.animationActive = false;
-		else {
-			this.mouseMarkEnabled = this.animationActive = true;
-			animate();
-		}
+		else this.mouseMarkEnabled = this.animationActive = true; animateParticles();
 	};
 
 	addEventListeners() {
@@ -121,12 +103,8 @@ class MainApp {
 			const fullpageApi = $('#fullpage').data('fullpage');
 			if (!fullpageApi) return;
 			switch (event.key) {
-				case 'ArrowUp':
-					this.moveSectionUp();
-					break;
-				case 'ArrowDown':
-					this.moveSectionDown();
-					break;
+				case 'ArrowUp': this.moveSectionUp(); break;
+				case 'ArrowDown': this.moveSectionDown(); break;
 			}
 		});
 	};
@@ -189,7 +167,7 @@ class MainApp {
 		this.contact = new Contact();
 		this.createContents();
 		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;
-		animate();
+		animateParticles();
 	};
 };
 
