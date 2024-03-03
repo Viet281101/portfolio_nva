@@ -106,9 +106,25 @@ class MainApp {
 			switch (event.key) {
 				case 'ArrowUp': this.moveSectionUp(); break;
 				case 'ArrowDown': this.moveSectionDown(); break;
+				case 'ArrowLeft': if(this.isHorizontallyScrollSection()) {this.scrollSlideLeft();} break;
+				case 'ArrowRight': if(this.isHorizontallyScrollSection()) {this.scrollSlideRight();} break;
 				default: break;
 			}
 		});
+	};
+
+	isHorizontallyScrollSection() {
+		if (window.innerWidth > 1000) {
+			if (this.sections[this.currentSection] === 'about') return true;
+		} return false;
+	};
+
+	scrollSlideLeft() {
+		if (this.about && this.sections[this.currentSection] === 'about') this.about.scrollSlides('left');
+	};
+
+	scrollSlideRight() {
+		if (this.about && this.sections[this.currentSection] === 'about') this.about.scrollSlides('right');
 	};
 
 	moveSectionUp() {

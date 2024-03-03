@@ -68,6 +68,7 @@ class Project {
 		let img = document.createElement('img');
 		img.src = './assets/project/' + projectData.image + '.png';
 		img.alt = projectName;
+		img.loading = 'lazy';
 		project_image.appendChild(img);
 
 		// Content
@@ -102,11 +103,7 @@ class Project {
 
 		return project;
 	};
-
-	updateContent(lang) {
-		this.createProjectContent(lang);
-	};
-
+	updateContent(lang) { this.createProjectContent(lang); };
 	setupCarouselOptions() {
 		$(document).ready(function() {
 			$('.slider').owlCarousel({
@@ -116,10 +113,8 @@ class Project {
 				autoplayTimeout: 3000,
 				autoplayHoverPause: true,
 				responsive: {
-					0: { items: 1 },
-					600: { items: 2 },
-					1400: { items: 3 },
-					1800: { items: 4 },
+					0: { items: 1 }, 600: { items: 2 },
+					1400: { items: 3 }, 1800: { items: 4 },
 				},
 			});
 	  	});
@@ -150,19 +145,15 @@ class Project {
 		$(document).ready(() => {
 			$('.owl-prev').html('<img title="Scroll Left" class="nav-prev-slider" src="./assets/icons/' + this.prev_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
-				"top": "50%",
-				"left": "-40px",
+				"top": "50%", "left": "-40px",
 				"transform": "translateY(-50%)",
-				"border": "none",
-				"background": "none"
+				"border": "none", "background": "none"
 			});
 			$('.owl-next').html('<img title="Scroll Right" class="nav-next-slider" src="./assets/icons/' + this.next_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute",
-				"top": "50%",
-				"right": "-40px",
+				"top": "50%", "right": "-40px",
 				"transform": "translateY(-50%)",
-				"border": "none",
-				"background": "none"
+				"border": "none", "background": "none"
 			});
 		});
 	};
@@ -208,16 +199,8 @@ class Project {
 				justify-content: center;
 				align-items: center;
 			}
-			.img {
-				width: 100%;
-				height: 160px;
-				overflow: hidden;
-			}
-			.img img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+			.img { width: 100%; height: 160px; overflow: hidden; }
+			.img img { width: 100%; height: 100%; object-fit: cover; }
 			.card-content { padding: 2px 16px; }
 			.title {
 				font-weight: bold;
@@ -236,10 +219,7 @@ class Project {
 				padding: 5px;
 				overflow-wrap: break-word;
 			}
-			.btn {
-				text-align: center;
-				margin-top: 10px;
-			}
+			.btn { text-align: center; margin-top: 10px; }
 			.btn button {
 				border: 1px solid #f1f1f1;
 				outline: none;

@@ -37,6 +37,7 @@ class About {
 		this.appendNavigationButtons();
 		slidesContainer.addEventListener('scroll', () => this.updateButtonVisibility());
 
+		this.bindTouchEvents();
 		this.applyAboutStyles();
 	};
 
@@ -101,6 +102,18 @@ class About {
 		return cvButton;
 	};
 
+	bindTouchEvents() {
+		const slidesContainer = this.section.querySelector('.slides-container');
+		let touchStartX = 0;
+		let touchEndX = 0;
+		slidesContainer.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, false);
+		slidesContainer.addEventListener('touchend', (e) => { touchEndX = e.changedTouches[0].clientX; this.handleTouchMove(touchStartX, touchEndX); }, false);
+	};
+	handleTouchMove(startX, endX) {
+		if (startX - endX > 50) this.scrollSlides('right');
+		else if (endX - startX > 50) this.scrollSlides('left');
+	};
+
 	updateContent(lang) {
 		this.lang = lang;
 		const aboutTitle = this.section.querySelector('.about-title');
@@ -133,12 +146,14 @@ class About {
 	appendNavigationButtons() {
 		const leftNavButton = document.createElement('img');
 		leftNavButton.src = this.leftArrow;
+		leftNavButton.loading = 'lazy';
 		leftNavButton.title = this.contentData[this.lang].leftBtn;
 		leftNavButton.className = 'scroll-left-btn';
 		leftNavButton.style.display = 'none';
 
 		const rightNavButton = document.createElement('img');
 		rightNavButton.src = this.rightArrow;
+		rightNavButton.loading = 'lazy';
 		rightNavButton.title = this.contentData[this.lang].rightBtn;
 		rightNavButton.className = 'scroll-right-btn';
 
@@ -181,31 +196,25 @@ class About {
 
 	applyAboutStyles() {
 		const css = `
-			/* About section and slide styles */
 			.slides-container {
 				display: flex;
 				overflow-x: hidden;
 				scroll-behavior: smooth;
-				width: 100%;
-				height: 100%;
+				width: 100%; height: 100%;
 			}
 			.slide {
-				width: 100%;
-				height: 100%;
+				width: 100%; height: 100%;
 				flex-shrink: 0;
 				display: flex;
 				overflow: hidden;
 				justify-content: center;
-				align-items: center;
-				text-align: center;
+				align-items: center; text-align: center;
 			}
-			/* Styles for navigation buttons */
 			.scroll-left-btn, .scroll-right-btn {
 				position: absolute;
 				top: 50%;
 				transform: translateY(-50%);
-				width: 50px;
-				height: 50px;
+				width: 50px; height: 50px;
 				cursor: pointer;
 			}
 			.scroll-left-btn { left: -35px; }
@@ -237,23 +246,18 @@ class About {
 			}
 			.cv-button {
 				display: block;
-				margin: 20px;
-				padding: 10px 20px;
+				margin: 20px; padding: 10px 20px;
 				text-transform: uppercase;
 				font-size: 24px;
 				text-align: center;
-				border-radius: 5px;
-				border: 2px solid #00D7FF;
+				border-radius: 5px; border: 2px solid #00D7FF;
 				text-decoration: none;
 				color: #fff;
 			}
 			.cv-button:hover { color: #00D7FF; }
 			@media screen and (max-width: 900px) {
 			/* Adjustments for mobile screens */
-			.about-content {
-				flex-direction: column;
-				gap: 0;
-			}
+			.about-content { flex-direction: column; gap: 0; }
 			.about-title { font-size: 24px; margin-bottom: 15px; }
 			.about-content-left h2, .about-content-right h2 { font-size: 18px; }
 			.about-content-left, .about-content-right {
