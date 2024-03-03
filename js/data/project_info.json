@@ -60,6 +60,7 @@
 			}
 		},
 		"button" : "See More",
+		"button_title": "See more about ",
 		"summary": "Currently showcasing {0} projects."
 	},
 	"fr" : {
@@ -122,6 +123,7 @@
 			}
 		},
 		"button" : "Voir Plus",
+		"button_title": "Voir plus sur ",
 		"summary": "Actuellement, {0} projets sont présentés."
 	}
 }

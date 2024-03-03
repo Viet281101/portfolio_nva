@@ -1,5 +1,4 @@
 // Author: Viet NGUYEN
-// Dependencies: Sidebar, LangBox, Background, Particles, Lightslider, Home, About, Project, Courses, Contact
 class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
@@ -8,10 +7,8 @@ class MainApp {
 			'background.js',
 			'effects/lightslider.js',
 			'effects/particles.js',
-			'sidebar.js',
-			'nav_bar.js',
-			'lang_box.js',
-			'on_top.js',
+			'sidebar.js', 'nav_bar.js',
+			'lang_box.js', 'on_top.js',
 			'contents/home.js',
 			'contents/about.js',
 			'contents/project.js',
@@ -99,23 +96,19 @@ class MainApp {
 	updateLanguage(lang) {
 		this.lang = lang;
 		document.documentElement.lang = lang;
-		this.sidebar.updateLanguage(lang);
-		this.home.updateContent(lang);
-		this.about.updateContent(lang);
-		this.project.updateContent(lang);
+		if (this.sidebar) this.sidebar.updateLanguage(lang);
+		if (this.home) this.home.updateContent(lang);
+		if (this.about) this.about.updateContent(lang);
+		if (this.project) this.project.updateContent(lang);
 		if (this.navBar) this.navBar.updateLanguage(lang);
 	};
 
 	handleSectionChange(index) {
 		if (this.sections[index - 1] === 'projects' || 
 			this.sections[index - 1] === 'home' || 
-			this.sections[index - 1] === 'courses') 
-		{
-			this.mouseMarkEnabled = false;
-			this.animationActive = false;
-		} else {
-			this.mouseMarkEnabled = true;
-			this.animationActive = true;
+			this.sections[index - 1] === 'courses') this.mouseMarkEnabled = this.animationActive = false;
+		else {
+			this.mouseMarkEnabled = this.animationActive = true;
 			animate();
 		}
 	};
@@ -124,12 +117,35 @@ class MainApp {
 		document.addEventListener('DOMContentLoaded', this.initializeComponents.bind(this));
 		window.addEventListener('resize', this.onResize.bind(this));
 		window.addEventListener('scroll', this.onScroll.bind(this));
+		document.addEventListener('keydown', (event) => {
+			const fullpageApi = $('#fullpage').data('fullpage');
+			if (!fullpageApi) return;
+			switch (event.key) {
+				case 'ArrowUp':
+					this.moveSectionUp();
+					break;
+				case 'ArrowDown':
+					this.moveSectionDown();
+					break;
+			}
+		});
+	};
+
+	moveSectionUp() {
+		const fullpageApi = $('#fullpage').data('fullpage');
+		let targetIndex = fullpageApi.currIndex - 1;
+		if (targetIndex >= 0) { fullpageApi.moveTo(targetIndex + 1); }
+	};
+	
+	moveSectionDown() {
+		const fullpageApi = $('#fullpage').data('fullpage');
+		let targetIndex = fullpageApi.currIndex + 1;
+		if (targetIndex < $('#fullpage').children().length) { fullpageApi.moveTo(targetIndex + 1); }
 	};
 
 	onResize() {
 		this.loadFullPage();
-		this.mouseMarkEnabled = window.innerWidth >= 768;
-		this.animationActive = window.innerWidth >= 768;	
+		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;	
 		if (this.navBar) this.navBar.updateMenuButtonVisibility();
 	};
 
@@ -138,52 +154,43 @@ class MainApp {
 		scrollBtn.style.display = window.scrollY > 150 ? 'block' : 'none';
 	};
 
-	initializeComponents() {
-		this.loadFullPage();
-
-		this.sidebar = new Sidebar();
-		this.sidebar.createSidebar();
-		this.sidebar.updateActiveNavItem(1);
-		this.sidebar.createConnectItems();
-		this.sidebar.applyStyles();
-
-		if (window.innerWidth < 800) {
-			this.navBar = new NavBar();
-			this.navBar.createNavBar();
+	createContents() {
+		if (this.sidebar) {
+			this.sidebar.createSidebar();
+			this.sidebar.updateActiveNavItem(1);
+			this.sidebar.createConnectItems();
+			this.sidebar.applyStyles();
+		}
+		if (this.background) this.background.init();
+		if (this.langBox) this.langBox.createLanguageSelector();
+		if (this.btnOnTop) this.btnOnTop.createScrollOnTopBtn();
+		if (this.navBar) {
+			this.navBar.createNavBar(); 
 			this.navBar.updateMenuButtonVisibility();
 		}
+		if (this.home) this.home.createHomeContent();
+		if (this.about) this.about.createAboutContent();
+		if (this.project) this.project.createProjectContent();
+		if (this.courses) this.courses.createCoursesContent();
+		if (this.contact) this.contact.createContactContent();
+	};
 
+	initializeComponents() {
+		this.loadFullPage();
+		this.sidebar = new Sidebar();
+		if (window.innerWidth < 800) this.navBar = new NavBar();
 		this.background = new Background();
-		this.background.init();
-
 		this.langBox = new LangBox();
-		this.langBox.createLanguageSelector();
-
-		this.btnOnTop = new scrollOnTop();
-		this.btnOnTop.createScrollOnTopBtn();
-
+		this.btnOnTop = new ScrollOnTop();
 		this.home = new Home();
-		this.home.createHomeContent();
-
 		this.about = new About();
-		this.about.createAboutContent();
-
 		this.project = new Project();
-		this.project.createProjectContent();
-
 		this.courses = new Courses();
-		this.courses.createCoursesContent();
-
 		this.contact = new Contact();
-		this.contact.createContactContent();
-
-		if (window.innerWidth < 768) {
-			this.mouseMarkEnabled = false;
-			this.animationActive = false;
-		}
+		this.createContents();
+		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;
 		animate();
 	};
 };
 
 const app = new MainApp();
-

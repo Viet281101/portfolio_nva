@@ -208,8 +208,8 @@ class Sidebar {
 				align-items: center;
 			}
 			.connect-icon {
-				width: 30px;
-				height: 30px;
+				width: 35px;
+				height: 35px;
 			}
 			@media screen and (max-width: 1000px) {
 				.sidebar {

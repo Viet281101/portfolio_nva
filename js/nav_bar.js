@@ -36,7 +36,7 @@ class NavBar {
 	};
 
 	updateMenuButtonVisibility() {
-		if (window.innerWidth < 768) {
+		if (window.innerWidth < 800) {
 			this.navIcon.style.display = 'block';
 		} else {
 			this.navIcon.style.display = 'none';
@@ -57,18 +57,21 @@ class NavBar {
 		this.navIcon.addEventListener('click', () => {
 			navBar.style.width = '100%';
 			document.getElementById('close-nav-icon').style.display = 'block';
+			document.body.style.overflowY = 'hidden';
 			this.navIcon.style.display = 'none';
 		});
 
 		document.getElementById('close-nav-icon').addEventListener('click', () => {
 			navBar.style.width = '0';
 			this.navIcon.style.display = 'block';
+			document.body.style.overflowY = 'auto';
 			document.getElementById('close-nav-icon').style.display = 'none';
 		});
 
 		navBar.querySelectorAll('a').forEach(a => {
 			a.addEventListener('click', (e) => {
 				e.preventDefault();
+				document.body.style.overflowY = 'auto';
 				const targetSection = document.querySelector(a.getAttribute('href'));
 				window.scrollTo({
 					top: targetSection.offsetTop,
@@ -119,9 +122,10 @@ class NavBar {
 				transition: 0.3s;
 			}
 			#nav-bar a img {
+				padding-left: 10px;
 				width:60px;
 				height:60px;
-				margin-right:20px;
+				margin-right:40px;
 			}
 			#nav-bar a:hover {
 				color: #f1f1f1;

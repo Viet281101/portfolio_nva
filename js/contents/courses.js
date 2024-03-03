@@ -2,10 +2,15 @@
 class Courses {
 	constructor() {
 		this.section = document.getElementById('courses');
+		this.leftArrow = 'assets/icons/arrow_left.png';
+		this.rightArrow = 'assets/icons/arrow_right.png';
 	};
 
 	createCoursesContent() {
 		this.section.innerHTML = '';
+
+
+
 		this.applyCoursesStyles();
 	};
 

@@ -1,7 +1,7 @@
 
-class scrollOnTop {
+class ScrollOnTop {
 	constructor() {
-		this.scrollOnTopBtn = "./assets/icons/up_arrow.png";
+		this.scrollOnTopBtn = "./assets/icons/nav_up.png";
 	};
 
 	createScrollOnTopBtn() {

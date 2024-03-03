@@ -3,8 +3,8 @@ class Project {
 	constructor() {
 		this.section = document.getElementById('projects');
 		this.contentData = {};
-		this.prev_slide = 'left_arrow';
-		this.next_slide = 'right_arrow';
+		this.prev_slide = 'nav_left';
+		this.next_slide = 'nav_right';
 		this.loadContentData();
 	};
 
@@ -49,7 +49,7 @@ class Project {
 		let slider_owl_carousel = document.createElement('div');
 		slider_owl_carousel.className = "slider owl-carousel";
 		Object.entries(data.projects).forEach(([projectName, projectData]) => {
-			let projectElement = this.createProjectElement(projectName, projectData, data.button);
+			let projectElement = this.createProjectElement(projectName, projectData, data.button, data.button_title);
 			slider_owl_carousel.appendChild(projectElement);
 		});
 		this.section.appendChild(slider_owl_carousel);
@@ -61,7 +61,7 @@ class Project {
 		this.section.appendChild(projectSummary);
 	};
 
-	createProjectElement(projectName, projectData, buttonText) {
+	createProjectElement(projectName, projectData, buttonText, buttonTitle) {
 		let project = document.createElement('div');
 		project.className = "card";
 
@@ -92,7 +92,7 @@ class Project {
 		btn.className = "btn";
 		let button = document.createElement("button");
 		button.innerHTML = buttonText;
-		button.title = "See more about " + projectName;
+		button.title = buttonTitle + projectName;
 
 		card_content.appendChild(title);
 		card_content.appendChild(sub_title);

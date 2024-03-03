@@ -1,7 +1,7 @@
 /* General styles */
 @charset "utf-8";
 @font-face {
-	font-family:"Pixel";
+	font-family:'Pixel';
 	src: url("../assets/Pixel_Font_free.ttf") format("truetype");
 }
 body {
@@ -10,7 +10,7 @@ body {
 	padding: 0;
 	background: black;
 	min-height: 100vh;
-	font-family:"Pixel";
+	font-family:'Pixel', sans-serif;
 	-webkit-user-select: none;
 	user-select: none;
 }

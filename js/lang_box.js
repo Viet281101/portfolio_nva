@@ -64,7 +64,7 @@ class LangBox {
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
-				background-image: url('assets/icons/down_arrow.png');
+				background-image: url('assets/icons/nav_down.png');
 				background-repeat: no-repeat;
 				background-position: right 3px center;
 				background-size: 20px;
