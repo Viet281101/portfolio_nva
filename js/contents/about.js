@@ -5,6 +5,17 @@ class About {
 		this.myCV = './assets/doc/Viet_Nguyen_CV.pdf';
 		this.leftArrow = './assets/icons/arrow_left.png';
 		this.rightArrow = './assets/icons/arrow_right.png';
+		this.gitHubStats = {
+			url : 'https://github-readme-stats.vercel.app/api/top-langs/?',
+			user : 'username=viet281101',
+			theme : '&theme=transparent',
+			layout : '&layout=compact',
+			langs : '&langs_count=14',
+			border: '&hide_border=true',
+			custom_title: '&custom_title=Programming Languages',
+			card_width: '&card_width=300',
+			hide_title: '&hide_title=true'
+		};
 		this.contentData = {};
 		this.loadContentData();
 	};
@@ -35,12 +46,44 @@ class About {
 		const slide2Title = document.createElement('h1');
 		slide2Title.textContent = this.contentData[this.lang].title2;
 		slide2Title.className = 'about-title-2';
-		const slide2ContentText = document.createElement('p');
-		slide2ContentText.textContent = this.contentData[this.lang].content2;
-		slide2ContentText.className = 'about-content-2';
-		
 		slide2Content.appendChild(slide2Title);
-		slide2Content.appendChild(slide2ContentText);
+		
+		const slide2SkillsContainer = document.createElement('div');
+		slide2SkillsContainer.className = 'skills-container';
+
+		const technicalSkills = document.createElement('div');
+		technicalSkills.className = 'technical-skills';
+		const technicalSkillsTitle = document.createElement('h2');
+		technicalSkillsTitle.textContent = this.contentData[this.lang].skillsTitle;
+		technicalSkills.appendChild(technicalSkillsTitle);
+
+		const topLangImg = document.createElement('img');
+		topLangImg.src = `${this.gitHubStats.url}${this.gitHubStats.user}${this.gitHubStats.theme}${this.gitHubStats.layout}${this.gitHubStats.langs}${this.gitHubStats.border}${this.gitHubStats.custom_title}${this.gitHubStats.card_width}${this.gitHubStats.hide_title}`;
+		topLangImg.alt = 'Top Languages';
+		topLangImg.loading = 'lazy';
+		technicalSkills.appendChild(topLangImg);
+		topLangImg.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
+		topLangImg.addEventListener('mouseout', (event) => { app.mouseMarkEnabled = true; });
+
+		const softSkills = document.createElement('div');
+		softSkills.className = 'soft-skills';
+		const softSkillsTitle = document.createElement('h2');
+		softSkillsTitle.textContent = this.contentData[this.lang].skillsTitle2;
+		softSkills.appendChild(softSkillsTitle);
+
+		const softSkillsList = document.createElement('ul');
+		for (const skillKey in this.contentData[this.lang].skills) {
+			const skillValue = this.contentData[this.lang].skills[skillKey];
+			const skillItem = document.createElement('li');
+			skillItem.textContent = skillValue;
+			softSkillsList.appendChild(skillItem);
+		}
+		softSkills.appendChild(softSkillsList);
+
+		slide2SkillsContainer.appendChild(technicalSkills);
+		slide2SkillsContainer.appendChild(softSkills);
+		slide2Content.appendChild(slide2SkillsContainer);
+
 		slide2.appendChild(slide2Content);
 
 		slidesContainer.appendChild(slide1);
@@ -154,8 +197,20 @@ class About {
 
 		const slide2Title = this.section.querySelector('.about-title-2');
 		slide2Title.textContent = this.contentData[this.lang].title2;
-		const slide2ContentText = this.section.querySelector('.about-content-2');
-		slide2ContentText.textContent = this.contentData[this.lang].content2;
+
+		const technicalSkillsTitle = this.section.querySelector('.technical-skills h2');
+		technicalSkillsTitle.textContent = this.contentData[this.lang].skillsTitle;
+		const softSkillsTitle = this.section.querySelector('.soft-skills h2');
+		softSkillsTitle.textContent = this.contentData[this.lang].skillsTitle2;
+
+		const softSkillsList = this.section.querySelector('.soft-skills ul');
+		softSkillsList.innerHTML = '';
+		for (const skillKey in this.contentData[this.lang].skills) {
+			const skillValue = this.contentData[this.lang].skills[skillKey];
+			const skillItem = document.createElement('li');
+			skillItem.textContent = skillValue;
+			softSkillsList.appendChild(skillItem);
+		}
 
 		this.updateButtonVisibility();
 	};
@@ -214,54 +269,46 @@ class About {
 	applyAboutStyles() {
 		const css = `
 			.slides-container {
-				display: flex;
-				overflow-x: hidden;
+				display: flex; overflow-x: hidden;
 				scroll-behavior: smooth;
 				width: 100%; height: 100%;
 			}
 			.slide {
-				width: 100%; height: 100%;
-				flex-shrink: 0;
-				display: flex;
-				overflow: hidden;
-				justify-content: center;
-				align-items: center; text-align: center;
+				width: 100%; height: 100%; flex-shrink: 0;
+				display: flex; overflow: hidden;
+				justify-content: center; align-items: center; text-align: center;
 			}
 			.scroll-left-btn, .scroll-right-btn {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 50px; height: 50px;
-				cursor: pointer;
+				position: absolute; top: 50%; transform: translateY(-50%);
+				width: 60px; height: 60px; cursor: pointer;
 			}
 			.scroll-left-btn:hover, .scroll-right-btn:hover { transform: translateY(-50%) scale(1.1);}
 			.scroll-left-btn { left: -35px; }
 			.scroll-right-btn { right: -35px; }
 			.slides-container::-webkit-scrollbar { display: none; }
-			.about-title {
-				text-align: center;
-				margin-bottom: 40px;
-				font-size: 44px;
-				color: #fff;
+			.about-title, .about-title-2 { 
+				text-align: center; margin-bottom: 40px; 
+				font-size: 44px; color: #fff; 
 			}
 			.about-content {
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
-				align-items: center;
-				padding: 20px;
-				gap: 20px;
+				display: flex; flex-direction: column;
+				justify-content: space-around; align-items: center;
+				padding: 20px; gap: 20px;
 			}
 			.about-content-left, .about-content-right {
-				flex-basis: 50%;
-				padding: 10px;
-				font-size: 18px;
-				color: #fff;
+				flex-basis: 50%; padding: 10px;
+				font-size: 18px; color: #fff;
 			}
-			.about-content-left h2, .about-content-right h2 {
-				margin-bottom: 10px;
-				font-size: 26px;
+			.about-content-left h2, .about-content-right h2 { margin-bottom: 10px; font-size: 26px; }
+			.skills-container { display: flex; justify-content: center; width: 100%; }
+			.technical-skills, .soft-skills {
+				display: flex; flex-direction: column; justify-content: center;
+				align-items: center; max-width: 50%;
+				gap: 10px; padding: 40px;
 			}
+			.technical-skills h2, .soft-skills h2 { font-size: 26px; margin-bottom: 20px; text-shadow: 2px 2px 2px #0056b3; }
+			.skills-container ul { padding-left: 20px; list-style: none; }
+			.skills-container li { font-size: 24px; text-align: left; padding: 5px; }
 			.cv-button {
 				display: block;
 				margin: 20px; padding: 10px 20px;
@@ -276,19 +323,20 @@ class About {
 			@media screen and (max-width: 900px) {
 			/* Adjustments for mobile screens */
 			.about-content { flex-direction: column; gap: 0; }
-			.about-title { font-size: 24px; margin-bottom: 15px; }
-			.about-content-left h2, .about-content-right h2 { font-size: 18px; }
+			.about-title, .about-title-2 { font-size: 24px; margin-bottom: 15px; }
+			.about-content-left h2, .about-content-right h2 { font-size: 20px; }
 			.about-content-left, .about-content-right {
-				width: 100%;
-				text-align: center;
-				padding: 5px;
-				font-size: 14px;
+				width: 100%; text-align: center;
+				padding: 5px; font-size: 14px;
 				word-wrap: break-word;
 			}
+			.skills-container { flex-direction: column; gap: 0; padding: 0; max-width: 100%; }
+			.technical-skills h2, .soft-skills h2 { font-size: 22px; margin-bottom: 0; border-bottom: 1px solid #00D7FF; }
+			.technical-skills, .soft-skills { max-width: 100%; justify-content: center; padding: 0;}
+			.skills-container li { font-size: 16px; margin-bottom: 5px; }
 			.cv-button { width: 80%; }
-			.scroll-left-btn, .scroll-right-btn { width: 40px; height: 40px; }
-		}
-		`;
+			.scroll-left-btn, .scroll-right-btn { width: 40px; height: 40px; padding: 0; }
+		}`;
 		const head = document.head;
 		const style = document.createElement('style');
 		style.type = 'text/css';

@@ -34,20 +34,15 @@ class MainApp {
 
 	loadFiles() {
 		let icon_page = document.createElement('link');
-		icon_page.rel = 'shortcut icon';
-		icon_page.href = './assets/icon.png';
+		icon_page.rel = 'shortcut icon'; icon_page.href = './assets/icon.png';
 		document.head.appendChild(icon_page);
 		let style = document.createElement('link');
-		style.rel = 'stylesheet';
-		style.type = 'text/css';
-		style.href = './style/style.css';
-		document.head.appendChild(style);
+		style.rel = 'stylesheet'; style.type = 'text/css'; 
+		style.href = './style/style.css'; document.head.appendChild(style);
 		for (let i = 0; i < this.jsFiles.length; i++) {
 			let script = document.createElement('script');
-			script.src = './js/' + this.jsFiles[i];
-			script.setAttribute("type", "text/javascript");
-			script.defer = true;
-			document.head.appendChild(script);
+			script.src = './js/' + this.jsFiles[i]; script.setAttribute("type", "text/javascript");
+			script.defer = true; document.head.appendChild(script);
 		}
 	};
 
@@ -61,7 +56,6 @@ class MainApp {
 			document.head.appendChild(lightslider);
 			$("#fullpage").fullpage({
 				afterLoad: (anchorLink, index) => {
-					console.log("Loaded section: " + index);
 					this.currentSection = index - 1;
 					if (this.sidebar) this.sidebar.updateActiveNavItem(index);
 					if (this.background) this.background.updateBackgroundForSection(index);
@@ -173,8 +167,8 @@ class MainApp {
 
 	initializeComponents() {
 		this.loadFullPage();
-		this.sidebar = new Sidebar();
-		if (window.innerWidth < 800) this.navBar = new NavBar();
+		if (window.innerWidth < 830) this.navBar = new NavBar();
+		else this.sidebar = new Sidebar();
 		this.background = new Background();
 		this.langBox = new LangBox();
 		this.btnOnTop = new ScrollOnTop();

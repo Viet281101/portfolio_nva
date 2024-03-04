@@ -126,8 +126,7 @@ class Sidebar {
 				width: 220px;
 				background-color: #333;
 				padding-top: 20px;
-				left: 0;
-				top: 0;
+				left: 0; top: 0;
 				overflow-x: hidden;
 				transition: 0.5s;
 				z-index: 10;
@@ -144,34 +143,24 @@ class Sidebar {
 			}
 			label div ul li a img {
 				transform: scale(0.7);
-				padding: 0;
-				margin-right: 3px;
+				padding: 0; margin-right: 3px;
 			}
 			label div ul {
 				list-style-type: none;
-				margin: 0;
-				padding: 0;
+				margin: 0; padding: 0;
 			}
 			label div ul li { list-style: none; }
 			label div ul li a {
-				display: flex;
-				align-items: center;
-				padding-top: 14px;
-				padding-bottom: 14px;
+				display: flex; align-items: center;
+				padding-top: 14px; padding-bottom: 14px;
 				text-decoration: none;
 				color: white;
-				text-align: left;
-				vertical-align: middle;
-				width: 100%;
-				font-size: 24px;
+				text-align: left; vertical-align: middle;
+				width: 100%; font-size: 24px;
 				border-top: 1.5px solid #555;
 				border-bottom: 1.5px solid #555;
 			}
-			label input {
-				display: none;
-				visibility: hidden;
-				appearance: none;
-			}
+			label input { display: none; visibility: hidden; appearance: none; }
 			.connect-container {
 				position: absolute;
 				bottom: 30px;
