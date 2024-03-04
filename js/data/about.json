@@ -9,7 +9,17 @@
 		"cvButton": "Resume",
 		"cvButtonTitle": "Download my CV",
 		"leftBtn": "Scroll Left",
-		"rightBtn": "Scroll Right"
+		"rightBtn": "Scroll Right",
+		"title2" : "My Skills",
+		"content2": "I have experience in web development using HTML, CSS, JavaScript, and PHP. I have also worked with the Bootstrap and jQuery libraries. I have experience in machine learning using Python and the TensorFlow library. I have also worked with the Keras library. I have experience in creating interactive, graphic effects using WebGL and the Three.js library. I have also worked with the GLSL language.",
+		"skills" : {
+			"webDev" : "Web Development",
+			"webDevDesc" : "I have experience in web development using HTML, CSS, JavaScript, and PHP. I have also worked with the Bootstrap and jQuery libraries.",
+			"ml" : "Machine Learning",
+			"mlDesc" : "I have experience in machine learning using Python and the TensorFlow library. I have also worked with the Keras library.",
+			"graphics" : "Graphics",
+			"graphicsDesc" : "I have experience in creating interactive, graphic effects using WebGL and the Three.js library. I have also worked with the GLSL language."
+		}
 	},
 	"fr" : {
 		"title" : "A propos de moi",
@@ -20,6 +30,16 @@
 		"cvButton": "Résumé",
 		"cvButtonTitle": "Télécharger mon CV",
 		"leftBtn": "Défiler à gauche",
-		"rightBtn": "Défiler à droite"
+		"rightBtn": "Défiler à droite",
+		"title2" : "Mes Compétences",
+		"content2": "J'ai de l'expérience dans le développement web en utilisant HTML, CSS, JavaScript et PHP. J'ai également travaillé avec les bibliothèques Bootstrap et jQuery. J'ai de l'expérience dans l'apprentissage automatique en utilisant Python et la bibliothèque TensorFlow. J'ai également travaillé avec la bibliothèque Keras. J'ai de l'expérience dans la création d'effets graphiques interactifs en utilisant WebGL et la bibliothèque Three.js. J'ai également travaillé avec le langage GLSL.",
+		"skills" : {
+			"webDev" : "Développement Web",
+			"webDevDesc" : "J'ai de l'expérience dans le développement web en utilisant HTML, CSS, JavaScript et PHP. J'ai également travaillé avec les bibliothèques Bootstrap et jQuery.",
+			"ml" : "Apprentissage Automatique",
+			"mlDesc" : "J'ai de l'expérience dans l'apprentissage automatique en utilisant Python et la bibliothèque TensorFlow. J'ai également travaillé avec la bibliothèque Keras.",
+			"graphics" : "Graphiques",
+			"graphicsDesc" : "J'ai de l'expérience dans la création d'effets graphiques interactifs en utilisant WebGL et la bibliothèque Three.js. J'ai également travaillé avec le langage GLSL."
+		}
 	}
 }

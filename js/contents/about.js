@@ -29,7 +29,19 @@ class About {
 
 		const slide2 = document.createElement('div');
 		slide2.className = 'slide';
-		slide2.innerHTML = '<h1>More about myself</h1>';
+		
+		const slide2Content = document.createElement('div');
+		slide2Content.className = 'slide2-content';
+		const slide2Title = document.createElement('h1');
+		slide2Title.textContent = this.contentData[this.lang].title2;
+		slide2Title.className = 'about-title-2';
+		const slide2ContentText = document.createElement('p');
+		slide2ContentText.textContent = this.contentData[this.lang].content2;
+		slide2ContentText.className = 'about-content-2';
+		
+		slide2Content.appendChild(slide2Title);
+		slide2Content.appendChild(slide2ContentText);
+		slide2.appendChild(slide2Content);
 
 		slidesContainer.appendChild(slide1);
 		slidesContainer.appendChild(slide2);
@@ -140,6 +152,11 @@ class About {
 		scrollLeftBtn.title = this.contentData[this.lang].leftBtn;
 		scrollRightBtn.title = this.contentData[this.lang].rightBtn;
 
+		const slide2Title = this.section.querySelector('.about-title-2');
+		slide2Title.textContent = this.contentData[this.lang].title2;
+		const slide2ContentText = this.section.querySelector('.about-content-2');
+		slide2ContentText.textContent = this.contentData[this.lang].content2;
+
 		this.updateButtonVisibility();
 	};
 
@@ -160,17 +177,17 @@ class About {
 		rightNavButton.onclick = () => this.scrollSlides('right');
 		leftNavButton.onclick = () => this.scrollSlides('left');
 
-		rightNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; rightNavButton.style.opacity = 0.5; });
+		rightNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
 		rightNavButton.addEventListener('mouseout', (event) => {
 			if (app.sections[app.currentSection] !== 'projects' && 
 				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; rightNavButton.style.opacity = 1;}
+				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; }
 		});
-		leftNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; leftNavButton.style.opacity = 0.5;});
+		leftNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
 		leftNavButton.addEventListener('mouseout', (event) => {
 			if (app.sections[app.currentSection] !== 'projects' && 
 				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; leftNavButton.style.opacity = 1;}
+				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; }
 		});
 
 		this.section.appendChild(leftNavButton);
@@ -217,6 +234,7 @@ class About {
 				width: 50px; height: 50px;
 				cursor: pointer;
 			}
+			.scroll-left-btn:hover, .scroll-right-btn:hover { transform: translateY(-50%) scale(1.1);}
 			.scroll-left-btn { left: -35px; }
 			.scroll-right-btn { right: -35px; }
 			.slides-container::-webkit-scrollbar { display: none; }
@@ -268,7 +286,7 @@ class About {
 				word-wrap: break-word;
 			}
 			.cv-button { width: 80%; }
-			.scroll-left-btn, .scroll-right-btn { width: 35px; height: 35px; }
+			.scroll-left-btn, .scroll-right-btn { width: 40px; height: 40px; }
 		}
 		`;
 		const head = document.head;
