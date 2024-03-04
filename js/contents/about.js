@@ -60,6 +60,7 @@ class About {
 		const topLangImg = document.createElement('img');
 		topLangImg.src = `${this.gitHubStats.url}${this.gitHubStats.user}${this.gitHubStats.theme}${this.gitHubStats.layout}${this.gitHubStats.langs}${this.gitHubStats.border}${this.gitHubStats.custom_title}${this.gitHubStats.card_width}${this.gitHubStats.hide_title}`;
 		topLangImg.alt = 'Top Languages';
+		topLangImg.className = 'top-langs-img';
 		topLangImg.loading = 'lazy';
 		technicalSkills.appendChild(topLangImg);
 		topLangImg.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
@@ -306,6 +307,7 @@ class About {
 				align-items: center; max-width: 50%;
 				gap: 10px; padding: 40px;
 			}
+			.top-langs-img { transform: scale(1.3);}
 			.technical-skills h2, .soft-skills h2 { font-size: 26px; margin-bottom: 20px; text-shadow: 2px 2px 2px #0056b3; }
 			.skills-container ul { padding-left: 20px; list-style: none; }
 			.skills-container li { font-size: 24px; text-align: left; padding: 5px; }
@@ -313,11 +315,9 @@ class About {
 				display: block;
 				margin: 20px; padding: 10px 20px;
 				text-transform: uppercase;
-				font-size: 24px;
-				text-align: center;
+				font-size: 24px; text-align: center;
 				border-radius: 5px; border: 2px solid #00D7FF;
-				text-decoration: none;
-				color: #fff;
+				text-decoration: none; color: #fff;
 			}
 			.cv-button:hover { color: #00D7FF; }
 			@media screen and (max-width: 900px) {
@@ -334,6 +334,7 @@ class About {
 			.technical-skills h2, .soft-skills h2 { font-size: 22px; margin-bottom: 0; border-bottom: 1px solid #00D7FF; }
 			.technical-skills, .soft-skills { max-width: 100%; justify-content: center; padding: 0;}
 			.skills-container li { font-size: 16px; margin-bottom: 5px; }
+			.top-langs-img { transform: scale(1); }
 			.cv-button { width: 80%; }
 			.scroll-left-btn, .scroll-right-btn { width: 40px; height: 40px; padding: 0; }
 		}`;
