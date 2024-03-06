@@ -28,6 +28,11 @@ class Sidebar {
 		input.setAttribute('type', 'checkbox');
 		input.setAttribute('id', 'sidebar-toggle');
 		this.divSidebar.classList.add('sidebar');
+		Object.assign(this.divSidebar.style, {
+			position: 'fixed', height: '100%', width: '220px', backgroundColor: '#333', paddingTop: '20px',
+			left: '0', top: '0', overflowX: 'hidden', transition: '0.5s', zIndex: '10',
+			WebkitBoxSizing: 'border-box', MozBoxSizing: 'border-box', MsBoxSizing: 'border-box', boxSizing: 'border-box',
+		});
 		h1.textContent = 'VIET';
 
 		this.liItems.forEach(item => {
@@ -116,19 +121,6 @@ class Sidebar {
 		style.type = 'text/css';
 		style.innerHTML = `
 			@charset "UTF-8";
-			.sidebar {
-				position: fixed;
-				height: 100%; width: 220px;
-				background-color: #333;
-				padding-top: 20px;
-				left: 0; top: 0;
-				overflow-x: hidden;
-				transition: 0.5s; z-index: 10;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				-ms-box-sizing: border-box;
-				box-sizing: border-box;
-			}
 			.sidebar a.active { background-color: #555; }
 			.sidebar a:hover { transform: scale(1.05); transition: 0.3s; }
 			label div h1 { text-align: center; padding-bottom: 100px; }
