@@ -95,7 +95,6 @@ class About {
 		slidesContainer.addEventListener('scroll', () => this.updateButtonVisibility());
 
 		this.bindTouchEvents();
-		this.applyAboutStyles();
 	};
 
 	createAboutContentDOM() {
@@ -266,77 +265,5 @@ class About {
 		const maxScrollLeft = slidesContainer.scrollWidth - slidesContainer.clientWidth;
 		leftNavButton.style.display = slidesContainer.scrollLeft > 0 ? 'block' : 'none';
 		rightNavButton.style.display = slidesContainer.scrollLeft < maxScrollLeft ? 'block' : 'none';
-	};
-
-	applyAboutStyles() {
-		const css = `
-			.slide {
-				width: 100%; height: 100%; flex-shrink: 0;
-				display: flex; overflow: hidden;
-				justify-content: center; align-items: center; text-align: center;
-			}
-			.scroll-left-btn, .scroll-right-btn {
-				position: absolute; top: 50%; transform: translateY(-50%);
-				width: 60px; height: 60px; cursor: pointer;
-			}
-			.scroll-left-btn:hover, .scroll-right-btn:hover { transform: translateY(-50%) scale(1.1);}
-			.scroll-left-btn { left: -35px; }
-			.scroll-right-btn { right: -35px; }
-			.slides-container::-webkit-scrollbar { display: none; }
-			.about-title, .about-title-2 { 
-				text-align: center; margin-bottom: 40px; 
-				font-size: 44px; color: #fff; 
-			}
-			.about-content {
-				display: flex; flex-direction: column;
-				justify-content: space-around; align-items: center;
-				padding: 20px; gap: 20px;
-			}
-			.about-content-left, .about-content-right {
-				flex-basis: 50%; padding: 10px;
-				font-size: 18px; color: #fff;
-			}
-			.about-content-left h2, .about-content-right h2 { margin-bottom: 10px; font-size: 26px; }
-			.skills-container { display: flex; justify-content: center; width: 100%; }
-			.technical-skills, .soft-skills {
-				display: flex; flex-direction: column; justify-content: center;
-				align-items: center; max-width: 50%;
-				gap: 10px; padding: 40px;
-			}
-			.top-langs-img { transform: scale(1.3);}
-			.technical-skills h2, .soft-skills h2 { font-size: 26px; margin-bottom: 20px; text-shadow: 2px 2px 2px #0056b3; }
-			.skills-container ul { padding-left: 20px; list-style: none; }
-			.skills-container li { font-size: 24px; text-align: left; padding: 5px; }
-			.cv-button {
-				display: block;
-				margin: 20px; padding: 10px 20px;
-				text-transform: uppercase;
-				font-size: 24px; text-align: center;
-				border-radius: 5px; border: 2px solid #00D7FF;
-				text-decoration: none; color: #fff;
-			}
-			.cv-button:hover { color: #00D7FF; }
-			@media screen and (max-width: 900px) {
-			.about-content { flex-direction: column; gap: 0; }
-			.about-title, .about-title-2 { font-size: 24px; margin-bottom: 15px; }
-			.about-content-left h2, .about-content-right h2 { font-size: 20px; }
-			.about-content-left, .about-content-right {
-				width: 100%; text-align: center;
-				padding: 5px; font-size: 14px;
-				word-wrap: break-word;
-			}
-			.skills-container { flex-direction: column; gap: 0; padding: 0; max-width: 100%; }
-			.technical-skills h2, .soft-skills h2 { font-size: 22px; margin-bottom: 0; border-bottom: 1px solid #00D7FF; }
-			.technical-skills, .soft-skills { max-width: 100%; justify-content: center; padding: 0;}
-			.skills-container li { font-size: 16px; margin-bottom: 5px; }
-			.top-langs-img { transform: scale(1); }
-			.cv-button { width: 80%; }
-			.scroll-left-btn, .scroll-right-btn { width: 40px; height: 40px; padding: 0; }
-		}`;
-		const head = document.head;
-		const style = document.createElement('style');
-		style.type = 'text/css';
-		style.appendChild(document.createTextNode(css));
-		head.appendChild(style);
 	};
 };

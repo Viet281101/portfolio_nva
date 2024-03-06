@@ -29,7 +29,6 @@ class Project {
 		this.setupCarouselOptions();
 		this.addEventListeners();
 		this.setupNavigationButtons();
-		this.applyProjectStyles();
 	};
 
 	loadSliderCSS() {
@@ -144,65 +143,6 @@ class Project {
 				"border": "none", "background": "none"
 			});
 		});
-	};
-
-	applyProjectStyles() {
-		const css = `
-			@charset "UTF-8";
-			#projects { width: 100%;}
-			.project-title {
-				margin-top: 70px; font-weight: bold;
-				text-align: center; padding: 30px;
-				font-size: 36px; color: #ffffff;
-				text-shadow: 4px 4px 4px #0056b3;
-			}
-			.slider {
-				display: flex; flex-direction: column;
-				justify-content: center; align-items: center;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				-ms-box-sizing: border-box;
-				box-sizing: border-box;
-			}
-			.card {
-				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-				transition: 0.3s; width: 240px; margin: 16px;
-				border-radius: 10px; overflow: hidden;
-				border: 1px solid #f1f1f1;
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				-ms-box-sizing: border-box;
-				box-sizing: border-box;
-			}
-			.owl-item { display: flex; justify-content: center; align-items: center; }
-			.project-card-img { width: 100%; height: 160px; overflow: hidden; }
-			.project-card-img img { width: 100%; height: 100%; object-fit: cover; }
-			.card-content { padding: 2px 16px; }
-			.title {
-				font-weight: bold; text-align: center;
-				font-size: 20px; padding: 5px;
-				text-shadow: 3px 3px 3px #0056b3;
-			}
-			.sub-title { text-align: center; padding: 5px; color: #00D7FF; }
-			.card-content p { text-align: center; padding: 5px; overflow-wrap: break-word; }
-			.btn { text-align: center; margin-top: 10px; }
-			.btn button {
-				border: 1px solid #f1f1f1; outline: none;
-				padding: 10px; background: transparent;
-				color: white; text-transform: uppercase;
-				font-family:'Pixel', sans-serif;
-				cursor: pointer; border-radius: 5px;
-			}
-			.btn button:hover { background-color: #0056b3; }
-			.nav-prev-slider:hover, .nav-next-slider:hover { transform: scale(1.1); }
-			.project-summary { text-align: center; padding: 20px; font-size: 24px; color: #ffffff; }
-			.project-summary strong { color: #00D7FF; }
-		`;
-		const head = document.head;
-		const style = document.createElement('style');
-		style.type = 'text/css';
-		style.innerHTML = css;
-		head.appendChild(style);
 	};
 };
 

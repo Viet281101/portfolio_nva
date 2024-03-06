@@ -58,7 +58,7 @@ class Background {
 				document.addEventListener('mousemove', (e) => this.handleMouseMove(e));
 				document.addEventListener('mousedown', (e) => this.handleMouseDown(e));
 				document.addEventListener('mouseup', (e) => this.handleMouseUp(e));
-			}, 2000);
+			}, 10000);
 		}
 	};
 

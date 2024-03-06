@@ -179,7 +179,7 @@ class MainApp {
 		this.contact = new Contact();
 		this.createContents();
 		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;
-		animateParticles();
+		setTimeout(() => { animateParticles(); }, 10000);
 	};
 };
 

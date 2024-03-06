@@ -38,7 +38,10 @@ class WelcomeStartUpPopUp {
 		const closeBtn = document.createElement("img");
 		closeBtn.id = "closeBtn";
 		closeBtn.src = this.x_close;
-		closeBtn.alt = "Close";
+		closeBtn.alt = "Close"; closeBtn.title = "Close";
+		closeBtn.loading = "lazy";
+		closeBtn.addEventListener("mouseover", () => closeBtn.style.transform = "scale(1.3)");
+		closeBtn.addEventListener("mouseout", () => closeBtn.style.transform = "scale(1)");
 		closeBtn.addEventListener("click", () => this.closePopup());
 		Object.assign(closeBtn.style, {
 			position: 'absolute', top: '50px', right: '-50px',
