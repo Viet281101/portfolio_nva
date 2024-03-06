@@ -5,6 +5,7 @@ class About {
 		this.myCV = './assets/doc/Viet_Nguyen_CV.pdf';
 		this.leftArrow = './assets/icons/arrow_left.png';
 		this.rightArrow = './assets/icons/arrow_right.png';
+		this.lang = app.lang;
 		this.gitHubStats = {
 			url : 'https://github-readme-stats.vercel.app/api/top-langs/?',
 			user : 'username=viet281101',
@@ -14,7 +15,8 @@ class About {
 			border: '&hide_border=true',
 			custom_title: '&custom_title=Programming Languages',
 			card_width: '&card_width=300',
-			hide_title: '&hide_title=true'
+			hide_title: '&hide_title=true',
+			locales: '&locale='
 		};
 		this.contentData = {};
 		this.loadContentData();
@@ -32,14 +34,23 @@ class About {
 		this.lang = app.lang;
 		this.section.innerHTML = '<div class="slides-container">';
 		const slidesContainer = this.section.querySelector('.slides-container');
+		Object.assign(slidesContainer.style, {
+			display: 'flex', overflowX: 'hidden', scrollBehavior: 'smooth',
+			width: '100%', height: '100%'
+		});
 		
+		const slides_style = {
+			width: '100%', height: '100%', flexShrink: '0', display: 'flex', 
+			justifyContent: 'center', alignItems: 'center', textAlign: 'center'};
 		const slide1 = document.createElement('div');
 		slide1.className = 'slide';
+		Object.assign(slide1.style, slides_style);
 		const aboutContent = this.createAboutContentDOM();
 		slide1.appendChild(aboutContent);
 
 		const slide2 = document.createElement('div');
 		slide2.className = 'slide';
+		Object.assign(slide2.style, slides_style);
 		
 		const slide2Content = document.createElement('div');
 		slide2Content.className = 'slide2-content';
@@ -58,7 +69,7 @@ class About {
 		technicalSkills.appendChild(technicalSkillsTitle);
 
 		const topLangImg = document.createElement('img');
-		topLangImg.src = `${this.gitHubStats.url}${this.gitHubStats.user}${this.gitHubStats.theme}${this.gitHubStats.layout}${this.gitHubStats.langs}${this.gitHubStats.border}${this.gitHubStats.custom_title}${this.gitHubStats.card_width}${this.gitHubStats.hide_title}`;
+		topLangImg.src = `${this.gitHubStats.url}${this.gitHubStats.user}${this.gitHubStats.theme}${this.gitHubStats.layout}${this.gitHubStats.langs}${this.gitHubStats.border}${this.gitHubStats.custom_title}${this.gitHubStats.card_width}${this.gitHubStats.hide_title}${this.gitHubStats.locales}${this.lang}`;
 		topLangImg.alt = 'Top Languages';
 		topLangImg.className = 'top-langs-img';
 		topLangImg.loading = 'lazy';
@@ -155,6 +166,14 @@ class About {
 				app.sections[app.currentSection] !== 'home' && 
 				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
 		});
+		Object.assign(cvButton.style, {
+			display: 'block', margin: '20px', padding: '10px 20px',
+			textTransform: 'uppercase', fontSize: '24px', textAlign: 'center',
+			borderRadius: '5px', border: '2px solid #00D7FF',
+			textDecoration: 'none', color: '#fff'
+		});
+		cvButton.addEventListener('mouseover', (event) => { cvButton.style.color = '#00D7FF'; });
+		cvButton.addEventListener('mouseout', (event) => { cvButton.style.color = '#fff'; });
 		return cvButton;
 	};
 
@@ -212,7 +231,8 @@ class About {
 			skillItem.textContent = skillValue;
 			softSkillsList.appendChild(skillItem);
 		}
-
+		const topLangImg = this.section.querySelector('.top-langs-img');
+		topLangImg.src = `${this.gitHubStats.url}${this.gitHubStats.user}${this.gitHubStats.theme}${this.gitHubStats.layout}${this.gitHubStats.langs}${this.gitHubStats.border}${this.gitHubStats.custom_title}${this.gitHubStats.card_width}${this.gitHubStats.hide_title}${this.gitHubStats.locales}${this.lang}`;
 		this.updateButtonVisibility();
 	};
 
@@ -269,16 +289,6 @@ class About {
 
 	applyAboutStyles() {
 		const css = `
-			.slides-container {
-				display: flex; overflow-x: hidden;
-				scroll-behavior: smooth;
-				width: 100%; height: 100%;
-			}
-			.slide {
-				width: 100%; height: 100%; flex-shrink: 0;
-				display: flex; overflow: hidden;
-				justify-content: center; align-items: center; text-align: center;
-			}
 			.scroll-left-btn, .scroll-right-btn {
 				position: absolute; top: 50%; transform: translateY(-50%);
 				width: 60px; height: 60px; cursor: pointer;
@@ -311,15 +321,6 @@ class About {
 			.technical-skills h2, .soft-skills h2 { font-size: 26px; margin-bottom: 20px; text-shadow: 2px 2px 2px #0056b3; }
 			.skills-container ul { padding-left: 20px; list-style: none; }
 			.skills-container li { font-size: 24px; text-align: left; padding: 5px; }
-			.cv-button {
-				display: block;
-				margin: 20px; padding: 10px 20px;
-				text-transform: uppercase;
-				font-size: 24px; text-align: center;
-				border-radius: 5px; border: 2px solid #00D7FF;
-				text-decoration: none; color: #fff;
-			}
-			.cv-button:hover { color: #00D7FF; }
 			@media screen and (max-width: 900px) {
 			/* Adjustments for mobile screens */
 			.about-content { flex-direction: column; gap: 0; }

@@ -9,20 +9,22 @@ class Courses {
 	createCoursesContent() {
 		this.section.innerHTML = '';
 
-
-
-		this.applyCoursesStyles();
 	};
 
-	applyCoursesStyles() {
-		const css = `
-			/* Courses section styles */
-			@charset "UTF-8";
+	scrollSlides(direction) {
+		const slidesContainer = this.section.querySelector('.slides-container');
+		const slideWidth = this.section.querySelector('.slide').offsetWidth;
+		if (direction === 'right') slidesContainer.scrollLeft += slideWidth;
+		else if (direction === 'left') slidesContainer.scrollLeft -= slideWidth;
+		setTimeout(() => this.updateButtonVisibility(), 50);
+	};
 
-			`;
-		const style = document.createElement('style');
-		style.type = 'text/css';
-		style.appendChild(document.createTextNode(css));
-		document.head.appendChild(style);
+	updateButtonVisibility() {
+		const slidesContainer = this.section.querySelector('.slides-container');
+		const leftNavButton = this.section.querySelector('.scroll-left-btn');
+		const rightNavButton = this.section.querySelector('.scroll-right-btn');
+		const maxScrollLeft = slidesContainer.scrollWidth - slidesContainer.clientWidth;
+		leftNavButton.style.display = slidesContainer.scrollLeft > 0 ? 'block' : 'none';
+		rightNavButton.style.display = slidesContainer.scrollLeft < maxScrollLeft ? 'block' : 'none';
 	};
 };

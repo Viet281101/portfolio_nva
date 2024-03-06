@@ -106,13 +106,9 @@ class Sidebar {
 	};
 
 	updateActiveNavItem(nextIndex) {
-		document.querySelectorAll('.sidebar a').forEach((navItem) => {
-			navItem.classList.remove('active');
-		});
+		document.querySelectorAll('.sidebar a').forEach((navItem) => { navItem.classList.remove('active'); });
 		const activeNavItem = document.getElementById('nav-' + this.sections[nextIndex - 1]);
-		if (activeNavItem) {
-			activeNavItem.classList.add('active');
-		}
+		if (activeNavItem) { activeNavItem.classList.add('active'); }
 	};
 
 	applyStyles() {
@@ -122,14 +118,12 @@ class Sidebar {
 			@charset "UTF-8";
 			.sidebar {
 				position: fixed;
-				height: 100%;
-				width: 220px;
+				height: 100%; width: 220px;
 				background-color: #333;
 				padding-top: 20px;
 				left: 0; top: 0;
 				overflow-x: hidden;
-				transition: 0.5s;
-				z-index: 10;
+				transition: 0.5s; z-index: 10;
 				-webkit-box-sizing: border-box;
 				-moz-box-sizing: border-box;
 				-ms-box-sizing: border-box;
@@ -137,10 +131,7 @@ class Sidebar {
 			}
 			.sidebar a.active { background-color: #555; }
 			.sidebar a:hover { transform: scale(1.05); transition: 0.3s; }
-			label div h1 {
-				text-align: center;
-				padding-bottom: 100px;
-			}
+			label div h1 { text-align: center; padding-bottom: 100px; }
 			label div ul li a img {
 				transform: scale(0.7);
 				padding: 0; margin-right: 3px;
@@ -153,8 +144,7 @@ class Sidebar {
 			label div ul li a {
 				display: flex; align-items: center;
 				padding-top: 14px; padding-bottom: 14px;
-				text-decoration: none;
-				color: white;
+				text-decoration: none; color: white;
 				text-align: left; vertical-align: middle;
 				width: 100%; font-size: 24px;
 				border-top: 1.5px solid #555;
@@ -163,19 +153,14 @@ class Sidebar {
 			label input { display: none; visibility: hidden; appearance: none; }
 			.connect-container {
 				position: absolute;
-				bottom: 30px;
-				left: 0;
-				width: 100%;
-				display: flex;
+				bottom: 30px; left: 0;
+				width: 100%; display: flex;
 				justify-content: space-around;
 				align-items: center;
 			}
 			.connect-icon { width: 35px; height: 35px; }
 			@media screen and (max-width: 1000px) {
-				.sidebar {
-					width: 0;
-					visibility: hidden;
-				}
+				.sidebar { width: 0; visibility: hidden; }
 				.content { margin-left: 0; }
 			}
 			@media screen and (min-width: 1001px) {
