@@ -317,7 +317,6 @@ class About {
 			}
 			.cv-button:hover { color: #00D7FF; }
 			@media screen and (max-width: 900px) {
-			/* Adjustments for mobile screens */
 			.about-content { flex-direction: column; gap: 0; }
 			.about-title, .about-title-2 { font-size: 24px; margin-bottom: 15px; }
 			.about-content-left h2, .about-content-right h2 { font-size: 20px; }

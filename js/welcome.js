@@ -47,7 +47,7 @@ class WelcomeStartUpPopUp {
 		popupContent.appendChild(closeBtn);
 
 		const heading = document.createElement("h1");
-		heading.textContent = "WELCOME";
+		heading.textContent = "WELCOME TO MY SITE!";
 		Object.assign(heading.style, {
 			textAlign: 'center', marginTop: '50px', fontSize: '50px'
 		});
