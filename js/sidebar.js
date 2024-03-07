@@ -21,9 +21,14 @@ class Sidebar {
 	createSidebar() {
 		this.label = document.createElement('label');
 		let input = document.createElement('input');
+		Object.assign(input.style, {
+			display: 'none', visibility: 'hidden', appearance: 'none',
+		});
 		this.divSidebar = document.createElement('div');
 		let h1 = document.createElement('h1');
+		Object.assign(h1.style, { textAlign: 'center', paddingBottom: '100px', });
 		let ul = document.createElement('ul');
+		Object.assign(ul.style, { padding: '0', margin: '0', listStyleType: 'none', });
 
 		input.setAttribute('type', 'checkbox');
 		input.setAttribute('id', 'sidebar-toggle');
@@ -37,13 +42,22 @@ class Sidebar {
 
 		this.liItems.forEach(item => {
 			let li = document.createElement('li');
+			Object.assign(li.style, { listStyle: 'none',});
 			let a = document.createElement('a');
 			this.img = document.createElement('img');
 			this.img.setAttribute('loading', 'lazy');
+			Object.assign(this.img.style, { 
+				transform: 'scale(0.7)', padding: '0', marginRight: '3px',
+			});
 
 			a.setAttribute('href', item.href);
 			a.setAttribute('class', 'section-btn');
 			a.id = 'nav-' + item.text.toLowerCase();
+			Object.assign(a.style, {
+				display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'white',
+				textAlign: 'left', verticalAlign: 'middle', width: '100%', fontSize: '24px',
+				borderTop: '1.5px solid #555', borderBottom: '1.5px solid #555', paddingBottom: '14px', paddingTop: '14px',
+			});
 			this.img.setAttribute('src', item.icon);
 			this.img.setAttribute('alt', item.text.toLowerCase() + " icon");
 
@@ -93,6 +107,10 @@ class Sidebar {
 	createConnectItems() {
 		let connectContainer = document.createElement('div');
 		connectContainer.classList.add('connect-container');
+		Object.assign(connectContainer.style, {
+			position: 'absolute', bottom: '30px', left: '0', width: '100%', display: 'flex',
+			justifyContent: 'space-around', alignItems: 'center',
+		});
 		this.connectItems.forEach(item => {
 			let a = document.createElement('a');
 			let img = document.createElement('img');
@@ -102,6 +120,9 @@ class Sidebar {
 			img.setAttribute('src', item.icon);
 			img.setAttribute('alt', item.text.toLowerCase() + " icon");
 			img.classList.add('connect-icon');
+			Object.assign(img.style, {
+				width: '35px', height: '35px',
+			});
 
 			a.appendChild(img);
 			connectContainer.appendChild(a);
@@ -114,52 +135,6 @@ class Sidebar {
 		document.querySelectorAll('.sidebar a').forEach((navItem) => { navItem.classList.remove('active'); });
 		const activeNavItem = document.getElementById('nav-' + this.sections[nextIndex - 1]);
 		if (activeNavItem) { activeNavItem.classList.add('active'); }
-	};
-
-	applyStyles() {
-		var style = document.createElement('style');
-		style.type = 'text/css';
-		style.innerHTML = `
-			@charset "UTF-8";
-			.sidebar a.active { background-color: #555; }
-			.sidebar a:hover { transform: scale(1.05); transition: 0.3s; }
-			label div h1 { text-align: center; padding-bottom: 100px; }
-			label div ul li a img {
-				transform: scale(0.7);
-				padding: 0; margin-right: 3px;
-			}
-			label div ul {
-				list-style-type: none;
-				margin: 0; padding: 0;
-			}
-			label div ul li { list-style: none; }
-			label div ul li a {
-				display: flex; align-items: center;
-				padding-top: 14px; padding-bottom: 14px;
-				text-decoration: none; color: white;
-				text-align: left; vertical-align: middle;
-				width: 100%; font-size: 24px;
-				border-top: 1.5px solid #555;
-				border-bottom: 1.5px solid #555;
-			}
-			label input { display: none; visibility: hidden; appearance: none; }
-			.connect-container {
-				position: absolute;
-				bottom: 30px; left: 0;
-				width: 100%; display: flex;
-				justify-content: space-around;
-				align-items: center;
-			}
-			.connect-icon { width: 35px; height: 35px; }
-			@media screen and (max-width: 1000px) {
-				.sidebar { width: 0; visibility: hidden; }
-				.content { margin-left: 0; }
-			}
-			@media screen and (min-width: 1001px) {
-				section { margin-left: 220px; }
-			}
-		`;
-		document.head.appendChild(style);
 	};
 };
 

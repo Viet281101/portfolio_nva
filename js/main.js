@@ -149,7 +149,6 @@ class MainApp {
 			this.sidebar.createSidebar();
 			this.sidebar.updateActiveNavItem(1);
 			this.sidebar.createConnectItems();
-			this.sidebar.applyStyles();
 		}
 		if (this.background) this.background.init();
 		if (this.langBox) this.langBox.createLanguageSelector();
