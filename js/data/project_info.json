@@ -57,6 +57,11 @@
 				"tools": "React, JQuery, HTML, CSS",
 				"image": "movies_web",
 				"desc" : "Movies Website with simple interface of movie list and search feature"
+			},
+			"Compilator" : {
+				"tools": "Ocaml, SPIM, MIPS",
+				"image": "compiler",
+				"desc" : "Compiler of a simple language (Mini C) to MIPS assembly language with Ocaml, result in SPIM"
 			}
 		},
 		"button" : "See More",
@@ -74,7 +79,7 @@
 			"Demo Graphic" : {
 				"tools": "C, OpenGL, GL4Dummies, SDL2",
 				"image": "demo_graphic",
-				"desc" : "Petite démo graphique vidéo utilisant OpenGL, SDL2 et la bibliothèque GL4Dummies"
+				"desc" : "Petite démo graphique vidéo utilisant OpenGL, SDL2 et le GL4Dummies"
 			},
 			"Chess Engine" : {
 				"tools": "JavaScript, HTML, CSS",
@@ -84,7 +89,7 @@
 			"Secure Chat" : {
 				"tools": "Python, Tkinter, AES",
 				"image": "chat_app",
-				"desc" : "Simple application de chat sécurisé avec chiffrement AES, serveur et client de socket utilisant l'interface graphique Tkinter"
+				"desc" : "Simple application de chat sécurisé avec chiffrement AES, serveur et client de socket utilisant l'interface Tkinter"
 			},
 			"Detection App" : {
 				"tools": "Python, OpenCV, Mediapipe",
@@ -120,6 +125,11 @@
 				"tools": "React, JQuery, HTML, CSS",
 				"image": "movies_web",
 				"desc" : "Site Web de films avec une interface simple de liste de films et une fonction de recherche"
+			},
+			"Compilator" : {
+				"tools": "Ocaml, SPIM, MIPS",
+				"image": "compiler",
+				"desc" : "Compilateur d'un langage simple (Mini C) vers le langage assembleur MIPS avec Ocaml, résultat dans SPIM"
 			}
 		},
 		"button" : "Voir Plus",
