@@ -1,15 +1,15 @@
 
 class WelcomeStartUpPopUp {
 	constructor() {
-		this.key_src = "./assets/key/keyboard_";
-		this.key_up_1 = this.key_src + "70.png";
-		this.key_up_2 = this.key_src + "171.png";
-		this.key_down_1 = this.key_src + "71.png";
-		this.key_down_2 = this.key_src + "172.png";
-		this.key_right_1 = this.key_src + "72.png";
-		this.key_right_2 = this.key_src + "173.png";
-		this.key_left_1 = this.key_src + "73.png";
-		this.key_left_2 = this.key_src + "174.png";
+		const key_src = "./assets/key/keyboard_";
+		this.key_up_1 = key_src + "70.png";
+		this.key_up_2 = key_src + "171.png";
+		this.key_down_1 = key_src + "71.png";
+		this.key_down_2 = key_src + "172.png";
+		this.key_right_1 = key_src + "72.png";
+		this.key_right_2 = key_src + "173.png";
+		this.key_left_1 = key_src + "73.png";
+		this.key_left_2 = key_src + "174.png";
 		this.x_close = "./assets/icons/x_close.png";
 		this.popupElement = null;
 		this.intervalId = null;
@@ -51,10 +51,13 @@ class WelcomeStartUpPopUp {
 
 		const heading = document.createElement("h1");
 		heading.textContent = "WELCOME TO MY SITE!";
-		Object.assign(heading.style, {
-			textAlign: 'center', marginTop: '50px', fontSize: '50px'
-		});
+		Object.assign(heading.style, { textAlign: 'center', marginTop: '50px', fontSize: '50px' });
 		popupContent.appendChild(heading);
+
+		const attention = document.createElement("p");
+		attention.textContent = "ATTENTION: This is not COOKIES !!";
+		Object.assign(attention.style, { textAlign: 'center', fontSize: '18px', margin: '5px', color: 'red', });
+		popupContent.appendChild(attention);
 
 		const instructions = document.createElement("p");
 		instructions.textContent = "If you are using a computer, you can use the following keys to navigate the site:";
@@ -144,8 +147,8 @@ class WelcomeStartUpPopUp {
 	};
 
 	closePopup() { 
-		clearInterval(this.intervalId);
-		this.popupElement.remove();
+		if (this.intervalId) { clearInterval(this.intervalId); this.intervalId = null; }
+		if (this.popupElement) { this.popupElement.remove(); this.popupElement = null; }
 		this.removeScriptTag();
 	};
 	removeScriptTag() {
@@ -157,7 +160,12 @@ class WelcomeStartUpPopUp {
 			}
 		}
 	};
-	init() { this.createStartUpPopUp(); };
+	init() {
+		if (!localStorage.getItem('welcomeShown')) {
+			this.createStartUpPopUp();
+			localStorage.setItem('welcomeShown', 'true');
+		} else { this.closePopup(); }
+	};
 };
 
 const welcomeStartUpPopUp = new WelcomeStartUpPopUp();

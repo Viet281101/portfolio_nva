@@ -99,12 +99,12 @@
 			"Music Virap" : {
 				"tools": "Kotlin, Android Studio",
 				"image": "music_player_virap",
-				"desc" : "Application mobile de lecteur de musique pour Android avec une interface et des fonctionnalités simples"
+				"desc" : "Mobile App Android: lecteur de musique avec interface, fonctionnalités simples"
 			},
 			"Colt Express" : {
 				"tools": "Pygame, Tkinter, PIL",
 				"image": "colt_express",
-				"desc" : "Jeu de société Colt Express avec une interface simple par la bibliothèque Pygame et Tkinter"
+				"desc" : "Jeu de société Colt Express avec une interface animée simple par la bibliothèque Pygame et Tkinter"
 			},
 			"Castlevania" : {
 				"tools": "JavaScript, Canvas, HTML",
@@ -119,7 +119,7 @@
 			"Teleporter" : {
 				"tools": "Godot Engine, GDScript",
 				"image": "teleporter",
-				"desc" : "Jeu pixel 2D rpg réalisé par Godot Engine 3.5.1 avec le langage GDScript"
+				"desc" : "Jeu pixel 2D rpg adventure réalisé par Godot Engine 3.5.1 avec le langage GDScript"
 			},
 			"Movies Website" : {
 				"tools": "React, JQuery, HTML, CSS",

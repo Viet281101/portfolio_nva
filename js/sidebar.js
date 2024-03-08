@@ -25,6 +25,9 @@ class Sidebar {
 			display: 'none', visibility: 'hidden', appearance: 'none',
 		});
 		this.divSidebar = document.createElement('div');
+		let h1Link = document.createElement('a');
+		h1Link.href = "#";
+		Object.assign(h1Link.style, { textDecoration: 'none', color: '#fff', })
 		let h1 = document.createElement('h1');
 		Object.assign(h1.style, { textAlign: 'center', paddingBottom: '100px', });
 		let ul = document.createElement('ul');
@@ -39,6 +42,7 @@ class Sidebar {
 			WebkitBoxSizing: 'border-box', MozBoxSizing: 'border-box', MsBoxSizing: 'border-box', boxSizing: 'border-box',
 		});
 		h1.textContent = 'VIET';
+		h1Link.appendChild(h1);
 
 		this.liItems.forEach(item => {
 			let li = document.createElement('li');
@@ -84,7 +88,11 @@ class Sidebar {
 				app.sections[app.currentSection] !== 'home' && 
 				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
 		});
-		this.divSidebar.appendChild(h1);
+		h1Link.addEventListener('click', (e) => {
+			e.preventDefault();
+			window.location.href = window.location.origin + window.location.pathname;
+		});
+		this.divSidebar.appendChild(h1Link);
 		this.divSidebar.appendChild(ul);
 		this.label.appendChild(input);
 		this.label.appendChild(this.divSidebar);
