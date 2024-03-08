@@ -47,7 +47,7 @@ class Home {
 
 		const greeting = document.createElement('h1');
 		greeting.className = 'hero-title';
-		Object.assign(greeting.style, { paddingTop: '60px', display: 'flex', flexDirection: 'row' });
+		Object.assign(greeting.style, { paddingTop: '60px', display: 'flex', flexDirection: 'row', fontSize: '34px', });
 		var greetingWriting = new Typewriter(greeting, { autoStart: true, loop: true, });
 		greetingWriting.typeString(this.contentData[this.lang].greeting).pauseFor(3000).deleteAll().typeString(this.contentData[this.lang].greeting2).pauseFor(3000).deleteAll().start();
 

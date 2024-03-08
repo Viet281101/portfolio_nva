@@ -14,19 +14,12 @@ class MainApp {
 			'contents/courses.js',
 			'contents/contact.js',
 		];
-		this.sidebar = null;
-		this.navBar = null;
+		this.sidebar = null; this.navBar = null;
 		this.background = null;
-		this.home = null;
-		this.about = null;
-		this.project = null;
-		this.courses = null;
-		this.contact = null;
-		this.langBox = null;
-		this.btnOnTop = null;
+		this.home = null; this.about = null; this.project = null; this.courses = null; this.contact = null;
+		this.langBox = null; this.btnOnTop = null;
 		this.currentSection = 0;
-		this.mouseMarkEnabled = true;
-		this.animationActive = true;
+		this.mouseMarkEnabled = true; this.animationActive = true;
 		this.lang = 'en';
 		this.loadFiles();
 		this.addEventListeners();
@@ -97,6 +90,7 @@ class MainApp {
 		document.addEventListener('keydown', (event) => {
 			const fullpageApi = $('#fullpage').data('fullpage');
 			if (!fullpageApi) return;
+			if (welcomeStartUpPopUp) welcomeStartUpPopUp.closePopup();
 			switch (event.key) {
 				case 'ArrowUp': this.moveSectionUp(); break;
 				case 'ArrowDown': this.moveSectionDown(); break;
@@ -178,7 +172,7 @@ class MainApp {
 		this.contact = new Contact();
 		this.createContents();
 		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;
-		setTimeout(() => { animateParticles(); }, 10000);
+		setTimeout(() => { animateParticles(); }, 8000);
 	};
 };
 

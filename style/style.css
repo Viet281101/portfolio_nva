@@ -65,19 +65,15 @@ section.in-view { opacity: 1; transform: translateY(0); }
 .skills-container { display: flex; justify-content: center; width: 100%; }
 .technical-skills, .soft-skills {
 	display: flex; flex-direction: column; justify-content: center;
-	align-items: center; max-width: 50%;
-	gap: 10px; padding: 40px;
+	align-items: center; max-width: 50%; gap: 10px; padding: 40px;
 }
 .top-langs-img { transform: scale(1.3);}
 .technical-skills h2, .soft-skills h2 { font-size: 26px; margin-bottom: 20px; text-shadow: 2px 2px 2px #0056b3; }
 .skills-container ul { padding-left: 20px; list-style: none; }
 .skills-container li { font-size: 24px; text-align: left; padding: 5px; }
 .cv-button {
-	display: block; margin: 20px; padding: 10px 20px;
-	text-transform: uppercase;
-	font-size: 24px; text-align: center;
-	border-radius: 5px; border: 2px solid #00D7FF;
-	text-decoration: none; color: #fff;
+	display: block; margin: 20px; padding: 10px 20px;text-transform: uppercase; font-size: 24px; text-align: center;
+	border-radius: 5px; border: 2px solid #00D7FF;text-decoration: none; color: #fff;
 }
 .cv-button:hover { color: #00D7FF; }
 @media screen and (max-width: 900px) {
@@ -86,8 +82,7 @@ section.in-view { opacity: 1; transform: translateY(0); }
 .about-content-left h2, .about-content-right h2 { font-size: 20px; }
 .about-content-left, .about-content-right {
 	width: 100%; text-align: center;
-	padding: 3px; font-size: 14px;
-	word-wrap: break-word;
+	padding: 3px; font-size: 14px; word-wrap: break-word;
 }
 .skills-container { flex-direction: column; gap: 0; padding: 0; max-width: 100%; }
 .technical-skills h2, .soft-skills h2 { font-size: 22px; margin-bottom: 0; border-bottom: 1px solid #00D7FF; }
@@ -100,10 +95,8 @@ section.in-view { opacity: 1; transform: translateY(0); }
 .slider {
 	display: flex; flex-direction: column;
 	justify-content: center; align-items: center;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+	-ms-box-sizing: border-box; box-sizing: border-box;
 }
 .owl-item { display: flex; justify-content: center; align-items: center; }
 .btn button:hover { background-color: #0056b3; }
