@@ -21,7 +21,7 @@ class LangBox {
 		Object.assign(select.style, {
 			borderRadius: '5px', border: '1px solid #333', WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none',
 			backgroundImage: 'url("assets/icons/nav_down.png")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 3px center', backgroundSize: '20px',
-			backgroundColor: '#333', padding: '5px 30px 5px 10px', color: 'white', fontFamily:'Pixel, sans-serif', fontSize: '14px', cursor: 'pointer',
+			backgroundColor: '#333', padding: '5px 30px 5px 10px', color: 'white', fontFamily:"'Pixel', sans-serif", fontSize: '14px', cursor: 'pointer',
 		});
 
 		select.addEventListener('change', (event) => {

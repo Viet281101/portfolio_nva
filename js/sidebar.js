@@ -73,6 +73,12 @@ class Sidebar {
 			li.appendChild(a);
 			ul.appendChild(li);
 
+			a.addEventListener('mouseover', (e) => {
+				Object.assign(a.style, { transform: 'scale(1.05)', transition: '0.3s', });
+			});
+			a.addEventListener('mouseout', (e) => {
+				Object.assign(a.style, { transform: 'scale(1.0)', transition: '0.3s', });
+			})
 			a.addEventListener('click', (e) => {
 				e.preventDefault();
 				const sectionIndex = this.sections.indexOf(item.text.toLowerCase());
@@ -131,7 +137,12 @@ class Sidebar {
 			Object.assign(img.style, {
 				width: '35px', height: '35px',
 			});
-
+			a.addEventListener('mouseover', (e) => {
+				Object.assign(a.style, { transform: 'scale(1.3)', transition: '0.3s', });
+			});
+			a.addEventListener('mouseout', (e) => {
+				Object.assign(a.style, { transform: 'scale(1.0)', transition: '0.3s', });
+			})
 			a.appendChild(img);
 			connectContainer.appendChild(a);
 		});

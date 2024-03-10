@@ -106,7 +106,7 @@ class Effect {
 		};
 
 		window.addEventListener('resize', e => {
-			console.log(e.target.window.innerWidth);
+			// console.log(e.target.window.innerWidth);
 			this.resize(e.target.window.innerWidth, e.target.window.innerHeight);
 		});
 

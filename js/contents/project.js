@@ -117,7 +117,7 @@ class Project {
 		Object.assign(button.style, {
 			border: '1px solid #F1F1F1', borderRadius: '5px', outline: 'none', color: 'white',
 			padding: '10px', background: 'transparent', cursor: 'pointer',
-			textTransform: 'uppercase', fontFamily:'Pixel, sans-serif',
+			textTransform: 'uppercase', fontFamily:"'Pixel', sans-serif",
 		});
 
 		card_content.appendChild(title);
