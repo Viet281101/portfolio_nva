@@ -91,25 +91,52 @@
 			"S1" : {
 				"h3": "Semester 1",
 				"courses": {
-					"1": "",
-					"2": "",
-					"3": "",
-					"4": "",
-					"5": "",
-					"6": "",
-					"7": ""
+					"1": "Not yet",
+					"2": "Not yet",
+					"3": "Not yet",
+					"4": "Not yet",
+					"5": "Not yet",
+					"6": "Not yet",
+					"7": "Not yet"
 				}
 			},
 			"S2" : {
 				"h3": "Semester 2",
 				"courses": {
-					"1": "",
-					"2": "",
-					"3": "",
-					"4": "",
-					"5": "",
-					"6": "",
-					"7": ""
+					"1": "Not yet",
+					"2": "Not yet",
+					"3": "Not yet",
+					"4": "Not yet",
+					"5": "Not yet",
+					"6": "Not yet",
+					"7": "Not yet"
+				}
+			}
+		},
+		"M2" : {
+			"h2" : "Master 2",
+			"S1" : {
+				"h3": "Semester 3",
+				"courses": {
+					"1": "Not yet",
+					"2": "Not yet",
+					"3": "Not yet",
+					"4": "Not yet",
+					"5": "Not yet",
+					"6": "Not yet",
+					"7": "Not yet"
+				}
+			},
+			"S2" : {
+				"h3": "Semester 4",
+				"courses": {
+					"1": "Not yet",
+					"2": "Not yet",
+					"3": "Not yet",
+					"4": "Not yet",
+					"5": "Not yet",
+					"6": "Not yet",
+					"7": "Not yet"
 				}
 			}
 		}
@@ -206,25 +233,52 @@
 			"S1" : {
 				"h3": "Semestre 1",
 				"courses": {
-					"1": "",
-					"2": "",
-					"3": "",
-					"4": "",
-					"5": "",
-					"6": "",
-					"7": ""
+					"1": "Pas encore",
+					"2": "Pas encore",
+					"3": "Pas encore",
+					"4": "Pas encore",
+					"5": "Pas encore",
+					"6": "Pas encore",
+					"7": "Pas encore"
 				}
 			},
 			"S2" : {
 				"h3": "Semestre 2",
 				"courses": {
-					"1": "",
-					"2": "",
-					"3": "",
-					"4": "",
-					"5": "",
-					"6": "",
-					"7": ""
+					"1": "Pas encore",
+					"2": "Pas encore",
+					"3": "Pas encore",
+					"4": "Pas encore",
+					"5": "Pas encore",
+					"6": "Pas encore",
+					"7": "Pas encore"
+				}
+			}
+		},
+		"M2" : {
+			"h2" : "Master 2",
+			"S1" : {
+				"h3": "Semestre 3",
+				"courses": {
+					"1": "Pas encore",
+					"2": "Pas encore",
+					"3": "Pas encore",
+					"4": "Pas encore",
+					"5": "Pas encore",
+					"6": "Pas encore",
+					"7": "Pas encore"
+				}
+			},
+			"S2" : {
+				"h3": "Semestre 4",
+				"courses": {
+					"1": "Pas encore",
+					"2": "Pas encore",
+					"3": "Pas encore",
+					"4": "Pas encore",
+					"5": "Pas encore",
+					"6": "Pas encore",
+					"7": "Pas encore"
 				}
 			}
 		}

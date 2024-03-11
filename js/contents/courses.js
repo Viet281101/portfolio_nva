@@ -2,7 +2,7 @@
 class Courses {
 	constructor() {
 		this.section = document.getElementById('courses');
-		this.tabList = ['L1', 'L2', 'L3', 'M1'];
+		this.tabList = ['L1', 'L2', 'L3', 'M1', 'M2'];
 		this.x_close = "./assets/icons/x_close.png";
 		this.contentData = {};
 		this.lang = app.lang;
@@ -23,19 +23,15 @@ class Courses {
 
 		this.title = document.createElement('h2');
 		this.title.innerHTML = this.contentData[this.lang].title;
-		Object.assign(this.title.style, {
-			fontSize: '30px',
-		});
+		Object.assign(this.title.style, { fontSize: '30px', });
 		this.section.appendChild(this.title);
 
 		this.desc = document.createElement("p");
 		this.desc.textContent = this.contentData[this.lang].desc;
-		Object.assign(this.desc, {
-			textAlign: 'center',
-		});
+		Object.assign(this.desc, { textAlign: 'center', });
 		this.section.appendChild(this.desc);
 		this.createTabs();
-		document.getElementById("defaultOpen").click();
+		document.getElementById("defaultOpen")?.click();
 	};
 
 	createTabs() {
@@ -65,9 +61,7 @@ class Courses {
 				if (!e.target.classList.contains("active")) { e.target.style.backgroundColor = "#333"; }
 				else { e.target.style.backgroundColor = "#666"; }
 			});
-
 			if (tabName === this.tabList[0]) { tabButton.id = "defaultOpen"; }
-	
 			this.tab.appendChild(tabButton);
 		});
 		this.createTabsContent();
@@ -78,23 +72,11 @@ class Courses {
 			const tabContent = document.createElement("div");
 			tabContent.id = tabName;
 			tabContent.className = "tabcontent";
-			Object.assign(tabContent.style, {
-				display: 'none', padding: '6px 12px',
-				border: '1px solid #ccc', borderTop: 'none',
-				background: 'transparent',
+			Object.assign(tabContent.style, { display: 'none', padding: '6px 12px',
+				border: '1px solid #ccc', borderTop: 'none', background: 'transparent',
 			});
 
-			const closeButton = document.createElement("img");
-			closeButton.src = this.x_close;
-			closeButton.title = this.contentData[this.lang].closeBtnTitle;
-			closeButton.alt = this.contentData[this.lang].closeBtnAlt;
-			closeButton.className = "topright";
-			Object.assign(closeButton.style, {
-				float: 'right', cursor: 'pointer', width: '30px', height: '30px',
-			});
-			closeButton.addEventListener("click", () => {
-				tabContent.style.display = 'none';
-			});
+			const closeButton = this.createCloseButton(tabContent);
 			tabContent.appendChild(closeButton);
 
 			const tabData = this.contentData[this.lang][tabName];
@@ -104,6 +86,19 @@ class Courses {
 
 			this.section.appendChild(tabContent);
 		});
+	};
+
+	createCloseButton(tabContent) {
+		const closeButton = document.createElement("img");
+		closeButton.src = this.x_close;
+		closeButton.className = "topright";
+		closeButton.title = this.contentData[this.lang].closeBtnTitle;
+		closeButton.alt = this.contentData[this.lang].closeBtnAlt;
+		Object.assign(closeButton.style, { float: 'right', cursor: 'pointer', width: '30px', height: '30px', });
+		closeButton.addEventListener("click", () => {
+			tabContent.style.display = 'none';
+		});
+		return closeButton;
 	};
 
 	openTab(event, tabName) {
