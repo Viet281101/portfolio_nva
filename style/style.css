@@ -88,7 +88,7 @@ section.in-view { opacity: 1; transform: translateY(0); }
 .technical-skills, .soft-skills { max-width: 100%; justify-content: center; padding: 0;}
 .skills-container li { font-size: 16px; margin-bottom: 5px; }
 .top-langs-img { transform: scale(1); }
-.cv-button { width: 80%; }
+.cv-button { width: 80%; padding: 10px 10px;}
 .scroll-left-btn, .scroll-right-btn { width: 40px; height: 40px; padding: 0; }}
 /* PROJECT */
 .slider {

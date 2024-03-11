@@ -1,12 +1,136 @@
 {
-    "en" : {
-        "title": "Courses",
-        "desc": "My courses in university",
-        "tabBtnTitle": "Show tab "
-    },
-    "fr" : {
-        "title": "Cours",
-        "desc": "Mes cours à l'université",
-        "tabBtnTitle": "Afficher les onglets "
-    }
+	"en" : {
+		"title": "Courses",
+		"desc": "My courses in university",
+		"tabBtnTitle": "Show tab {0}",
+		"closeBtnTitle": "Close Tab",
+		"closeBtnAlt": "Close",
+		"L1" : {
+			"h2" : "Licence 1",
+			"S1" : {
+				"h3": "Semester 1",
+				"courses": {
+
+				}
+			},
+			"S2" : {
+				"h3": "Semester 2",
+				"courses": {
+
+				}
+			}
+		},
+		"L2" : {
+			"h2" : "Licence 2",
+			"S3" : {
+				"h3": "Semester 3",
+				"courses": {
+
+				}
+			},
+			"S4" : {
+				"h3": "Semester 4",
+				"courses": {
+
+				}
+			}
+		},
+		"L3" : {
+			"h2" : "Licence 3",
+			"S5" : {
+				"h3": "Semester 5",
+				"courses": {
+
+				}
+			},
+			"S6" : {
+				"h3": "Semester 5",
+				"courses": {
+
+				}
+			}
+		},
+		"M1" : {
+			"h2" : "Master 1",
+			"S1" : {
+				"h3": "Semester 1",
+				"courses": {
+
+				}
+			},
+			"S2" : {
+				"h3": "Semester 2",
+				"courses": {
+
+				}
+			}
+		}
+	},
+	"fr" : {
+		"title": "Cours",
+		"desc": "Mes cours à l'université",
+		"tabBtnTitle": "Afficher les onglets {0}",
+		"closeBtnTitle": "Fermer l'onglet",
+		"closeBtnAlt": "Fermer",
+		"L1" : {
+			"h2" : "Licence 1",
+			"S1" : {
+				"h3": "Semestre 1",
+				"courses": {
+
+				}
+			},
+			"S2" : {
+				"h3": "Semestre 2",
+				"courses": {
+
+				}
+			}
+		},
+		"L2" : {
+			"h2" : "Licence 2",
+			"S3" : {
+				"h3": "Semestre 3",
+				"courses": {
+
+				}
+			},
+			"S4" : {
+				"h3": "Semestre 4",
+				"courses": {
+
+				}
+			}
+		},
+		"L3" : {
+			"h2" : "Licence 3",
+			"S5" : {
+				"h3": "Semestre 5",
+				"courses": {
+
+				}
+			},
+			"S6" : {
+				"h3": "Semestre 5",
+				"courses": {
+
+				}
+			}
+		},
+		"M1" : {
+			"h2" : "Master 1",
+			"S1" : {
+				"h3": "Semestre 1",
+				"courses": {
+
+				}
+			},
+			"S2" : {
+				"h3": "Semestre 2",
+				"courses": {
+
+				}
+			}
+		}
+	}
 }

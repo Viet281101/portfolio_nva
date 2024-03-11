@@ -49,7 +49,7 @@ class Courses {
 		this.tabList.forEach((tabName) => {
 			const tabButton = document.createElement("button");
 			tabButton.className = "tablinks";
-			tabButton.title = this.contentData[this.lang].tabBtnTitle + tabName;
+			tabButton.title = this.contentData[this.lang].tabBtnTitle.replace('{0}', tabName);
 			tabButton.textContent = tabName;
 			Object.assign(tabButton.style, {
 				border: '1px solid #555', outline: 'none', backgroundColor: '#333', float: 'left',
@@ -84,10 +84,15 @@ class Courses {
 				background: 'transparent',
 			});
 
+			const yearData = this.contentData[this.lang][tabName];
+			const yearTitle = document.createElement("h2");
+			yearTitle.textContent = yearData['h2'];
+			tabContent.appendChild(yearTitle);
+
 			const closeButton = document.createElement("img");
 			closeButton.src = this.x_close;
-			closeButton.title = "Close Tab";
-			closeButton.alt = "Close";
+			closeButton.title = this.contentData[this.lang].closeBtnTitle;
+			closeButton.alt = this.contentData[this.lang].closeBtnAlt;
 			closeButton.className = "topright";
 			Object.assign(closeButton.style, {
 				float: 'right', cursor: 'pointer', width: '30px', height: '30px',
@@ -124,5 +129,16 @@ class Courses {
 		this.lang = lang;
 		this.title.innerHTML = this.contentData[this.lang].title;
 		this.desc.textContent = this.contentData[this.lang].desc;
+
+		const closeButtons = this.section.querySelectorAll('.topright');
+		closeButtons.forEach(button => {
+			button.alt = this.contentData[this.lang].closeBtnAlt;
+			button.title = this.contentData[this.lang].closeBtnTitle;
+		});
+
+		const tabButtons = this.section.querySelectorAll('.tablinks');
+		tabButtons.forEach((button, index) => {
+			button.title = this.contentData[this.lang].tabBtnTitle.replace('{0}', this.tabList[index]);
+		});
 	};
 };

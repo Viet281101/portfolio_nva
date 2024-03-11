@@ -4,8 +4,7 @@ class MainApp {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
 		this.jsFiles = [
 			'load_progress.js', 'background.js',
-			'effects/lightslider.js',
-			'effects/particles.js',
+			'effects/lightslider.js', 'effects/particles.js',
 			'sidebar.js', 'nav_bar.js',
 			'lang_box.js', 'on_top.js',
 			'contents/home.js',
