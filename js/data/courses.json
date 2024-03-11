@@ -10,13 +10,25 @@
 			"S1" : {
 				"h3": "Semester 1",
 				"courses": {
-
+					"1": "Programming Methodology",
+					"2": "Functional Program",
+					"3": "Computer Architecture",
+					"4": "Introduction Game Engine",
+					"5": "Fundamental Computer Science",
+					"6": "Online Identity Management",
+					"7": "Machine Practice"
 				}
 			},
 			"S2" : {
 				"h3": "Semester 2",
 				"courses": {
-
+					"1": "Programming Requirements",
+					"2": "Programming Logic",
+					"3": "Declarative Programming & Database",
+					"4": "Programming Game Engine",
+					"5": "Creation & Management Resources",
+					"6": "Collaborative IT Tools",
+					"7": "English Robotic"
 				}
 			}
 		},
@@ -25,13 +37,25 @@
 			"S3" : {
 				"h3": "Semester 3",
 				"courses": {
-
+					"1": "Algorithms & Data Structures 1",
+					"2": "Advanced Programming",
+					"3": "User Interface Programming",
+					"4": "Algorithms for Graphic Programming",
+					"5": "Introduction to Artificial Intelligence",
+					"6": "Professional Project Preparation",
+					"7": "Artificial Intelligence English"
 				}
 			},
 			"S4" : {
 				"h3": "Semester 4",
 				"courses": {
-
+					"1": "Algorithms & Data Structures 2",
+					"2": "Object-Oriented Programming",
+					"3": "Systems & Networks",
+					"4": "Concurrent Programming & Networks",
+					"5": "Image Synthesis, Animation & Sound",
+					"6": "History of Computing",
+					"7": "Oral Knowledge Presentation"
 				}
 			}
 		},
@@ -40,13 +64,25 @@
 			"S5" : {
 				"h3": "Semester 5",
 				"courses": {
-
+					"1": "Advanced Algorithms",
+					"2": "Interpretation & Compilation",
+					"3": "Introduction to Security",
+					"4": "Game Engines",
+					"5": "Mobile Development",
+					"6": "Tutored Project: State of the Art",
+					"7": "Master's Objective"
 				}
 			},
 			"S6" : {
-				"h3": "Semester 5",
+				"h3": "Semester 6",
 				"courses": {
-
+					"1": "Artificial Intelligence & Learning",
+					"2": "Language Engineering",
+					"3": "Free Software Development",
+					"4": "Graphics Card Programming",
+					"5": "Artificial Intelligence for Games",
+					"6": "Tutored Project: Implementation",
+					"7": "Law, Ethics, Computer Science"
 				}
 			}
 		},
@@ -55,13 +91,25 @@
 			"S1" : {
 				"h3": "Semester 1",
 				"courses": {
-
+					"1": "",
+					"2": "",
+					"3": "",
+					"4": "",
+					"5": "",
+					"6": "",
+					"7": ""
 				}
 			},
 			"S2" : {
 				"h3": "Semester 2",
 				"courses": {
-
+					"1": "",
+					"2": "",
+					"3": "",
+					"4": "",
+					"5": "",
+					"6": "",
+					"7": ""
 				}
 			}
 		}
@@ -77,13 +125,25 @@
 			"S1" : {
 				"h3": "Semestre 1",
 				"courses": {
-
+					"1": "Méthodologie de la Programmation",
+					"2": "Programmation Fonctionnelle",
+					"3": "Architecture des Ordinateurs",
+					"4": "Introduction aux Moteurs de Jeux",
+					"5": "Informatique Fondamentale",
+					"6": "Gestion d'Identité en Ligne",
+					"7": "Pratique des Machines"
 				}
 			},
 			"S2" : {
 				"h3": "Semestre 2",
 				"courses": {
-
+					"1": "Programmation Impérative",
+					"2": "Programmation Logique",
+					"3": "Programmation Declarative & Base de Données",
+					"4": "Programmation dans les Moteurs de Jeux",
+					"5": "Création et Gestion de Ressources",
+					"6": "Outils Informatiques Collaboratifs",
+					"7": "Anglais Robotique"
 				}
 			}
 		},
@@ -92,13 +152,25 @@
 			"S3" : {
 				"h3": "Semestre 3",
 				"courses": {
-
+					"1": "Algorithmique & Structures de Données 1",
+					"2": "Programmation Avancée",
+					"3": "Programmation Interfaces",
+					"4": "Algorithmes pour la Programmation Graphique",
+					"5": "Introduction à l'Intelligence Artificielle",
+					"6": "Préparation au Projet Professionnel",
+					"7": "Anglais d'Intelligence Artificielle"
 				}
 			},
 			"S4" : {
 				"h3": "Semestre 4",
 				"courses": {
-
+					"1": "Algorithmique & Structures de Données 2",
+					"2": "Programmation Orientée Objet",
+					"3": "Systèmes & Réseaux",
+					"4": "Programmation concurrent & Réseaux",
+					"5": "Synthèse d'Images, Animation & Sons",
+					"6": "Histoire de l'Informatique",
+					"7": "Restitution Orale de Connaissances"
 				}
 			}
 		},
@@ -107,13 +179,25 @@
 			"S5" : {
 				"h3": "Semestre 5",
 				"courses": {
-
+					"1": "Algorithmique Avancée",
+					"2": "Interprétation & Compilation",
+					"3": "Introduction à la Sécurité",
+					"4": "Moteurs de Jeu",
+					"5": "Développement Mobile",
+					"6": "Projet Tuteuré : état de l'Art",
+					"7": "Objectif Master"
 				}
 			},
 			"S6" : {
-				"h3": "Semestre 5",
+				"h3": "Semestre 6",
 				"courses": {
-
+					"1": "Intelligence Artificielle & Apprentissage",
+					"2": "Ingénierie des Langues",
+					"3": "Développement de Logiciels Libres",
+					"4": "Programmation de Cartes Graphiques",
+					"5": "Intelligence Artificielle pour les Jeux",
+					"6": "Projet Tuteuré : Implémentation",
+					"7": "Droit, éthique, informatique"
 				}
 			}
 		},
@@ -122,13 +206,25 @@
 			"S1" : {
 				"h3": "Semestre 1",
 				"courses": {
-
+					"1": "",
+					"2": "",
+					"3": "",
+					"4": "",
+					"5": "",
+					"6": "",
+					"7": ""
 				}
 			},
 			"S2" : {
 				"h3": "Semestre 2",
 				"courses": {
-
+					"1": "",
+					"2": "",
+					"3": "",
+					"4": "",
+					"5": "",
+					"6": "",
+					"7": ""
 				}
 			}
 		}

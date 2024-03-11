@@ -24,7 +24,7 @@ class Courses {
 		this.title = document.createElement('h2');
 		this.title.innerHTML = this.contentData[this.lang].title;
 		Object.assign(this.title.style, {
-			fontSize: '34px',
+			fontSize: '30px',
 		});
 		this.section.appendChild(this.title);
 
@@ -84,11 +84,6 @@ class Courses {
 				background: 'transparent',
 			});
 
-			const yearData = this.contentData[this.lang][tabName];
-			const yearTitle = document.createElement("h2");
-			yearTitle.textContent = yearData['h2'];
-			tabContent.appendChild(yearTitle);
-
 			const closeButton = document.createElement("img");
 			closeButton.src = this.x_close;
 			closeButton.title = this.contentData[this.lang].closeBtnTitle;
@@ -101,6 +96,12 @@ class Courses {
 				tabContent.style.display = 'none';
 			});
 			tabContent.appendChild(closeButton);
+
+			const tabData = this.contentData[this.lang][tabName];
+			const tabTitle = document.createElement("h2");
+			tabTitle.textContent = tabData['h2'];
+			tabContent.appendChild(tabTitle);
+
 			this.section.appendChild(tabContent);
 		});
 	};

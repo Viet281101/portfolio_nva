@@ -9,7 +9,7 @@ class Project {
 	};
 
 	loadContentData() {
-		fetch('./js/data/project_info.json')
+		fetch('./js/data/project.json')
 			.then(response => response.json())
 			.then(data => { this.contentData = data; this.createProjectContent(app.lang); })
 			.catch(error => console.error('Error loading the project content:', error));

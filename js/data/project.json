@@ -1,0 +1,164 @@
+
+{
+	"en" : {
+		"title" : "Projects",
+		"projects": {
+			"Othello AI Game" : {
+				"id" : "othello",
+				"tools": "C, GLUT, SDL2, Minimax Algo",
+				"image": "othello_ai",
+				"desc" : "Othello AI Game with simple interface and AI using Minimax/Alphabeta"
+			},
+			"Demo Graphic" : {
+				"id" : "demo_graphic",
+				"tools": "C, OpenGL, GL4Dummies, SDL2",
+				"image": "demo_graphic",
+				"desc" : "Small video graphic demo using OpenGL, SDL2 and GL4Dummies library"
+			},
+			"Chess Engine" : {
+				"id" : "chess_engine",
+				"tools": "JavaScript, HTML, CSS",
+				"image": "chess_engine",
+				"desc" : "Chess Engine with simple web interface and AI using Minimax Algorithm"
+			},
+			"Secure Chat" : {
+				"id" : "secure_chat",
+				"tools": "Python, Tkinter, AES",
+				"image": "chat_app",
+				"desc" : "Simple Securite Chat App with AES encryption, Socket server and client using Tkinter GUI"
+			},
+			"Detection App" : {
+				"id" : "detec_app",
+				"tools": "Python, OpenCV, Mediapipe",
+				"image": "screen_detection",
+				"desc" : "Detection Programs Collection for screen, face, hand, object, sec, etc"
+			},
+			"Music Virap" : {
+				"id" : "music_virap",
+				"tools": "Kotlin, Android Studio",
+				"image": "music_player_virap",
+				"desc" : "Music Player mobile app for Android with simple interface and features"
+			},
+			"Colt Express" : {
+				"id" : "colt_express",
+				"tools": "Pygame, Tkinter, PIL",
+				"image": "colt_express",
+				"desc" : "Colt Express board game with simple interface by Pygame and Tkinter library"
+			},
+			"Castlevania" : {
+				"id" : "castlevania",
+				"tools": "JavaScript, Canvas, HTML",
+				"image": "castlevania",
+				"desc" : "2D platformer game with castlevania style using vanilla JS and Canvas API"
+			},
+			"Polyominos" : {
+				"id" : "polyominos",
+				"tools": "JavaScript, HTML, CSS",
+				"image": "polyominos",
+				"desc" : "Solving Polyominos Puzzle with algorithm and simple website interface"
+			},
+			"Teleporter" : {
+				"id" : "teleporter",
+				"tools": "Godot Engine, GDScript",
+				"image": "teleporter",
+				"desc" : "2D rpg pixel game make by Godot Engine 3.5.1 with GDScript language"
+			},
+			"Movies Website" : {
+				"id" : "moviesite",
+				"tools": "React, JQuery, HTML, CSS",
+				"image": "movies_web",
+				"desc" : "Movies Website with simple interface of movie list and search feature"
+			},
+			"Compilator" : {
+				"id" : "compilator",
+				"tools": "Ocaml, SPIM, MIPS",
+				"image": "compiler",
+				"desc" : "Compiler of a simple language (Mini C) to MIPS assembly language with Ocaml, result in SPIM"
+			}
+		},
+		"button" : "See More",
+		"button_title": "See more about ",
+		"summary": "Currently showcasing {0} projects."
+	},
+	"fr" : {
+		"title" : "Projets",
+		"projects": {
+			"Othello AI Game" : {
+				"id" : "othello",
+				"tools": "C, GLUT, SDL2, Minimax Algo",
+				"image": "othello_ai",
+				"desc" : "Jeu Othello avec une interface simple et une IA utilisant l'algorithme Minimax/Alphabeta"
+			},
+			"Demo Graphic" : {
+				"id" : "demo_graphic",
+				"tools": "C, OpenGL, GL4Dummies, SDL2",
+				"image": "demo_graphic",
+				"desc" : "Petite démo graphique vidéo utilisant OpenGL, SDL2 et le GL4Dummies"
+			},
+			"Chess Engine" : {
+				"id" : "chess_engine",
+				"tools": "JavaScript, HTML, CSS",
+				"image": "chess_engine",
+				"desc" : "Moteur d'échecs avec une interface web simple et une IA utilisant l'algorithme Minimax"
+			},
+			"Secure Chat" : {
+				"id" : "secure_chat",
+				"tools": "Python, Tkinter, AES",
+				"image": "chat_app",
+				"desc" : "Simple application de chat sécurisé avec chiffrement AES, serveur et client de socket utilisant l'interface Tkinter"
+			},
+			"Detection App" : {
+				"id" : "detec_app",
+				"tools": "Python, OpenCV, Mediapipe",
+				"image": "screen_detection",
+				"desc" : "Collection de programmes de détection pour écran, visage, main, objet, sec, etc"
+			},
+			"Music Virap" : {
+				"id" : "music_virap",
+				"tools": "Kotlin, Android Studio",
+				"image": "music_player_virap",
+				"desc" : "Mobile App Android: lecteur de musique avec interface, fonctionnalités simples"
+			},
+			"Colt Express" : {
+				"id" : "colt_express",
+				"tools": "Pygame, Tkinter, PIL",
+				"image": "colt_express",
+				"desc" : "Jeu de société Colt Express avec une interface animée simple par la bibliothèque Pygame et Tkinter"
+			},
+			"Castlevania" : {
+				"id" : "castlevania",
+				"tools": "JavaScript, Canvas, HTML",
+				"image": "castlevania",
+				"desc" : "Jeu de plateforme 2D avec un style castlevania utilisant vanilla JS et l'API Canvas"
+			},
+			"Polyominos" : {
+				"id" : "polyominos",
+				"tools": "JavaScript, HTML, CSS",
+				"image": "polyominos",
+				"desc" : "Résolution du puzzle Polyominos avec un algorithme et une interface web simple"
+			},
+			"Teleporter" : {
+				"id" : "teleporter",
+				"tools": "Godot Engine, GDScript",
+				"image": "teleporter",
+				"desc" : "Jeu pixel 2D rpg adventure réalisé par Godot Engine 3.5.1 avec le langage GDScript"
+			},
+			"Movies Website" : {
+				"id" : "moviesite",
+				"tools": "React, JQuery, HTML, CSS",
+				"image": "movies_web",
+				"desc" : "Site Web de films avec une interface simple de liste de films et une fonction de recherche"
+			},
+			"Compilator" : {
+				"id" : "compilator",
+				"tools": "Ocaml, SPIM, MIPS",
+				"image": "compiler",
+				"desc" : "Compilateur d'un langage simple (Mini C) vers le langage assembleur MIPS avec Ocaml, résultat dans SPIM"
+			}
+		},
+		"button" : "Voir Plus",
+		"button_title": "Voir plus sur ",
+		"summary": "Actuellement, {0} projets sont présentés."
+	}
+}
+
