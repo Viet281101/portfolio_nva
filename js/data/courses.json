@@ -1,0 +1,12 @@
+{
+    "en" : {
+        "title": "Courses",
+        "desc": "My courses in university",
+        "tabBtnTitle": "Show tab "
+    },
+    "fr" : {
+        "title": "Cours",
+        "desc": "Mes cours à l'université",
+        "tabBtnTitle": "Afficher les onglets "
+    }
+}

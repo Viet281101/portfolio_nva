@@ -55,7 +55,7 @@ class WelcomeStartUpPopUp {
 		popupContent.appendChild(heading);
 
 		const attention = document.createElement("p");
-		attention.textContent = "ATTENTION: This is not COOKIES !!";
+		attention.textContent = "ATTENTION : This is not COOKIES !!";
 		Object.assign(attention.style, { textAlign: 'center', fontSize: '18px', margin: '5px', color: 'red', });
 		popupContent.appendChild(attention);
 

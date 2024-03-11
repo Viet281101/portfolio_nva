@@ -72,6 +72,7 @@ class MainApp {
 		if (this.home) this.home.updateContent(lang);
 		if (this.about) this.about.updateContent(lang);
 		if (this.project) this.project.updateContent(lang);
+		if (this.courses) this.courses.updateContent(lang);
 		if (this.navBar) this.navBar.updateLanguage(lang);
 		if (this.btnOnTop) this.btnOnTop.updateContent(lang);
 	};
