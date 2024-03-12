@@ -1,10 +1,11 @@
 
 class Home {
-	constructor() {
+	constructor(lang) {
 		this.section = document.getElementById('home');
 		Object.assign(this.section.style, {
 			display: 'flex', justifyContent: 'space-between', alignItems: 'center'
 		});
+		this.lang = lang;
 		this.contentData = {};
 		this.loadContentData();
 		this.createAvatarContent();
@@ -38,7 +39,6 @@ class Home {
 
 	createHomeContent() {
 		if (Object.keys(this.contentData).length === 0) return;
-		this.lang = app.lang;
 		this.clearContentExceptAvatar();
 
 		const introTitle = document.createElement('div');

@@ -160,15 +160,15 @@ class MainApp {
 
 	initializeComponents() {
 		this.loadFullPage();
-		if (window.innerWidth < 830) this.navBar = new NavBar();
-		else this.sidebar = new Sidebar();
+		if (window.innerWidth < 830) this.navBar = new NavBar(this.lang);
+		else this.sidebar = new Sidebar(this.lang);
 		this.background = new Background();
-		this.langBox = new LangBox();
+		this.langBox = new LangBox(this.lang);
 		this.btnOnTop = new ScrollOnTop();
-		this.home = new Home();
-		this.about = new About();
-		this.project = new Project();
-		this.courses = new Courses();
+		this.home = new Home(this.lang);
+		this.about = new About(this.lang);
+		this.project = new Project(this.lang);
+		this.courses = new Courses(this.lang);
 		this.contact = new Contact();
 		this.createContents();
 		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;

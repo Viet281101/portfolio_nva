@@ -1,6 +1,6 @@
 
 class About {
-	constructor() {
+	constructor(lang) {
 		this.section = document.getElementById('about');
 		this.myCV = './assets/doc/Viet_Nguyen_CV.pdf';
 		this.leftArrow = './assets/icons/arrow_left.png';
@@ -16,6 +16,7 @@ class About {
 			card_width: '&card_width=300',
 			hide_title: '&hide_title=true'
 		};
+		this.lang = lang;
 		this.contentData = {};
 		this.loadContentData();
 	};
@@ -29,7 +30,6 @@ class About {
 
 	createAboutContent() {
 		if (Object.keys(this.contentData).length === 0) return;
-		this.lang = app.lang;
 		this.section.innerHTML = '<div class="slides-container">';
 		const slidesContainer = this.section.querySelector('.slides-container');
 		Object.assign(slidesContainer.style, { display: 'flex', overflowX: 'hidden', scrollBehavior: 'smooth', width: '100%', height: '100%' });
@@ -112,7 +112,6 @@ class About {
 		aboutContent.appendChild(aboutLeft);
 		aboutContent.appendChild(aboutRight);
 		aboutContent.appendChild(this.createCVButton());
-
 		return aboutContent;
 	};
 
@@ -212,7 +211,6 @@ class About {
 			skillItem.textContent = skillValue;
 			softSkillsList.appendChild(skillItem);
 		}
-
 		this.updateButtonVisibility();
 	};
 

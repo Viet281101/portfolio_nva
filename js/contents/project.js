@@ -1,9 +1,10 @@
 // Dependencies: owl.carousel.css, owl.carousel.js
 class Project {
-	constructor() {
+	constructor(lang) {
 		this.section = document.getElementById('projects');
 		Object.assign(this.section.style, { width: '100%', });
 		this.contentData = {};
+		this.lang = lang;
 		this.prev_slide = 'nav_left'; this.next_slide = 'nav_right';
 		this.loadContentData();
 	};
@@ -11,7 +12,7 @@ class Project {
 	loadContentData() {
 		fetch('./js/data/project.json')
 			.then(response => response.json())
-			.then(data => { this.contentData = data; this.createProjectContent(app.lang); })
+			.then(data => { this.contentData = data; this.createProjectContent(this.lang); })
 			.catch(error => console.error('Error loading the project content:', error));
 	};
 

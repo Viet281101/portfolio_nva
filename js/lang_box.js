@@ -1,7 +1,7 @@
 
 class LangBox {
-	constructor() {
-		this.lang = app.lang;
+	constructor(lang) {
+		this.lang = lang;
 		this.langs = ['en', 'fr'];
 	};
 

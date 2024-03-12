@@ -1,9 +1,9 @@
 
 class NavBar {
-	constructor() {
+	constructor(lang) {
 		this.menu_nav_icon = "./assets/icons/menu.png";
 		this.close_nav_icon = "./assets/icons/x_close.png";
-		this.lang = 'en';
+		this.lang = lang;
 		this.navItems = [
 			{ href: "#home", icon: "./assets/icons/home.png", text: { en: "Home", fr: "Accueil" } },
 			{ href: "#about", icon: "./assets/icons/about.png", text: { en: "About", fr: "À propos" } },

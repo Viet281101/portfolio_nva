@@ -1,11 +1,12 @@
 
 class Courses {
-	constructor() {
+	constructor(lang) {
 		this.section = document.getElementById('courses');
 		this.tabList = ['L1', 'L2', 'L3', 'M1', 'M2'];
 		this.x_close = "./assets/icons/x_close.png";
 		this.contentData = {};
-		this.lang = app.lang;
+		this.infoData = {};
+		this.lang = lang;
 		this.loadContentData();
 	};
 
@@ -14,11 +15,14 @@ class Courses {
 			.then(response => response.json())
 			.then(data => { this.contentData = data; this.createCoursesContent(); })
 			.catch(error => console.error('Error loading the courses content:', error));
+		fetch('./js/data/courses_info.json')
+			.then(response => response.json())
+			.then(data => { this.infoData = data; this.createCoursesContent(); })
+			.catch(error => console.error('Error loading the courses content:', error));
 	};
 
 	createCoursesContent() {
 		if (Object.keys(this.contentData).length === 0) return;
-		this.lang = app.lang;
 		this.section.innerHTML = '';
 
 		this.title = document.createElement('h2');
@@ -71,15 +75,14 @@ class Courses {
 			tabContent.id = tabName;
 			tabContent.className = "tabcontent";
 			Object.assign(tabContent.style, { display: 'none',
-				border: '1px solid #ccc', borderTop: 'none', background: 'transparent',
-			});
-
+				border: '1px solid #ccc', borderTop: 'none', background: 'transparent', });
 			const closeButton = this.createCloseButton(tabContent);
 			tabContent.appendChild(closeButton);
 
 			const tabData = this.contentData[this.lang][tabName];
 			const tabTitle = document.createElement("h2");
 			tabTitle.textContent = tabData['h2'];
+			tabTitle.style.textDecoration = 'underline';
 			tabContent.appendChild(tabTitle);
 
 			const semesterTabsWrapper = document.createElement("div");
@@ -111,12 +114,7 @@ class Courses {
 
 					const coursesList = document.createElement("ul");
 					Object.entries(semesterData["courses"]).forEach(([courseId, courseName]) => {
-						const courseItem = document.createElement("li");
-						courseItem.textContent = courseName;
-						Object.assign(courseItem.style, {
-							wordWrap: 'normal', padding: '10px 0px',
-						});
-						coursesList.appendChild(courseItem);
+						this.updateCourseContent(coursesList, semesterData, courseId, courseName);
 					});
 					Object.assign(coursesList.style, { listStyle: 'none', textAlign: 'left', });
 					semesterContent.appendChild(coursesList);
@@ -138,9 +136,7 @@ class Courses {
 		closeButton.title = this.contentData[this.lang].closeBtnTitle;
 		closeButton.alt = this.contentData[this.lang].closeBtnAlt;
 		Object.assign(closeButton.style, { float: 'right', cursor: 'pointer', width: '35px', height: '35px', padding: '4px 4px', });
-		closeButton.addEventListener("click", () => {
-			tabContent.style.display = 'none';
-		});
+		closeButton.addEventListener("click", () => { tabContent.style.display = 'none'; });
 		return closeButton;
 	};
 
@@ -178,57 +174,60 @@ class Courses {
 		Object.assign(event.currentTarget.style, { backgroundColor: '#666', });
 	};
 
+	updateCourseContent(content, semesterData, courseId, courseName) {
+		const courseItem = document.createElement("li");
+		const courseButton = document.createElement("button");
+		courseButton.textContent = courseName;
+		Object.assign(courseButton.style, {
+			display: 'block', width: '100%', padding: '10px 0px', textAlign: 'left', background: 'none', 
+			border: 'none', color: 'inherit', textTransform: 'none', fontSize: 'inherit', cursor: 'pointer',
+			fontFamily: "'Pixel', sans-serif",
+		});
+		courseButton.addEventListener('click', () => {
+			console.log(`Detail info of this course: ${courseName} & Course id: ${courseId}`);
+		});
+		courseItem.appendChild(courseButton);
+		content.appendChild(courseItem);
+	};	
+
 	updateContent(lang) {
 		this.lang = lang;
 		this.title.innerHTML = this.contentData[this.lang].title;
 		this.desc.textContent = this.contentData[this.lang].desc;
 
-		this.tabList.forEach((year) => {
+		const tabContent = this.section.querySelectorAll('.tabcontent');
+		tabContent.forEach(content => {
+			const year = content.id;
 			const yearData = this.contentData[this.lang][year];
-			const yearTitle = this.section.querySelector(`#${year} > h2`);
-			if (yearTitle) { yearTitle.textContent = yearData['h2']; }
-
-			Object.keys(yearData).forEach((semester) => {
-				if (semester.startsWith("S")) {
-					const semesterData = yearData[semester];
-					const semesterTitle = this.section.querySelector(`#${year}-${semester} > h3`);
-					if (semesterTitle) { semesterTitle.textContent = semesterData['h3']; }
-
-					const coursesList = this.section.querySelector(`#${year}-${semester} ul`);
-					if (coursesList) {
-						coursesList.innerHTML = '';
-						Object.entries(semesterData["courses"]).forEach(([courseId, courseName]) => {
-							const courseItem = document.createElement("li");
-							courseItem.textContent = courseName;
-							Object.assign(courseItem.style, { wordWrap: 'normal', padding: '10px 0px', });
-							coursesList.appendChild(courseItem);
-						});
+			if (yearData) {
+				const tabTitle = content.querySelector('h2');
+				if (tabTitle) { tabTitle.textContent = yearData['h2']; }
+				Object.keys(yearData).forEach(key => {
+					if (key.startsWith("S")) {
+						const semesterData = yearData[key];
+						const semesterTitle = content.querySelector(`#${year}-${key} > h3`);
+						if (semesterTitle) { semesterTitle.textContent = semesterData['h3']; }
+						const coursesList = content.querySelector(`#${year}-${key} ul`);
+						if (coursesList) {
+							coursesList.innerHTML = '';
+							Object.entries(semesterData["courses"]).forEach(([courseId, courseName]) => {
+								this.updateCourseContent(coursesList, semesterData, courseId, courseName);
+							});
+						}
 					}
-				}
-			});
+				});
+			}
 		});
-
 		const activeYearTab = this.section.querySelector('.tablinks.active');
 		if (activeYearTab) { activeYearTab.click(); }
-
-		const activeSemesterTab = this.section.querySelector('.semester-tablinks.active');
-		if (activeSemesterTab) { activeSemesterTab.click(); }
-
-		const closeButtons = this.section.querySelectorAll('.topright');
-		closeButtons.forEach(button => {
-			button.alt = this.contentData[this.lang].closeBtnAlt;
-			button.title = this.contentData[this.lang].closeBtnTitle;
-		});
-
-		const tabButtons = this.section.querySelectorAll('.tablinks');
-		tabButtons.forEach((button, index) => {
-			button.title = this.contentData[this.lang].tabBtnTitle.replace('{0}', this.tabList[index]);
-		});
-
-		const semesterTabButtons = this.section.querySelectorAll('.semester-tablinks');
-		semesterTabButtons.forEach((button) => {
+		this.section.querySelectorAll('.semester-tablinks').forEach(button => {
 			const [year, semester] = button.id.split('-');
-			button.textContent = this.contentData[this.lang][year][semester]['h3'];
+			const semesterData = this.contentData[this.lang][year] ? this.contentData[this.lang][year][semester] : null;
+			if (semesterData) { button.textContent = semesterData['h3']; }
+		});
+		this.section.querySelectorAll('.topright').forEach(button => {
+			button.title = this.contentData[this.lang].closeBtnTitle;
+			button.alt = this.contentData[this.lang].closeBtnAlt;
 		});
 	};
 };

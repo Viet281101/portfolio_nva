@@ -1,7 +1,7 @@
 // Dependencies: jquery, fullpage.js
 class Sidebar {
-	constructor() {
-		this.lang = app.lang;
+	constructor(lang) {
+		this.lang = lang;
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
 		this.liItems = [
 			{href: "#home", icon: "./assets/icons/home.png", text: "Home", texte: "Accueil"},
