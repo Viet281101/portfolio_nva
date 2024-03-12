@@ -1,28 +1,88 @@
 {
 	"en" : {
 		"L1-S1-1": {
-			"title": "Programming Methodology",
-			"description": "This course introduces the basic concepts of programming...",
-			"duration": "10 weeks",
-			"credits": "3"
+		  "title": "Programming Methodology",
+		  "description": "The objective of this course is to learn how to learn programming. It is about acquiring the essential basics for learning programming and thus continuing with the degree. This course is an introduction to the use of several programming languages (Python, C, Bash, LaTeX), as well as some essential tools (interpreters, compilers, version control manager, build manager). Each point will be reviewed and deepened later in other courses of the degree.",
+		  "duration": "10 weeks",
+		  "credits": "3"
 		},
 		"L1-S1-2": {
-			"title": "Functional Programming",
-			"description": "This course covers the principles of functional programming...",
-			"duration": "8 weeks",
-			"credits": "3"
+		  "title": "Functional Programming",
+		  "description": "The goal of this course is to learn programming. Choosing the functional paradigm from the first semester of the first year aims to instill good programming habits, especially to think about the 'what' (the goal of the algorithm) and not just the 'how' (the steps of the algorithm) when designing a program. Depending on the instructor, this course uses the Racket language or the OCaml language.",
+		  "duration": "8 weeks",
+		  "credits": "3"
+		},
+		"L1-S1-3": {
+		  "title": "Computer Architecture",
+		  "description": "The objective of this course is to learn the principles of a computer's hardware operation. It is useful to know a minimum about hardware to think and design adequate programs and software.",
+		  "duration": "8 weeks",
+		  "credits": "3"
+		},
+		"L1-S1-4": {
+		  "title": "Introduction to Game Engines",
+		  "description": "The objective of this course is to introduce the functioning of game engines (their role, their functionalities), as well as the practical handling of a particular game engine (Godot).",
+		  "duration": "8 weeks",
+		  "credits": "3"
+		},
+		"L1-S1-5": {
+		  "title": "Fundamental Computer Science",
+		  "description": "The goal of this course is to provide basic knowledge on important mathematical concepts in algorithms and video game design: reminders on sets and number sets, number arithmetic and applications in cryptography, introduction to matrices and solving linear systems, elements of geometry in the plane and space.",
+		  "duration": "8 weeks",
+		  "credits": "3"
+		},
+		"L1-S1-6": {
+		  "title": "Online Identity Management",
+		  "description": "The objective of this course is to learn the best practices to be mindful of one's online image, as well as to create and maintain a simple personal webpage that will be fed by the various academic and personal projects of each student.",
+		  "duration": "8 weeks",
+		  "credits": "3"
+		},
+		"L1-S1-7": {
+		  "title": "Machine Practice",
+		  "description": "The objective of this course is to become familiar with the GNU/Linux environment, the command line, and to learn more closely about the machines that will be used throughout the training.",
+		  "duration": "8 weeks",
+		  "credits": "3"
 		}
-	},
+	  },
 	"fr" : {
 		"L1-S1-1": {
 			"title": "Méthodologie de la programmation",
-			"description": "Ce cours présente les concepts de base de la programmation...",
+			"description": "L'objectif de ce cours est d'apprendre à apprendre à programmer. Il s'agit d'acquérir les bases essentielles à l'apprentissage de la programmation et donc à la poursuite de la licence. Ce cours est une introduction à l'utilisation de plusieurs langages de programmation (Python, C, Bash, LaTeX), ainsi que de quelques outils essentiels (interpréteurs, compilateurs, gestionnaire de contrôle de version, gestionnaire de compilation). Chaque point sera revu et approfondi par la suite dans d'autres cours de la licence.",
 			"duration": "10 semaines",
 			"credits": "3"
 		},
 		"L1-S1-2": {
 			"title": "Programmation Fonctionnelle",
-			"description": "Ce cours couvre les principes de la programmation fonctionnelle...",
+			"description": "L'objectif de ce cours est l'apprentissage de la programmation. Le choix du paradigme fonctionnel dès le premier semestre de la première année a pour but de donner de bonnes habitudes de programmation, notamment de faire réfléchir au “quoi” (l'objectif de l'algorithme) et pas seulement au “comment” (les étapes de l'algorithme) lors de la conception de programme. Suivant l'enseignant·e, ce cours utilise le langage Racket ou le langage OCaml.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S1-3": {
+			"title": "Architecture des ordinateurs",
+			"description": "L'objectif de ce cours est d'apprendre les principes de fonctionnement matériels d'un ordinateur. Il est utile de connaître un minimum le matériel pour penser et concevoir des programmes et des logiciels adéquats.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S1-4": {
+			"title": "Introduction aux Moteurs de Jeux",
+			"description": "L'objectif de ce cours est d'introduire le fonctionnement des moteurs de jeux (leur rôle, leurs fonctionnalités), ainsi que la prise en main concrète d'un moteur de jeu en particulier (Godot).",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S1-5": {
+			"title": "Informatique Fondamentale",
+			"description": "L'objectif de ce cours est de fournir des connaissances de base sur des notions mathématiques importantes en algorithmique et en conception de jeux-vidéos : rappels sur les ensembles et ensembles de nombres, arithmétique des nombres et applications en cryptographie, introduction aux matrices et à la résolution de systèmes linéaires, éléments de géométrie dans le plan et l'espace.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S1-6": {
+			"title": "Gestion d'Identité en Ligne",
+			"description": "L'objectif de ce cours est d'apprendre les bonnes pratiques à adopter pour faire attention à son image en ligne, ainsi qu'à créer et maintenir une page web personnelle simple qui sera alimentée par les différents projets académiques et personnels de chacun·e.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S1-7": {
+			"title": "Pratique des Machines",
+			"description": "L'objectif de ce cours est de se familiariser avec l'environnement GNU/Linux, la ligne de commande et apprendre à connaître d'un peu plus près les machines qui vont être utilisées tout au long de la formation.",
 			"duration": "8 semaines",
 			"credits": "3"
 		}

@@ -52,7 +52,7 @@ class Courses {
 			tabButton.textContent = tabName;
 			Object.assign(tabButton.style, {
 				border: '1px solid #555', outline: 'none', backgroundColor: '#333', float: 'left',
-				cursor: 'pointer', padding: '8px 10px', transition: '0.3s',
+				cursor: 'pointer', padding: '8px 10px', transition: '0.3s', borderRadius: '5px',
 				fontSize: '18px', fontFamily:"'Pixel', sans-serif", color:'#fff', fontWeight: 'bold',
 			});
 			tabButton.addEventListener("click", (e) => this.openTab(e, tabName));
@@ -98,7 +98,7 @@ class Courses {
 					semesterTab.className = "semester-tablinks";
 					semesterTab.textContent = key;
 					Object.assign(semesterTab.style, {
-						border: '1px solid #555', outline: 'none', backgroundColor: '#333',
+						border: '1px solid #555', outline: 'none', backgroundColor: '#333', borderRadius: '5px', 
 						cursor: 'pointer', padding: '4px 10px', transition: '0.3s', float: 'left',
 						fontSize: '18px', fontFamily:"'Pixel', sans-serif", color:'#fff', fontWeight: 'bold',
 					});

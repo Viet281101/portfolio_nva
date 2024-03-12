@@ -22,9 +22,8 @@ class CoursesInfo {
 		const popup = document.createElement("div");
 		Object.assign(popup.style, {
 			backgroundColor: "rgba(0,0,0,1)",
-			padding: "20px", borderRadius: "5px",
-			maxWidth: "600px", maxHeight: "80%",
-			overflowY: "auto",
+			padding: "20px", borderRadius: "5px", border: "2px solid #fff",
+			maxWidth: "600px", maxHeight: "80%", overflowY: "auto",
 			boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
 		});
 
@@ -44,6 +43,19 @@ class CoursesInfo {
 		credits.textContent = `Credits: ${this.credits}`;
 		popup.appendChild(credits);
 
+		const closeButton = this.closeBtn(overlay);
+		popup.appendChild(closeButton);
+
+		overlay.appendChild(popup);
+		document.body.appendChild(overlay);
+
+		this.showPopup = () => {
+			overlay.style.visibility = "visible";
+			overlay.style.opacity = "1";
+		};
+	};
+
+	closeBtn(overlay) {
 		const closeButton = document.createElement("button");
 		closeButton.textContent = "Close";
 		closeButton.onclick = () => {
@@ -56,14 +68,6 @@ class CoursesInfo {
 			backgroundColor: "#444", color: "#fff",
 			fontSize: "16px", fontFamily: "'Pixel', sans-serif",
 		});
-		popup.appendChild(closeButton);
-
-		overlay.appendChild(popup);
-		document.body.appendChild(overlay);
-
-		this.showPopup = () => {
-			overlay.style.visibility = "visible";
-			overlay.style.opacity = "1";
-		};
+		return closeButton;
 	};
 };
