@@ -10,7 +10,7 @@ class MainApp {
 			'contents/home.js',
 			'contents/about.js',
 			'contents/project.js',
-			'contents/courses.js',
+			'contents/courses.js', 'contents/courses_info.js',
 			'contents/contact.js',
 		];
 		this.sidebar = null; this.navBar = null;

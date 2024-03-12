@@ -1,8 +1,30 @@
 {
 	"en" : {
-
+		"L1-S1-1": {
+			"title": "Programming Methodology",
+			"description": "This course introduces the basic concepts of programming...",
+			"duration": "10 weeks",
+			"credits": "3"
+		},
+		"L1-S1-2": {
+			"title": "Functional Programming",
+			"description": "This course covers the principles of functional programming...",
+			"duration": "8 weeks",
+			"credits": "3"
+		}
 	},
 	"fr" : {
-
+		"L1-S1-1": {
+			"title": "Méthodologie de la programmation",
+			"description": "Ce cours présente les concepts de base de la programmation...",
+			"duration": "10 semaines",
+			"credits": "3"
+		},
+		"L1-S1-2": {
+			"title": "Programmation Fonctionnelle",
+			"description": "Ce cours couvre les principes de la programmation fonctionnelle...",
+			"duration": "8 semaines",
+			"credits": "3"
+		}
 	}
 }

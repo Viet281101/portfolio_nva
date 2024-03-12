@@ -57,9 +57,7 @@ class Project {
 		projectSummary.className = "project-summary";
 		let totalProjects = Object.keys(data.projects).length;
 		projectSummary.innerHTML = data.summary.replace('{0}', `<strong style="color:#00D7FF;">${totalProjects}</strong>`);
-		Object.assign(projectSummary.style, {
-			textAlign: 'center', padding: '20px', color: '#fff', fontSize: '24px',
-		});
+		Object.assign(projectSummary.style, { textAlign: 'center', padding: '20px', color: '#fff', fontSize: '24px', });
 		this.section.appendChild(projectSummary);
 	};
 
@@ -99,15 +97,11 @@ class Project {
 		let sub_title = document.createElement('div');
 		sub_title.className = "sub-title";
 		sub_title.innerHTML = projectData.tools;
-		Object.assign(sub_title.style, {
-			textAlign: 'center', padding: '5px', color: '#00D7FF',
-		});
+		Object.assign(sub_title.style, { textAlign: 'center', padding: '5px', color: '#00D7FF', });
 
 		let description = document.createElement('p');
 		description.innerHTML = projectData.desc;
-		Object.assign(description.style, {
-			textAlign: 'center', padding: '5px', wordWrap: 'break-word',
-		});
+		Object.assign(description.style, { textAlign: 'center', padding: '5px', wordWrap: 'break-word', });
 
 		let btn = document.createElement("div");
 		btn.className = "btn";

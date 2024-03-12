@@ -85,63 +85,73 @@ class NavBar {
 	};
 
 	styleNavBar() {
-		const style = document.createElement('style');
-		style.type = 'text/css';
-		style.innerHTML = `
-			#nav-bar {
-				height: 100%;
-				width: 0;
-				position: fixed;
-				z-index: 11;
-				top: 0;
-				right: 0;
-				background-color: #111;
-				overflow-x: hidden;
-				transition: 0.5s;
-				padding-top: 60px;
-			}
-			#nav-bar #nav-content {
-				width: 100%;
-				margin-top: 20px;
-			}
-			#nav-bar ul {
-				padding: 10px 10px;
-				list-style: none;
-			}
-			#nav-bar li {
-				margin-top: 10px;
-				margin-bottom: 10px;
-				border-bottom: 1px solid #f1f1f1;
-			}
-			#nav-bar a {
-				padding: 10px 15px;
-				text-decoration: none;
-				font-size: 26px;
-				color: white;
-				display: block;
-				transition: 0.3s;
-			}
-			#nav-bar a img {
-				padding-left: 10px;
-				width:60px;
-				height:60px;
-				margin-right:40px;
-			}
-			#nav-bar a:hover {
-				color: #f1f1f1;
-			}
-			#nav-icon, #close-nav-icon {
-				cursor: pointer;
-				position: fixed;
-				top: 15px;
-				right: 15px;
-				width: 40px;
-				height: 40px;
-				z-index: 12;
-			}
-		`;
-		document.head.appendChild(style);
-	};
+		const navBar = document.getElementById('nav-bar');
+		const navBarStyles = {
+			height: '100%', width: '0',
+			position: 'fixed',
+			zIndex: '11',
+			top: '0', right: '0',
+			backgroundColor: '#111',
+			overflowX: 'hidden',
+			transition: '0.5s',
+			paddingTop: '60px',
+		};
+		Object.assign(navBar.style, navBarStyles);
+
+		const navContent = navBar.querySelector('#nav-content');
+		const navContentStyles = {
+			width: '100%',
+			marginTop: '20px',
+		};
+		Object.assign(navContent.style, navContentStyles);
+
+		const ul = navContent.querySelector('ul');
+		const ulStyles = {
+			padding: '10px 10px',
+			listStyle: 'none',
+		};
+		Object.assign(ul.style, ulStyles);
+
+		const lis = ul.querySelectorAll('li');
+		const liStyles = {
+			marginTop: '10px',
+			marginBottom: '10px',
+			borderBottom: '1px solid #f1f1f1',
+		};
+		lis.forEach(li => Object.assign(li.style, liStyles));
+
+		const aStyles = {
+			padding: '10px 15px',
+			textDecoration: 'none',
+			fontSize: '26px',
+			color: 'white',
+			display: 'block',
+			transition: '0.3s',
+		};
+		const as = navBar.querySelectorAll('a');
+		as.forEach(a => Object.assign(a.style, aStyles));
+
+		const aImgs = navBar.querySelectorAll('a img');
+		const aImgStyles = {
+			paddingLeft: '10px',
+			width: '60px', height: '60px',
+			marginRight: '40px',
+		};
+		aImgs.forEach(img => Object.assign(img.style, aImgStyles));
+
+		const icons = [this.navIcon, document.getElementById('close-nav-icon')];
+		const iconStyles = {
+			cursor: 'pointer',
+			position: 'fixed',
+			top: '15px', right: '15px',
+			width: '40px', height: '40px',
+			zIndex: '12',
+		};
+		icons.forEach(icon => {
+			if (icon) Object.assign(icon.style, iconStyles);
+		});
+	}
+	
 };
 
 

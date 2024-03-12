@@ -23,6 +23,7 @@ class Courses {
 
 	createCoursesContent() {
 		if (Object.keys(this.contentData).length === 0) return;
+		if (Object.keys(this.infoData).length === 0) return;
 		this.section.innerHTML = '';
 
 		this.title = document.createElement('h2');
@@ -101,6 +102,14 @@ class Courses {
 						cursor: 'pointer', padding: '4px 10px', transition: '0.3s', float: 'left',
 						fontSize: '18px', fontFamily:"'Pixel', sans-serif", color:'#fff', fontWeight: 'bold',
 					});
+					semesterTab.addEventListener('mouseover', (e) => {
+						if (!e.target.classList.contains("active")) { e.target.style.backgroundColor = "#444"; }
+						else { e.target.style.backgroundColor = "#666"; }
+					});
+					semesterTab.addEventListener('mouseout', (e) => {
+						if (!e.target.classList.contains("active")) { e.target.style.backgroundColor = "#333"; }
+						else { e.target.style.backgroundColor = "#666"; }
+					});
 					semesterTabsWrapper.appendChild(semesterTab);
 
 					const semesterContent = document.createElement("div");
@@ -114,7 +123,7 @@ class Courses {
 
 					const coursesList = document.createElement("ul");
 					Object.entries(semesterData["courses"]).forEach(([courseId, courseName]) => {
-						this.updateCourseContent(coursesList, semesterData, courseId, courseName);
+						this.updateCourseContent(coursesList, courseId, courseName, this.lang, tabName, key);
 					});
 					Object.assign(coursesList.style, { listStyle: 'none', textAlign: 'left', });
 					semesterContent.appendChild(coursesList);
@@ -174,7 +183,7 @@ class Courses {
 		Object.assign(event.currentTarget.style, { backgroundColor: '#666', });
 	};
 
-	updateCourseContent(content, semesterData, courseId, courseName) {
+	updateCourseContent(content, courseId, courseName, lang, tabName, semesterKey) {
 		const courseItem = document.createElement("li");
 		const courseButton = document.createElement("button");
 		courseButton.textContent = courseName;
@@ -184,11 +193,19 @@ class Courses {
 			fontFamily: "'Pixel', sans-serif",
 		});
 		courseButton.addEventListener('click', () => {
-			console.log(`Detail info of this course: ${courseName} & Course id: ${courseId}`);
+			const courseInfoId = `${tabName}-${semesterKey}-${courseId}`;
+			const courseInfo = this.infoData[lang][courseInfoId];
+			if (courseInfo) {
+				const coursePopup = new CoursesInfo(courseInfo.title, courseInfo.description, courseInfo.duration, courseInfo.credits);
+				coursePopup.createPopupWindow();
+				coursePopup.showPopup();
+			} else { console.log("No detailed info available for this course."); }
 		});
+		courseButton.addEventListener('mouseover', (e) => { e.target.style.color = '#00D7FF'; });
+		courseButton.addEventListener('mouseout', (e) => { e.target.style.color = '#fff'; });
 		courseItem.appendChild(courseButton);
 		content.appendChild(courseItem);
-	};	
+	};
 
 	updateContent(lang) {
 		this.lang = lang;
@@ -211,7 +228,7 @@ class Courses {
 						if (coursesList) {
 							coursesList.innerHTML = '';
 							Object.entries(semesterData["courses"]).forEach(([courseId, courseName]) => {
-								this.updateCourseContent(coursesList, semesterData, courseId, courseName);
+								this.updateCourseContent(coursesList, courseId, courseName, this.lang, year, key);
 							});
 						}
 					}
