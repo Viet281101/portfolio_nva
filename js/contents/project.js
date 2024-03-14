@@ -4,6 +4,7 @@ class Project {
 		this.section = document.getElementById('projects');
 		Object.assign(this.section.style, { width: '100%', });
 		this.contentData = {};
+		this.infoData = {};
 		this.lang = lang;
 		this.prev_slide = 'nav_left'; this.next_slide = 'nav_right';
 		this.loadContentData();
@@ -11,6 +12,10 @@ class Project {
 
 	loadContentData() {
 		fetch('./js/data/project.json')
+			.then(response => response.json())
+			.then(data => { this.contentData = data; this.createProjectContent(this.lang); })
+			.catch(error => console.error('Error loading the project content:', error));
+		fetch('./js/data/project_info.json')
 			.then(response => response.json())
 			.then(data => { this.contentData = data; this.createProjectContent(this.lang); })
 			.catch(error => console.error('Error loading the project content:', error));
@@ -73,9 +78,7 @@ class Project {
 
 		let project_image = document.createElement('div');
 		project_image.className = "project-card-img";
-		Object.assign(project_image.style, {
-			width: '100%', height: '160px', overflow: 'hidden',
-		});
+		Object.assign(project_image.style, { width: '100%', height: '160px', overflow: 'hidden', });
 		let img = document.createElement('img');
 		img.src = './assets/project/' + projectData.image + '.png';
 		img.alt = projectName; img.loading = 'lazy'; img.title = projectName;
@@ -131,10 +134,7 @@ class Project {
 			$('.slider').owlCarousel({
 				loop: true, nav: true,
 				autoplay: true, autoplayTimeout: 3000, autoplayHoverPause: true,
-				responsive: {
-					0: { items: 1 }, 600: { items: 2 },
-					1400: { items: 3 }, 1800: { items: 4 },
-				},
+				responsive: { 0: { items: 1 }, 600: { items: 2 }, 1400: { items: 3 }, 1800: { items: 4 }, },
 			});
 	  	});
 	};
@@ -148,8 +148,8 @@ class Project {
 				target.querySelector('img').style.transform = 'scale(1.1)';
 				target.querySelector('p').style.color = '#0056b3';
 			}
-			});
-			this.section.addEventListener('mouseout', (event) => {
+		});
+		this.section.addEventListener('mouseout', (event) => {
 			let target = event.target.closest('.card');
 			if (target) {
 				target.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2)';

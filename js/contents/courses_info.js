@@ -5,6 +5,7 @@ class CoursesInfo {
 		this.desc = description;
 		this.duration = duration;
 		this.credits = credits;
+		this.x_close = "./assets/icons/x_close.png";
 	};
 
 	createPopupWindow() {
@@ -26,7 +27,8 @@ class CoursesInfo {
 			maxWidth: "600px", maxHeight: "80%", overflowY: "auto",
 			boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
 		});
-
+		const closeXButton = this.closeXBtn(overlay);
+		popup.appendChild(closeXButton);
 		const title = document.createElement("h2");
 		title.textContent = this.title;
 		popup.appendChild(title);
@@ -58,16 +60,32 @@ class CoursesInfo {
 	closeBtn(overlay) {
 		const closeButton = document.createElement("button");
 		closeButton.textContent = "Close";
+		closeButton.title = "Close";
 		closeButton.onclick = () => {
 			overlay.style.visibility = "hidden";
 			overlay.style.opacity = "0";
 		};
 		Object.assign(closeButton.style, {
 			cursor: "pointer", padding: "10px 20px", margin: "20px 0 0",
-			border: "none", borderRadius: "5px",
-			backgroundColor: "#444", color: "#fff",
+			border: "none", borderRadius: "5px", textAlign: 'center', 
+			backgroundColor: "#444", color: "#fff", 
 			fontSize: "16px", fontFamily: "'Pixel', sans-serif",
 		});
 		return closeButton;
 	};
+
+	closeXBtn(overlay) {
+		const closeXButton = document.createElement("img");
+		closeXButton.src = this.x_close;
+		closeXButton.title = "Close";
+		closeXButton.className = "popupCloseX";
+		closeXButton.addEventListener("click", () => {
+			overlay.style.visibility = "hidden";
+			overlay.style.opacity = "0";
+		});
+		Object.assign(closeXButton.style, {
+			cursor: "pointer", padding: "5px", float: 'right',
+		});
+		return closeXButton;
+	}
 };

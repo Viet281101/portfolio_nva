@@ -16,7 +16,8 @@
 					"4": "Introduction Game Engine",
 					"5": "Fundamental Computer Science",
 					"6": "Online Identity Management",
-					"7": "Machine Practice"
+					"7": "Machine Practice",
+					"8": "...Empty..."
 				}
 			},
 			"S2" : {
@@ -28,7 +29,8 @@
 					"4": "Programming Game Engine",
 					"5": "Creation & Management Resources",
 					"6": "Collaborative IT Tools",
-					"7": "English Robotic"
+					"7": "English Robotic",
+					"8": "EC Free"
 				}
 			}
 		},
@@ -43,7 +45,8 @@
 					"4": "Algorithms for Graphic Programming",
 					"5": "Introduction to Artificial Intelligence",
 					"6": "Professional Project Preparation",
-					"7": "Artificial Intelligence English"
+					"7": "English - Artificial Intelligence",
+					"8": "...Empty..."
 				}
 			},
 			"S4" : {
@@ -53,9 +56,10 @@
 					"2": "Object-Oriented Programming",
 					"3": "Systems & Networks",
 					"4": "Concurrent Programming & Networks",
-					"5": "Image Synthesis, Animation & Sound",
-					"6": "History of Computing",
-					"7": "Oral Knowledge Presentation"
+					"5": "Web and Database Development",
+					"6": "Image Synthesis, Animation & Sound",
+					"7": "History of Computing",
+					"8": "Oral Knowledge Presentation"
 				}
 			}
 		},
@@ -70,7 +74,8 @@
 					"4": "Game Engines",
 					"5": "Mobile Development",
 					"6": "Tutored Project: State of the Art",
-					"7": "Master's Objective"
+					"7": "Master's Objective",
+					"8": "English - Artificial Intelligence"
 				}
 			},
 			"S6" : {
@@ -82,7 +87,8 @@
 					"4": "Graphics Card Programming",
 					"5": "Artificial Intelligence for Games",
 					"6": "Tutored Project: Implementation",
-					"7": "Law, Ethics, Computer Science"
+					"7": "Law, Ethics, Computer Science",
+					"8": "English - Artificial Intelligence"
 				}
 			}
 		},
@@ -97,7 +103,8 @@
 					"4": "Not yet",
 					"5": "Not yet",
 					"6": "Not yet",
-					"7": "Not yet"
+					"7": "Not yet",
+					"8": "Not yet"
 				}
 			},
 			"S2" : {
@@ -109,7 +116,8 @@
 					"4": "Not yet",
 					"5": "Not yet",
 					"6": "Not yet",
-					"7": "Not yet"
+					"7": "Not yet",
+					"8": "Not yet"
 				}
 			}
 		},
@@ -124,7 +132,8 @@
 					"4": "Not yet",
 					"5": "Not yet",
 					"6": "Not yet",
-					"7": "Not yet"
+					"7": "Not yet",
+					"8": "Not yet"
 				}
 			},
 			"S2" : {
@@ -136,7 +145,8 @@
 					"4": "Not yet",
 					"5": "Not yet",
 					"6": "Not yet",
-					"7": "Not yet"
+					"7": "Not yet",
+					"8": "Not yet"
 				}
 			}
 		}
@@ -158,7 +168,8 @@
 					"4": "Introduction aux Moteurs de Jeux",
 					"5": "Informatique Fondamentale",
 					"6": "Gestion d'Identité en Ligne",
-					"7": "Pratique des Machines"
+					"7": "Pratique des Machines",
+					"8": "...Vide..."
 				}
 			},
 			"S2" : {
@@ -170,7 +181,8 @@
 					"4": "Programmation dans les Moteurs de Jeux",
 					"5": "Création et Gestion de Ressources",
 					"6": "Outils Informatiques Collaboratifs",
-					"7": "Anglais Robotique"
+					"7": "Anglais Robotique",
+					"8": "EC Libre"
 				}
 			}
 		},
@@ -185,7 +197,8 @@
 					"4": "Algorithmes pour la Programmation Graphique",
 					"5": "Introduction à l'Intelligence Artificielle",
 					"6": "Préparation au Projet Professionnel",
-					"7": "Anglais d'Intelligence Artificielle"
+					"7": "Anglais - Intelligence Artificielle",
+					"8": "...Vide..."
 				}
 			},
 			"S4" : {
@@ -195,9 +208,10 @@
 					"2": "Programmation Orientée Objet",
 					"3": "Systèmes & Réseaux",
 					"4": "Programmation concurrent & Réseaux",
-					"5": "Synthèse d'Images, Animation & Sons",
-					"6": "Histoire de l'Informatique",
-					"7": "Restitution Orale de Connaissances"
+					"5": "Développement Web & Base de Données",
+					"6": "Synthèse d'Images, Animation & Sons",
+					"7": "Histoire de l'Informatique",
+					"8": "Restitution Orale de Connaissances"
 				}
 			}
 		},
@@ -212,7 +226,8 @@
 					"4": "Moteurs de Jeu",
 					"5": "Développement Mobile",
 					"6": "Projet Tuteuré : état de l'Art",
-					"7": "Objectif Master"
+					"7": "Objectif Master",
+					"8": "Anglais - Intelligence Artificelle"
 				}
 			},
 			"S6" : {
@@ -224,7 +239,8 @@
 					"4": "Programmation de Cartes Graphiques",
 					"5": "Intelligence Artificielle pour les Jeux",
 					"6": "Projet Tuteuré : Implémentation",
-					"7": "Droit, éthique, informatique"
+					"7": "Droit, éthique, informatique",
+					"8": "Anglais - Intelligence Artificelle"
 				}
 			}
 		},
@@ -239,7 +255,8 @@
 					"4": "Pas encore",
 					"5": "Pas encore",
 					"6": "Pas encore",
-					"7": "Pas encore"
+					"7": "Pas encore",
+					"8": "Pas encore"
 				}
 			},
 			"S2" : {
@@ -251,7 +268,8 @@
 					"4": "Pas encore",
 					"5": "Pas encore",
 					"6": "Pas encore",
-					"7": "Pas encore"
+					"7": "Pas encore",
+					"8": "Pas encore"
 				}
 			}
 		},
@@ -266,7 +284,8 @@
 					"4": "Pas encore",
 					"5": "Pas encore",
 					"6": "Pas encore",
-					"7": "Pas encore"
+					"7": "Pas encore",
+					"8": "Pas encore"
 				}
 			},
 			"S2" : {
@@ -278,7 +297,8 @@
 					"4": "Pas encore",
 					"5": "Pas encore",
 					"6": "Pas encore",
-					"7": "Pas encore"
+					"7": "Pas encore",
+					"8": "Pas encore"
 				}
 			}
 		}

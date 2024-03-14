@@ -1,66 +1,114 @@
 {
 	"en" : {
 		"L1-S1-1": {
-		  "title": "Programming Methodology",
-		  "description": "The objective of this course is to learn how to learn programming. It is about acquiring the essential basics for learning programming and thus continuing with the degree. This course is an introduction to the use of several programming languages (Python, C, Bash, LaTeX), as well as some essential tools (interpreters, compilers, version control manager, build manager). Each point will be reviewed and deepened later in other courses of the degree.",
-		  "duration": "10 weeks",
-		  "credits": "3"
+			"title": "Programming Methodology",
+			"description": "The objective of this course is to learn how to learn programming. It is about acquiring the essential basics for learning programming and thus continuing with the degree. This course is an introduction to the use of several programming languages (Python, C, Bash, LaTeX), as well as some essential tools (interpreters, compilers, version control manager, build manager). Each point will be reviewed and deepened later in other courses of the degree.",
+			"duration": "10 weeks",
+			"credits": "6"
 		},
 		"L1-S1-2": {
-		  "title": "Functional Programming",
-		  "description": "The goal of this course is to learn programming. Choosing the functional paradigm from the first semester of the first year aims to instill good programming habits, especially to think about the 'what' (the goal of the algorithm) and not just the 'how' (the steps of the algorithm) when designing a program. Depending on the instructor, this course uses the Racket language or the OCaml language.",
-		  "duration": "8 weeks",
-		  "credits": "3"
+			"title": "Functional Programming",
+			"description": "The goal of this course is to learn programming. Choosing the functional paradigm from the first semester of the first year aims to instill good programming habits, especially to think about the 'what' (the goal of the algorithm) and not just the 'how' (the steps of the algorithm) when designing a program. Depending on the instructor, this course uses the Racket language or the OCaml language.",
+			"duration": "8 weeks",
+			"credits": "6"
 		},
 		"L1-S1-3": {
-		  "title": "Computer Architecture",
-		  "description": "The objective of this course is to learn the principles of a computer's hardware operation. It is useful to know a minimum about hardware to think and design adequate programs and software.",
-		  "duration": "8 weeks",
-		  "credits": "3"
+			"title": "Computer Architecture",
+			"description": "The objective of this course is to learn the principles of a computer's hardware operation. It is useful to know a minimum about hardware to think and design adequate programs and software.",
+			"duration": "8 weeks",
+			"credits": "6"
 		},
 		"L1-S1-4": {
-		  "title": "Introduction to Game Engines",
-		  "description": "The objective of this course is to introduce the functioning of game engines (their role, their functionalities), as well as the practical handling of a particular game engine (Godot).",
-		  "duration": "8 weeks",
-		  "credits": "3"
+			"title": "Introduction to Game Engines",
+			"description": "The objective of this course is to introduce the functioning of game engines (their role, their functionalities), as well as the practical handling of a particular game engine (Godot).",
+			"duration": "8 weeks",
+			"credits": "3"
 		},
 		"L1-S1-5": {
-		  "title": "Fundamental Computer Science",
-		  "description": "The goal of this course is to provide basic knowledge on important mathematical concepts in algorithms and video game design: reminders on sets and number sets, number arithmetic and applications in cryptography, introduction to matrices and solving linear systems, elements of geometry in the plane and space.",
-		  "duration": "8 weeks",
-		  "credits": "3"
+			"title": "Fundamental Computer Science",
+			"description": "The goal of this course is to provide basic knowledge on important mathematical concepts in algorithms and video game design: reminders on sets and number sets, number arithmetic and applications in cryptography, introduction to matrices and solving linear systems, elements of geometry in the plane and space.",
+			"duration": "8 weeks",
+			"credits": "3"
 		},
 		"L1-S1-6": {
-		  "title": "Online Identity Management",
-		  "description": "The objective of this course is to learn the best practices to be mindful of one's online image, as well as to create and maintain a simple personal webpage that will be fed by the various academic and personal projects of each student.",
-		  "duration": "8 weeks",
-		  "credits": "3"
+			"title": "Online Identity Management",
+			"description": "The objective of this course is to learn the best practices to be mindful of one's online image, as well as to create and maintain a simple personal webpage that will be fed by the various academic and personal projects of each student.",
+			"duration": "8 weeks",
+			"credits": "3"
 		},
 		"L1-S1-7": {
-		  "title": "Machine Practice",
-		  "description": "The objective of this course is to become familiar with the GNU/Linux environment, the command line, and to learn more closely about the machines that will be used throughout the training.",
-		  "duration": "8 weeks",
-		  "credits": "3"
+			"title": "Machine Practice",
+			"description": "The objective of this course is to become familiar with the GNU/Linux environment, the command line, and to learn more closely about the machines that will be used throughout the training.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L1-S2-1": {
+			"title": "Imperative Programming",
+			"description": "The objective of this course is to learn low-level imperative programming (modern C) and tools for modular compilation, debugging, library generation, as well as some fundamentals of algorithmics. The course relies on numerous examples and exercises that lead students to discover all the specifics of the chosen language, such as: standard data types, control structures, function prototyping, the preprocessor, iterativity vs recursivity, pointer usage, creation of new types, dynamic memory allocation, and input/output.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L1-S2-2": {
+			"title": "Logic Programming",
+			"description": "This course introduces a new programming paradigm, logic programming. It presents programming languages Datalog and Prolog, which allow for a new way of decomposing and solving problems, thereby significantly improving one's developer toolkit.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L1-S2-3": {
+			"title": "Declarative Programming & Databases",
+			"description": "The goal of this course is to learn programming in MySQL, SQLite, and Prolog.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L1-S2-4": {
+			"title": "Game Engine Programming",
+			"description": "This course is a direct continuation of the previous semester's 'Introduction to Game Engines' course. Its objective is to learn to implement complex behaviors in game scenes, particularly by going further with programming.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L1-S2-5": {
+			"title": "Creation and Management of Resources",
+			"description": "The objective of this course is the handling of software for the creation and editing of graphic (for example with Gimp, Inkscape, Krita, Synfig, Blender, or PikoPixel) and sound resources (for example with Audacity, Ardour, or LMMS), as well as the management of these resources in the context of software project design (typically, a Godot project).",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L1-S2-6": {
+			"title": "Collaborative IT Tools",
+			"description": "The goal of this course is to learn to use a version control manager (Git) and the tools provided by software forges (bug tracker, merge request, etc.) to collaborate on a programming project with others.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L1-S2-7": {
+			"title": "Robotics English",
+			"description": "Being able to read and write in English is very useful for succeeding in computing. A lot of documentation is only available in English!",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L1-S2-8": {
+			"title": "Free EC",
+			"description": "A free course to choose from another department of the university, subject to schedule compatibility.",
+			"duration": "8 weeks",
+			"credits": "3"
 		}
-	  },
+	},
 	"fr" : {
 		"L1-S1-1": {
 			"title": "Méthodologie de la programmation",
 			"description": "L'objectif de ce cours est d'apprendre à apprendre à programmer. Il s'agit d'acquérir les bases essentielles à l'apprentissage de la programmation et donc à la poursuite de la licence. Ce cours est une introduction à l'utilisation de plusieurs langages de programmation (Python, C, Bash, LaTeX), ainsi que de quelques outils essentiels (interpréteurs, compilateurs, gestionnaire de contrôle de version, gestionnaire de compilation). Chaque point sera revu et approfondi par la suite dans d'autres cours de la licence.",
 			"duration": "10 semaines",
-			"credits": "3"
+			"credits": "6"
 		},
 		"L1-S1-2": {
 			"title": "Programmation Fonctionnelle",
 			"description": "L'objectif de ce cours est l'apprentissage de la programmation. Le choix du paradigme fonctionnel dès le premier semestre de la première année a pour but de donner de bonnes habitudes de programmation, notamment de faire réfléchir au “quoi” (l'objectif de l'algorithme) et pas seulement au “comment” (les étapes de l'algorithme) lors de la conception de programme. Suivant l'enseignant·e, ce cours utilise le langage Racket ou le langage OCaml.",
 			"duration": "8 semaines",
-			"credits": "3"
+			"credits": "6"
 		},
 		"L1-S1-3": {
 			"title": "Architecture des ordinateurs",
 			"description": "L'objectif de ce cours est d'apprendre les principes de fonctionnement matériels d'un ordinateur. Il est utile de connaître un minimum le matériel pour penser et concevoir des programmes et des logiciels adéquats.",
 			"duration": "8 semaines",
-			"credits": "3"
+			"credits": "6"
 		},
 		"L1-S1-4": {
 			"title": "Introduction aux Moteurs de Jeux",
@@ -83,6 +131,54 @@
 		"L1-S1-7": {
 			"title": "Pratique des Machines",
 			"description": "L'objectif de ce cours est de se familiariser avec l'environnement GNU/Linux, la ligne de commande et apprendre à connaître d'un peu plus près les machines qui vont être utilisées tout au long de la formation.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S2-1": {
+			"title": "Programmation Impérative",
+			"description": "L'objectif de ce cours est d'apprendre la programmation impérative “bas niveau” (C moderne) et les outils de compilation modulaire, de debug, de génération de bibliothèques, ainsi que quelques bases d'algorithmique. Le cours s'appuie sur de nombreux exemples et exercices amenant son public à découvrir l'ensemble des spécificités du langage choisi, comme par exemple : les types de données standards, les structures de contrôle, le prototypage de fonction, le pré-processeur, l'itérativité vs la récursivité, l'usage des pointeurs, la création de nouveaux types, l'allocation dynamique de mémoire et les entrées/sorties.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L1-S2-2": {
+			"title": "Programmation Logique",
+			"description": "Ce cours introduit un nouveau paradigme de programmation, la programmation logique. Il présente pour cela les langages de programmation Datalog et Prolog, qui permettent d'aborder une nouvelle façon de décomposer et résoudre des problèmes, et donc d'améliorer significativement sa boîte à outil de développeur·e.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L1-S2-3": {
+			"title": "Programmation Declarative & Base de Données",
+			"description": "L'objectif de ce cours est d'apprendre la programmation en MySQL, SQLite et Prolog.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L1-S2-4": {
+			"title": "Programmation dans les Moteurs de Jeux",
+			"description": "Ce cours est la suite directe du cours “Introduction aux moteurs de jeux” du semestre précédent. Son objectif est d'apprendre à implémenter des comportements complexes dans les scènes de jeux, notamment en allant plus loin à l'aide de la programmation.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S2-5": {
+			"title": "Création et Gestion de Ressources",
+			"description": "L'objectif de ce cours est la prise en main de logiciels de créations et éditions de ressources graphiques (par exemple avec Gimp, Inkscape, Krita, Synfig, Blender, ou encore PikoPixel) et sonores (par exemple avec Audacity, Ardour, ou encore LMMS), ainsi que la gestion de ces ressources dans le cadre de la conception d'un projet logiciel (typiquement, un projet Godot).",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S2-6": {
+			"title": "Outils Informatiques Collaboratifs",
+			"description": "L'objectif de ce cours est d'apprendre à utiliser un gestionnaire de contrôle de version (Git) et les outils mis à disposition par les forges logicielles (bug tracker, merge request, etc.) pour collaborer à plusieurs sur un même projet de programmation.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S2-7": {
+			"title": "Anglais Robotique",
+			"description": "Il est trsè utile de lire et écrire l'anglais pour réussir en informatique. Beaucoup de documentation n'existe qu'en anglais !",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L1-S2-8": {
+			"title": "EC Libre",
+			"description": "Un cours libre à choisir dans un autre département de l'université, sous réserve de compatibilité des emplois du temps.",
 			"duration": "8 semaines",
 			"credits": "3"
 		}
