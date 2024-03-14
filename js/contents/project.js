@@ -17,7 +17,7 @@ class Project {
 			.catch(error => console.error('Error loading the project content:', error));
 		fetch('./js/data/project_info.json')
 			.then(response => response.json())
-			.then(data => { this.contentData = data; this.createProjectContent(this.lang); })
+			.then(data => { this.infoData = data; this.createProjectContent(this.lang); })
 			.catch(error => console.error('Error loading the project content:', error));
 	};
 
@@ -117,6 +117,11 @@ class Project {
 			padding: '10px', background: 'transparent', cursor: 'pointer',
 			textTransform: 'uppercase', fontFamily:"'Pixel', sans-serif",
 		});
+		button.setAttribute('data-project-id', projectData.id);
+		button.addEventListener('click', (e) => {
+			const projectId = e.target.getAttribute('data-project-id');
+			console.log(projectId);
+		});
 
 		card_content.appendChild(title);
 		card_content.appendChild(sub_title);
@@ -143,8 +148,7 @@ class Project {
 		this.section.addEventListener('mouseover', (event) => {
 			let target = event.target.closest('.card');
 			if (target) {
-				target.style.boxShadow = '0 8px 16px 0 rgba(0,0,0,0.2)';
-				target.style.border = '1px solid #0056b3';
+				target.style.boxShadow = '0 8px 16px 0 rgba(0,0,0,0.2)'; target.style.border = '1px solid #0056b3';
 				target.querySelector('img').style.transform = 'scale(1.1)';
 				target.querySelector('p').style.color = '#0056b3';
 			}
@@ -152,8 +156,7 @@ class Project {
 		this.section.addEventListener('mouseout', (event) => {
 			let target = event.target.closest('.card');
 			if (target) {
-				target.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2)';
-				target.style.border = '1px solid #f1f1f1';
+				target.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2)'; target.style.border = '1px solid #f1f1f1';
 				target.querySelector('img').style.transform = 'scale(1)';
 				target.querySelector('p').style.color = 'white';
 			}
@@ -164,13 +167,11 @@ class Project {
 		$(document).ready(() => {
 			$('.owl-prev').html('<img title="Scroll Left" class="nav-prev-slider" src="./assets/icons/' + this.prev_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute", "top": "50%", "left": "-40px",
-				"transform": "translateY(-50%)",
-				"border": "none", "background": "none"
+				"transform": "translateY(-50%)", "border": "none", "background": "none"
 			});
 			$('.owl-next').html('<img title="Scroll Right" class="nav-next-slider" src="./assets/icons/' + this.next_slide + '.png" style="width: 50px; height: 50px;">').css({
 				"position": "absolute", "top": "50%", "right": "-40px",
-				"transform": "translateY(-50%)",
-				"border": "none", "background": "none"
+				"transform": "translateY(-50%)", "border": "none", "background": "none"
 			});
 		});
 	};
