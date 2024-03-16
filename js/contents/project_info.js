@@ -8,7 +8,6 @@ class ProjectPopupInfo {
 	};
 
 	createPopupWindow() {
-		document.body.style.overflow = 'hidden';
 		const popupContainer = document.createElement('div');
 		popupContainer.className = "popupContainer";
 		Object.assign(popupContainer.style, {
@@ -81,7 +80,6 @@ class ProjectPopupInfo {
 			cursor: 'pointer',
 		});
 		closeBtn.addEventListener('click', () => {
-			document.body.style.overflow = '';
 			popupContainer.remove();
 		});
 		return closeBtn;
