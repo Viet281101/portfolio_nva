@@ -34,7 +34,10 @@ class ProjectPopupInfo {
 		const closeBtn = this.closeButton(popupContainer);
 
 		const img = document.createElement('img');
+		img.title = this.img;
+		img.alt = this.img;
 		img.src = "./assets/project/" + this.img + ".png";
+		img.loading = "lazy";
 		Object.assign(img.style, {
 			maxWidth: '100%', maxHeight: '300px',
 			display: 'block',
@@ -53,6 +56,7 @@ class ProjectPopupInfo {
 		const sources = document.createElement('a');
 		sources.href = this.sources;
 		sources.innerHTML = "Source";
+		sources.target = "_blank";
 		Object.assign(sources.style, {
 			display: 'block',
 			marginTop: '20px',
@@ -66,13 +70,15 @@ class ProjectPopupInfo {
 		if (this.sources) popupContent.appendChild(sources);
 
 		popupContainer.appendChild(popupContent);
-
 		document.body.appendChild(popupContainer);
 	};
 
 	closeButton(popupContainer) {
 		const closeBtn = document.createElement('img');
+		closeBtn.title = "Close";
+		closeBtn.alt = "Close";
 		closeBtn.src = this.x_close;
+		closeBtn.loading = "lazy";
 		Object.assign(closeBtn.style, {
 			position: 'absolute',
 			top: '10px', right: '10px',
