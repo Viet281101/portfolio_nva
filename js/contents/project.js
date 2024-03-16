@@ -8,6 +8,7 @@ class Project {
 		this.lang = lang;
 		this.prev_slide = 'nav_left'; this.next_slide = 'nav_right';
 		this.loadContentData();
+		this.boundHandleProjectClick = this.handleProjectClick.bind(this);
 	};
 
 	loadContentData() {
@@ -75,6 +76,7 @@ class Project {
 			border: '1px solid #f1f1f1', borderRadius: '10px', 
 			mozBoxSize: 'border-box', webkitBoxSize: 'border-box', boxSizing: 'border-box',
 		});
+		project.setAttribute('data-project-id', projectData.id);
 
 		let project_image = document.createElement('div');
 		project_image.className = "project-card-img";
@@ -113,14 +115,9 @@ class Project {
 		button.innerHTML = buttonText;
 		button.title = buttonTitle + projectName;
 		Object.assign(button.style, {
-			border: '1px solid #F1F1F1', borderRadius: '5px', outline: 'none', color: 'white',
-			padding: '10px', background: 'transparent', cursor: 'pointer',
+			border: '1px solid #F1F1F1', borderRadius: '5px', outline: 'none',
+			padding: '10px', background: 'transparent', cursor: 'pointer', color: '#fff',
 			textTransform: 'uppercase', fontFamily:"'Pixel', sans-serif",
-		});
-		button.setAttribute('data-project-id', projectData.id);
-		button.addEventListener('click', (e) => {
-			const projectId = e.target.getAttribute('data-project-id');
-			console.log(projectId);
 		});
 
 		card_content.appendChild(title);
@@ -145,6 +142,8 @@ class Project {
 	};
 
 	addEventListeners() {
+		this.section.removeEventListener('click', this.boundHandleProjectClick);
+		this.section.addEventListener('click', this.boundHandleProjectClick);
 		this.section.addEventListener('mouseover', (event) => {
 			let target = event.target.closest('.card');
 			if (target) {
@@ -161,6 +160,21 @@ class Project {
 				target.querySelector('p').style.color = 'white';
 			}
 		});
+	};
+
+	handleProjectClick(event) {
+		let target = event.target.closest('.card');
+		if (target) {
+			const projectId = target.getAttribute('data-project-id');
+			const projectInfoData = this.infoData[this.lang][projectId];
+			console.log(projectId);
+			if (projectInfoData) {
+				if (!document.querySelector('.popup-container')) {
+					const projectPopup = new ProjectPopupInfo(projectInfoData.details, projectInfoData.sources, projectInfoData.img);
+					projectPopup.createPopupWindow();
+				}
+			}
+		}
 	};
 
 	setupNavigationButtons() {

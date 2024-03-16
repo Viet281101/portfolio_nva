@@ -9,7 +9,7 @@ class MainApp {
 			'lang_box.js', 'on_top.js',
 			'contents/home.js',
 			'contents/about.js',
-			'contents/project.js',
+			'contents/project.js', 'contents/project_info.js',
 			'contents/courses.js', 'contents/courses_info.js',
 			'contents/contact.js',
 		];

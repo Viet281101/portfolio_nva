@@ -26,6 +26,7 @@ class LoadPopupPage {
 
 	hidePopup() {
 		this.popupElement.style.display = 'none';
+		if (this.popupElement) { this.popupElement.remove(); this.popupElement = null; }
 	};
 
 	stylePopupPage() {
