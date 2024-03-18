@@ -187,7 +187,6 @@ class Courses {
 	updateCourseContent(content, courseId, courseName, lang, tabName, semesterKey) {
 		const courseItem = document.createElement("li");
 		courseItem.style.borderTop = window.innerWidth < 768 ? '1px solid #fff' : 'none';
-		Object.assign(courseItem.style, { listStyle: 'none', });
 		const courseButton = document.createElement("button");
 		courseButton.textContent = courseName;
 		Object.assign(courseButton.style, {

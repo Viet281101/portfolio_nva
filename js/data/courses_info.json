@@ -227,7 +227,56 @@
 			"description": "Being able to read and write in English is very useful for succeeding in computing. A lot of documentation is only available in English! The topic of this course is future AI fiction.",
 			"duration": "8 weeks",
 			"credits": "3"
+		},
+		"L3-S6-1": {
+			"title": "Artificial Intelligence & Learning",
+			"description": "This course focuses on the study of models and learning algorithms. The areas covered include supervised, unsupervised, reinforcement, and transfer learning. The algorithms discussed include SVM classification, neural networks, k-means, Random Forest, temporal difference, and q-learning.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L3-S6-2": {
+			"title": "Language Engineering",
+			"description": "The goal of this course is to present tools and applications for analyzing textual data and human/machine linguistic interactions (conversational agents) in various application domains: information retrieval, automatic summarization, computer-assisted translation, text understanding and generation, human-machine dialogue.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L3-S6-3": {
+			"title": "Development of Free Software",
+			"description": "The aim of this course is to learn how to collaborate on existing free projects: appropriating their tools, conventions, development platforms, etc., with the goal of involving up to a real contribution.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L3-S6-4": {
+			"title": "Graphics Card Programming",
+			"description": "The objective of this course is to tackle GPU programming (C language and GLSL, OpenGL 3.3+ API) through the problems of parallelizing algorithms mainly from the field of image synthesis (convolution filters, Voronoi diagram, Perlin noise, mesh deformation, media displacement). Still on GPU, we also cover more classical aspects of image synthesis such as illumination models (self-shadowing –Gouraud, Phong–, cast shadows, specular reflections, etc.), mesh generation (landscapes, trees in L-System, etc.), loading of models and their animation.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S6-5": {
+			"title": "Artificial Intelligence for Games",
+			"description": "This course covers the study of games, matrix and tree representations, and traversal and learning algorithms, offering solutions to decision-making questions in single-player games, two-player games, complete information games, games with chance, real-time strategy games, combining Monte Carlo algorithms and reinforcement learning.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S6-6": {
+			"title": "Supervised Project: Implementation",
+			"description": "Continuation of the corresponding module from the previous semester. This time, it involves implementation: producing in pairs an implementation of what is requested by the introductory research topic.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S6-7": {
+			"title": "Law, Ethics, Computing",
+			"description": "The goal of this course is to continue the contextualization in society of computing and technologies. It specifically addresses different software licenses and laws related to privacy protection.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S6-8": {
+			"title": "English - Artificial Intelligence",
+			"description": "Being able to read and write in English is very useful for succeeding in computing. A lot of documentation is only available in English! The topic of this course is future AI fiction.",
+			"duration": "8 weeks",
+			"credits": "3"
 		}
+		
 	},
 	"fr" : {
 		"L1-S1-1": {
@@ -469,6 +518,42 @@
 			"description": "L'objectif de ce cours est de présenter des outils et applications pour l'analyse de données textuelles et interactions langagières homme/machine (agents conversationnels) dans de nombreux domaines d'application : recherche d'information, résumé automatique, traduction assistée par ordinateur, compréhension et génération de textes, dialogue homme-machine.",
 			"duration": "8 semaines",
 			"credits": "6"
+		},
+		"L3-S6-3": {
+			"title": "Développement de Logiciels Libres",
+			"description": "L'objectif de ce cours est d'apprendre à collaborer sur des projets libres déjà existants : s'approprier leurs outils, leurs conventions, leurs plateformes de développement, etc. dans le but de s'impliquer jusqu'à une vraie contribution.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L3-S6-4": {
+			"title": "Programmation de Cartes Graphiques",
+			"description": "L'objectif de ce cours est d'aborder la programmation sur GPU (langage C et GLSL, API OpenGL 3.3+) par le biais de problématiques de parallélisation d'algorithmes principalement issus du domaine de la synthèse d'images (filtres de convolution, diagramme de Voronoi, bruit de Perlin, déformation de maillages, déplacement des milieux). Toujours en GPU, nous abordons aussi des aspects plus classiques de la synthèse d'images tels que les modèles d'illumination (ombre propre –Gouraud, Phong–, ombre portée, reflets spéculaires, etc.), la génération de maillages (paysages, arbres en L-Système, etc.), le chargement de modèles et leur animation.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S6-5": {
+			"title": "Intelligence Artificielle pour les Jeux",
+			"description": "Ce cours concerne l'étude des jeux, des représentation matricielles et arborescentes et des algorithmes de parcours et d'apprentissage et propose des réponses aux questions de décision dans les jeux à un·e joueur·e, deux joueur·es, à information complète, avec chance, aux jeux de stratégie temps réel, en combinant algorithmes Monte Carlo et apprentissage par renforcement.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S6-6": {
+			"title": "Projet Tuteuré : Implémentation",
+			"description": "Suite du module correspondant du semestre précédent. Cette fois-ci il s'agit de la mise en œuvre : produire en binôme une implémentation de ce qui est demandé par le sujet d'initiation à la recherche.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S6-7": {
+			"title": "Droit, éthique, informatique",
+			"description": "L'objectif de ce cours est de poursuivre la contextualisation dans la société de l'informatique et des technologies. Il y est notamment question des différentes licences logicielles et des lois relatives à la protection de la vie privée.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S6-8": {
+			"title": "Anglais - Intelligence Artificielle",
+			"description": "Il est très utile de lire et écrire l'anglais pour réussir en informatique. Beaucoup de documentation n'existe qu'en anglais ! Le sujet de ce cours est IA fiction future",
+			"duration": "8 semaines",
+			"credits": "3"
 		}
 	}
 }

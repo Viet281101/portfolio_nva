@@ -17,11 +17,10 @@ class ProjectPopupInfo {
 		});
 
 		const popupContent = document.createElement('div');
+		popupContent.style.maxWidth = popupContent.style.maxHeight = window.innerWidth > 900 ? "70%" : "90%";
 		Object.assign(popupContent.style, {
-			backgroundColor: '#000',
-			padding: '20px', maxWidth: '90%', maxHeight: '90%',
-			overflowY: 'auto', position: 'relative',
-			borderRadius: '5px', border: '2px solid #fff',
+			backgroundColor: '#000', borderRadius: '5px', border: '2px solid #fff',
+			padding: '20px', overflowY: 'auto', position: 'relative',
 		});
 
 		const closeBtn = this.closeButton(popupContainer);
@@ -69,10 +68,8 @@ class ProjectPopupInfo {
 		closeBtn.src = this.x_close;
 		closeBtn.loading = "lazy";
 		Object.assign(closeBtn.style, {
-			position: 'absolute',
-			top: '10px', right: '10px',
-			width: '50px', height: '50px',
-			cursor: 'pointer',
+			position: 'absolute', top: '10px', right: '10px',
+			width: '50px', height: '50px', cursor: 'pointer',
 		});
 		closeBtn.addEventListener('click', () => {
 			popupContainer.remove();
