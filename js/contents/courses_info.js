@@ -25,6 +25,7 @@ class CoursesInfo {
 			padding: "20px", borderRadius: "5px", border: "2px solid #fff", overflowY: "auto",
 		});
 		popup.style.maxWidth = popup.style.maxHeight = window.innerWidth > 900 ? "70%" : "90%";
+		popup.style.fontSize = window.innerWidth > 900 ? "large" : "inherit";
 		const closeXButton = this.closeXBtn(overlay);
 		popup.appendChild(closeXButton);
 		const title = document.createElement("h2");

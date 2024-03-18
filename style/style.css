@@ -27,7 +27,7 @@ section.in-view { opacity: 1; transform: translateY(0); }
 	background-clip: text; color: transparent;
 }
 /* SIDEBAR */
-.sidebar a.active { background-color: #555; }
+.sidebar a.active { background-color: #555; pointer-events: none; }
 @media screen and (min-width: 1001px) { section { margin-left: 220px; } }
 @media screen and (max-width: 1000px) {
 	.sidebar { width: 0; visibility: hidden; }

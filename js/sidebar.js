@@ -92,12 +92,13 @@ class Sidebar {
 		this.label.addEventListener("mouseout", function() {
 			if (app.sections[app.currentSection] !== 'projects' && 
 				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
+				app.sections[app.currentSection] !== 'courses' && 
+				app.sections[app.currentSection] !== 'contact') app.mouseMarkEnabled = true;
 		});
 		h1Link.addEventListener('click', (e) => {
 			e.preventDefault();
 			window.location.href = window.location.origin + window.location.pathname;
-		});
+		}, { once:true } );
 		this.divSidebar.appendChild(h1Link);
 		this.divSidebar.appendChild(ul);
 		this.label.appendChild(input);
@@ -134,9 +135,7 @@ class Sidebar {
 			img.setAttribute('src', item.icon);
 			img.setAttribute('alt', item.text.toLowerCase() + " icon");
 			img.classList.add('connect-icon');
-			Object.assign(img.style, {
-				width: '35px', height: '35px',
-			});
+			Object.assign(img.style, { width: '35px', height: '35px', });
 			a.addEventListener('mouseover', (e) => {
 				Object.assign(a.style, { transform: 'scale(1.3)', transition: '0.3s', });
 			});

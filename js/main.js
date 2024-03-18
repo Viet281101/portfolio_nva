@@ -77,10 +77,9 @@ class MainApp {
 	};
 
 	handleSectionChange(index) {
-		if (this.sections[index - 1] === 'projects' || 
-			this.sections[index - 1] === 'home' || 
-			this.sections[index - 1] === 'courses') this.mouseMarkEnabled = this.animationActive = false;
-		else this.mouseMarkEnabled = this.animationActive = true; animateParticles();
+		if (this.sections[index - 1] === 'projects' || this.sections[index - 1] === 'home' || this.sections[index - 1] === 'courses' ||
+			this.sections[index - 1] === 'contact') { this.mouseMarkEnabled = this.animationActive = false; }
+		else { this.mouseMarkEnabled = this.animationActive = true; animateParticles(); }
 	};
 
 	addEventListeners() {
@@ -100,39 +99,32 @@ class MainApp {
 			}
 		});
 	};
-
 	isHorizontallyScrollSection() {
 		if (window.innerWidth > 1000) {
 			if (this.sections[this.currentSection] === 'about') return true;
 		} return false;
 	};
-
 	scrollSlideLeft() {
 		if (this.about && this.sections[this.currentSection] === 'about') this.about.scrollSlides('left');
 	};
-
 	scrollSlideRight() {
 		if (this.about && this.sections[this.currentSection] === 'about') this.about.scrollSlides('right');
 	};
-
 	moveSectionUp() {
 		const fullpageApi = $('#fullpage').data('fullpage');
 		let targetIndex = fullpageApi.currIndex - 1;
 		if (targetIndex >= 0) { fullpageApi.moveTo(targetIndex + 1); }
 	};
-	
 	moveSectionDown() {
 		const fullpageApi = $('#fullpage').data('fullpage');
 		let targetIndex = fullpageApi.currIndex + 1;
 		if (targetIndex < $('#fullpage').children().length) { fullpageApi.moveTo(targetIndex + 1); }
 	};
-
 	onResize() {
 		this.loadFullPage();
 		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;	
 		if (this.navBar) this.navBar.updateMenuButtonVisibility();
 	};
-
 	onScroll() {
 		const scrollBtn = document.getElementById('scrollOnTopBtn');
 		scrollBtn.style.display = window.scrollY > 150 ? 'block' : 'none';

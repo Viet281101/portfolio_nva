@@ -1,7 +1,8 @@
 
 class Contact {
 	constructor() {
-		this.section = document.getElementById('contact');	
+		this.section = document.getElementById('contact');
+		this.ic_phone = "./assets/icons/phone.png";
 	};
 
 	createContactContent() {
@@ -9,9 +10,7 @@ class Contact {
 
 		this.title = document.createElement('h2');
 		this.title.innerHTML = 'Contact';
-		Object.assign(this.title.style, {
-			fontSize: '34px',
-		});
+		this.title.style.fontSize = window.innerWidth > 900 ? '34px' : '28px';
 		this.section.appendChild(this.title);
 	};
 };

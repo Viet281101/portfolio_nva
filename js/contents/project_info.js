@@ -18,6 +18,7 @@ class ProjectPopupInfo {
 
 		const popupContent = document.createElement('div');
 		popupContent.style.maxWidth = popupContent.style.maxHeight = window.innerWidth > 900 ? "70%" : "90%";
+		popupContent.style.fontSize = window.innerWidth > 900 ? "large" : "inherit";
 		Object.assign(popupContent.style, {
 			backgroundColor: '#000', borderRadius: '5px', border: '2px solid #fff',
 			padding: '20px', overflowY: 'auto', position: 'relative',
