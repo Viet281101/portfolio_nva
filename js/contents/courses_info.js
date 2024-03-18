@@ -24,7 +24,7 @@ class CoursesInfo {
 			backgroundColor: "rgba(0,0,0,1)", boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
 			padding: "20px", borderRadius: "5px", border: "2px solid #fff", overflowY: "auto",
 		});
-		popup.style.maxWidth = popup.style.maxHeight = window.innerWidth > 1000 ? "70%" : "90%";
+		popup.style.maxWidth = popup.style.maxHeight = window.innerWidth > 900 ? "70%" : "90%";
 		const closeXButton = this.closeXBtn(overlay);
 		popup.appendChild(closeXButton);
 		const title = document.createElement("h2");

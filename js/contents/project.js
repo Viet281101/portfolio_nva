@@ -64,7 +64,7 @@ class Project {
 		let totalProjects = Object.keys(data.projects).length;
 		projectSummary.innerHTML = data.summary.replace('{0}', `<strong style="color:#00D7FF;">${totalProjects}</strong>`);
 		Object.assign(projectSummary.style, { textAlign: 'center', padding: '20px', color: '#fff', });
-		projectSummary.style.fontSize = window.innerWidth > 1000 ? '24px' : '20px';
+		projectSummary.style.fontSize = window.innerWidth > 900 ? '24px' : '20px';
 		this.section.appendChild(projectSummary);
 	};
 

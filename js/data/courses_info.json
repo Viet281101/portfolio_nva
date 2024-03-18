@@ -179,8 +179,55 @@
 			"description": "This course is coupled with the 'History of Computing' course. It requires students to give a presentation on a topic from the course they wish to delve deeper into, or on any other subject related to the history of computing, or the relationships between technology and society. If the chosen subject allows, a technocritical approach is encouraged.",
 			"duration": "8 weeks",
 			"credits": "3"
+		},
+		"L3-S5-1": {
+			"title": "Advanced Algorithms",
+			"description": "The objective of this course, which follows the 'Algorithms and Data Structures' 1 and 2 courses from the previous year, is to introduce complexity through examples. Many problems are presented, and for each, different resolution methods are proposed and compared, both in practice and in theoretical complexity.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L3-S5-2": {
+			"title": "Interpretation & Compilation",
+			"description": "Programming languages are the tools of computer scientists. To solve a problem, it is necessary to use the right tool. Being able to create one's own programming language is thus the ultimate abstraction. The goal of this course is precisely to learn how to implement a programming language oneself, from reading the source code to its translation into assembler.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L3-S5-3": {
+			"title": "Introduction to Security",
+			"description": "This course covers the basics of computer security and cryptography. Its objective is to make students aware of the issues related to security, so they ask the right questions when they will be called upon to design an information system in the future, even if they do not specifically pursue their studies in the field of security.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L3-S5-4": {
+			"title": "Game Engines",
+			"description": "The objective of this course is to learn how a game engine works from the inside, that is to study their implementation rather than their use as was the case in the two courses of the first year.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S5-5": {
+			"title": "Mobile Development",
+			"description": "The objective of this course is to learn how to develop for mobile platforms and to leverage their potential for video gaming, for example with virtual reality.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S5-6": {
+			"title": "Supervised Project: State of the Art",
+			"description": "The supervised project is an introduction to research. Topics are proposed by the teaching researchers involved in the degree, and students are invited to work on them in pairs. For this first part, it involves studying the state of the art regarding the chosen subject to prepare an implementation work that will take place in the second semester.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S5-7": {
+			"title": "Master's Objective",
+			"description": "Workshops for preparing for internships and master's degree applications.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L3-S5-8": {
+			"title": "English - Artificial Intelligence",
+			"description": "Being able to read and write in English is very useful for succeeding in computing. A lot of documentation is only available in English! The topic of this course is future AI fiction.",
+			"duration": "8 weeks",
+			"credits": "3"
 		}
-		
 	},
 	"fr" : {
 		"L1-S1-1": {
@@ -362,6 +409,66 @@
 			"description": "Ce cours est couplé avec le cours d'“histoire de l'informatique”, il s'agit pour les étudiant·es de faire un exposé sur un sujet du cours qu'illes souhaitent approfondir, ou sur n'importe quel autre sujet ayant trait à l'histoire de l'informatique, ou aux rapports entre la technologie et la société. Si le sujet choisi le permet, une approche technocritique est encouragée.",
 			"duration": "8 semaines",
 			"credits": "3"
+		},
+		"L3-S5-1": {
+			"title": "Algorithmique Avancée",
+			"description": "L'objectif de ce cours, qui prend la suite des cours “Algorithmique et structures de données” 1 et 2 de l'année précédente, est d'introduire la complexité par l’exemple. De nombreux problèmes sont présentés et, pour chacun, différentes méthodes de résolution sont proposées et comparées, tant en pratique qu'en complexité théorique.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L3-S5-2": {
+			"title": "Interprétation & Compilation",
+			"description": "Les langages de programmation sont les outils des informaticien·nes. Pour résoudre un problème, il est nécessaire d'utiliser un outil adapté. Être capable de créer son propre langage de programmation est donc l'abstraction ultime. L'objectif de ce cours est justement d'apprendre à implémenter soi-même un langage de programmation, de la lecture du code source jusqu'à sa traduction en assembleur.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L3-S5-3": {
+			"title": "Introduction à la Sécurité",
+			"description": "Ce cours aborde les bases de la sécurité informatique et de la cryptographie. Son objectif est de faire prendre conscience aux étudiant·es des enjeux liés à la sécurité, afin qu'illes se posent les bonnes questions lorsqu'illes seront amené·es à concevoir un système d'information à l'avenir, même s'illes ne poursuivent pas leurs études spécifiquement dans le domaine de la sécurité.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L3-S5-4": {
+			"title": "Moteurs de Jeu",
+			"description": "L'objectif de ce cours est d'apprendre comment fonctionne un moteur de jeu de l'intérieur, c'est-à-dire étudier leur implémentation et plus leur utilisation comme c'était le cas dans les deux cours de la première année.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S5-5": {
+			"title": "Développement Mobile",
+			"description": "L'objectif de ce cours est d'apprendre à développer pour les plateformes mobiles et à tirer parti de leur potentiel pour le jeu vidéo, par exemple avec de la réalité virtuelle.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S5-6": {
+			"title": "Projet Tuteuré : état de l'Art",
+			"description": "Le projet tuteuré est une initiation à la recherche. Des sujets sont proposés par les enseignant·es-chercheur·es qui interviennent dans la licence et les étudiant·es sont invité·es à y travailler en binôme. Pour cette première partie, il s'agit d'étudier l'état de l'art concernant le sujet choisi pour préparer un travail d'implémentation qui aura lieu au second semestre.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S5-7": {
+			"title": "Objectif Master",
+			"description": "Ateliers de préparation à la recherche de stage et à la candidature en master.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S5-8": {
+			"title": "Anglais - Intelligence Artificielle",
+			"description": "Il est très utile de lire et écrire l'anglais pour réussir en informatique. Beaucoup de documentation n'existe qu'en anglais ! Le sujet de ce cours est IA fiction future",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L3-S6-1": {
+			"title": "Intelligence Artificielle & Apprentissage",
+			"description": "Ce cours concerne l'étude des modèles et des algorithmes d'apprentissage. Les domaines concernés sont l'apprentissage supervisé, non supervisé, par renforcement et par transfert. Les algorithmes concernés sont la classification SVM, les réseaux de neurones, k-means, Random Forest, différence temporelle, et le q-learning.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L3-S6-2": {
+			"title": "Ingénierie des Langues",
+			"description": "L'objectif de ce cours est de présenter des outils et applications pour l'analyse de données textuelles et interactions langagières homme/machine (agents conversationnels) dans de nombreux domaines d'application : recherche d'information, résumé automatique, traduction assistée par ordinateur, compréhension et génération de textes, dialogue homme-machine.",
+			"duration": "8 semaines",
+			"credits": "6"
 		}
 	}
 }
