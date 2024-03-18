@@ -63,7 +63,8 @@ class Project {
 		projectSummary.className = "project-summary";
 		let totalProjects = Object.keys(data.projects).length;
 		projectSummary.innerHTML = data.summary.replace('{0}', `<strong style="color:#00D7FF;">${totalProjects}</strong>`);
-		Object.assign(projectSummary.style, { textAlign: 'center', padding: '20px', color: '#fff', fontSize: '24px', });
+		Object.assign(projectSummary.style, { textAlign: 'center', padding: '20px', color: '#fff', });
+		projectSummary.style.fontSize = window.innerWidth > 1000 ? '24px' : '20px';
 		this.section.appendChild(projectSummary);
 	};
 
@@ -125,7 +126,6 @@ class Project {
 		card_content.appendChild(description);
 		card_content.appendChild(btn);
 		btn.appendChild(button);
-
 		project.appendChild(project_image);
 		project.appendChild(card_content);
 		return project;
@@ -150,6 +150,7 @@ class Project {
 				target.style.boxShadow = '0 8px 16px 0 rgba(0,0,0,0.2)'; target.style.border = '1px solid #0056b3';
 				target.querySelector('img').style.transform = 'scale(1.1)';
 				target.querySelector('p').style.color = '#0056b3';
+				target.querySelector('button').style.color = target.querySelector('button').style.borderColor = '#00D7FF';
 			}
 		});
 		this.section.addEventListener('mouseout', (event) => {
@@ -158,6 +159,7 @@ class Project {
 				target.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2)'; target.style.border = '1px solid #f1f1f1';
 				target.querySelector('img').style.transform = 'scale(1)';
 				target.querySelector('p').style.color = 'white';
+				target.querySelector('button').style.color = target.querySelector('button').style.borderColor = 'white';
 			}
 		});
 	};

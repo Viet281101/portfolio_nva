@@ -11,23 +11,16 @@ class ProjectPopupInfo {
 		const popupContainer = document.createElement('div');
 		popupContainer.className = "popupContainer";
 		Object.assign(popupContainer.style, {
-			position: 'fixed',
-			top: '0', left: '0',
-			width: '100%', height: '100%',
-			backgroundColor: 'rgba(0,0,0,0.9)',
-			display: 'flex',
-			justifyContent: 'center', alignItems: 'center',
-			zIndex: '20',
+			position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
+			backgroundColor: 'rgba(0,0,0,0.9)', zIndex: '20',
+			display: 'flex', justifyContent: 'center', alignItems: 'center',
 		});
 
 		const popupContent = document.createElement('div');
 		Object.assign(popupContent.style, {
 			backgroundColor: '#000',
-			padding: '20px',
-			borderRadius: '5px',
-			maxWidth: '90%', maxHeight: '90%',
-			overflowY: 'auto',
-			position: 'relative',
+			padding: '20px', maxWidth: '90%', maxHeight: '90%',
+			overflowY: 'auto', position: 'relative',
 			borderRadius: '5px', border: '2px solid #fff',
 		});
 
@@ -43,15 +36,11 @@ class ProjectPopupInfo {
 			display: 'block',
 			objectFit: 'contain',
 			margin: '0 auto',
-			borderRadius: '5px',
 		});
 
 		const details = document.createElement('p');
 		details.innerHTML = this.details;
-		Object.assign(details.style, {
-			textAlign: 'justify',
-			marginTop: '20px',
-		});
+		Object.assign(details.style, { textAlign: 'justify', marginTop: '20px', });
 
 		const sources = document.createElement('a');
 		sources.href = this.sources;

@@ -17,7 +17,7 @@
 					"5": "Fundamental Computer Science",
 					"6": "Online Identity Management",
 					"7": "Machine Practice",
-					"8": "...Empty..."
+					"8": "NULL"
 				}
 			},
 			"S2" : {
@@ -46,7 +46,7 @@
 					"5": "Introduction to Artificial Intelligence",
 					"6": "Professional Project Preparation",
 					"7": "English - Artificial Intelligence",
-					"8": "...Empty..."
+					"8": "NULL"
 				}
 			},
 			"S4" : {
@@ -169,7 +169,7 @@
 					"5": "Informatique Fondamentale",
 					"6": "Gestion d'Identité en Ligne",
 					"7": "Pratique des Machines",
-					"8": "...Vide..."
+					"8": "VIDE"
 				}
 			},
 			"S2" : {
@@ -198,7 +198,7 @@
 					"5": "Introduction à l'Intelligence Artificielle",
 					"6": "Préparation au Projet Professionnel",
 					"7": "Anglais - Intelligence Artificielle",
-					"8": "...Vide..."
+					"8": "VIDE"
 				}
 			},
 			"S4" : {

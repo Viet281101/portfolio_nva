@@ -89,7 +89,98 @@
 			"description": "A free course to choose from another department of the university, subject to schedule compatibility.",
 			"duration": "8 weeks",
 			"credits": "3"
+		},
+		"L2-S3-1": {
+			"title": "Algorithms & Data Structures 1",
+			"description": "This course introduces algorithms and data structures. Algorithms are at the heart of programming in computer science. They involve the study and resolution of problems, both theoretically and practically. This course emphasizes the importance of using appropriate data structures for solving addressed problems. Throughout the discovery of different issues, we will discuss and propose re-implementations of data structures, more or less adapted to their resolution; learning to choose the right data structure and optimizing its implementations will be among the objectives of this course, leading the audience to create their first toolkit for algorithmic uses.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L2-S3-2": {
+			"title": "Advanced Programming",
+			"description": "This course follows the 'Imperative Programming' course offered in the first year. Its goal is to delve deeper into C programming, particularly learning to fully leverage modular compilation and debugging tools. It also involves mastering the subtleties of the used language and learning to program in a more readable way, thereby making it easier to take over, modify, improve, and of course, correct.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L2-S3-3": {
+			"title": "GUI Programming",
+			"description": "The objective of this course is to learn to use the Tkinter library in Python to create simple project interfaces.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L2-S3-4": {
+			"title": "Algorithms for Graphics Programming",
+			"description": "The primary goal of this course is the exploration of the memory representation of images in machines, the implementation and optimization of drawing primitives in the discrete space, and the development of a custom rasterization pipeline including Gouraud shading and texture mapping. We will then explore more complex concepts of algorithmic geometry such as the construction of a Voronoi diagram, triangulating a point cloud, or using cellular automata for texture generation. We will conclude with an introduction to the use of the OpenGL library and shader programming, revisiting some of the previously addressed issues through a SIMD (GPU/parallel) approach.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S3-5": {
+			"title": "Introduction to Artificial Intelligence",
+			"description": "This course covers the underlying principles of all computing and, in particular, artificial intelligence: knowledge representation, algorithms, and problem solving. Heuristic methods are discussed, whether it is path finding, two-player games or other classical problems, as well as a first look at machine learning, more specifically, classification here. The perceptron is introduced, before discussing various types of neural networks, and, to conclude this overview, decision trees are introduced.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S3-6": {
+			"title": "Preparation for Professional Project",
+			"description": "This course, partly provided by the SCUIO-IP, aims to make students think about their academic path ahead in line with their goals.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S3-7": {
+			"title": "English - Artificial Intelligence",
+			"description": "Being able to read and write in English is very useful for succeeding in computing. A lot of documentation is only available in English! The topic of this course is future AI fiction.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S4-1": {
+			"title": "Algorithms & Data Structures 2",
+			"description": "This course is a direct continuation of the similarly named course from the previous semester. It aims to continue the study of algorithms related to the data structures covered in the previous course, and to start the study of other types of algorithms, such as those related to text.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L2-S4-2": {
+			"title": "Object-Oriented Programming",
+			"description": "Since the beginning of the program, students have been practicing object-oriented programming in various forms due to its widespread paradigm. The goal of this course is to formalize the theoretical and practical concepts of the object paradigm, as well as the practical implementation of some more advanced concepts (design patterns).",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L2-S4-3": {
+			"title": "Systems & Networks",
+			"description": "The objective of this course is to learn system programming on one hand, and models and network programming (which itself uses system programming) on the other. It involves understanding the operation of low-level software layers that are most often abstracted, to avoid being stuck when problems appearing at the application level have their origins in the lower layers of the system.",
+			"duration": "8 weeks",
+			"credits": "6"
+		},
+		"L2-S4-4": {
+			"title": "Concurrent Programming & Networks",
+			"description": "This course explores the foundational concepts and techniques of concurrent programming and network communication. In the realm of concurrent programming, students will learn about the importance of processes and threads, synchronization techniques, and the challenges associated with designing and debugging concurrent applications. This includes understanding race conditions, deadlocks, and strategies for achieving thread safety and process coordination. In addition to concurrent programming, the course delves into the basics of network programming, covering key protocols, socket programming, and how to build scalable and efficient network applications. Through a blend of theoretical knowledge and practical exercises, students will gain the skills necessary to develop sophisticated programs that can perform multiple tasks simultaneously and communicate over a network. This course is designed for students looking to enhance their programming capabilities with an in-depth understanding of concurrency and network programming paradigms.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S4-5": {
+			"title": "Web Development & Databases",
+			"description": "The objective of this course is to learn how to develop simple web applications requiring client-server interaction associated with a database. This type of application is commonly used in online games, not least for managing user accounts.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S4-6": {
+			"title": "Image Synthesis, Animation & Sound",
+			"description": "Based on the use of a low-level graphical API such as OpenGL, the objective of this course is to study in detail various techniques for lighting 3D scenes to produce real-time synthetic images. Other types of rendering, such as expressive rendering —formerly known as Non-Photorealistic— will be covered. On this basis, we will study the representation, loading, and processing of static or animated 3D models. Finally, both the bilateral interaction with sound and the application of sound frequency analysis to image synthesis will be presented, with the goal of creating an 'images & sound' application (possibly demoscene).",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S4-7": {
+			"title": "History of Computing",
+			"description": "The objective of this course is to contextualize the computer science discipline in society, both historically and socially or environmentally, in order to make students think about the impacts of their future choices as computer developers. For this, the history of computing is approached topic by topic, and parallels are made with current events as much as possible.",
+			"duration": "8 weeks",
+			"credits": "3"
+		},
+		"L2-S4-8": {
+			"title": "Oral Presentation of Knowledge",
+			"description": "This course is coupled with the 'History of Computing' course. It requires students to give a presentation on a topic from the course they wish to delve deeper into, or on any other subject related to the history of computing, or the relationships between technology and society. If the chosen subject allows, a technocritical approach is encouraged.",
+			"duration": "8 weeks",
+			"credits": "3"
 		}
+		
 	},
 	"fr" : {
 		"L1-S1-1": {
@@ -179,6 +270,96 @@
 		"L1-S2-8": {
 			"title": "EC Libre",
 			"description": "Un cours libre à choisir dans un autre département de l'université, sous réserve de compatibilité des emplois du temps.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S3-1": {
+			"title": "Algorithmique & Structures de Données 1",
+			"description": "Ce cours introduit l'algorithmique et les structures de données. L'algorithmique est au cœur de la programmation en informatique. Elle consiste en l'étude et la résolution de problèmes, aussi bien au niveau théorique que pratique. Ce cours présente l'intérêt d'utiliser des structures de données appropriées aux résolutions des problèmes abordés. Au fil de la découverte de différentes problématiques, nous discuterons et proposerons des ré-implémentations de structures de données plus ou moins adaptées à leur résolution ; apprendre à bien choisir sa structure de données et l'optimisation de ses implémentations fera ainsi partie des objectifs de ce cours, emmenant l'auditeur à se constituer sa première bibliothèque d'outils pour des usages algorithmiques.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L2-S3-2": {
+			"title": "Programmation Avancée",
+			"description": "Ce cours est la suite de celui de “Programmation impérative” qui est donné en première année. Son objectif est d'aller plus loin dans la programmation en C, notamment d'apprendre à tirer pleinement parti des outils de compilation modulaire et de débugage. Il s'agit également de maîtriser des subtilités du langage utilisé et d'apprendre à programmer de façon plus lisible et donc plus facile à reprendre, modifier, améliorer, et bien sûr corriger.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L2-S3-3": {
+			"title": "Programmation Interfaces",
+			"description": "L'objectif de ce cours est d'apprendre à utiliser la bibliothèque Tkinter en Python pour créer des simples interfaces projets.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L2-S3-4": {
+			"title": "Algorithmes pour la Programmation Graphique",
+			"description": "Cet enseignement a pour premier objectif la découverte de la représentation mémoire des images en machine, l'implémentation et l'optimisation de primitives de dessin dans l'espace discret et l'élaboration d'un pipeline “maison” de rastérisation incluant le coloriage Gouraud et le placage de texture. Nous découvrirons ensuite des notions plus complexes de géométrie algorithmique telles que l'élaboration d'un diagramme de Voronoï, la triangulation d'un nuage de points ou l'utilisation d'automates cellulaires afin de générer des textures. Nous terminerons par une introduction à l'utilisation de la bibliothèque OpenGL et à la programmation de shaders en revenant, via une approche SIMD (GPU/parallèle), sur certaines des problématiques précédemment abordées.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S3-5": {
+			"title": "Introduction à l'Intelligence Artificielle",
+			"description": "Ce cours aborde les principes sous-jacents à toute l'informatique et, en particulier, à l'intelligence artificielle : la représentation des connaissances, les algorithmes, et la résolution de problème. Sont abordés les méthodes heuristiques, qu'il s'agisse de la découverte de chemins, de jeux à deux joueur·es ou autres problèmes classiques, ainsi qu'un premier aperçu de l'apprentissage automatique, plus spécifiquement, ici, la classification. Le perceptron est présenté, avant d'évoquer les différentes variantes de réseaux de neurones, puis, pour conclure cet aperçu, les arbres de décision sont introduits.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S3-6": {
+			"title": "Préparation au Projet Professionnel",
+			"description": "Ce cours, qui est en partie assuré par le SCUIO-IP, a pour objectif de faire réfléchir les étudiant·es à la suite de leur parcours universitaire en fonction de leurs objectifs.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S3-7": {
+			"title": "Anglais - Intelligence Artificielle",
+			"description": "Il est très utile de lire et écrire l'anglais pour réussir en informatique. Beaucoup de documentation n'existe qu'en anglais ! Le sujet de ce cours est IA fiction future",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S4-1": {
+			"title": "Algorithmique & Structures de Données 2",
+			"description": "Ce cours est la suite directe du cours éponyme au semestre précédent. Il s'agit de poursuivre l'études des algorithmes liés aux structures de données vues dans le cours précédent, et de démarrer l'étude d'autres types d'algorithmes, comme ceux liés au texte par exemple.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L2-S4-2": {
+			"title": "Programmation Orientée Objet",
+			"description": "Depuis le début de la formation, les étudiant·es de la licence pratiquent la programmation orientée objet sous diverses formes tant ce paradigme est répandu. L'objectif de ce cours est la formalisation des concepts théoriques et pratiques du paradigme objet, ainsi que la mise en œuvre pratique de certains concepts plus avancés (patrons de conception).",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L2-S4-3": {
+			"title": "Systèmes & Réseaux",
+			"description": "L'objectif de ce cours est l'apprentissage de la programmation système d'une part, et des modèles et de la programmation réseau (qui utilise elle-même la programmation système) d'autre part. Il s'agit de comprendre le fonctionnement de couches logicielles de bas niveau qui sont la plupart du temps abstraites, afin de ne pas se retrouver coincer lorsque des problèmes apparaissant au niveau applicatif ont leurs origines dans les couches inférieures du système.",
+			"duration": "8 semaines",
+			"credits": "6"
+		},
+		"L2-S4-4": {
+			"title": "Programmation concurrent & Réseaux",
+			"description": "Ce cours explore les concepts fondamentaux et les techniques de la programmation concurrente et de la communication réseau. Dans le domaine de la programmation concurrente, les étudiants apprendront l'importance des processus et des threads, des techniques de synchronisation, et les défis associés à la conception et au débogage d'applications concurrentes. Cela comprend la compréhension des conditions de concurrence, des interblocages et des stratégies pour atteindre la sécurité des threads et la coordination des processus. En plus de la programmation concurrente, le cours se penche sur les bases de la programmation réseau, couvrant les protocoles clés, la programmation de sockets et comment construire des applications réseau scalables et efficaces. À travers un mélange de connaissances théoriques et d'exercices pratiques, les étudiants acquerront les compétences nécessaires pour développer des programmes sophistiqués capables de réaliser plusieurs tâches simultanément et de communiquer à travers un réseau. Ce cours est conçu pour les étudiants souhaitant améliorer leurs capacités de programmation avec une compréhension approfondie des paradigmes de la programmation concurrente et de la programmation réseau.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S4-5": {
+			"title": "Développement Web & Base de Données",
+			"description": "L'objectif de ce cours est d'apprendre à réaliser des applications web simples nécessitant une interaction client-serveur associée à une base de données. Ce type d'application est couramment utilisé dans le cas de jeux en ligne ne serait-ce que pour la gestion des comptes des utilisateur·ices.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S4-6": {
+			"title": "Synthèse d'Images, Animation & Sons",
+			"description": "Basé sur l'utilisation d'une API graphique bas niveau telle qu'OpenGL, cet enseignement a pour objectif d'étudier en détail diverses techniques d'éclairage de scènes 3D permettant de produire en temps réel des images de synthèse. D'autres types de rendus, tels que les rendus expressifs —anciennement appelés Non-Photo-Réalistes— seront abordés. Sur cette base, nous étudierons la représentation, le chargement et le traitement de modèles 3D statiques ou animés. Enfin, aussi bien l'interaction bilatérale avec le son que l'application de l'analyse fréquentielle du son à la synthèse d'images seront présentées, avec comme objectif, la réalisation d'une application “images & sons” (voire demoscene).",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S4-7": {
+			"title": "Histoire de l'Informatique",
+			"description": "Ce cours a pour objectif de contextualiser la discpline informatique dans la société, autant historiquement que socialement ou environnementalement, afin de faire réfléchir les étudiant·es aux impacts de leur choix futurs en tant que développeur·euses informatiques. Pour cela, l'histoire de l'informatique est abordée sujet par sujet, et des parallèles sont faits avec l'actualité autant que possible.",
+			"duration": "8 semaines",
+			"credits": "3"
+		},
+		"L2-S4-8": {
+			"title": "Restitution Orale de Connaissances",
+			"description": "Ce cours est couplé avec le cours d'“histoire de l'informatique”, il s'agit pour les étudiant·es de faire un exposé sur un sujet du cours qu'illes souhaitent approfondir, ou sur n'importe quel autre sujet ayant trait à l'histoire de l'informatique, ou aux rapports entre la technologie et la société. Si le sujet choisi le permet, une approche technocritique est encouragée.",
 			"duration": "8 semaines",
 			"credits": "3"
 		}

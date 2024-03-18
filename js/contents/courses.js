@@ -34,6 +34,7 @@ class Courses {
 		this.desc = document.createElement("p");
 		this.desc.textContent = this.contentData[this.lang].desc;
 		Object.assign(this.desc, { textAlign: 'center', });
+		this.desc.style.fontSize = window.innerWidth > 1000 ? 'large' : 'inherit';
 		this.section.appendChild(this.desc);
 		this.createTabs();
 		document.getElementById("defaultOpen")?.click();
@@ -185,13 +186,15 @@ class Courses {
 
 	updateCourseContent(content, courseId, courseName, lang, tabName, semesterKey) {
 		const courseItem = document.createElement("li");
+		Object.assign(courseItem.style, { listStyle: 'none', });
 		const courseButton = document.createElement("button");
 		courseButton.textContent = courseName;
 		Object.assign(courseButton.style, {
-			display: 'block', width: '100%', padding: '10px 0px', textAlign: 'left', background: 'none', 
-			border: 'none', color: 'inherit', textTransform: 'none', fontSize: 'inherit', cursor: 'pointer',
-			fontFamily: "'Pixel', sans-serif",
-		});
+			display: 'block', width: '100%', textAlign: 'left', background: 'none', 
+			border: 'none', color: 'inherit', textTransform: 'none', cursor: 'pointer',
+			fontFamily: "'Pixel', sans-serif", });
+		courseButton.style.fontSize = window.innerWidth > 1000 ? 'large' : 'inherit';
+		courseButton.style.padding = window.innerWidth > 1000 ? '15px 0px' : '10px 0px';
 		courseButton.addEventListener('click', () => {
 			const courseInfoId = `${tabName}-${semesterKey}-${courseId}`;
 			const courseInfo = this.infoData[lang][courseInfoId];
