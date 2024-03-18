@@ -2,9 +2,9 @@
 class About {
 	constructor(lang) {
 		this.section = document.getElementById('about');
-		this.myCV = './assets/doc/Viet_Nguyen_CV.pdf';
-		this.leftArrow = './assets/icons/arrow_left.png';
-		this.rightArrow = './assets/icons/arrow_right.png';
+		const ars = './assets/icons/arrow_';
+		this.leftArrow = ars+'left.png';
+		this.rightArrow = ars+'right.png';
 		this.gitHubStats = {
 			url : 'https://github-readme-stats.vercel.app/api/top-langs/?',
 			user : 'username=viet281101',
@@ -58,14 +58,8 @@ class About {
 		technicalSkillsTitle.textContent = this.contentData[this.lang].skillsTitle;
 		technicalSkills.appendChild(technicalSkillsTitle);
 
-		const topLangImg = document.createElement('img');
-		topLangImg.src = `${this.gitHubStats.url}${this.gitHubStats.user}${this.gitHubStats.theme}${this.gitHubStats.layout}${this.gitHubStats.langs}${this.gitHubStats.border}${this.gitHubStats.custom_title}${this.gitHubStats.card_width}${this.gitHubStats.hide_title}`;
-		topLangImg.alt = 'Top Languages';
-		topLangImg.className = 'top-langs-img';
-		topLangImg.loading = 'lazy';
+		const topLangImg = this.createTopLangImg();
 		technicalSkills.appendChild(topLangImg);
-		topLangImg.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
-		topLangImg.addEventListener('mouseout', (event) => { app.mouseMarkEnabled = true; });
 
 		const softSkills = document.createElement('div');
 		softSkills.className = 'soft-skills';
@@ -85,18 +79,14 @@ class About {
 		slide2SkillsContainer.appendChild(technicalSkills);
 		slide2SkillsContainer.appendChild(softSkills);
 		slide2Content.appendChild(slide2SkillsContainer);
-
 		slide2.appendChild(slide2Content);
-
 		slidesContainer.appendChild(slide1);
 		slidesContainer.appendChild(slide2);
 
 		this.appendNavigationButtons();
 		slidesContainer.addEventListener('scroll', () => this.updateButtonVisibility());
-
 		this.bindTouchEvents();
 	};
-
 	createAboutContentDOM() {
 		const aboutContent = document.createElement('div');
 		aboutContent.className = 'about-content';
@@ -114,7 +104,6 @@ class About {
 		aboutContent.appendChild(this.createCVButton());
 		return aboutContent;
 	};
-
 	createAboutLeftContent() {
 		const aboutLeft = document.createElement('div');
 		aboutLeft.className = 'about-content-left';
@@ -127,7 +116,6 @@ class About {
 		aboutLeft.appendChild(leftContent);
 		return aboutLeft;
 	};
-
 	createAboutRightContent() {
 		const aboutRight = document.createElement('div');
 		aboutRight.className = 'about-content-right';
@@ -140,21 +128,26 @@ class About {
 		aboutRight.appendChild(rightContent);
 		return aboutRight;
 	};
-
 	createCVButton() {
 		const cvButton = document.createElement('a');
-		cvButton.href = this.myCV;
+		cvButton.href = this.contentData[this.lang].cvTarget;
 		cvButton.textContent = this.contentData[this.lang].cvButton;
 		cvButton.className = 'cv-button';
 		cvButton.target = '_blank';
 		cvButton.title = this.contentData[this.lang].cvButtonTitle;
 		cvButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
-		cvButton.addEventListener('mouseout', (event) => {
-			if (app.sections[app.currentSection] !== 'projects' && 
-				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') app.mouseMarkEnabled = true;
-		});
+		cvButton.addEventListener('mouseout', (event) => { this.eventMouseOut(); });
 		return cvButton;
+	};
+	createTopLangImg() {
+		const topLangImg = document.createElement('img');
+		topLangImg.src = `${this.gitHubStats.url}${this.gitHubStats.user}${this.gitHubStats.theme}${this.gitHubStats.layout}${this.gitHubStats.langs}${this.gitHubStats.border}${this.gitHubStats.custom_title}${this.gitHubStats.card_width}${this.gitHubStats.hide_title}`;
+		topLangImg.alt = 'Top Languages';
+		topLangImg.className = 'top-langs-img';
+		topLangImg.loading = 'lazy';
+		topLangImg.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
+		topLangImg.addEventListener('mouseout', (event) => { this.eventMouseOut(); });
+		return topLangImg;
 	};
 
 	bindTouchEvents() {
@@ -167,6 +160,12 @@ class About {
 	handleTouchMove(startX, endX) {
 		if (startX - endX > 50) this.scrollSlides('right');
 		else if (endX - startX > 50) this.scrollSlides('left');
+	};
+	eventMouseOut() {
+		if (app.sections[app.currentSection] !== 'projects' && 
+			app.sections[app.currentSection] !== 'home' && 
+			app.sections[app.currentSection] !== 'courses' && 
+			app.sections[app.currentSection] !== 'contact') { app.mouseMarkEnabled = true; }
 	};
 
 	updateContent(lang) {
@@ -188,6 +187,7 @@ class About {
 
 		const cvButton = this.section.querySelector('.cv-button');
 		cvButton.textContent = this.contentData[this.lang].cvButton;
+		cvButton.href = this.contentData[this.lang].cvTarget;
 		cvButton.title = this.contentData[this.lang].cvButtonTitle;
 
 		const scrollLeftBtn = this.section.querySelector('.scroll-left-btn');
@@ -232,17 +232,9 @@ class About {
 		leftNavButton.onclick = () => this.scrollSlides('left');
 
 		rightNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
-		rightNavButton.addEventListener('mouseout', (event) => {
-			if (app.sections[app.currentSection] !== 'projects' && 
-				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; }
-		});
+		rightNavButton.addEventListener('mouseout', (event) => { this.eventMouseOut(); });
 		leftNavButton.addEventListener('mouseover', (event) => { app.mouseMarkEnabled = false; });
-		leftNavButton.addEventListener('mouseout', (event) => {
-			if (app.sections[app.currentSection] !== 'projects' && 
-				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') {app.mouseMarkEnabled = true; }
-		});
+		leftNavButton.addEventListener('mouseout', (event) => { this.eventMouseOut(); });
 
 		this.section.appendChild(leftNavButton);
 		this.section.appendChild(rightNavButton);

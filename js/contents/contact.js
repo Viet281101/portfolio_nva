@@ -2,7 +2,10 @@
 class Contact {
 	constructor() {
 		this.section = document.getElementById('contact');
-		this.ic_phone = "./assets/icons/phone.png";
+		const ic = "./assets/icons/";
+		this.ic_phone = ic+"phone.png";
+		this.ic_mail = ic+"mail.png";
+		this.ic_map= ic+"map.png";
 	};
 
 	createContactContent() {

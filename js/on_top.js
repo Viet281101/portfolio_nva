@@ -8,14 +8,15 @@ class ScrollOnTop {
 		const btn = document.createElement('button');
 		btn.title = 'Scroll to top';
 		btn.id = 'scrollOnTopBtn';
-		btn.innerHTML = `<img src="${this.scrollOnTopBtn}" alt="Scroll to top" style="width: 30px; height: 30px;">`;
+		btn.innerHTML = `<img src="${this.scrollOnTopBtn}" alt="Scroll to top" style="width: 40px; height: 40px;">`;
 		Object.assign(btn.style, {
 			position: 'fixed', bottom: '20px', right: '30px', display: 'none', zIndex: '10',
 			border: 'none', outline: 'none', backgroundColor: '#333', color: 'white',
-			cursor: 'pointer', padding: '15px', borderRadius: '50%',
+			cursor: 'pointer', padding: '10px', borderRadius: '50%',
 		});
 		document.body.appendChild(btn);
-
+		btn.addEventListener('mouseover', () => { btn.style.backgroundColor = '#555'; });
+		btn.addEventListener('mouseout', () => { btn.style.backgroundColor = '#333'; });
 		btn.addEventListener('click', () => {
 			if (window.innerWidth > 800) $("#fullpage").data('fullpage').moveTo(1);
 			else window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -2,14 +2,14 @@
 class WelcomeStartUpPopUp {
 	constructor() {
 		const key_src = "./assets/key/keyboard_";
-		this.key_up_1 = key_src + "70.png";
-		this.key_up_2 = key_src + "171.png";
-		this.key_down_1 = key_src + "71.png";
-		this.key_down_2 = key_src + "172.png";
-		this.key_right_1 = key_src + "72.png";
-		this.key_right_2 = key_src + "173.png";
-		this.key_left_1 = key_src + "73.png";
-		this.key_left_2 = key_src + "174.png";
+		this.key_up_1 = key_src+"70.png";
+		this.key_up_2 = key_src+"171.png";
+		this.key_down_1 = key_src+"71.png";
+		this.key_down_2 = key_src+"172.png";
+		this.key_right_1 = key_src+"72.png";
+		this.key_right_2 = key_src+"173.png";
+		this.key_left_1 = key_src+"73.png";
+		this.key_left_2 = key_src+"174.png";
 		this.x_close = "./assets/icons/x_close.png";
 		this.popupElement = null;
 		this.intervalId = null;
