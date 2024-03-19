@@ -21,12 +21,37 @@ class NavBar {
 
 		const navBar = document.createElement('nav');
 		navBar.id = 'nav-bar';
-		let navContentHTML = `<div id="nav-content"><img id="close-nav-icon" src="${this.close_nav_icon}" alt="Close" style="display: none;"><ul>`;
+
+		const navContent = document.createElement('div');
+		navContent.id = 'nav-content';
+
+		const closeNavIcon = document.createElement('img');
+		closeNavIcon.id = 'close-nav-icon';
+		closeNavIcon.src = this.close_nav_icon;
+		closeNavIcon.alt = "Close";
+		closeNavIcon.style.display = 'none';
+		navContent.appendChild(closeNavIcon);
+
+		const ul = document.createElement('ul');
 		this.navItems.forEach(item => {
-			navContentHTML += `<li><a href="${item.href}"><img src="${item.icon}" alt="${item.text[this.lang]}" /><span>${item.text[this.lang]}</span></a></li>`;
+			const li = document.createElement('li');
+			const a = document.createElement('a');
+			a.href = item.href;
+
+			const img = document.createElement('img');
+			img.src = item.icon;
+			img.alt = item.text[this.lang];
+
+			const span = document.createElement('span');
+			span.textContent = item.text[this.lang];
+
+			a.appendChild(img);
+			a.appendChild(span);
+			li.appendChild(a);
+			ul.appendChild(li);
 		});
-		navContentHTML += `</ul></div>`;
-		navBar.innerHTML = navContentHTML;
+		navContent.appendChild(ul);
+		navBar.appendChild(navContent);
 		document.body.appendChild(navBar);
 
 		this.bindNavBarEvents(navBar);
@@ -151,7 +176,5 @@ class NavBar {
 			if (icon) Object.assign(icon.style, iconStyles);
 		});
 	}
-	
 };
-
 

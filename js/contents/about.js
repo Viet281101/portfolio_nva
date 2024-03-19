@@ -22,16 +22,13 @@ class About {
 	};
 
 	loadContentData() {
-		fetch('./js/data/about.json')
-			.then(response => response.json())
-			.then(data => { this.contentData = data; this.createAboutContent(); })
-			.catch(error => console.error('Error loading the about content:', error));
+		fetch('./js/data/about.json').then(response => response.json()).then(data => { this.contentData = data; this.createAboutContent(); }).catch(error => console.error('Error loading the about content:', error));
 	};
 
 	createAboutContent() {
 		if (Object.keys(this.contentData).length === 0) return;
-		this.section.innerHTML = '<div class="slides-container">';
-		const slidesContainer = this.section.querySelector('.slides-container');
+		const slidesContainer = document.createElement('div');
+		slidesContainer.className = 'slides-container';
 		Object.assign(slidesContainer.style, { display: 'flex', overflowX: 'hidden', scrollBehavior: 'smooth', width: '100%', height: '100%' });
 		
 		const slide1 = document.createElement('div');
@@ -39,6 +36,16 @@ class About {
 		const aboutContent = this.createAboutContentDOM();
 		slide1.appendChild(aboutContent);
 
+		const slide2 = this.createSecondSlide();
+		slidesContainer.appendChild(slide1);
+		slidesContainer.appendChild(slide2);
+		this.section.appendChild(slidesContainer);
+
+		this.appendNavigationButtons();
+		slidesContainer.addEventListener('scroll', () => this.updateButtonVisibility());
+		this.bindTouchEvents();
+	};
+	createSecondSlide() {
 		const slide2 = document.createElement('div');
 		slide2.className = 'slide';
 		
@@ -80,12 +87,7 @@ class About {
 		slide2SkillsContainer.appendChild(softSkills);
 		slide2Content.appendChild(slide2SkillsContainer);
 		slide2.appendChild(slide2Content);
-		slidesContainer.appendChild(slide1);
-		slidesContainer.appendChild(slide2);
-
-		this.appendNavigationButtons();
-		slidesContainer.addEventListener('scroll', () => this.updateButtonVisibility());
-		this.bindTouchEvents();
+		return slide2;
 	};
 	createAboutContentDOM() {
 		const aboutContent = document.createElement('div');

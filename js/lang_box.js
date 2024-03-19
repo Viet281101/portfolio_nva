@@ -12,14 +12,21 @@ class LangBox {
 		Object.assign(languageSelector.style, {
 			position: 'fixed', top: '0', left: '230px', zIndex: '10', padding: '10px',
 		});
+
 		const select = document.createElement('select');
 		select.title = 'Change language';
 		select.id = 'box-selector';
-		select.setAttribute('class', 'select-langbox');
-		select.innerHTML = this.langs.map(lang => `
-		<option value="${lang}" ${this.lang === lang ? 'selected' : ''}>
-			${this.getLangName(lang)}
-		</option>`).join('');
+		select.className = 'select-langbox';
+		this.langs.forEach(lang => {
+			const option = document.createElement('option');
+			option.value = lang;
+			option.textContent = this.getLangName(lang);
+			if (this.lang === lang) {
+				option.selected = true;
+			}
+			select.appendChild(option);
+		});
+
 		Object.assign(select.style, {
 			borderRadius: '5px', border: '1px solid #333', WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none',
 			backgroundImage: 'url("assets/icons/nav_down.png")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 3px center', backgroundSize: '20px',

@@ -6,7 +6,7 @@
 			"Othello AI Game" : {
 				"id" : "othello",
 				"tools": "C, GLUT, SDL2, Minimax Algo",
-				"image": "othello_ai",
+				"image": "othello/1",
 				"desc" : "Othello AI Game with simple interface and AI using Minimax/Alphabeta"
 			},
 			"Demo Graphic" : {
@@ -18,7 +18,7 @@
 			"Chess Engine" : {
 				"id" : "chess_engine",
 				"tools": "JavaScript, HTML, CSS",
-				"image": "chess_engine",
+				"image": "chess_engine/2",
 				"desc" : "Chess Engine with simple web interface and AI using Minimax Algorithm"
 			},
 			"Secure Chat" : {
@@ -48,7 +48,7 @@
 			"Castlevania" : {
 				"id" : "castlevania",
 				"tools": "JavaScript, Canvas, HTML",
-				"image": "castlevania",
+				"image": "castlevania/1",
 				"desc" : "2D platformer game with castlevania style using vanilla JS and Canvas API"
 			},
 			"Polyominos" : {
@@ -86,7 +86,7 @@
 			"Othello AI Game" : {
 				"id" : "othello",
 				"tools": "C, GLUT, SDL2, Minimax Algo",
-				"image": "othello_ai",
+				"image": "othello/1",
 				"desc" : "Jeu Othello avec une interface simple et une IA utilisant l'algorithme Minimax/Alphabeta"
 			},
 			"Demo Graphic" : {
@@ -98,7 +98,7 @@
 			"Chess Engine" : {
 				"id" : "chess_engine",
 				"tools": "JavaScript, HTML, CSS",
-				"image": "chess_engine",
+				"image": "chess_engine/2",
 				"desc" : "Moteur d'échecs avec une interface web simple et une IA utilisant l'algorithme Minimax"
 			},
 			"Secure Chat" : {
@@ -128,7 +128,7 @@
 			"Castlevania" : {
 				"id" : "castlevania",
 				"tools": "JavaScript, Canvas, HTML",
-				"image": "castlevania",
+				"image": "castlevania/1",
 				"desc" : "Jeu de plateforme 2D avec un style castlevania utilisant vanilla JS et l'API Canvas"
 			},
 			"Polyominos" : {

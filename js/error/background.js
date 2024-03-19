@@ -59,17 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 //////*  Create & Update Background Effects  *//////
 function applyBackgroundStyles(element, imageUrl, zIndex) {
-	element.style.position = 'fixed';
-	element.style.top = '0';
-	element.style.left = '0';
-	element.style.width = '100%';
-	element.style.height = '100vh';
-	element.style.backgroundImage = 'url(' + imageUrl + ')';
-	element.style.backgroundSize = 'cover';
-	element.style.backgroundPosition = 'center';
-	element.style.backgroundRepeat = 'no-repeat';
-	element.style.zIndex = zIndex;
-	element.style.transition = 'background-image 1s ease-in-out';
+	Object.assign(element.style, {
+		position: 'fixed', top: '0', left: '0', width: '100%', height: '100vh', 
+		backgroundImage: "url("+imageUrl+")", backgroundSize: 'cover', backgroundSize: 'cover',
+		backgroundPosition: 'center', backgroundRepeat: 'no-repeat', zIndex: zIndex, 
+		transition: 'background-image 1s ease-in-out'
+	});
 };
 function updateMouseMask(backgroundLayer, x, y, radius) {
 	influenceArea.width = radius * 2;

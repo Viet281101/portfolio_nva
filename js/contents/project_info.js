@@ -20,7 +20,7 @@ class ProjectPopupInfo {
 		popupContent.style.maxWidth = popupContent.style.maxHeight = window.innerWidth > 900 ? "70%" : "90%";
 		popupContent.style.fontSize = window.innerWidth > 900 ? "large" : "inherit";
 		Object.assign(popupContent.style, {
-			backgroundColor: '#000', borderRadius: '5px', border: '2px solid #fff',
+			backgroundColor: '#000', borderRadius: '5px', border: '3px solid #fff',
 			padding: '20px', overflowY: 'auto', position: 'relative',
 		});
 
@@ -66,7 +66,7 @@ class ProjectPopupInfo {
                 img.loading = "lazy";
                 Object.assign(img.style, {
                     maxWidth: '100%', maxHeight: '250px',
-                    flex: '0 0 auto',
+                    flex: '0 0 auto', border: '1px solid #fff', borderRadius: '5px',
                     objectFit: 'contain',
                 });
                 container.appendChild(img);

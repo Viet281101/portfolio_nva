@@ -8,7 +8,13 @@ class ScrollOnTop {
 		const btn = document.createElement('button');
 		btn.title = 'Scroll to top';
 		btn.id = 'scrollOnTopBtn';
-		btn.innerHTML = `<img src="${this.scrollOnTopBtn}" alt="Scroll to top" style="width: 40px; height: 40px;">`;
+
+		const img = document.createElement('img');
+		img.src = this.scrollOnTopBtn;
+		img.alt = 'Scroll to top';
+		img.style.width = img.style.height = window.innerWidth > 900 ? '40px' : '35px';
+		btn.appendChild(img);
+
 		Object.assign(btn.style, {
 			position: 'fixed', bottom: '20px', right: '30px', display: 'none', zIndex: '10',
 			border: 'none', outline: 'none', backgroundColor: '#333', color: 'white',
