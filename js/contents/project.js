@@ -172,7 +172,7 @@ class Project {
 			console.log(projectId);
 			if (projectInfoData) {
 				if (!document.querySelector('.popup-container')) {
-					const projectPopup = new ProjectPopupInfo(projectInfoData.details, projectInfoData.sources, projectInfoData.img);
+					const projectPopup = new ProjectPopupInfo(projectInfoData.details, projectInfoData.sources, projectInfoData.imgs);
 					projectPopup.createPopupWindow();
 				}
 			}

@@ -1,9 +1,9 @@
 
 class ProjectPopupInfo {
-	constructor(details, sources, img) {
+	constructor(details, sources, imgs) {
 		this.details = details;
 		this.sources = sources;
-		this.img = img;
+		this.imgs = imgs;
 		this.x_close = "./assets/icons/x_close.png";
 	};
 
@@ -25,18 +25,7 @@ class ProjectPopupInfo {
 		});
 
 		const closeBtn = this.closeButton(popupContainer);
-
-		const img = document.createElement('img');
-		img.title = this.img;
-		img.alt = this.img;
-		img.src = "./assets/project/" + this.img + ".png";
-		img.loading = "lazy";
-		Object.assign(img.style, {
-			maxWidth: '100%', maxHeight: '300px',
-			display: 'block',
-			objectFit: 'contain',
-			margin: '0 auto',
-		});
+		const imgContainer = this.createImagesContainer();
 
 		const details = document.createElement('p');
 		details.innerHTML = this.details;
@@ -54,13 +43,37 @@ class ProjectPopupInfo {
 		});
 
 		popupContent.appendChild(closeBtn);
-		if (this.img) popupContent.appendChild(img);
+		if (this.imgs) popupContent.appendChild(imgContainer);
 		popupContent.appendChild(details);
 		if (this.sources) popupContent.appendChild(sources);
 
 		popupContainer.appendChild(popupContent);
 		document.body.appendChild(popupContainer);
 	};
+
+	createImagesContainer() {
+        const container = document.createElement('div');
+        Object.assign(container.style, {
+            display: 'flex', overflowX: 'auto', margin: '0 auto 20px',
+            maxWidth: '100%', maxHeight: '250px', gap: '10px', boxSizing: 'border-box',
+        });
+        this.imgs.forEach(imgName => {
+            if (imgName) {
+                const img = document.createElement('img');
+                img.title = imgName;
+                img.alt = imgName;
+                img.src = `./assets/project/${imgName}.png`;
+                img.loading = "lazy";
+                Object.assign(img.style, {
+                    maxWidth: '100%', maxHeight: '250px',
+                    flex: '0 0 auto',
+                    objectFit: 'contain',
+                });
+                container.appendChild(img);
+            }
+        });
+        return container;
+    };
 
 	closeButton(popupContainer) {
 		const closeBtn = document.createElement('img');

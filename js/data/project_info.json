@@ -3,124 +3,124 @@
 		"othello": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/OthelloAI",
-			"img": "othello_ai"
+			"imgs": ["othello_ai"]
 		},
 		"demo_graphic": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/DemoGraphicGL4Du",
-			"img": "demo_graphic"
+			"imgs": ["demo_graphic"]
 		},
 		"chess_engine": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/chessEngineJS",
-			"img": "chess_img"
+			"imgs": ["chess_img", "chess_engine"]
 		},
 		"secure_chat": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
-			"img": "chat_app"
+			"imgs": ["chat_app"]
 		},
 		"detec_app": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "",
-			"img": "screen_detection"
+			"imgs": ["screen_detection"]
 		},
 		"music_virap": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/MusicPlayerVirap",
-			"img": "music_player_virap"
+			"imgs": ["music_player_virap"]
 		},
 		"colt_express": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/ColtExpressTkinter",
-			"img": "colt_express"
+			"imgs": ["colt_express"]
 		},
 		"castlevania": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/CastlevaniaJS",
-			"img": "castlevania"
+			"imgs": ["castlevania"]
 		},
 		"polyominos": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/PavagesPolyominosJS",
-			"img": "polyominos"
+			"imgs": ["polyominos"]
 		},
 		"teleporter": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/2D_RPG_Godot",
-			"img": "teleporter"
+			"imgs": ["teleporter"]
 		},
 		"moviesite": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/movie-website",
-			"img": "movies_web"
+			"imgs": ["movies_web"]
 		},
 		"compilator": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/MiniC-MISP_compiler",
-			"img": "compiler"
+			"imgs": ["compiler"]
 		}
 	},
 	"fr" : {
 		"othello": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/OthelloAI",
-			"img": "othello_ai"
+			"imgs": ["othello_ai"]
 		},
 		"demo_graphic": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/DemoGraphicGL4Du",
-			"img": "demo_graphic"
+			"imgs": ["demo_graphic"]
 		},
 		"chess_engine": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/chessEngineJS",
-			"img": "chess_img"
+			"imgs": ["chess_img"]
 		},
 		"secure_chat": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
-			"img": "chat_app"
+			"imgs": ["chat_app"]
 		},
 		"detec_app": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "",
-			"img": "screen_detection"
+			"imgs": ["screen_detection"]
 		},
 		"music_virap": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/MusicPlayerVirap",
-			"img": "music_player_virap"
+			"imgs": ["music_player_virap"]
 		},
 		"colt_express": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/ColtExpressTkinter",
-			"img": "colt_express"
+			"imgs": ["colt_express"]
 		},
 		"castlevania": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/CastlevaniaJS",
-			"img": "castlevania"
+			"imgs": ["castlevania"]
 		},
 		"polyominos": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/PavagesPolyominosJS",
-			"img": "polyominos"
+			"imgs": ["polyominos"]
 		},
 		"teleporter": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/2D_RPG_Godot",
-			"img": "teleporter"
+			"imgs": ["teleporter"]
 		},
 		"moviesite": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/movie-website",
-			"img": "movies_web"
+			"imgs": ["movies_web"]
 		},
 		"compilator": {
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/MiniC-MISP_compiler",
-			"img": "compiler"
+			"imgs": ["compiler"]
 		}
 	}
 }

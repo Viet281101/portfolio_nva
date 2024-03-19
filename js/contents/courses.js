@@ -120,13 +120,15 @@ class Courses {
 
 					const semesterTitle = document.createElement("h3");
 					semesterTitle.textContent = semesterData['h3'];
+					semesterTitle.style.fontSize = window.innerWidth > 900 ? "x-large" : "large";
 					semesterContent.appendChild(semesterTitle);
 
 					const coursesList = document.createElement("ul");
 					Object.entries(semesterData["courses"]).forEach(([courseId, courseName]) => {
 						this.updateCourseContent(coursesList, courseId, courseName, this.lang, tabName, key);
 					});
-					Object.assign(coursesList.style, { listStyle: 'none', textAlign: 'left', });
+					Object.assign(coursesList.style, { listStyle: 'none', textAlign: 'left', padding: '0', margin: '0', });
+					coursesList.style.marginLeft = window.innerWidth > 768 ? '100px' : '0';
 					semesterContent.appendChild(coursesList);
 					semesterTabContentWrapper.appendChild(semesterContent);
 
@@ -192,7 +194,7 @@ class Courses {
 		Object.assign(courseButton.style, {
 			display: 'block', width: '100%', textAlign: 'left', background: 'none', 
 			border: 'none', color: 'inherit', textTransform: 'none', cursor: 'pointer',
-			fontFamily: "'Pixel', sans-serif", });
+			fontFamily: "'Pixel', sans-serif", wordBreak: 'keep-all',});
 		courseButton.style.fontSize = window.innerWidth > 900 ? 'large' : 'inherit';
 		courseButton.style.padding = window.innerWidth > 900 ? '15px 0px' : '10px 0px';
 		courseButton.addEventListener('click', () => {

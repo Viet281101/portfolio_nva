@@ -14,6 +14,8 @@ class LangBox {
 		});
 		const select = document.createElement('select');
 		select.title = 'Change language';
+		select.id = 'box-selector';
+		select.setAttribute('class', 'select-langbox');
 		select.innerHTML = this.langs.map(lang => `
 		<option value="${lang}" ${this.lang === lang ? 'selected' : ''}>
 			${this.getLangName(lang)}
