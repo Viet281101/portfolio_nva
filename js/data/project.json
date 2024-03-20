@@ -12,7 +12,7 @@
 			"Demo Graphic" : {
 				"id" : "demo_graphic",
 				"tools": "C, OpenGL, GL4Dummies, SDL2",
-				"image": "demo_graphic",
+				"image": "demo_graphic/1",
 				"desc" : "Small video graphic demo using OpenGL, SDL2 and GL4Dummies library"
 			},
 			"Chess Engine" : {
@@ -92,7 +92,7 @@
 			"Demo Graphic" : {
 				"id" : "demo_graphic",
 				"tools": "C, OpenGL, GL4Dummies, SDL2",
-				"image": "demo_graphic",
+				"image": "demo_graphic/1",
 				"desc" : "Petite démo graphique vidéo utilisant OpenGL, SDL2 et le GL4Dummies"
 			},
 			"Chess Engine" : {

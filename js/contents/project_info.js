@@ -1,6 +1,7 @@
 
 class ProjectPopupInfo {
-	constructor(details, sources, imgs) {
+	constructor(title, details, sources, imgs) {
+		this.title = title;
 		this.details = details;
 		this.sources = sources;
 		this.imgs = imgs;
@@ -25,15 +26,20 @@ class ProjectPopupInfo {
 		});
 
 		const closeBtn = this.closeButton(popupContainer);
+		const title = document.createElement('h2');
+		title.textContent = this.title;
+		Object.assign(title.style, { padding: '20px 0', margin: '0', textAlign: 'center', textShadow: '3px 3px 3px #0056B3', });
+		popupContent.appendChild(title);
+
 		const imgContainer = this.createImagesContainer();
 
 		const details = document.createElement('p');
-		details.innerHTML = this.details;
+		details.textContent = this.details;
 		Object.assign(details.style, { textAlign: 'justify', marginTop: '20px', });
 
 		const sources = document.createElement('a');
 		sources.href = this.sources;
-		sources.innerHTML = "Source";
+		sources.textContent = "Source";
 		sources.target = "_blank";
 		Object.assign(sources.style, {
 			display: 'block',

@@ -22,7 +22,7 @@ class Project {
 
 		let title = document.createElement('div');
 		title.className = "project-title";
-		title.innerHTML = data.title;
+		title.textContent = data.title;
 		Object.assign(title.style, { 
 			marginTop: '70px', fontWeight: 'bold', fontSize: '36px',
 			textAlign: 'center', padding: '30px', color: '#fff', textShadow: '4px 4px 4px #0056B3',
@@ -87,7 +87,7 @@ class Project {
 
 		let title = document.createElement('div');
 		title.className = "title";
-		title.innerHTML = projectName;
+		title.textContent = projectName;
 		Object.assign(title.style, { 
 			fontSize: '20px', fontWeight: 'bold', textAlign: 'center',
 			padding: '5px', textShadow: '3px 3px 3px #0056B3',
@@ -95,18 +95,18 @@ class Project {
 
 		let sub_title = document.createElement('div');
 		sub_title.className = "sub-title";
-		sub_title.innerHTML = projectData.tools;
+		sub_title.textContent = projectData.tools;
 		Object.assign(sub_title.style, { textAlign: 'center', padding: '5px', color: '#00D7FF', });
 
 		let description = document.createElement('p');
-		description.innerHTML = projectData.desc;
+		description.textContent = projectData.desc;
 		Object.assign(description.style, { textAlign: 'center', padding: '5px', wordWrap: 'break-word', });
 
 		let btn = document.createElement("div");
 		btn.className = "btn";
 		Object.assign(btn.style, { textAlign: 'center', marginTop: '10px',});
 		let button = document.createElement("button");
-		button.innerHTML = buttonText;
+		button.textContent = buttonText;
 		button.title = buttonTitle + projectName;
 		Object.assign(button.style, {
 			border: '1px solid #F1F1F1', borderRadius: '5px', outline: 'none',
@@ -127,7 +127,7 @@ class Project {
 	setupCarouselOptions() {
 		$(document).ready(function() {
 			$('.slider').owlCarousel({
-				loop: true, nav: true,
+				loop: true, nav: true, dots: false,
 				autoplay: true, autoplayTimeout: 3000, autoplayHoverPause: true,
 				responsive: { 0: { items: 1 }, 600: { items: 2 }, 1400: { items: 3 }, 1800: { items: 4 }, },
 			});
@@ -165,7 +165,7 @@ class Project {
 			console.log(projectId);
 			if (projectInfoData) {
 				if (!document.querySelector('.popup-container')) {
-					const projectPopup = new ProjectPopupInfo(projectInfoData.details, projectInfoData.sources, projectInfoData.imgs);
+					const projectPopup = new ProjectPopupInfo(projectInfoData.title, projectInfoData.details, projectInfoData.sources, projectInfoData.imgs);
 					projectPopup.createPopupWindow();
 				}
 			}

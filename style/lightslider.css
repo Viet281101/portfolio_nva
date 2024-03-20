@@ -240,7 +240,6 @@
 	float: right !important;
 }
 /* Rtl */
-
 @-webkit-keyframes rightEnd {
 	0% { transform: translateX(0); }
 	50% { transform: translateX(-15px); }

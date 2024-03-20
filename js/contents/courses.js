@@ -27,7 +27,7 @@ class Courses {
 		this.section.innerHTML = '';
 
 		this.title = document.createElement('h2');
-		this.title.innerHTML = this.contentData[this.lang].title;
+		this.title.textContent = this.contentData[this.lang].title;
 		Object.assign(this.title.style, { fontSize: '30px', textDecoration: 'underline', });
 		this.section.appendChild(this.title);
 
