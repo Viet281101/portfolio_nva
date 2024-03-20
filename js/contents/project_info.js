@@ -58,28 +58,28 @@ class ProjectPopupInfo {
 	};
 
 	createImagesContainer() {
-        const container = document.createElement('div');
-        Object.assign(container.style, {
-            display: 'flex', overflowX: 'auto', margin: '0 auto 20px',
-            maxWidth: '100%', maxHeight: '250px', gap: '10px', boxSizing: 'border-box',
-        });
-        this.imgs.forEach(imgName => {
-            if (imgName) {
-                const img = document.createElement('img');
-                img.title = imgName;
-                img.alt = imgName;
-                img.src = `./assets/project/${imgName}.png`;
-                img.loading = "lazy";
-                Object.assign(img.style, {
-                    maxWidth: '100%', maxHeight: '250px',
-                    flex: '0 0 auto', border: '1px solid #fff', borderRadius: '5px',
-                    objectFit: 'contain',
-                });
-                container.appendChild(img);
-            }
-        });
-        return container;
-    };
+		const container = document.createElement('div');
+		Object.assign(container.style, {
+			display: 'flex', overflowX: this.imgs.length > 1 ? 'scroll' : 'hidden', margin: '0 auto 20px',
+			maxWidth: '100%', maxHeight: '250px', gap: '10px', boxSizing: 'border-box',
+		});
+		this.imgs.forEach(imgName => {
+			if (imgName) {
+				const img = document.createElement('img');
+				img.title = imgName;
+				img.alt = imgName;
+				img.src = `./assets/project/${imgName}.png`;
+				img.loading = "lazy";
+				Object.assign(img.style, {
+					maxWidth: '100%', maxHeight: '250px',
+					flex: '0 0 auto', border: '1px solid #fff', borderRadius: '5px',
+					objectFit: 'contain',
+				});
+				container.appendChild(img);
+			}
+		});
+		return container;
+	};
 
 	closeButton(popupContainer) {
 		const closeBtn = document.createElement('img');

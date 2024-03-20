@@ -42,7 +42,7 @@
 			"Colt Express" : {
 				"id" : "colt_express",
 				"tools": "Pygame, Tkinter, PIL",
-				"image": "colt_express",
+				"image": "colt_express/1",
 				"desc" : "Colt Express board game with simple interface by Pygame and Tkinter library"
 			},
 			"Castlevania" : {
@@ -122,7 +122,7 @@
 			"Colt Express" : {
 				"id" : "colt_express",
 				"tools": "Pygame, Tkinter, PIL",
-				"image": "colt_express",
+				"image": "colt_express/1",
 				"desc" : "Jeu de société Colt Express avec une interface animée simple par la bibliothèque Pygame et Tkinter"
 			},
 			"Castlevania" : {

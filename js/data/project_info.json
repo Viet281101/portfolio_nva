@@ -40,7 +40,7 @@
 			"title": "Colt Express",
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/ColtExpressTkinter",
-			"imgs": ["colt_express"]
+			"imgs": ["colt_express/2", "colt_express/1", "colt_express/3"]
 		},
 		"castlevania": {
 			"title": "Castlevania JS (2D platformer)",
@@ -75,7 +75,7 @@
 	},
 	"fr" : {
 		"othello": {
-			"title": "Jeu Othello IA",
+			"title": "Jeu d'Othello IA",
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/OthelloAI",
 			"imgs": ["othello/1"]
@@ -114,7 +114,7 @@
 			"title": "Colt Express",
 			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
 			"sources": "https://github.com/Viet281101/ColtExpressTkinter",
-			"imgs": ["colt_express"]
+			"imgs": ["colt_express/2", "colt_express/1", "colt_express/3"]
 		},
 		"castlevania": {
 			"title": "Castlevania JS (2D platformer)",

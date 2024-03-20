@@ -123,7 +123,7 @@ class Project {
 		project.appendChild(card_content);
 		return project;
 	};
-	updateContent(lang) { this.createProjectContent(lang); };
+	updateContent(lang) { this.lang = lang; this.createProjectContent(lang); };
 	setupCarouselOptions() {
 		$(document).ready(function() {
 			$('.slider').owlCarousel({
