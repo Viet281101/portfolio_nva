@@ -20,7 +20,7 @@
 		},
 		"secure_chat": {
 			"title": "Security Mini Chat App",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "The Objective of this project is to create a basic chat application with a simple interface using the 'tkinter' library and a server using 'socket' with the ideas to develop the following additional security systems: 1) Encrypt messages before to send them.  2) Connection encryption1.  3) User authentication.  4) Message storage.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
 			"imgs": ["chat_app"]
 		},
@@ -94,7 +94,7 @@
 		},
 		"secure_chat": {
 			"title": "Sécurité Chat App",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "L'Objectif de ce projet est de créer une application de chat de base avec une interface simple utilisant la bibliothèque 'tkinter' et un serveur utilisant 'socket' avec les idées pour développer des systèmes de sécurité supplémentaires suivants: 1) Crypter les messages avant de les envoyer.  2) Cryptage de connexion1.  3) Authentification d'utilisateur.  4) Stockage des messages.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
 			"imgs": ["chat_app"]
 		},

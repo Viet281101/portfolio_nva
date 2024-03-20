@@ -4,15 +4,9 @@ const ctx = canvas.getContext('2d');
 canvas.style.position = 'fixed';
 canvas.style.top = '0';
 canvas.style.zIndex = '2';
-if (window.innerWidth < 1000) {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	canvas.style.left = '0';
-} else {
-	canvas.width = window.innerWidth - 220;
-	canvas.height = window.innerHeight;
-	canvas.style.left = '220px';
-}
+canvas.width = window.innerWidth < 1000 ? window.innerWidth : window.innerWidth - 220;
+canvas.height = window.innerHeight;
+canvas.style.left = window.innerWidth < 1000 ? '0' : '220px';
 
 const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
 gradient.addColorStop(0, 'blue');
@@ -91,11 +85,7 @@ class Effect {
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;
 		this.particles = [];
-		if (this.canvas.width < 1000) {
-			this.numberOfParticles = 20;
-		} else {
-			this.numberOfParticles = 120;
-		}
+		this.numberOfParticles = this.canvas.width < 1000 ? 20 : 120;
 		this.createParticles();
 
 		this.mouse = {
@@ -109,30 +99,19 @@ class Effect {
 			// console.log(e.target.window.innerWidth);
 			this.resize(e.target.window.innerWidth, e.target.window.innerHeight);
 		});
-
 		window.addEventListener('mousemove', e => {
 			// console.log(e.x, e.y);
 			if (this.mouse.pressed) {
-				if (canvas.width < 1000) {
-					this.mouse.x = e.x;
-				} else {
-					this.mouse.x = e.x - 220;
-				}
+				this.mouse.x = canvas.width < 1000 ? e.x : e.x - 220;
 				this.mouse.y = e.y;
 				// console.log(this.mouse.x, this.mouse.y);
 			}
 		});
-
 		window.addEventListener('mousedown', e => {
 			this.mouse.pressed = true;
-			if (canvas.width < 1000) {
-				this.mouse.x = e.x;
-			} else {
-				this.mouse.x = e.x - 220;
-			}
+			this.mouse.x = canvas.width < 1000 ? e.x : e.x - 220;
 			this.mouse.y = e.y;
 		});
-
 		window.addEventListener('mouseup', e => {
 			this.mouse.pressed = false;
 		});
@@ -178,16 +157,9 @@ class Effect {
 	}
 
 	resize(width, height) {
-		if (width < 1000) {
-			this.canvas.width = width;
-			this.canvas.height = height;
-			this.canvas.style.left = '0';
-		}
-		else {
-			this.canvas.width = width - 220;
-			this.canvas.height = height;
-			this.canvas.style.left = '220px';
-		}
+		this.canvas.width = width < 1000 ? width : width - 220;
+		this.canvas.height = height;
+		this.canvas.style.left = width < 1000 ? '0' : '220px';
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;
 
