@@ -6,6 +6,7 @@ class ProjectPopupInfo {
 		this.sources = sources;
 		this.imgs = imgs;
 		this.x_close = "./assets/icons/x_close.png";
+		this.userInteracted = false;
 	};
 
 	createPopupWindow() {
@@ -32,6 +33,10 @@ class ProjectPopupInfo {
 		popupContent.appendChild(title);
 
 		const imgContainer = this.createImagesContainer();
+		if (this.imgs && this.imgs.length > 1) {
+			popupContent.appendChild(imgContainer);
+			this.autoScroll(imgContainer, 1000);
+		}
 
 		const details = document.createElement('p');
 		details.textContent = this.details;
@@ -41,12 +46,7 @@ class ProjectPopupInfo {
 		sources.href = this.sources;
 		sources.textContent = "Source";
 		sources.target = "_blank";
-		Object.assign(sources.style, {
-			display: 'block',
-			marginTop: '20px',
-			textDecoration: 'none',
-			color: '#007bff',
-		});
+		Object.assign(sources.style, { display: 'block', marginTop: '20px', textDecoration: 'none', color: '#007bff', });
 
 		popupContent.appendChild(closeBtn);
 		if (this.imgs) popupContent.appendChild(imgContainer);
@@ -60,9 +60,13 @@ class ProjectPopupInfo {
 	createImagesContainer() {
 		const container = document.createElement('div');
 		Object.assign(container.style, {
-			display: 'flex', overflowX: this.imgs.length > 1 ? 'scroll' : 'hidden', margin: '0 auto 20px',
-			maxWidth: '100%', maxHeight: '250px', gap: '10px', boxSizing: 'border-box',
+			display: 'flex', overflowX: this.imgs.length > 1 ? 'scroll' : 'hidden', 
+			margin: '0 auto 20px', maxWidth: '100%', maxHeight: '250px', gap: '10px', 
+			boxSizing: 'border-box',
 		});
+		container.addEventListener('scroll', () => { this.userInteracted = true; });
+		container.addEventListener('touchstart', () => { this.userInteracted = true; });
+		container.addEventListener('mousedown', () => { this.userInteracted = true; });
 		this.imgs.forEach(imgName => {
 			if (imgName) {
 				const img = document.createElement('img');
@@ -71,9 +75,8 @@ class ProjectPopupInfo {
 				img.src = `./assets/project/${imgName}.png`;
 				img.loading = "lazy";
 				Object.assign(img.style, {
-					maxWidth: '100%', maxHeight: '250px',
-					flex: '0 0 auto', border: '1px solid #fff', borderRadius: '5px',
-					objectFit: 'contain',
+					maxWidth: '100%', maxHeight: '250px', flex: '0 0 auto', 
+					border: '1px solid #fff', borderRadius: '5px', objectFit: 'contain',
 				});
 				container.appendChild(img);
 			}
@@ -95,5 +98,26 @@ class ProjectPopupInfo {
 			popupContainer.remove();
 		});
 		return closeBtn;
+	};
+
+	autoScroll(container, delay) {
+		const stepSize = window.innerWidth - (window.innerWidth / 10);
+		let isScrolling = false;
+		const startScroll = () => {
+			let scrollAmount = 0;
+			const doScroll = () => {
+				if (scrollAmount < stepSize) { container.scrollLeft += 10; scrollAmount += 10; requestAnimationFrame(doScroll); } 
+				else { isScrolling = false; setTimeout(() => startAutoScroll(), delay); }
+			};
+			doScroll();
+		};
+		const startAutoScroll = () => {
+			if (!this.userInteracted && !isScrolling) {
+				isScrolling = true;
+				if (container.scrollWidth <= container.scrollLeft + container.offsetWidth) { container.scrollLeft = 0; }
+				startScroll();
+			}
+		};
+		if (!this.userInteracted) { setTimeout(() => startAutoScroll(), delay); }
 	};
 };

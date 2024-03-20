@@ -38,7 +38,7 @@
 		},
 		"colt_express": {
 			"title": "Colt Express",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "This project consists of building an electronic and slightly simplified version of the game Colt Express. The game takes place on board a train, consisting of a locomotive and a certain number of equal carriages to the number of players. Players take on the role of bandits who have jumped on board to rob the passengers.",
 			"sources": "https://github.com/Viet281101/ColtExpressTkinter",
 			"imgs": ["colt_express/2", "colt_express/1", "colt_express/3"]
 		},
@@ -112,7 +112,7 @@
 		},
 		"colt_express": {
 			"title": "Colt Express",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "Ce projet consiste à construire une version électronique et légèrement simplifiée du jeu Colt Express. Le jeu se déroule à bord d'un train, composé d'une locomotive et d’un certain nombre de wagons égal au nombre de joueurs. Les joueurs incarnent des bandits qui ont sauté à bord pour détrousser les passagers.",
 			"sources": "https://github.com/Viet281101/ColtExpressTkinter",
 			"imgs": ["colt_express/2", "colt_express/1", "colt_express/3"]
 		},
