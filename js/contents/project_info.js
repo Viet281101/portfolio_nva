@@ -39,7 +39,7 @@ class ProjectPopupInfo {
 		}
 
 		const details = document.createElement('p');
-		details.textContent = this.details;
+		details.innerHTML = this.details;
 		Object.assign(details.style, { textAlign: 'justify', marginTop: '20px', });
 
 		const sources = document.createElement('a');
@@ -64,7 +64,7 @@ class ProjectPopupInfo {
 			margin: '0 auto 20px', maxWidth: '100%', maxHeight: '250px', gap: '10px', 
 			boxSizing: 'border-box',
 		});
-		container.addEventListener('scroll', () => { this.userInteracted = true; });
+		if (window.innerWidth > 900) container.addEventListener('scroll', () => { this.userInteracted = true; });
 		container.addEventListener('touchstart', () => { this.userInteracted = true; });
 		container.addEventListener('mousedown', () => { this.userInteracted = true; });
 		this.imgs.forEach(imgName => {
@@ -90,10 +90,8 @@ class ProjectPopupInfo {
 		closeBtn.alt = "Close";
 		closeBtn.src = this.x_close;
 		closeBtn.loading = "lazy";
-		Object.assign(closeBtn.style, {
-			position: 'absolute', top: '10px', right: '10px',
-			width: '50px', height: '50px', cursor: 'pointer',
-		});
+		Object.assign(closeBtn.style, {position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', });
+		closeBtn.style.width = closeBtn.style.height = window.innerWidth > 900 ? '50px' : '40px';
 		closeBtn.addEventListener('click', () => {
 			popupContainer.remove();
 		});

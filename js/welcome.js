@@ -170,3 +170,4 @@ class WelcomeStartUpPopUp {
 
 const welcomeStartUpPopUp = new WelcomeStartUpPopUp();
 if (window.innerWidth > 1000) welcomeStartUpPopUp.init();
+else welcomeStartUpPopUp.removeScriptTag();

@@ -8,7 +8,7 @@
 		},
 		"demo_graphic": {
 			"title": "Demo Graphic API8",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "API8 is a national programming competition targeting enthusiasts of image synthesis and digital creation of all stripes and backgrounds. In the spirit of a festive Demo-Party, this competition aims to promote the technique and creativity of the participants.<br>This project is to create a graphics program using GL4Dummies, SDL, OpenGL, Shaders,... to generate a animated video of the images (duration at least 1 minute).",
 			"sources": "https://github.com/Viet281101/DemoGraphicGL4Du",
 			"imgs": ["demo_graphic/1", "demo_graphic/2", "demo_graphic/3"]
 		},
@@ -20,7 +20,7 @@
 		},
 		"secure_chat": {
 			"title": "Security Mini Chat App",
-			"details": "The Objective of this project is to create a basic chat application with a simple interface using the 'tkinter' library and a server using 'socket' with the ideas to develop the following additional security systems: 1) Encrypt messages before to send them.  2) Connection encryption1.  3) User authentication.  4) Message storage.",
+			"details": "The Objective of this project is to create a basic chat application with a simple interface using the 'tkinter' library and a server using 'socket' with the ideas to develop the following additional security systems: <br>1) Encrypt messages before to send them.  <br>2) Connection encryption1.  <br>3) User authentication.  <br>4) Message storage.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
 			"imgs": ["chat_app"]
 		},
@@ -82,7 +82,7 @@
 		},
 		"demo_graphic": {
 			"title": "Demo Graphique API8",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "API8 est un concours national de programmation ciblant les passionnés de synthèse d’images et de création numérique de tous bords et tous horizons. Dans un esprit de Demo-Party festive, ce concours a pour objectif de promouvoir la technique et la créativité des participants.<br>Ce projet est de créer un programme graphique utilisant GL4Dummies, SDL, OpenGL, Shaders,... pour generer un vidéo d'animation des images (durée au moins 1 minute).",
 			"sources": "https://github.com/Viet281101/DemoGraphicGL4Du",
 			"imgs": ["demo_graphic/1", "demo_graphic/2", "demo_graphic/3"]
 		},
@@ -94,7 +94,7 @@
 		},
 		"secure_chat": {
 			"title": "Sécurité Chat App",
-			"details": "L'Objectif de ce projet est de créer une application de chat de base avec une interface simple utilisant la bibliothèque 'tkinter' et un serveur utilisant 'socket' avec les idées pour développer des systèmes de sécurité supplémentaires suivants: 1) Crypter les messages avant de les envoyer.  2) Cryptage de connexion1.  3) Authentification d'utilisateur.  4) Stockage des messages.",
+			"details": "L'Objectif de ce projet est de créer une application de chat de base avec une interface simple utilisant la bibliothèque 'tkinter' et un serveur utilisant 'socket' avec les idées pour développer des systèmes de sécurité supplémentaires suivants: <br>1) Crypter les messages avant de les envoyer.  <br>2) Cryptage de connexion1.  <br>3) Authentification d'utilisateur.  <br>4) Stockage des messages.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
 			"imgs": ["chat_app"]
 		},

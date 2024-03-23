@@ -167,7 +167,7 @@ class Courses {
 		event.currentTarget.className += " active";
 		Object.assign(event.currentTarget.style, { backgroundColor: '#666', });
 		const firstSemesterTab = this.section.querySelector(`#${tabName} .semester-tablinks:first-child`);
-		if (firstSemesterTab) { firstSemesterTab.click(); }
+		if (firstSemesterTab) { firstSemesterTab?.click(); }
 	};
 
 	openSemesterTab(event, semesterId) {
@@ -241,7 +241,7 @@ class Courses {
 			}
 		});
 		const activeYearTab = this.section.querySelector('.tablinks.active');
-		if (activeYearTab) { activeYearTab.click(); }
+		if (activeYearTab) { activeYearTab?.click(); }
 		this.section.querySelectorAll('.semester-tablinks').forEach(button => {
 			const [year, semester] = button.id.split('-');
 			const semesterData = this.contentData[this.lang][year] ? this.contentData[this.lang][year][semester] : null;
