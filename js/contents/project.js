@@ -88,10 +88,7 @@ class Project {
 		let title = document.createElement('div');
 		title.className = "title";
 		title.textContent = projectName;
-		Object.assign(title.style, { 
-			fontSize: '20px', fontWeight: 'bold', textAlign: 'center',
-			padding: '5px', textShadow: '3px 3px 3px #0056B3',
-		});
+		Object.assign(title.style, { fontSize: '20px', fontWeight: 'bold', textAlign: 'center', padding: '5px', textShadow: '3px 3px 3px #0056B3', });
 
 		let sub_title = document.createElement('div');
 		sub_title.className = "sub-title";
@@ -167,8 +164,7 @@ class Project {
 				if (!document.querySelector('.popup-container')) {
 					const projectPopup = new ProjectPopupInfo(projectInfoData.title, projectInfoData.details, projectInfoData.sources, projectInfoData.imgs);
 					projectPopup.createPopupWindow();
-				}
-			}
+				} }
 		}
 	};
 

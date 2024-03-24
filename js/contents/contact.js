@@ -1,14 +1,26 @@
 
 class Contact {
-	constructor() {
+	constructor(lang) {
 		this.section = document.getElementById('contact');
 		const ic = "./assets/icons/";
-		this.ic_phone = ic + "phone.png";
-		this.ic_mail = ic + "mail.png";
-		this.ic_map = ic + "map.png";
+		this.contentData = {};
+		this.lang = lang;
+		this.icons = [
+			{ name: 'phone', src: ic + "phone.png" },
+			{ name: 'mail', src: ic + "mail.png" },
+			{ name: 'map', src: ic + "map.png" },
+			{ name: 'plus', src: ic + "plus.png" },
+		];
+		this.loadContentData();
+	};
+
+	loadContentData() {
+		fetch('./js/data/contact.json').then(response => response.json()).then(data => { this.contentData = data; this.createContactContent(); }).catch(error => console.error('Error loading the contact content:', error));
 	};
 
 	createContactContent() {
+		if (!this.contentData[this.lang]) return;
+		const data = this.contentData[this.lang];
 		this.section.innerHTML = '';
 
 		this.title = document.createElement('h2');
@@ -17,33 +29,28 @@ class Contact {
 		this.section.appendChild(this.title);
 
 		const table = document.createElement('table');
+		this.icons.forEach(icon => {
+			const row = table.insertRow();
+			const cell1 = row.insertCell();
+			Object.assign(cell1.style, { padding: '20px', });
+			const img = document.createElement('img');
+			img.className = "contact-icon";
+			img.src = icon.src;
+			img.alt = icon.name;
+			img.title = icon.name;
+			img.style.cursor = 'pointer';
+			img.addEventListener('click', () => console.log(icon.name));
+			cell1.appendChild(img);
 
-		this.createTableRow(table, this.ic_phone, 'Phone');
-		this.createTableRow(table, this.ic_mail, 'Email');
-		this.createTableRow(table, this.ic_map, 'Location');
-
+			const cell2 = row.insertCell();
+			Object.assign(cell2.style, { padding: '20px', textAlign: 'left', });
+			const button = document.createElement('button');
+			button.className = 'contact-btn';
+			Object.assign(button.style, { fontFamily:"'Pixel', sans-serif", fontSize: 'large', padding: '10px 20px', minWidth: '100%', });
+			button.textContent = data[icon.name];
+			button.addEventListener('click', () => console.log(icon.name));
+			cell2.appendChild(button);
+		});
 		this.section.appendChild(table);
-	};
-
-	createTableRow(table, iconSrc, contactType) {
-		const row = document.createElement('tr');
-
-		const iconCell = document.createElement('td');
-		const iconImage = document.createElement('img');
-		iconImage.src = iconSrc;
-		iconCell.appendChild(iconImage);
-
-		const buttonCell = document.createElement('td');
-		const button = document.createElement('button');
-		button.textContent = contactType;
-		button.onclick = function() {
-			console.log(contactType);
-		};
-		buttonCell.appendChild(button);
-
-		row.appendChild(iconCell);
-		row.appendChild(buttonCell);
-
-		table.appendChild(row);
 	};
 };

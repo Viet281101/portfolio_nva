@@ -1,8 +1,14 @@
 {
 	"en": {
-
+		"phone": "Phone",
+		"mail": "Mail",
+		"map": "Location",
+		"plus": "Orther"
 	},
 	"fr": {
-
+		"phone": "Téléphone",
+		"mail": "Mail",
+		"map": "Emplacement",
+		"plus": "Autres"
 	}
 }

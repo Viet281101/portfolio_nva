@@ -161,7 +161,7 @@ class MainApp {
 		this.about = new About(this.lang);
 		this.project = new Project(this.lang);
 		this.courses = new Courses(this.lang);
-		this.contact = new Contact();
+		this.contact = new Contact(this.lang);
 		this.createContents();
 		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;
 		setTimeout(() => { animateParticles(); }, 8000);
