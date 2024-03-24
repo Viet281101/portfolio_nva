@@ -4,13 +4,13 @@
 		"mail": "Mail",
 		"map": "Location",
 		"plus": "Orther",
-		"desc": "You can choose the methods to contact me using the buttons above. But attention, don't spam !!!"
+		"desc": "You can choose the methods to contact me using the buttons above. But please, don't spam me !!!"
 	},
 	"fr": {
 		"phone": "Téléphone",
 		"mail": "Mail",
 		"map": "Emplacement",
 		"plus": "Autres",
-		"desc": "Vous pouvez choisir les méthodes me contacter en utisant les boutons ci-dessus. Mais attention, ne spammez pas !!!"
+		"desc": "Vous pouvez choisir les méthodes me contacter en utisant les boutons ci-dessus. Mais s'il vous plaît, ne me spammez pas !!!"
 	}
 }

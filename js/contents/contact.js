@@ -67,4 +67,9 @@ class Contact {
 	clickInfo(name) {
 		console.log(name);
 	};
+
+	updateContent(lang) {
+		this.lang = lang;
+		this.createContactContent();
+	};
 };
