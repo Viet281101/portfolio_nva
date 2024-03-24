@@ -29,6 +29,7 @@ class Contact {
 		this.section.appendChild(this.title);
 
 		const table = document.createElement('table');
+		table.style.marginTop = window.innerWidth > 900 ? '50px' : '20px';
 		this.icons.forEach(icon => {
 			const row = table.insertRow();
 			const cell1 = row.insertCell();
@@ -39,18 +40,31 @@ class Contact {
 			img.alt = icon.name;
 			img.title = icon.name;
 			img.style.cursor = 'pointer';
-			img.addEventListener('click', () => console.log(icon.name));
+			img.addEventListener('click', () => this.clickInfo(icon.name));
+			img.addEventListener('mouseover', (e) => {e.target.style.transform = 'scale(1.1'});
+			img.addEventListener('mouseout', (e) => {e.target.style.transform = 'scale(1.0'});
 			cell1.appendChild(img);
 
 			const cell2 = row.insertCell();
-			Object.assign(cell2.style, { padding: '20px', textAlign: 'left', });
+			Object.assign(cell2.style, { padding: '15px', textAlign: 'left', });
 			const button = document.createElement('button');
 			button.className = 'contact-btn';
-			Object.assign(button.style, { fontFamily:"'Pixel', sans-serif", fontSize: 'large', padding: '10px 20px', minWidth: '100%', });
+			Object.assign(button.style, { fontFamily:"'Pixel', sans-serif", padding: '8px 22px', minWidth: '100%', color: '#000', borderRadius: '5px'});
+			button.style.fontSize = window.innerWidth > 900 ? 'x-large' : 'large';
 			button.textContent = data[icon.name];
-			button.addEventListener('click', () => console.log(icon.name));
+			button.addEventListener('click', () => this.clickInfo(icon.name));
 			cell2.appendChild(button);
 		});
 		this.section.appendChild(table);
+
+		this.desc = document.createElement('p');
+		this.desc.textContent = data.desc;
+		this.desc.style.marginTop = window.innerWidth > 900 ? '50px' : '20px';
+		this.desc.style.fontSize = window.innerWidth > 900 ? 'large' : 'inherit';
+		this.section.appendChild(this.desc);
+	};
+
+	clickInfo(name) {
+		console.log(name);
 	};
 };
