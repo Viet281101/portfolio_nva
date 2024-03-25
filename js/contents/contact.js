@@ -65,7 +65,25 @@ class Contact {
 	};
 
 	clickInfo(name) {
-		console.log(name);
+		switch (name) {
+			case 'phone': this.phoneClickInfo(); break;
+			case 'mail': this.mailClickInfo(); break;
+			case 'map': this.mapClickInfo(); break;
+			case 'plus': this.plusClickInfo(); break;
+		}
+	};
+
+	phoneClickInfo() {
+		console.log('phone');
+	};
+	mailClickInfo() {
+		console.log('mail');
+	};
+	mapClickInfo() {
+		console.log('map');
+	};
+	plusClickInfo() {
+		console.log('plus');
 	};
 
 	updateContent(lang) {

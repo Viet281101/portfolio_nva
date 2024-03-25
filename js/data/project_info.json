@@ -2,9 +2,9 @@
 	"en" : {
 		"othello": {
 			"title": "Othello AI Game",
-			"details": "This is a small project to create AI for Othello using C with openGL GLUT. Othello is a strategy board game for two players (Black and White), played on an 8 by 8 board.",
+			"details": "This is a small project to create an AI for Othello using C with openGL GLUT. Othello is a strategy board game for two players (black and white), played on an 8 x 8 board. This project has 3 game versions: Human vs Human, Human vs AI (choose between Mnimax and Minimax with Alphabeta) , AI vs AI (compare between algorithms).",
 			"sources": "https://github.com/Viet281101/OthelloAI",
-			"imgs": ["othello/1"]
+			"imgs": ["othello/1", "othello/2"]
 		},
 		"demo_graphic": {
 			"title": "Demo Graphic API8",
@@ -14,7 +14,7 @@
 		},
 		"chess_engine": {
 			"title": "Chess Engine JS",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "Chess game for 1 player with simple minimax AI letter, simple interface with few control buttons like change AI depth value, apply FEN string, undo, redo, etc. This project is intended to learn how to solve a chess game with a basic algorithm.",
 			"sources": "https://github.com/Viet281101/chessEngineJS",
 			"imgs": ["chess_engine/1", "chess_engine/2", "chess_engine/3"]
 		},
@@ -76,9 +76,9 @@
 	"fr" : {
 		"othello": {
 			"title": "Jeu d'Othello IA",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "Il s'agit d'un petit projet visant à créer une IA pour Othello en utilisant C avec openGL GLUT. Othello est un jeu de société de stratégie pour deux joueurs (noir et blanc), joué sur un plateau de 8 x 8. Ce projet comporte 3 versions de jeu : Human vs Human, Human vs AI (choisissez entre Mnimax et Minimax avec Alphabeta), AI vs AI (comparez entre les algorithmes).",
 			"sources": "https://github.com/Viet281101/OthelloAI",
-			"imgs": ["othello/1"]
+			"imgs": ["othello/1", "othello/2"]
 		},
 		"demo_graphic": {
 			"title": "Demo Graphique API8",
@@ -88,7 +88,7 @@
 		},
 		"chess_engine": {
 			"title": "Moteur d'échecs JS",
-			"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet orci quis est sodales tempor. Duis purus est, consequat id ultrices id, vehicula quis tortor. Fusce at erat vitae lectus malesuada placerat id ac nibh. In sagittis sollicitudin eros, eu posuere dolor condimentum vel. Aliquam sit amet metus viverra, consequat nulla quis, facilisis libero.",
+			"details": "Jeu d'échecs pour 1 joueur avec une simple lettre AI minimax, une interface simple avec quelques boutons de commande comme changer la valeur de profondeur de l'IA, appliquer la chaîne FEN, annuler, refaire, etc. Ce projet est destiné à apprendre à résoudre une partie d'échecs avec un algorithme de base.",
 			"sources": "https://github.com/Viet281101/chessEngineJS",
 			"imgs": ["chess_engine/1", "chess_engine/2", "chess_engine/3"]
 		},
