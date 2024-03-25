@@ -162,8 +162,15 @@ class Project {
 			console.log(projectId);
 			if (projectInfoData) {
 				if (!document.querySelector('.popup-container')) {
-					const projectPopup = new ProjectPopupInfo(projectInfoData.title, projectInfoData.details, projectInfoData.sources, projectInfoData.imgs);
-					projectPopup.createPopupWindow();
+					try { 
+						if (typeof ProjectPopupInfo === "undefined") { throw new Error("ProjectPopupInfo class is not defined."); }
+						const projectPopup = new ProjectPopupInfo(projectInfoData.title, projectInfoData.details, projectInfoData.sources, projectInfoData.imgs);
+						projectPopup.createPopupWindow();
+					} catch (error) {
+						console.error(error);
+						alert('An error occurred while initializing components, reloading...');
+						window.location.reload();
+					}
 				} }
 		}
 	};

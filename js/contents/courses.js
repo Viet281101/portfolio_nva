@@ -201,9 +201,11 @@ class Courses {
 			const courseInfoId = `${tabName}-${semesterKey}-${courseId}`;
 			const courseInfo = this.infoData[lang][courseInfoId];
 			if (courseInfo) {
-				const coursePopup = new CoursesInfo(courseInfo.title, courseInfo.description, courseInfo.duration, courseInfo.credits);
-				coursePopup.createPopupWindow();
-				coursePopup.showPopup();
+				try { if (typeof CoursesInfo === "undefined") { throw new Error("CoursesInfo class is not defined."); }
+					const coursePopup = new CoursesInfo(courseInfo.title, courseInfo.description, courseInfo.duration, courseInfo.credits);
+					coursePopup.createPopupWindow();
+					coursePopup.showPopup(); 
+				} catch (error) { console.error(error); alert('An error occurred while initializing components, reloading...'); window.location.reload(); }
 			} else { console.log("No detailed info available for this course."); }
 		});
 		courseButton.addEventListener('mouseover', (e) => { e.target.style.color = '#00D7FF'; });

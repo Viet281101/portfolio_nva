@@ -31,10 +31,14 @@ class MainApp {
 		let style = document.createElement('link');
 		style.rel = 'stylesheet'; style.type = 'text/css'; 
 		style.href = './style/style.css'; document.head.appendChild(style);
+		let loadErrors = false;
+		const handleError = () => { 
+			if (!loadErrors) { loadErrors = true; alert('Failed to load some resources, reloading...'); window.location.reload(); } 
+		};
 		for (let i = 0; i < this.jsFiles.length; i++) {
 			let script = document.createElement('script');
 			script.src = './js/' + this.jsFiles[i]; script.setAttribute("type", "text/javascript");
-			script.defer = true; document.head.appendChild(script);
+			script.defer = true; script.onerror = handleError; document.head.appendChild(script);
 		}
 	};
 
@@ -42,8 +46,7 @@ class MainApp {
 		if (window.innerWidth > 1000) {
 			document.body.style.overflow = 'hidden';
 			let lightslider = document.createElement('link');
-			lightslider.rel = 'stylesheet';
-			lightslider.type = 'text/css';
+			lightslider.rel = 'stylesheet'; lightslider.type = 'text/css';
 			lightslider.href = './style/lightslider.css';
 			document.head.appendChild(lightslider);
 			$("#fullpage").fullpage({
@@ -152,20 +155,25 @@ class MainApp {
 	};
 
 	initializeComponents() {
-		this.loadFullPage();
-		if (window.innerWidth < 830) this.navBar = new NavBar(this.lang);
-		else this.sidebar = new Sidebar(this.lang);
-		this.background = new Background();
-		this.langBox = new LangBox(this.lang);
-		this.btnOnTop = new ScrollOnTop();
-		this.home = new Home(this.lang);
-		this.about = new About(this.lang);
-		this.project = new Project(this.lang);
-		this.courses = new Courses(this.lang);
-		this.contact = new Contact(this.lang);
-		this.createContents();
-		this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;
-		setTimeout(() => { animateParticles(); }, 8000);
+		try { if (typeof Sidebar === "undefined" || typeof NavBar === "undefined" || typeof Background === "undefined" ||
+				typeof LangBox === "undefined" || typeof ScrollOnTop === "undefined" || typeof Home === "undefined" ||
+				typeof About === "undefined" || typeof Project === "undefined" || typeof Courses === "undefined" ||
+				typeof Contact === "undefined") { throw new Error("Some classes are not defined."); }
+			this.loadFullPage();
+			if (window.innerWidth < 830) this.navBar = new NavBar(this.lang);
+			else this.sidebar = new Sidebar(this.lang);
+			this.background = new Background();
+			this.langBox = new LangBox(this.lang);
+			this.btnOnTop = new ScrollOnTop();
+			this.home = new Home(this.lang);
+			this.about = new About(this.lang);
+			this.project = new Project(this.lang);
+			this.courses = new Courses(this.lang);
+			this.contact = new Contact(this.lang);
+			this.createContents();
+			this.mouseMarkEnabled = this.animationActive = window.innerWidth >= 768;
+			setTimeout(() => { animateParticles(); }, 8000);
+		} catch (error) { console.error(error); alert('An error occurred while initializing components, reloading...'); window.location.reload(); }
 	};
 };
 

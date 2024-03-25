@@ -66,28 +66,44 @@ class Contact {
 
 	clickInfo(name) {
 		switch (name) {
-			case 'phone': this.phoneClickInfo(); break;
-			case 'mail': this.mailClickInfo(); break;
-			case 'map': this.mapClickInfo(); break;
-			case 'plus': this.plusClickInfo(); break;
+			case 'phone': this.phoneClickInfo(this.lang); break;
+			case 'mail': this.mailClickInfo(this.lang); break;
+			case 'map': this.mapClickInfo(this.lang); break;
+			case 'plus': this.plusClickInfo(this.lang); break;
+			default: break;
 		}
 	};
 
-	phoneClickInfo() {
-		console.log('phone');
+	phoneClickInfo(lang) {
+		const phonePopup = new PhonePopupInfo(lang);
+		phonePopup.createPhonePopup();
 	};
-	mailClickInfo() {
+	mailClickInfo(lang) {
 		console.log('mail');
 	};
-	mapClickInfo() {
+	mapClickInfo(lang) {
 		console.log('map');
 	};
-	plusClickInfo() {
+	plusClickInfo(lang) {
 		console.log('plus');
 	};
 
 	updateContent(lang) {
 		this.lang = lang;
 		this.createContactContent();
+	};
+};
+
+class PhonePopupInfo {
+	constructor(lang) {
+		this.phone_ics = [
+			{ name: 'phone_call', src: ic + "phone_call.png" },
+			{ name: 'phone_message', src: ic + "phone_message.png" }
+		];
+		this.lang = lang;
+	};
+
+	createPhonePopup() {
+
 	};
 };
