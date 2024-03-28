@@ -26,6 +26,7 @@ class Contact {
 
 		const table = document.createElement('table');
 		table.style.marginTop = window.innerWidth > 900 ? '50px' : '20px';
+		table.style.width = '90%';
 		this.icons.forEach(icon => {
 			const row = table.insertRow();
 			const cell1 = row.insertCell();
@@ -35,18 +36,21 @@ class Contact {
 			img.alt = icon.name; img.title = icon.name;
 			img.style.cursor = 'pointer';
 			img.addEventListener('click', () => this.clickInfo(icon.name));
-			img.addEventListener('mouseover', (e) => {e.target.style.transform = 'scale(1.1'});
-			img.addEventListener('mouseout', (e) => {e.target.style.transform = 'scale(1.0'});
+			img.addEventListener('mouseover', (e) => {e.target.style.transform = 'scale(1.1)'});
+			img.addEventListener('mouseout', (e) => {e.target.style.transform = 'scale(1.0)'});
 			cell1.appendChild(img);
 
 			const cell2 = row.insertCell();
 			Object.assign(cell2.style, { padding: '15px', textAlign: 'left', });
 			const button = document.createElement('button');
 			button.className = 'contact-btn';
-			Object.assign(button.style, { fontFamily:"'Pixel', sans-serif", padding: '8px 22px', minWidth: '100%', color: '#000', borderRadius: '5px'});
+			Object.assign(button.style, { fontFamily:"'Pixel', sans-serif", padding: '5px 22px', minWidth: '100%',
+				background: 'transparent', color: '#fff', border: '1px solid #fff', borderRadius: '15px', cursor: 'pointer', });
 			button.style.fontSize = window.innerWidth > 900 ? 'x-large' : 'large';
 			button.textContent = data[icon.name];
 			button.addEventListener('click', () => this.clickInfo(icon.name));
+			button.addEventListener('mouseover', (e) => {e.target.style.textShadow = "2px 2px #00D7FF"; e.target.style.boxShadow = "2px 2px 2px #00D7FF";});
+			button.addEventListener('mouseout', (e) => {e.target.style.textShadow = 'none'; e.target.style.boxShadow = 'none'; });
 			cell2.appendChild(button);
 		});
 		this.section.appendChild(table);

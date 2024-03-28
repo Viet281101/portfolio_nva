@@ -72,7 +72,7 @@ class Courses {
 			const tabContent = document.createElement("div");
 			tabContent.id = tabName;
 			tabContent.className = "tabcontent";
-			Object.assign(tabContent.style, { display: 'none',
+			Object.assign(tabContent.style, { display: 'none', borderRadius: '15px',
 				border: '1px solid #ccc', borderTop: 'none', background: 'transparent', });
 			const closeButton = this.createCloseButton(tabContent);
 			tabContent.appendChild(closeButton);

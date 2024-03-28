@@ -65,7 +65,8 @@ class LangBox {
 			select.style.backgroundColor = '#333';
 			if (app.sections[app.currentSection] !== 'projects' && 
 				app.sections[app.currentSection] !== 'home' && 
-				app.sections[app.currentSection] !== 'courses') {
+				app.sections[app.currentSection] !== 'courses' &&
+				app.sections[app.currentSection] !== 'contact') {
 					app.mouseMarkEnabled = true;
 			}
 		});
