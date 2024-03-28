@@ -6,18 +6,14 @@ class Contact {
 		this.contentData = {};
 		this.lang = lang;
 		this.icons = [
-			{ name: 'phone', src: ic + "phone.png" },
-			{ name: 'mail', src: ic + "mail.png" },
-			{ name: 'map', src: ic + "map.png" },
-			{ name: 'plus', src: ic + "plus.png" },
+			{ name: 'phone', src: ic+"phone.png" },
+			{ name: 'mail', src: ic+"mail.png" },
+			{ name: 'map', src: ic+"map.png" },
+			{ name: 'plus', src: ic+"plus.png" },
 		];
 		this.loadContentData();
 	};
-
-	loadContentData() {
-		fetch('./js/data/contact.json').then(response => response.json()).then(data => { this.contentData = data; this.createContactContent(); }).catch(error => console.error('Error loading the contact content:', error));
-	};
-
+	loadContentData() { fetch('./js/data/contact.json').then(response => response.json()).then(data => { this.contentData = data; this.createContactContent(); }).catch(error => console.error('Error loading the contact content:', error)); };
 	createContactContent() {
 		if (!this.contentData[this.lang]) return;
 		const data = this.contentData[this.lang];
@@ -35,10 +31,8 @@ class Contact {
 			const cell1 = row.insertCell();
 			Object.assign(cell1.style, { padding: '20px', });
 			const img = document.createElement('img');
-			img.className = "contact-icon";
-			img.src = icon.src;
-			img.alt = icon.name;
-			img.title = icon.name;
+			img.className = "contact-icon"; img.src = icon.src;
+			img.alt = icon.name; img.title = icon.name;
 			img.style.cursor = 'pointer';
 			img.addEventListener('click', () => this.clickInfo(icon.name));
 			img.addEventListener('mouseover', (e) => {e.target.style.transform = 'scale(1.1'});
@@ -63,7 +57,7 @@ class Contact {
 		this.desc.style.fontSize = window.innerWidth > 900 ? 'large' : 'inherit';
 		this.section.appendChild(this.desc);
 	};
-
+	updateContent(lang) { this.lang = lang; this.createContactContent(); };
 	clickInfo(name) {
 		switch (name) {
 			case 'phone': this.phoneClickInfo(this.lang); break;
@@ -73,7 +67,6 @@ class Contact {
 			default: break;
 		}
 	};
-
 	phoneClickInfo(lang) {
 		const phonePopup = new PhonePopupInfo(lang);
 		phonePopup.createPhonePopup();
@@ -87,22 +80,17 @@ class Contact {
 	plusClickInfo(lang) {
 		console.log('plus');
 	};
-
-	updateContent(lang) {
-		this.lang = lang;
-		this.createContactContent();
-	};
 };
 
 class PhonePopupInfo {
 	constructor(lang) {
+		const ic = "./assets/icons/";
 		this.phone_ics = [
-			{ name: 'phone_call', src: ic + "phone_call.png" },
-			{ name: 'phone_message', src: ic + "phone_message.png" }
+			{ name: 'phone_call', src: ic+"phone_call.png" },
+			{ name: 'phone_message', src: ic+"phone_message.png" }
 		];
 		this.lang = lang;
 	};
-
 	createPhonePopup() {
 
 	};

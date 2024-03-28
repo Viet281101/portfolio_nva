@@ -2,22 +2,18 @@
 class Home {
 	constructor(lang) {
 		this.section = document.getElementById('home');
-		Object.assign(this.section.style, {
-			display: 'flex', justifyContent: 'space-between', alignItems: 'center'
-		});
+		Object.assign(this.section.style, { display: 'flex', justifyContent: 'space-between', alignItems: 'center' });
 		this.lang = lang;
 		this.contentData = {};
 		this.loadContentData();
 		this.createAvatarContent();
 	};
-
 	loadContentData() {
 		fetch('./js/data/home.json')
 			.then(response => response.json())
 			.then(data => { this.contentData = data; this.createHomeContent(); })
 			.catch(error => console.error('Error loading the home content:', error));
 	};
-
 	createAvatarContent() {
 		if (!document.getElementById('avatar-container')) {
 			const avatarContainer = document.createElement('div');
@@ -36,7 +32,6 @@ class Home {
 			window.dispatchEvent(new CustomEvent('avatarContainerReady'));
 		}
 	};
-
 	createHomeContent() {
 		if (Object.keys(this.contentData).length === 0) return;
 		this.clearContentExceptAvatar();
@@ -71,18 +66,12 @@ class Home {
 		this.section.appendChild(introTitle);
 		this.applyRespnsiveStyles();
 	};
-
 	clearContentExceptAvatar() {
 		Array.from(this.section.children).forEach(child => {
 			if (child.id !== 'avatar-container') { this.section.removeChild(child); }
 		});
 	};
-
-	updateContent(lang) {
-		this.lang = lang;
-		this.loadContentData();
-	};
-
+	updateContent(lang) { this.lang = lang; this.loadContentData(); };
 	applyRespnsiveStyles() {
 		const applyStylesForMobile = () => {
 			Object.assign(this.section.style, { flexDirection: 'column', alignItems: 'stretch' });

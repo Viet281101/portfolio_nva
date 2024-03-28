@@ -20,11 +20,9 @@ class About {
 		this.contentData = {};
 		this.loadContentData();
 	};
-
 	loadContentData() {
 		fetch('./js/data/about.json').then(response => response.json()).then(data => { this.contentData = data; this.createAboutContent(); }).catch(error => console.error('Error loading the about content:', error));
 	};
-
 	createAboutContent() {
 		if (Object.keys(this.contentData).length === 0) return;
 		const slidesContainer = document.createElement('div');
@@ -151,7 +149,6 @@ class About {
 		topLangImg.addEventListener('mouseout', (event) => { this.eventMouseOut(); });
 		return topLangImg;
 	};
-
 	bindTouchEvents() {
 		const slidesContainer = this.section.querySelector('.slides-container');
 		let touchStartX = 0;
@@ -169,7 +166,6 @@ class About {
 			app.sections[app.currentSection] !== 'courses' && 
 			app.sections[app.currentSection] !== 'contact') { app.mouseMarkEnabled = true; }
 	};
-
 	updateContent(lang) {
 		this.lang = lang;
 		const aboutTitle = this.section.querySelector('.about-title');
@@ -215,7 +211,6 @@ class About {
 		}
 		this.updateButtonVisibility();
 	};
-
 	appendNavigationButtons() {
 		const leftNavButton = document.createElement('img');
 		leftNavButton.src = this.leftArrow;
@@ -241,7 +236,6 @@ class About {
 		this.section.appendChild(leftNavButton);
 		this.section.appendChild(rightNavButton);
 	};
-
 	scrollSlides(direction) {
 		const slidesContainer = this.section.querySelector('.slides-container');
 		const slideWidth = this.section.querySelector('.slide').offsetWidth;
@@ -249,7 +243,6 @@ class About {
 		else if (direction === 'left') slidesContainer.scrollLeft -= slideWidth;
 		setTimeout(() => this.updateButtonVisibility(), 50);
 	};
-
 	updateButtonVisibility() {
 		const slidesContainer = this.section.querySelector('.slides-container');
 		const leftNavButton = this.section.querySelector('.scroll-left-btn');

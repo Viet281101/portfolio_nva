@@ -2,16 +2,12 @@
 class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
+		const ct = "contents/"; const ef = "effects/";
 		this.jsFiles = [
 			'load_progress.js', 'background.js',
-			'effects/lightslider.js', 'effects/particles.js',
-			'sidebar.js', 'nav_bar.js',
-			'lang_box.js', 'on_top.js',
-			'contents/home.js',
-			'contents/about.js',
-			'contents/project.js', 'contents/project_info.js',
-			'contents/courses.js', 'contents/courses_info.js',
-			'contents/contact.js',
+			ef+'lightslider.js', ef+'particles.js',
+			'sidebar.js', 'nav_bar.js', 'lang_box.js', 'on_top.js',
+			ct+'home.js', ct+'about.js', ct+'project.js', ct+'courses.js', ct+'contact.js',
 		];
 		this.sidebar = null; this.navBar = null;
 		this.background = null;
@@ -23,7 +19,6 @@ class MainApp {
 		this.loadFiles();
 		this.addEventListeners();
 	};
-
 	loadFiles() {
 		let icon_page = document.createElement('link');
 		icon_page.rel = 'shortcut icon'; icon_page.href = './assets/icon.png';
@@ -32,16 +27,13 @@ class MainApp {
 		style.rel = 'stylesheet'; style.type = 'text/css'; 
 		style.href = './style/style.css'; document.head.appendChild(style);
 		let loadErrors = false;
-		const handleError = () => { 
-			if (!loadErrors) { loadErrors = true; alert('Failed to load some resources, reloading...'); window.location.reload(); } 
-		};
+		const handleError = () => { if (!loadErrors) { loadErrors = true; alert('Failed to load some resources, reloading...'); window.location.reload(); } };
 		for (let i = 0; i < this.jsFiles.length; i++) {
 			let script = document.createElement('script');
 			script.src = './js/' + this.jsFiles[i]; script.setAttribute("type", "text/javascript");
 			script.defer = true; script.onerror = handleError; document.head.appendChild(script);
 		}
 	};
-
 	loadFullPage() {
 		if (window.innerWidth > 1000) {
 			document.body.style.overflow = 'hidden';
@@ -67,7 +59,6 @@ class MainApp {
 			$("#fullpage").fullpage({ autoScrolling: false, scrollBar: true, fitToSection: false});
 		}
 	};
-
 	updateLanguage(lang) {
 		document.documentElement.lang = lang; this.lang = lang;
 		if (this.sidebar) this.sidebar.updateLanguage(lang);
@@ -79,13 +70,11 @@ class MainApp {
 		if (this.navBar) this.navBar.updateLanguage(lang);
 		if (this.btnOnTop) this.btnOnTop.updateContent(lang);
 	};
-
 	handleSectionChange(index) {
 		if (this.sections[index - 1] === 'projects' || this.sections[index - 1] === 'home' || this.sections[index - 1] === 'courses' ||
 			this.sections[index - 1] === 'contact') { this.mouseMarkEnabled = this.animationActive = false; }
 		else { this.mouseMarkEnabled = this.animationActive = true; animateParticles(); }
 	};
-
 	addEventListeners() {
 		document.addEventListener('DOMContentLoaded', this.initializeComponents.bind(this));
 		window.addEventListener('resize', this.onResize.bind(this));
@@ -133,7 +122,6 @@ class MainApp {
 		const scrollBtn = document.getElementById('scrollOnTopBtn');
 		scrollBtn.style.display = window.scrollY > 150 ? 'block' : 'none';
 	};
-
 	createContents() {
 		if (this.sidebar) {
 			this.sidebar.createSidebar();
@@ -153,7 +141,6 @@ class MainApp {
 		if (this.courses) this.courses.createCoursesContent();
 		if (this.contact) this.contact.createContactContent();
 	};
-
 	initializeComponents() {
 		try { if (typeof Sidebar === "undefined" || typeof NavBar === "undefined" || typeof Background === "undefined" ||
 				typeof LangBox === "undefined" || typeof ScrollOnTop === "undefined" || typeof Home === "undefined" ||
