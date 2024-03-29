@@ -21,11 +21,17 @@ class Project {
 		let title = document.createElement('div');
 		title.className = "project-title";
 		title.textContent = data.title;
-		Object.assign(title.style, { 
-			marginTop: '70px', fontWeight: 'bold', fontSize: '36px',
-			textAlign: 'center', padding: '30px', color: '#fff', textShadow: '4px 4px 4px #0056B3',
-		});
+		Object.assign(title.style, { fontWeight: 'bold', fontSize: '36px', textAlign: 'center', color: '#fff', textShadow: '4px 4px 4px #0056B3', });
+		title.style.padding = title.style.marginTop = window.innerWidth > 900 ? '20px' : '0';
 		this.section.appendChild(title);
+
+		let subtitle = document.createElement('h3');
+		subtitle.className = "project-section-subtitle";
+		subtitle.textContent = data.subtitle;
+		subtitle.style.fontSize = window.innerWidth > 900 ? '24px' : 'inherit';
+		subtitle.style.padding = window.innerWidth > 900 ? '10px' : '0';
+		Object.assign(subtitle.style, { textAlign: 'center', color: '#fff', });
+		this.section.appendChild(subtitle);
 
 		this.loadSliderCSS();
 		this.createSliderCarousel(data);
@@ -114,7 +120,7 @@ class Project {
 	setupCarouselOptions() {
 		$(document).ready(function() {
 			$('.slider').owlCarousel({ loop: true, nav: true, dots: false,
-				autoplay: true, autoplayTimeout: 3000, autoplayHoverPause: true,
+				autoplay: true, autoHeight: true, autoplayTimeout: 3000, autoplayHoverPause: true,
 				responsive: { 0: { items: 1 }, 600: { items: 2 }, 1400: { items: 3 }, 1800: { items: 4 }, },
 			});
 	  	});

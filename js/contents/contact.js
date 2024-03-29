@@ -2,6 +2,7 @@
 class Contact {
 	constructor(lang) {
 		this.section = document.getElementById('contact');
+		Object.assign(this.section.style, { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', });
 		const ic = "./assets/icons/";
 		this.contentData = {};
 		this.lang = lang;
@@ -23,6 +24,11 @@ class Contact {
 		this.title.textContent = 'Contact';
 		this.title.style.fontSize = window.innerWidth > 900 ? '34px' : '28px';
 		this.section.appendChild(this.title);
+
+		this.subtitle = document.createElement('h3');
+		this.subtitle.textContent = data.subtitle;
+		this.subtitle.style.fontSize = window.innerWidth > 900 ? 'large' : 'inherit';
+		this.section.appendChild(this.subtitle);
 
 		const table = document.createElement('table');
 		table.style.marginTop = window.innerWidth > 900 ? '50px' : '20px';

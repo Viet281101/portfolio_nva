@@ -3,8 +3,7 @@ class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
 		const ct = "contents/"; const ef = "effects/";
-		this.jsFiles = [
-			'load_progress.js', 'background.js',
+		this.jsFiles = [ 'background.js',
 			ef+'lightslider.js', ef+'particles.js',
 			'sidebar.js', 'nav_bar.js', 'lang_box.js', 'on_top.js',
 			ct+'home.js', ct+'about.js', ct+'project.js', ct+'courses.js', ct+'contact.js',
