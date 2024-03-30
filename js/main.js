@@ -19,14 +19,14 @@ class MainApp {
 		this.addEventListeners();
 	};
 	loadFiles() {
+		let loadErrors = false;
+		const handleError = () => { if (!loadErrors) { loadErrors = true; alert('Failed to load some resources, reloading...'); window.location.reload(); } };
 		let icon_page = document.createElement('link');
 		icon_page.rel = 'shortcut icon'; icon_page.href = './assets/icon.png';
 		document.head.appendChild(icon_page);
 		let style = document.createElement('link');
-		style.rel = 'stylesheet'; style.type = 'text/css'; 
+		style.rel = 'stylesheet'; style.type = 'text/css'; style.onerror = handleError;
 		style.href = './style/style.css'; document.head.appendChild(style);
-		let loadErrors = false;
-		const handleError = () => { if (!loadErrors) { loadErrors = true; alert('Failed to load some resources, reloading...'); window.location.reload(); } };
 		for (let i = 0; i < this.jsFiles.length; i++) {
 			let script = document.createElement('script');
 			script.src = './js/' + this.jsFiles[i]; script.setAttribute("type", "text/javascript");

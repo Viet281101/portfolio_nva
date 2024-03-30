@@ -83,7 +83,7 @@
 	},
 	"fr" : {
 		"title" : "Projets",
-		"subtitle": "Inclure certains de mes petits projets d'études et de loisirs",
+		"subtitle": "Inclure certains de mes projets d'études et de loisirs",
 		"projects": {
 			"Othello AI Game" : {
 				"id" : "othello",

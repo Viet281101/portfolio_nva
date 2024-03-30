@@ -25,7 +25,7 @@ class Project {
 		title.style.padding = title.style.marginTop = window.innerWidth > 900 ? '20px' : '0';
 		this.section.appendChild(title);
 
-		let subtitle = document.createElement('h3');
+		let subtitle = document.createElement('p');
 		subtitle.className = "project-section-subtitle";
 		subtitle.textContent = data.subtitle;
 		subtitle.style.fontSize = window.innerWidth > 900 ? '24px' : 'inherit';
@@ -258,10 +258,8 @@ class ProjectPopupInfo {
 	};
 	closeButton(popupContainer) {
 		const closeBtn = document.createElement('img');
-		closeBtn.title = "Close";
-		closeBtn.alt = "Close";
-		closeBtn.src = this.x_close;
-		closeBtn.loading = "lazy";
+		closeBtn.title = closeBtn.alt = "Close";
+		closeBtn.src = this.x_close; closeBtn.loading = "lazy";
 		Object.assign(closeBtn.style, {position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', });
 		closeBtn.style.width = closeBtn.style.height = window.innerWidth > 900 ? '50px' : '40px';
 		closeBtn.addEventListener('click', () => { popupContainer.remove(); });

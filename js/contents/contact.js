@@ -25,7 +25,7 @@ class Contact {
 		this.title.style.fontSize = window.innerWidth > 900 ? '34px' : '28px';
 		this.section.appendChild(this.title);
 
-		this.subtitle = document.createElement('h3');
+		this.subtitle = document.createElement('p');
 		this.subtitle.textContent = data.subtitle;
 		this.subtitle.style.fontSize = window.innerWidth > 900 ? 'large' : 'inherit';
 		this.section.appendChild(this.subtitle);
@@ -99,9 +99,49 @@ class PhonePopupInfo {
 			{ name: 'phone_call', src: ic+"phone_call.png" },
 			{ name: 'phone_message', src: ic+"phone_message.png" }
 		];
+		this.x_close = ic+"x_close.png";
+		this.phoneNumbers = ['+33 7 71 24 12 43', '+33 7 71 24 12 43'];
 		this.lang = lang;
 	};
 	createPhonePopup() {
-
+		const overlay = document.createElement('div');
+		Object.assign(overlay.style, { position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
+			backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '20',
+			display: 'flex', justifyContent: 'center', alignItems: 'center',
+		});
+		const popup = document.createElement('div');
+		popup.style.padding = window.innerWidth > 900 ? '80px' : '40px';
+		Object.assign(popup.style, { backgroundColor: '#000', borderRadius: '10px', border: '1px solid #fff',
+			display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative',
+		});
+		const closeButton = this.createCloseBtn(overlay);
+		const table = this.createPhoneShow();
+		popup.appendChild(closeButton);
+		popup.appendChild(table);
+		overlay.appendChild(popup);
+		document.body.appendChild(overlay);
+	};
+	createCloseBtn(overlay) {
+		const closeButton = document.createElement('img');
+		closeButton.src = this.x_close; closeButton.alt = closeButton.title = 'Close'; closeButton.loading = "lazy";
+		Object.assign(closeButton.style, { position: 'absolute', top: '5px', right: '5px', cursor: 'pointer', });
+		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
+		closeButton.addEventListener('click', () => overlay.remove());
+		return closeButton;
+	};
+	createPhoneShow() {
+		const table = document.createElement('table');
+		this.phoneNumbers.forEach((number, index) => {
+			const row = table.insertRow();
+			const cellIcon = row.insertCell();
+			Object.assign(cellIcon.style, { padding: '10px', });
+			const img = document.createElement('img');
+			img.src = this.phone_ics[index % this.phone_ics.length].src;
+			img.alt = img.title = this.phone_ics[index % this.phone_ics.length].name.replace('_', ' ');
+			cellIcon.appendChild(img);
+			const cellNumber = row.insertCell();
+			cellNumber.textContent = number;
+		});
+		return table;
 	};
 };
