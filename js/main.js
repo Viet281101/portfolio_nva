@@ -47,16 +47,12 @@ class MainApp {
 					if (this.background) this.background.updateBackgroundForSection(index);
 					this.handleSectionChange(index);
 					const scrollBtn = document.getElementById('scrollOnTopBtn');
-					if (scrollBtn) {
-						if (index === 1) { scrollBtn.style.display = 'none'; } 
-						else { scrollBtn.style.display = 'block'; }
-					}
+					if (scrollBtn) { if (index === 1) { scrollBtn.style.display = 'none'; } 
+						else { scrollBtn.style.display = 'block'; } }
 				},
 			});
-		} else {
-			document.body.style.overflowX = 'hidden';
-			$("#fullpage").fullpage({ autoScrolling: false, scrollBar: true, fitToSection: false});
-		}
+		} else { document.body.style.overflowX = 'hidden';
+			$("#fullpage").fullpage({ autoScrolling: false, scrollBar: true, fitToSection: false}); }
 	};
 	updateLanguage(lang) {
 		document.documentElement.lang = lang; this.lang = lang;
