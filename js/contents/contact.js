@@ -101,7 +101,7 @@ class PhonePopupInfo {
 		Object.assign(popup.style, { backgroundColor: '#000', borderRadius: '10px', border: '1px solid #fff',
 			display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', });
 		const closeButton = this.createCloseBtn(overlay);
-		const table = this.createPhoneShow();
+		const table = this.createPhoneTable();
 		popup.appendChild(closeButton);
 		popup.appendChild(table);
 		overlay.appendChild(popup);
@@ -114,7 +114,7 @@ class PhonePopupInfo {
 		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
 		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
 	};
-	createPhoneShow() {
+	createPhoneTable() {
 		const ic = "./assets/icons/";
 		const table = document.createElement('table');
 		this.phoneNumbers.forEach((number, index) => {
@@ -133,24 +133,58 @@ class PhonePopupInfo {
 
 class OrtherInfoPopup {
 	constructor(lang) {
-		const ic = "./assets/icons/";
-		this.icons = [
-			{ name:"github", src: ic+"github.png", },
-			{ name:"gitlab", src: ic+"gitlab.png", },
-			{ name:"twitter", src: ic+"twitter.png", },
-			{ name:"kaggle", src: ic+"kaggle.png", },
-			{ name:"linkedin", src: ic+"linkedin.png", },
-			{ name:"matermost", src: ic+"mattermost.png", },
-			{ name:"facebook", src: ic+"facebook.png", },
-			{ name:"discord", src: ic+"discord.png", },
-			{ name:"youtube", src: ic+"youtube.png", },
-			{ name:"codepen", src: ic+"codepen.png", },
-			{ name:"codesandbox", src: ic+"codesandbox.png", },
-		];
-		this.x_close = ic+"x_close.png";
+		this.icons = [ "github", "gitlab", "twitter", "kaggle", "linkedin", "mattermost", "facebook", "skype", "discord", "youtube", "codepen", "codesandbox", ];
+		this.x_close = "./assets/icons/x_close.png";
 		this.lang = lang;
 	};
 	createPopup() {
-
+		const overlay = document.createElement('div');
+		Object.assign(overlay.style, { position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
+			backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '20', display: 'flex', justifyContent: 'center', alignItems: 'center', });
+		const popup = document.createElement('div');
+		popup.style.padding = window.innerWidth > 900 ? '40px' : '20px';
+		Object.assign(popup.style, { backgroundColor: '#000', borderRadius: '10px', border: '1px solid #fff', display: 'flex',
+			flexDirection: 'column', alignItems: 'center', position: 'relative', maxWidth: '600px', width: '80%', });
+		const closeButton = this.createCloseBtn(overlay);
+		const table = this.createIconsTable();
+		popup.appendChild(closeButton);
+		popup.appendChild(table);
+		overlay.appendChild(popup);
+		document.body.appendChild(overlay);
+	};
+	createCloseBtn(overlay) {
+		const closeButton = document.createElement('img');
+		closeButton.src = this.x_close; closeButton.alt = closeButton.title = 'Close';
+		Object.assign(closeButton.style, { position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', });
+		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
+		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
+	};
+	createIconsTable() {
+		const ic = "./assets/icons/";
+		const table = document.createElement('table');
+		Object.assign(table.style, { width: '100%', });
+		const tbody = table.createTBody();
+		const iconsPerColumn = window.innerWidth > 900 ? 5 : 12;
+		const totalColumns = Math.ceil(this.icons.length / iconsPerColumn);
+		for (let col = 0; col < totalColumns; col++) {
+			for (let row = 0; row < iconsPerColumn; row++) {
+				const iconIndex = col * iconsPerColumn + row;
+				if (iconIndex >= this.icons.length) break;
+				const icon = this.icons[iconIndex];
+				let tableRow;
+				if (tbody.rows[row] === undefined) {
+					tableRow = tbody.insertRow();
+				} else { tableRow = tbody.rows[row]; }
+				const cellIcon = tableRow.insertCell(-1);
+				Object.assign(cellIcon.style, { padding: '10px', textAlign: 'center' });
+				const img = document.createElement('img');
+				img.src = `${ic}${icon}.png`; img.alt = img.title = icon;
+				img.style.width = img.style.height = window.innerWidth > 900 ? '50px' : '40px';
+				cellIcon.appendChild(img);
+				const cellName = tableRow.insertCell(-1);
+				cellName.textContent = icon.charAt(0).toUpperCase() + icon.slice(1);
+				Object.assign(cellName.style, { padding: '10px', textAlign: 'left' });
+			}
+		} return table;
 	};
 };
