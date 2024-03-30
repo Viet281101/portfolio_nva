@@ -68,23 +68,13 @@ class Contact {
 		const index = this.icons.indexOf(name);
 		if (index !== -1) { actions[index].call(this, this.lang); }
 	};
-	phoneClickInfo(lang) {
-		const phonePopup = new PhonePopupInfo(lang);
-		phonePopup.createPhonePopup();
-	};
-	mailClickInfo(lang) {
-		console.log('mail');
-	};
-	mapClickInfo(lang) {
-		console.log('map');
-	};
-	plusClickInfo(lang) {
-		const ortherInfoPopup = new OrtherInfoPopup(lang);
-		ortherInfoPopup.createPopup();
-	};
+	phoneClickInfo(lang) { const phonePopup = new PhoneInfoPopup(lang); phonePopup.createPhonePopup(); };
+	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang); mailPopup.createPopup(); };
+	mapClickInfo(lang) { const mapPopup = new MapInfoPopup(lang); mapPopup.createPopup(); };
+	plusClickInfo(lang) { const ortherInfoPopup = new OrtherInfoPopup(lang); ortherInfoPopup.createPopup(); };
 };
 
-class PhonePopupInfo {
+class PhoneInfoPopup {
 	constructor(lang) {
 		this.phone_ics = ['phone_call', 'phone_message', ];
 		this.x_close = "./assets/icons/x_close.png";
@@ -120,10 +110,12 @@ class PhonePopupInfo {
 		this.phoneNumbers.forEach((number, index) => {
 			const row = table.insertRow();
 			const cellIcon = row.insertCell();
-			Object.assign(cellIcon.style, { padding: '10px', });
+			Object.assign(cellIcon.style, { padding: '15px', });
 			const img = document.createElement('img');
 			img.src = ic+this.phone_ics[index % this.phone_ics.length]+'.png';
 			img.alt = img.title = this.phone_ics[index % this.phone_ics.length].replace('_', ' ');
+			img.addEventListener('mouseover', (e) => {e.target.style.transform = 'scale(1.1)'});
+			img.addEventListener('mouseout', (e) => {e.target.style.transform = 'scale(1.0)'});
 			cellIcon.appendChild(img);
 			const cellNumber = row.insertCell();
 			cellNumber.textContent = number;
@@ -143,6 +135,7 @@ class OrtherInfoPopup {
 			backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '20', display: 'flex', justifyContent: 'center', alignItems: 'center', });
 		const popup = document.createElement('div');
 		popup.style.padding = window.innerWidth > 900 ? '40px' : '20px';
+		if (window.innerWidth < 768) { popup.style.maxHeight = '70%'; popup.style.overflowY='auto'; };
 		Object.assign(popup.style, { backgroundColor: '#000', borderRadius: '10px', border: '1px solid #fff', display: 'flex',
 			flexDirection: 'column', alignItems: 'center', position: 'relative', maxWidth: '600px', width: '80%', });
 		const closeButton = this.createCloseBtn(overlay);
@@ -164,7 +157,7 @@ class OrtherInfoPopup {
 		const table = document.createElement('table');
 		Object.assign(table.style, { width: '100%', });
 		const tbody = table.createTBody();
-		const iconsPerColumn = window.innerWidth > 900 ? 5 : 12;
+		const iconsPerColumn = window.innerWidth > 900 ? 4 : 12;
 		const totalColumns = Math.ceil(this.icons.length / iconsPerColumn);
 		for (let col = 0; col < totalColumns; col++) {
 			for (let row = 0; row < iconsPerColumn; row++) {
@@ -172,19 +165,38 @@ class OrtherInfoPopup {
 				if (iconIndex >= this.icons.length) break;
 				const icon = this.icons[iconIndex];
 				let tableRow;
-				if (tbody.rows[row] === undefined) {
-					tableRow = tbody.insertRow();
-				} else { tableRow = tbody.rows[row]; }
+				if (tbody.rows[row] === undefined) { tableRow = tbody.insertRow(); }
+				else { tableRow = tbody.rows[row]; }
 				const cellIcon = tableRow.insertCell(-1);
-				Object.assign(cellIcon.style, { padding: '10px', textAlign: 'center' });
+				Object.assign(cellIcon.style, { padding: '12px', textAlign: 'center' });
 				const img = document.createElement('img');
 				img.src = `${ic}${icon}.png`; img.alt = img.title = icon;
 				img.style.width = img.style.height = window.innerWidth > 900 ? '50px' : '40px';
+				img.addEventListener('mouseover', (e) => {e.target.style.transform = 'scale(1.1)'});
+				img.addEventListener('mouseout', (e) => {e.target.style.transform = 'scale(1.0)'});
 				cellIcon.appendChild(img);
 				const cellName = tableRow.insertCell(-1);
 				cellName.textContent = icon.charAt(0).toUpperCase() + icon.slice(1);
 				Object.assign(cellName.style, { padding: '10px', textAlign: 'left' });
 			}
 		} return table;
+	};
+};
+
+class MailInfoPopup {
+	constructor(lang) {
+		this.lang = lang;
+	};
+	createPopup() {
+		console.log('mail');
+	};
+};
+
+class MapInfoPopup {
+	constructor(lang) {
+		this.lang = lang;
+	};
+	createPopup() {
+		console.log('map');
 	};
 };
