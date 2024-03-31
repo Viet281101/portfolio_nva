@@ -71,9 +71,8 @@ class Contact {
 	phoneClickInfo(lang) { const phonePopup = new PhoneInfoPopup(lang); phonePopup.createPhonePopup(); };
 	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang); mailPopup.createPopup(); };
 	mapClickInfo(lang) { const mapPopup = new MapInfoPopup(lang); mapPopup.createPopup(); };
-	plusClickInfo(lang) { const ortherInfoPopup = new OrtherInfoPopup(lang); ortherInfoPopup.createPopup(); };
+	plusClickInfo(lang) { const ortherInfoPopup = new OrtherInfoPopup(lang, this.contentData[this.lang].orther); };
 };
-
 class PhoneInfoPopup {
 	constructor(lang) {
 		this.phone_ics = ['phone_call', 'phone_message', ];
@@ -122,13 +121,14 @@ class PhoneInfoPopup {
 		}); return table;
 	};
 };
-
 class OrtherInfoPopup {
-	constructor(lang) {
+	constructor(lang, subtitle) {
 		this.icons = [ "github", "gitlab", "twitter", "kaggle", "linkedin", "mattermost", "facebook", "skype", "discord", "youtube", "codepen", "codesandbox", ];
 		this.x_close = "./assets/icons/x_close.png";
-		this.lang = lang;
+		this.lang = lang; this.subtitle = subtitle;
+		this.urlData = {}; this.loadData();
 	};
+	loadData() { fetch('./js/data/contact_url.json').then(response => response.json()).then(data => { this.urlData = data; this.createPopup(); }).catch(error => console.error('Error loading the contact content:', error)); };
 	createPopup() {
 		const overlay = document.createElement('div');
 		Object.assign(overlay.style, { position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
@@ -139,8 +139,10 @@ class OrtherInfoPopup {
 		Object.assign(popup.style, { backgroundColor: '#000', borderRadius: '10px', border: '1px solid #fff', display: 'flex',
 			flexDirection: 'column', alignItems: 'center', position: 'relative', maxWidth: '600px', width: '80%', });
 		const closeButton = this.createCloseBtn(overlay);
+		const subtitle = document.createElement('p'); subtitle.textContent = this.subtitle;
 		const table = this.createIconsTable();
 		popup.appendChild(closeButton);
+		popup.appendChild(subtitle);
 		popup.appendChild(table);
 		overlay.appendChild(popup);
 		document.body.appendChild(overlay);
@@ -170,10 +172,10 @@ class OrtherInfoPopup {
 				const cellIcon = tableRow.insertCell(-1);
 				Object.assign(cellIcon.style, { padding: '12px', textAlign: 'center' });
 				const img = document.createElement('img');
-				img.src = `${ic}${icon}.png`; img.alt = img.title = icon;
-				img.style.width = img.style.height = window.innerWidth > 900 ? '50px' : '40px';
+				img.src = `${ic}${icon}.png`; img.alt = img.title = icon; img.style.cursor = 'pointer';
 				img.addEventListener('mouseover', (e) => {e.target.style.transform = 'scale(1.1)'});
 				img.addEventListener('mouseout', (e) => {e.target.style.transform = 'scale(1.0)'});
+				if (this.urlData[icon]) { img.addEventListener('click', () => window.open(this.urlData[icon], '_blank'));}
 				cellIcon.appendChild(img);
 				const cellName = tableRow.insertCell(-1);
 				cellName.textContent = icon.charAt(0).toUpperCase() + icon.slice(1);
@@ -182,7 +184,6 @@ class OrtherInfoPopup {
 		} return table;
 	};
 };
-
 class MailInfoPopup {
 	constructor(lang) {
 		this.lang = lang;
@@ -191,7 +192,6 @@ class MailInfoPopup {
 		console.log('mail');
 	};
 };
-
 class MapInfoPopup {
 	constructor(lang) {
 		this.lang = lang;

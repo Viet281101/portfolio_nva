@@ -5,6 +5,7 @@
 		"mail": "Mail",
 		"map": "Location",
 		"plus": "Orther",
+		"orther": "Maybe you can connect with me on some other social media.",
 		"desc": "But please, don't spam me !!!"
 	},
 	"fr": {
@@ -13,6 +14,7 @@
 		"mail": "Mail",
 		"map": "Emplacement",
 		"plus": "Autres",
+		"orther": "Vous pouvez me contacter sur d'autres réseaux sociaux.",
 		"desc": "Mais s'il vous plaît, ne me spammez pas !!!"
 	}
 }
