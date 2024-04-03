@@ -61,7 +61,7 @@
 			"Teleporter" : {
 				"id" : "teleporter",
 				"tools": "Godot Engine, GDScript",
-				"image": "teleporter",
+				"image": "teleporter/1",
 				"desc" : "2D rpg pixel game make by Godot Engine 3.5.1 with GDScript language"
 			},
 			"Movies Website" : {
@@ -142,7 +142,7 @@
 			"Teleporter" : {
 				"id" : "teleporter",
 				"tools": "Godot Engine, GDScript",
-				"image": "teleporter",
+				"image": "teleporter/1",
 				"desc" : "Jeu pixel 2D rpg adventure réalisé par Godot Engine 3.5.1 avec le langage GDScript"
 			},
 			"Movies Website" : {

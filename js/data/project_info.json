@@ -58,7 +58,7 @@
 			"title": "Teleporter",
 			"details": "<< The Teleporter 2D RPG Pixel Game >> project is a pixel RPG game developed with Godot Engine 3.5. It invites players on an adventurous journey with a world-traveling hero, navigating through teleportation gates to overcome challenges, solve complex puzzles, and engage in battles. Although the game was never completed, it is open for anyone interested in exploring and utilizing its resources and code for their own purposes.<br><br>The concept behind << Teleporter 2D RPG Pixel Game >> centers on creating an immersive gaming experience in a universe where magic and technology converge, allowing players to explore diverse worlds and interact with unique characters. Focusing on exploration and puzzle-solving, the game aims to foster player creativity while offering engaging tactical combat.<br><br>Despite its unfinished status, the project serves as a valuable resource for game developers, artists, and gaming enthusiasts who can draw inspiration from its pixel art graphics, gameplay mechanics, and available source code. By freely sharing this project, the creators hope to promote learning, experimentation, and the development of new gaming experiences based on the groundwork they have laid.",
 			"sources": "https://github.com/Viet281101/2D_RPG_Godot",
-			"imgs": ["teleporter"]
+			"imgs": ["teleporter/1", "teleporter/2", "teleporter/3", "teleporter/4", "teleporter/5"]
 		},
 		"moviesite": {
 			"title": "Movie Website",
@@ -132,7 +132,7 @@
 			"title": "Téléporteur",
 			"details": "L'idée derrière << Teleporter 2D RPG Pixel Game >> est de créer une expérience de jeu immersive dans un univers où la magie et la technologie se rencontrent, permettant aux joueurs d'explorer des mondes divers et d'interagir avec des personnages uniques. En mettant l'accent sur l'exploration et la résolution de puzzles, le jeu vise à stimuler la créativité des joueurs tout en leur offrant des combats tactiques engageants.<br><br>Même si le projet n'a pas été mené à terme, il représente une ressource précieuse pour les développeurs de jeux, les artistes et les amateurs de jeux vidéo qui peuvent tirer inspiration des graphismes pixel art, des mécanismes de jeu et du code source disponible. En partageant librement ce projet, les créateurs espèrent encourager l'apprentissage, l'expérimentation et la création de nouvelles expériences de jeu basées sur les fondations qu'ils ont établies.",
 			"sources": "https://github.com/Viet281101/2D_RPG_Godot",
-			"imgs": ["teleporter"]
+			"imgs": ["teleporter/1", "teleporter/2", "teleporter/3", "teleporter/4", "teleporter/5"]
 		},
 		"moviesite": {
 			"title": "Site Web du Film",
