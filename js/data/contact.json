@@ -4,6 +4,7 @@
 		"phone": "Phone",
 		"mail": "Mail",
 		"map": "Location",
+		"address": "My address: 7 rue Albert Camus 92340 Bourg-la-Reine, French",
 		"plus": "Orther",
 		"orther": "Maybe you can connect with me on some other social media.",
 		"desc": "But please, don't spam me !!!"
@@ -13,6 +14,7 @@
 		"phone": "Téléphone",
 		"mail": "Mail",
 		"map": "Emplacement",
+		"address": "Mon adresse : 7 rue Albert Camus 92340 Bourg-là-Reine, France",
 		"plus": "Autres",
 		"orther": "Vous pouvez me contacter sur d'autres réseaux sociaux.",
 		"desc": "Mais s'il vous plaît, ne me spammez pas !!!"

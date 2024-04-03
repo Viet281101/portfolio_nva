@@ -70,7 +70,7 @@ class Contact {
 	};
 	phoneClickInfo(lang) { const phonePopup = new PhoneInfoPopup(lang); phonePopup.createPhonePopup(); };
 	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang); mailPopup.createPopup(); };
-	mapClickInfo(lang) { new MapInfoPopup(lang); };
+	mapClickInfo(lang) { new MapInfoPopup(lang, this.contentData[this.lang].address); };
 	plusClickInfo(lang) { new OrtherInfoPopup(lang, this.contentData[this.lang].orther); };
 };
 class PhoneInfoPopup {
@@ -117,7 +117,10 @@ class PhoneInfoPopup {
 			img.addEventListener('mouseout', (e) => {e.target.style.transform = 'scale(1.0)'});
 			cellIcon.appendChild(img);
 			const cellNumber = row.insertCell();
-			cellNumber.textContent = number;
+			const phoneLink = document.createElement('a');
+			phoneLink.href = `tel:${number.replace(/\s+/g, '')}`; phoneLink.alt = phoneLink.title = "Phone Number";
+			phoneLink.textContent = number; Object.assign(phoneLink.style, {textDecoration: 'none', fontSize: 'large'});
+			cellNumber.appendChild(phoneLink);
 		}); return table;
 	};
 };
@@ -178,7 +181,13 @@ class OrtherInfoPopup {
 				if (this.urlData[icon]) { img.addEventListener('click', () => window.open(this.urlData[icon], '_blank'));}
 				cellIcon.appendChild(img);
 				const cellName = tableRow.insertCell(-1);
-				cellName.textContent = icon.charAt(0).toUpperCase() + icon.slice(1);
+				if (this.urlData[icon]) {
+					const link = document.createElement('a');
+					link.href = this.urlData[icon];
+					link.textContent = icon.charAt(0).toUpperCase() + icon.slice(1);
+					link.style.color = "#FFFFFF"; link.target = "_blank";
+					cellName.appendChild(link);
+				} else { cellName.textContent = icon.charAt(0).toUpperCase() + icon.slice(1); }
 				Object.assign(cellName.style, { padding: '10px', textAlign: 'left' });
 			}
 		} return table;
@@ -193,8 +202,8 @@ class MailInfoPopup {
 	};
 };
 class MapInfoPopup {
-	constructor(lang) {
-		this.lang = lang;
+	constructor(lang, address) {
+		this.lang = lang; this.adr = address;
 		if (MapInfoPopup.leafletLoaded === undefined) { MapInfoPopup.leafletLoaded = false; }
 		this.loadLeaflet();
 	};
@@ -210,8 +219,7 @@ class MapInfoPopup {
 		const overlay = document.createElement('div');
 		Object.assign(overlay.style, { position: 'fixed', top: '0', left: '0',
 			width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.75)',
-			zIndex: 12, display: 'flex', justifyContent: 'center', alignItems: 'center',
-		});
+			zIndex: 12, display: 'flex', justifyContent: 'center', alignItems: 'center', });
 
 		const popup = document.createElement('div');
 		Object.assign(popup.style, { maxWidth: '100%', maxHeight: '70%', overflowY: 'auto',
@@ -223,15 +231,13 @@ class MapInfoPopup {
 		mapContainer.id = 'map';
 		Object.assign(mapContainer.style, { width: '100%', height: '500px' });
 		popup.appendChild(mapContainer);
-
 		setTimeout(() => {
 			const myMap = L.map('map').setView([48.78833, 2.31578], 13);
 			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				maxZoom: 19,
 			}).addTo(myMap);
-
 			const marker = L.marker([48.78833, 2.31578]).addTo(myMap);
-			marker.bindPopup("My address.").openPopup();
+			marker.bindPopup(this.adr).openPopup();
 		}, 0);
 
 		const closeButton = this.createCloseBtn(overlay);
