@@ -2,9 +2,8 @@
 class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
-		const ct = "contents/"; const ef = "effects/";
-		this.jsFiles = [ 'background.js',
-			ef+'lightslider.js', ef+'particles.js',
+		const ct = "contents/";
+		this.jsFiles = [ 'background.js', 'particles.js',
 			'sidebar.js', 'nav_bar.js', 'lang_box.js', 'on_top.js',
 			ct+'home.js', ct+'about.js', ct+'project.js', ct+'courses.js', ct+'contact.js',
 		];
@@ -21,12 +20,14 @@ class MainApp {
 	loadFiles() {
 		let loadErrors = false;
 		const handleError = () => { if (!loadErrors) { loadErrors = true; alert('Failed to load some resources, reloading...'); window.location.reload(); } };
-		let icon_page = document.createElement('link');
-		icon_page.rel = 'shortcut icon'; icon_page.href = './assets/icon.png';
+		let icon_page = document.createElement('link'); icon_page.rel = 'shortcut icon'; icon_page.href = './assets/icon.png';
 		document.head.appendChild(icon_page);
 		let style = document.createElement('link');
 		style.rel = 'stylesheet'; style.type = 'text/css'; style.onerror = handleError;
 		style.href = './style/style.css'; document.head.appendChild(style);
+		let leafletStyle = document.createElement('link');
+		leafletStyle.rel = 'stylesheet'; leafletStyle.type = 'text/css'; leafletStyle.onerror = handleError;
+		leafletStyle.href = './libs/leaflet/leaflet.css'; document.head.appendChild(leafletStyle);
 		for (let i = 0; i < this.jsFiles.length; i++) {
 			let script = document.createElement('script');
 			script.src = './js/' + this.jsFiles[i]; script.setAttribute("type", "text/javascript");

@@ -70,8 +70,8 @@ class Contact {
 	};
 	phoneClickInfo(lang) { const phonePopup = new PhoneInfoPopup(lang); phonePopup.createPhonePopup(); };
 	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang); mailPopup.createPopup(); };
-	mapClickInfo(lang) { const mapPopup = new MapInfoPopup(lang); mapPopup.createPopup(); };
-	plusClickInfo(lang) { const ortherInfoPopup = new OrtherInfoPopup(lang, this.contentData[this.lang].orther); };
+	mapClickInfo(lang) { new MapInfoPopup(lang); };
+	plusClickInfo(lang) { new OrtherInfoPopup(lang, this.contentData[this.lang].orther); };
 };
 class PhoneInfoPopup {
 	constructor(lang) {
@@ -195,8 +195,55 @@ class MailInfoPopup {
 class MapInfoPopup {
 	constructor(lang) {
 		this.lang = lang;
+		if (MapInfoPopup.leafletLoaded === undefined) { MapInfoPopup.leafletLoaded = false; }
+		this.loadLeaflet();
+	};
+	loadLeaflet() {
+		if (!MapInfoPopup.leafletLoaded) {
+			let leafletScript = document.createElement('script');
+			leafletScript.src = "./libs/leaflet/leaflet.js"; leafletScript.defer = true;
+			leafletScript.onload = () => { MapInfoPopup.leafletLoaded = true; this.createPopup(); };
+			document.body.appendChild(leafletScript);
+		} else { this.createPopup(); }
 	};
 	createPopup() {
-		console.log('map');
+		const overlay = document.createElement('div');
+		Object.assign(overlay.style, { position: 'fixed', top: '0', left: '0',
+			width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.75)',
+			zIndex: 12, display: 'flex', justifyContent: 'center', alignItems: 'center',
+		});
+
+		const popup = document.createElement('div');
+		Object.assign(popup.style, { maxWidth: '100%', maxHeight: '70%', overflowY: 'auto',
+			backgroundColor: '#000', padding: '5px', borderRadius: '10px', border: '1px solid #fff',
+			display: 'flex', flexDirection: 'column', position: 'relative', });
+		popup.style.width = window.innerWidth > 900 ? '70%' : '100%';
+
+		const mapContainer = document.createElement('div');
+		mapContainer.id = 'map';
+		Object.assign(mapContainer.style, { width: '100%', height: '500px' });
+		popup.appendChild(mapContainer);
+
+		setTimeout(() => {
+			const myMap = L.map('map').setView([48.78833, 2.31578], 13);
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 19,
+			}).addTo(myMap);
+
+			const marker = L.marker([48.78833, 2.31578]).addTo(myMap);
+			marker.bindPopup("My address.").openPopup();
+		}, 0);
+
+		const closeButton = this.createCloseBtn(overlay);
+		popup.appendChild(closeButton);
+		overlay.appendChild(popup);
+		document.body.appendChild(overlay);
+	};
+	createCloseBtn(overlay) {
+		const closeButton = document.createElement('img');
+		closeButton.src = "./assets/icons/x_close.png"; closeButton.alt = closeButton.title = 'Close'; closeButton.loading = "lazy";
+		Object.assign(closeButton.style, { position: 'absolute', top: '5px', right: '5px', cursor: 'pointer', zIndex: '9999'});
+		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
+		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
 	};
 };

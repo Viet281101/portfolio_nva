@@ -3,8 +3,7 @@ class Background {
 	constructor() {
 		this.radius = 70;
 		this.influenceArea = {
-			x: 100,
-			y: 100,
+			x: 100, y: 100,
 			width: this.radius * 2,
 			height: this.radius * 2
 		};
@@ -72,7 +71,6 @@ class Background {
 		if (!this.isThrottled) {
 			this.isThrottled = true;
 			setTimeout(() => this.isThrottled = false, 100);
-
 			requestAnimationFrame(() => {
 				if (app.mouseMarkEnabled) {
 					this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
@@ -94,9 +92,7 @@ class Background {
 		if (app.mouseMarkEnabled) {
 			this.radius = 70;
 			this.updateBackgroundMask(this.backgroundLayer2, e.clientX, e.clientY, this.radius);
-		} else {
-			this.backgroundLayer2.style.webkitMaskImage = 'none';
-		}
+		} else { this.backgroundLayer2.style.webkitMaskImage = 'none'; }
 	};
 
 	updateBackgroundMask(element, x, y, maskSize) {
