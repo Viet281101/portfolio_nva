@@ -68,7 +68,7 @@ class Contact {
 		if (index !== -1) { actions[index].call(this, this.lang); }
 	};
 	phoneClickInfo(lang) { const phonePopup = new PhoneInfoPopup(lang); phonePopup.createPhonePopup(); };
-	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang); mailPopup.createPopup(); };
+	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang, this.contentData[this.lang].mail_name, this.contentData[this.lang].mail_adr, this.contentData[this.lang].mail_text, this.contentData[this.lang].send_btn); mailPopup.createPopup(); };
 	mapClickInfo(lang) { new MapInfoPopup(lang, this.contentData[this.lang].address); };
 	plusClickInfo(lang) { new OrtherInfoPopup(lang, this.contentData[this.lang].orther); };
 };
@@ -193,8 +193,8 @@ class OrtherInfoPopup {
 	};
 };
 class MailInfoPopup {
-	constructor(lang) {
-		this.lang = lang;
+	constructor(lang, name, adr, text, send) {
+		this.lang = lang; this.name = name; this.adr = adr; this.txt = text; this.send = send;
 	};
 	createPopup() {
 		const overlay = document.createElement('div');
@@ -202,35 +202,32 @@ class MailInfoPopup {
 			width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.75)',
 			zIndex: 20, display: 'flex', justifyContent: 'center', alignItems: 'center',});
 		const popup = document.createElement('div');
-		Object.assign(popup.style, { maxWidth: '600px', width: '80%', maxHeight: '80%', overflowY: 'auto',
-			backgroundColor: '#000', padding: '20px', borderRadius: '10px', border: '1px solid #fff',
-			display: 'flex', flexDirection: 'column', position: 'relative', });
-
+		Object.assign(popup.style, { overflowY: 'auto', backgroundColor: '#000', padding: '20px', 
+			borderRadius: '10px', border: '1px solid #fff', display: 'flex', flexDirection: 'column', position: 'relative', });
+		popup.style.width = window.innerWidth > 900 ? '60%' : '90%';
 		const form = document.createElement('form');
 		form.action = "#"; form.method = "POST";
 		Object.assign(form.style, { display: 'flex', flexDirection: 'column', padding: '20px', gap: '20px' });
 
 		const nameInput = document.createElement('input');
-		nameInput.type = 'text';
-		nameInput.placeholder = 'Your Name';
-		nameInput.required = true;
+		nameInput.type = 'text'; nameInput.placeholder = this.name; nameInput.required = true;
+		Object.assign(nameInput.style, { fontFamily:"'Pixel', sans-serif", fontSize: 'large', backgroundColor: '#666', borderRadius: '10px', border: 'none', padding: '10px'});
 		form.appendChild(nameInput);
 
 		const emailInput = document.createElement('input');
-		emailInput.type = 'email';
-		emailInput.placeholder = 'Your Email';
-		emailInput.required = true;
+		emailInput.type = 'email'; emailInput.placeholder = this.adr; emailInput.required = true;
+		Object.assign(emailInput.style, { fontFamily:"'Pixel', sans-serif", fontSize: 'large', backgroundColor: '#666', borderRadius: '10px', border: 'none', padding: '10px'});
 		form.appendChild(emailInput);
 
 		const messageTextArea = document.createElement('textarea');
-		messageTextArea.placeholder = 'Your Message';
-		messageTextArea.required = true;
+		messageTextArea.placeholder = this.txt; messageTextArea.required = true;
+		Object.assign(messageTextArea.style, { fontFamily:"'Pixel', sans-serif", fontSize: 'large', backgroundColor: '#666', borderRadius: '10px', border: 'none', padding: '10px'});
+		messageTextArea.style.height = window.innerWidth < 900 ? '300px' : '200px';
 		form.appendChild(messageTextArea);
 
 		const submitButton = document.createElement('button');
-		submitButton.type = 'submit';
-		submitButton.textContent = 'Send Message';
-		Object.assign(submitButton.style, { fontFamily:"'Pixel', sans-serif", });
+		submitButton.type = 'submit'; submitButton.textContent = this.send;
+		Object.assign(submitButton.style, { fontFamily:"'Pixel', sans-serif", fontSize: 'x-large', background: 'transparent', borderRadius: '10px', border: '2px solid #fff', color: '#fff', padding: '10px', cursor: 'pointer' });
 		form.appendChild(submitButton);
 
 		popup.appendChild(form);
