@@ -2,10 +2,9 @@
 class Contact {
 	constructor(lang) {
 		this.section = document.getElementById('contact');
-		Object.assign(this.section.style, { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', });
-		this.contentData = {};
-		this.lang = lang;
-		this.icons = ['phone', 'mail', 'map', 'plus', ];
+		Object.assign(this.section.style, { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh'});
+		this.contentData = {}; this.lang = lang;
+		this.icons = ['phone', 'mail', 'map', 'plus'];
 		this.loadContentData();
 	};
 	loadContentData() { fetch('./js/data/contact.json').then(response => response.json()).then(data => { this.contentData = data; this.createContactContent(); }).catch(error => console.error('Error loading the contact content:', error)); };
@@ -75,7 +74,7 @@ class Contact {
 };
 class PhoneInfoPopup {
 	constructor(lang) {
-		this.phone_ics = ['phone_call', 'phone_message', ];
+		this.phone_ics = ['phone_call', 'phone_message'];
 		this.x_close = "./assets/icons/x_close.png";
 		this.phoneNumbers = ['+33 7 71 24 12 43', '+33 7 71 24 12 43'];
 		this.lang = lang;
@@ -126,7 +125,7 @@ class PhoneInfoPopup {
 };
 class OrtherInfoPopup {
 	constructor(lang, subtitle) {
-		this.icons = [ "github", "gitlab", "twitter", "kaggle", "linkedin", "mattermost", "facebook", "skype", "discord", "youtube", "codepen", "codesandbox", ];
+		this.icons = [ "github", "gitlab", "twitter", "kaggle", "linkedin", "mattermost", "facebook", "skype", "discord", "youtube", "codepen", "codesandbox"];
 		this.x_close = "./assets/icons/x_close.png";
 		this.lang = lang; this.subtitle = subtitle;
 		this.urlData = {}; this.loadData();
@@ -198,7 +197,55 @@ class MailInfoPopup {
 		this.lang = lang;
 	};
 	createPopup() {
-		console.log('mail');
+		const overlay = document.createElement('div');
+		Object.assign(overlay.style, { position: 'fixed', top: '0', left: '0',
+			width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.75)',
+			zIndex: 20, display: 'flex', justifyContent: 'center', alignItems: 'center',});
+		const popup = document.createElement('div');
+		Object.assign(popup.style, { maxWidth: '600px', width: '80%', maxHeight: '80%', overflowY: 'auto',
+			backgroundColor: '#000', padding: '20px', borderRadius: '10px', border: '1px solid #fff',
+			display: 'flex', flexDirection: 'column', position: 'relative', });
+
+		const form = document.createElement('form');
+		form.action = "#"; form.method = "POST";
+		Object.assign(form.style, { display: 'flex', flexDirection: 'column', padding: '20px', gap: '20px' });
+
+		const nameInput = document.createElement('input');
+		nameInput.type = 'text';
+		nameInput.placeholder = 'Your Name';
+		nameInput.required = true;
+		form.appendChild(nameInput);
+
+		const emailInput = document.createElement('input');
+		emailInput.type = 'email';
+		emailInput.placeholder = 'Your Email';
+		emailInput.required = true;
+		form.appendChild(emailInput);
+
+		const messageTextArea = document.createElement('textarea');
+		messageTextArea.placeholder = 'Your Message';
+		messageTextArea.required = true;
+		form.appendChild(messageTextArea);
+
+		const submitButton = document.createElement('button');
+		submitButton.type = 'submit';
+		submitButton.textContent = 'Send Message';
+		Object.assign(submitButton.style, { fontFamily:"'Pixel', sans-serif", });
+		form.appendChild(submitButton);
+
+		popup.appendChild(form);
+		const closeButton = this.createCloseBtn(overlay);
+		popup.appendChild(closeButton);
+		overlay.appendChild(popup);
+		document.body.appendChild(overlay);
+		form.onsubmit = function(event) {event.preventDefault(); console.log("Form submitted!"); };
+	};
+	createCloseBtn(overlay) {
+		const closeButton = document.createElement('img');
+		closeButton.src = "./assets/icons/x_close.png"; closeButton.alt = closeButton.title = 'Close'; closeButton.loading = "lazy";
+		Object.assign(closeButton.style, { position: 'absolute', top: '5px', right: '5px', cursor: 'pointer', zIndex: '9999'});
+		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
+		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
 	};
 };
 class MapInfoPopup {
@@ -233,9 +280,7 @@ class MapInfoPopup {
 		popup.appendChild(mapContainer);
 		setTimeout(() => {
 			const myMap = L.map('map').setView([48.78833, 2.31578], 13);
-			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-				maxZoom: 19,
-			}).addTo(myMap);
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, }).addTo(myMap);
 			const marker = L.marker([48.78833, 2.31578]).addTo(myMap);
 			marker.bindPopup(this.adr).openPopup();
 		}, 0);
