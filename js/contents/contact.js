@@ -125,7 +125,7 @@ class PhoneInfoPopup {
 };
 class OrtherInfoPopup {
 	constructor(lang, subtitle) {
-		this.icons = [ "github", "gitlab", "twitter", "kaggle", "linkedin", "mattermost", "facebook", "skype", "discord", "youtube", "codepen", "codesandbox"];
+		this.icons = [ "github", "gitlab", "twitter", "instagram", "snapchat", "kaggle", "linkedin", "mattermost", "facebook", "skype", "discord", "youtube", "hackMD", "codepen", "codesandbox"];
 		this.x_close = "./assets/icons/x_close.png";
 		this.lang = lang; this.subtitle = subtitle;
 		this.urlData = {}; this.loadData();
@@ -137,9 +137,10 @@ class OrtherInfoPopup {
 			backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: '20', display: 'flex', justifyContent: 'center', alignItems: 'center', });
 		const popup = document.createElement('div');
 		popup.style.padding = window.innerWidth > 900 ? '40px' : '20px';
+		popup.style.width = window.innerWidth > 900 ? '60%' : '90%';
 		if (window.innerWidth < 768) { popup.style.maxHeight = '70%'; popup.style.overflowY='auto'; };
 		Object.assign(popup.style, { backgroundColor: '#000', borderRadius: '10px', border: '1px solid #fff', display: 'flex',
-			flexDirection: 'column', alignItems: 'center', position: 'relative', maxWidth: '600px', width: '80%', });
+			flexDirection: 'column', alignItems: 'center', position: 'relative'});
 		const closeButton = this.createCloseBtn(overlay);
 		const subtitle = document.createElement('p'); subtitle.textContent = this.subtitle;
 		const table = this.createIconsTable();
@@ -161,7 +162,7 @@ class OrtherInfoPopup {
 		const table = document.createElement('table');
 		Object.assign(table.style, { width: '100%', });
 		const tbody = table.createTBody();
-		const iconsPerColumn = window.innerWidth > 900 ? 4 : 12;
+		const iconsPerColumn = window.innerWidth > 900 ? 4 : 20;
 		const totalColumns = Math.ceil(this.icons.length / iconsPerColumn);
 		for (let col = 0; col < totalColumns; col++) {
 			for (let row = 0; row < iconsPerColumn; row++) {
@@ -205,8 +206,8 @@ class MailInfoPopup {
 		Object.assign(popup.style, { overflowY: 'auto', backgroundColor: '#000', padding: '20px', 
 			borderRadius: '10px', border: '1px solid #fff', display: 'flex', flexDirection: 'column', position: 'relative', });
 		popup.style.width = window.innerWidth > 900 ? '60%' : '90%';
-		const form = document.createElement('form');
-		form.action = "#"; form.method = "POST";
+
+		const form = document.createElement('form'); form.action = "sendemail.php"; form.method = "POST";
 		Object.assign(form.style, { display: 'flex', flexDirection: 'column', padding: '20px', gap: '20px' });
 
 		const nameInput = document.createElement('input');
@@ -235,7 +236,7 @@ class MailInfoPopup {
 		popup.appendChild(closeButton);
 		overlay.appendChild(popup);
 		document.body.appendChild(overlay);
-		form.onsubmit = function(event) {event.preventDefault(); console.log("Form submitted!"); };
+		form.onsubmit = function(event) { console.log("Form submitted!"); };
 	};
 	createCloseBtn(overlay) {
 		const closeButton = document.createElement('img');
