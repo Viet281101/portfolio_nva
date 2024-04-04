@@ -9,7 +9,7 @@ class MainApp {
 		this.home = null; this.about = null; this.project = null; this.courses = null; this.contact = null;
 		this.langBox = null; this.btnOnTop = null;
 		this.currentSection = 0;
-		this.mouseMarkEnabled = true; this.animationActive = true;
+		this.mouseMarkEnabled = true; this.animationActive = true; this.canScroll = true;
 		this.lang = 'en';
 		this.loadFiles(); this.addEventListeners();
 	};
@@ -89,6 +89,7 @@ class MainApp {
 			if (this.sections[this.currentSection] === 'about') return true;
 		} return false;
 	};
+	setScrollable(canScroll) { this.canScroll = canScroll; };
 	scrollSlideLeft() {
 		if (this.about && this.sections[this.currentSection] === 'about') this.about.scrollSlides('left');
 	};
@@ -96,11 +97,13 @@ class MainApp {
 		if (this.about && this.sections[this.currentSection] === 'about') this.about.scrollSlides('right');
 	};
 	moveSectionUp() {
+		if (!this.canScroll) return;
 		const fullpageApi = $('#fullpage').data('fullpage');
 		let targetIndex = fullpageApi.currIndex - 1;
 		if (targetIndex >= 0) { fullpageApi.moveTo(targetIndex + 1); }
 	};
 	moveSectionDown() {
+		if (!this.canScroll) return;
 		const fullpageApi = $('#fullpage').data('fullpage');
 		let targetIndex = fullpageApi.currIndex + 1;
 		if (targetIndex < $('#fullpage').children().length) { fullpageApi.moveTo(targetIndex + 1); }
@@ -118,15 +121,13 @@ class MainApp {
 		if (this.sidebar) {
 			this.sidebar.createSidebar();
 			this.sidebar.updateActiveNavItem(1);
-			this.sidebar.createConnectItems();
-		}
+			this.sidebar.createConnectItems(); }
 		if (this.background) this.background.init();
 		if (this.langBox) this.langBox.createLanguageSelector();
 		if (this.btnOnTop) this.btnOnTop.createScrollOnTopBtn();
 		if (this.navBar) {
 			this.navBar.createNavBar(); 
-			this.navBar.updateMenuButtonVisibility();
-		}
+			this.navBar.updateMenuButtonVisibility(); }
 		if (this.home) this.home.createHomeContent();
 		if (this.about) this.about.createAboutContent();
 		if (this.project) this.project.createProjectContent();

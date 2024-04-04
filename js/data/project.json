@@ -24,19 +24,19 @@
 			"Secure Chat" : {
 				"id" : "secure_chat",
 				"tools": "Python, Tkinter, AES",
-				"image": "chat_app",
+				"image": "chat_app/1",
 				"desc" : "Simple Securite Chat App with AES encryption, Socket server and client using Tkinter GUI"
 			},
 			"Detection App" : {
 				"id" : "detec_app",
 				"tools": "Python, OpenCV, Mediapipe",
-				"image": "screen_detection",
+				"image": "detection_apps/1",
 				"desc" : "Detection Programs Collection for screen, face, hand, object, sec, etc"
 			},
 			"Music Virap" : {
 				"id" : "music_virap",
 				"tools": "Kotlin, Android Studio",
-				"image": "music_player_virap",
+				"image": "virap/1",
 				"desc" : "Music Player mobile app for Android with simple interface and features"
 			},
 			"Colt Express" : {
@@ -54,7 +54,7 @@
 			"Polyominos" : {
 				"id" : "polyominos",
 				"tools": "JavaScript, HTML, CSS",
-				"image": "polyominos",
+				"image": "polyominos/1",
 				"desc" : "Solving Polyominos Puzzle with algorithm and simple website interface"
 			},
 			"Teleporter" : {
@@ -66,13 +66,13 @@
 			"Movies Website" : {
 				"id" : "moviesite",
 				"tools": "React, JQuery, HTML, CSS",
-				"image": "movies_web",
+				"image": "movies_web/1",
 				"desc" : "Movies Website with simple interface of movie list and search feature"
 			},
 			"Compilator" : {
 				"id" : "compilator",
 				"tools": "Ocaml, SPIM, MIPS",
-				"image": "compiler",
+				"image": "compiler/1",
 				"desc" : "Compiler of a simple language (Mini C) to MIPS assembly language with Ocaml, result in SPIM"
 			}
 		},
@@ -105,19 +105,19 @@
 			"Secure Chat" : {
 				"id" : "secure_chat",
 				"tools": "Python, Tkinter, AES",
-				"image": "chat_app",
+				"image": "chat_app/1",
 				"desc" : "Simple application de chat sécurisé avec chiffrement AES, serveur et client de socket utilisant l'interface Tkinter"
 			},
 			"Detection App" : {
 				"id" : "detec_app",
 				"tools": "Python, OpenCV, Mediapipe",
-				"image": "screen_detection",
+				"image": "detection_apps/1",
 				"desc" : "Collection de programmes de détection pour écran, visage, main, objet, sec, etc"
 			},
 			"Music Virap" : {
 				"id" : "music_virap",
 				"tools": "Kotlin, Android Studio",
-				"image": "music_player_virap",
+				"image": "virap/1",
 				"desc" : "Mobile App Android: lecteur de musique avec interface, fonctionnalités simples"
 			},
 			"Colt Express" : {
@@ -135,7 +135,7 @@
 			"Polyominos" : {
 				"id" : "polyominos",
 				"tools": "JavaScript, HTML, CSS",
-				"image": "polyominos",
+				"image": "polyominos/1",
 				"desc" : "Résolution du puzzle Polyominos avec un algorithme et une interface web simple"
 			},
 			"Teleporter" : {
@@ -147,13 +147,13 @@
 			"Movies Website" : {
 				"id" : "moviesite",
 				"tools": "React, JQuery, HTML, CSS",
-				"image": "movies_web",
+				"image": "movies_web/1",
 				"desc" : "Site Web de films avec une interface simple de liste de films et une fonction de recherche"
 			},
 			"Compilator" : {
 				"id" : "compilator",
 				"tools": "Ocaml, SPIM, MIPS",
-				"image": "compiler",
+				"image": "compiler/1",
 				"desc" : "Compilateur d'un langage simple (Mini C) vers le langage assembleur MIPS avec Ocaml, résultat dans SPIM"
 			}
 		},

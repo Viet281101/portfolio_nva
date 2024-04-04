@@ -9,10 +9,7 @@
 				this.options = options;
 				this.init();
 			};
-			init() {
-				this.initHTML();
-				this.bindEvent();
-			};
+			init() { this.initHTML(); this.bindEvent(); };
 			initHTML() {
 				this.$el.children().css({
 					'height': '100vh',
@@ -26,6 +23,7 @@
 				var isMobile = window.innerWidth < 1000;
 				if (!isMobile) {
 					$(window).on('wheel DOMMouseScroll', utils.throttle(function () {
+						if (!app.canScroll) return;
 						var e = arguments[0].originalEvent;
 						delta = e.wheelDelta ? e.wheelDelta : -e.detail;
 						targetIndex = that.currIndex + (delta > 0 ? -1 : 1);
@@ -33,11 +31,13 @@
 					}, 100));
 				}
 				this.$el.on('touchstart', function (e) {
+					if (!app.canScroll) return;
 					if (isMobile) return;
 					x0 = e.touches[0].clientX;
 					y0 = e.touches[0].clientY;
 				});
 				this.$el.on('touchmove', utils.throttle(function () {
+					if (!app.canScroll) return;
 					if (isMobile) return;
 					console.log('move');
 					var e = arguments[0];
@@ -112,7 +112,6 @@
 				this.gotoTarget(targetIndex);
 			};
 		};
-
 		var utils = {
 			throttle:function(callback,delayTime,maxTime){
 				var timer = null;

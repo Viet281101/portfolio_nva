@@ -195,8 +195,7 @@ class Courses {
 			if (courseInfo) {
 				try { if (typeof CoursesInfo === "undefined") { throw new Error("CoursesInfo class is not defined."); }
 					const coursePopup = new CoursesInfo(courseInfo.title, courseInfo.description, courseInfo.duration, courseInfo.credits);
-					coursePopup.createPopupWindow();
-					coursePopup.showPopup(); 
+					coursePopup.createPopupWindow(); app.setScrollable(false); coursePopup.showPopup();
 				} catch (error) { console.error(error); alert('An error occurred while initializing components, reloading...'); window.location.reload(); }
 			} else { console.log("No detailed info available for this course."); }
 		});
@@ -301,18 +300,14 @@ class CoursesInfo {
 		closeButton.title = "Close";
 		closeButton.onclick = () => { overlay.style.visibility = "hidden"; overlay.style.opacity = "0"; };
 		Object.assign(closeButton.style, { cursor: "pointer", padding: "10px 20px", margin: "20px 0 0",
-			border: "none", borderRadius: "5px", textAlign: 'center', 
-			backgroundColor: "#444", color: "#fff", 
+			border: "none", borderRadius: "5px", textAlign: 'center',  backgroundColor: "#444", color: "#fff", 
 			fontSize: "16px", fontFamily: "'Pixel', sans-serif", });
 		return closeButton;
 	};
 	closeXBtn(overlay) {
 		const closeXButton = document.createElement("img");
-		closeXButton.src = this.x_close;
-		closeXButton.title = "Close";
-		closeXButton.className = "popupCloseX";
-		closeXButton.addEventListener("click", () => { overlay.style.visibility = "hidden"; overlay.style.opacity = "0"; });
-		Object.assign(closeXButton.style, { cursor: "pointer", padding: "5px", float: 'right', });
-		return closeXButton;
-	}
+		closeXButton.src = this.x_close; closeXButton.alt = closeXButton.title = "Close"; closeXButton.className = "popupCloseX";
+		closeXButton.addEventListener("click", () => { overlay.style.visibility = "hidden"; overlay.style.opacity = "0"; app.setScrollable(true); });
+		Object.assign(closeXButton.style, { cursor: "pointer", padding: "5px", float: 'right', }); return closeXButton;
+	};
 };

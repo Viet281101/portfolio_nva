@@ -22,19 +22,19 @@
 			"title": "Security Mini Chat App",
 			"details": "The Objective of this project is to create a basic chat application with a simple interface using the 'tkinter' library and a server using 'socket' with the ideas to develop the following additional security systems: <br><br>1) Encrypt messages before to send them.  <br><br>2) Connection encryption1.  <br><br>3) User authentication.  <br><br>4) Message storage.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
-			"imgs": ["chat_app"]
+			"imgs": ["chat_app/1"]
 		},
 		"detec_app": {
 			"title": "Camera Detection Apps",
 			"details": "The << Camera Detection App >> project is a comprehensive application designed to perform various types of recognition through a camera, from facial and limb recognition to object and video game character detection. This project leverages the powerful OpenCV libraries on both Python and C++, utilizing advanced image processing and pattern recognition capabilities to provide accurate and efficient detection solutions. Through the learning and development process, the project not only enhances my knowledge and programming skills in computer vision and pattern recognition but also creates a practical tool capable of meeting diverse needs in camera-based recognition.<br><br>The aim of this project is to deliver a versatile application capable of recognizing different types of objects or people through a camera lens, utilizing OpenCV's image processing power. This includes developing several specialized algorithms to efficiently process and interpret visual data in real-time.<br><br>Although the project is primarily educational, the practical applications of the << Camera Detection App >> are vast, ranging from enhanced security with facial recognition to entertainment applications like motion recognition for video game character control. By sharing the developed codes and methodologies, the project also aims to contribute to the OpenCV community and those interested in learning about computer vision and object recognition.",
 			"sources": "",
-			"imgs": ["screen_detection"]
+			"imgs": ["detection_apps/1"]
 		},
 		"music_virap": {
 			"title": "Music Player Mobile App - Virap",
 			"details": "The << ViRap Music Player >> project is a mobile music application developed in Kotlin for the Android operating system. Created through the collaboration between Viet and Raphael, ViRap is not just a simple music player but also a free, ad-free solution for offline music listening, offering a seamless user experience focused on music. Featuring a user-friendly and easy-to-navigate interface, ViRap supports a wide range of music file formats, allowing users to enjoy their favorite tracks without interruptions from ads or the need for an internet connection. Key features include playlist management, quick music search, and audio quality customization, providing a highly personalized music listening experience.",
 			"sources": "https://github.com/Viet281101/MusicPlayerVirap",
-			"imgs": ["music_player_virap"]
+			"imgs": ["virap/1"]
 		},
 		"colt_express": {
 			"title": "Colt Express",
@@ -52,7 +52,7 @@
 			"title": "Polyomino Tilings",
 			"details": "The << Polyomino Tiling >> project leverages pure JavaScript to delve into the captivating world of geometric tiling and polyominos through 2D Canvas and 3D ThreeJs. The primary goal is to create an educational and entertaining tool, allowing users to directly interact to create, transform, and explore complex tiling patterns in both 2D and 3D spaces. The integration of 2D Canvas and ThreeJs not only brings powerful graphic capabilities but also enhances user experience with intuitive and understandable graphic effects. This project not only brings mathematical concepts to life but also encourages creativity and logical thinking through the challenge of creating innovative tiling patterns.",
 			"sources": "https://github.com/Viet281101/PavagesPolyominosJS",
-			"imgs": ["polyominos"]
+			"imgs": ["polyominos/1"]
 		},
 		"teleporter": {
 			"title": "Teleporter",
@@ -64,13 +64,13 @@
 			"title": "Movie Website",
 			"details": "The << Movies Website >> project is a film-themed website built for educational purposes, utilizing HTML, CSS, and JavaScript. This project offers a basic yet effective interface, featuring Owl Carousels from jQuery to visually display movie layouts in an engaging manner. Additionally, the website incorporates a basic search engine, enabling users to easily search for and discover their favorite movies.<br><br>The goal of this project is twofold: firstly, it serves as a practical learning platform for front-end web development, and secondly, it provides users with a pleasant experience in discovering and exploring various movies. Despite its simplicity, the site is designed to be responsive, ensuring smooth navigation across different devices, from desktop to mobile.<br><br>Although primarily educational, the <<Movies Website >> project demonstrates how basic web technologies can be employed to create engaging and functional user interfaces. By leveraging popular libraries like jQuery and integrating Owl Carousel, students can gain hands-on skills while developing an interesting and visually appealing project.",
 			"sources": "https://github.com/Viet281101/movie-website",
-			"imgs": ["movies_web"]
+			"imgs": ["movies_web/1"]
 		},
 		"compilator": {
 			"title": "MiniC - MISP Compilator",
 			"details": "The << MiniC - MISP Compilator >> project is a creative endeavor to develop a compiler for a homemade programming language structured with syntax similar to the C language, but designed to be translated into MISP code, an assembly language. Using Ocaml, a powerful functional programming language, this project focuses on processing semantic files, lexer, and parser, converting them into MISP code. The goal is to create a complete compiler capable of taking MiniC source code and translating it into MISP code, which can then be assembled and executed to produce the correct result of the program written in this language.<br><br>This project highlights the versatility and power of Ocaml in handling complex compilation tasks, providing a bridge between a high-level, custom programming language and a lower-level assembly language. By developing a compiler that translates MiniC into MISP, the project opens up possibilities for educational and experimental applications, allowing users to explore the intricacies of compiler design and the process of translating high-level syntax into executable machine code.",
 			"sources": "https://github.com/Viet281101/MiniC-MISP_compiler",
-			"imgs": ["compiler"]
+			"imgs": ["compiler/1"]
 		}
 	},
 	"fr" : {
@@ -96,19 +96,19 @@
 			"title": "Sécurité Chat App",
 			"details": "L'Objectif de ce projet est de créer une application de chat de base avec une interface simple utilisant la bibliothèque 'tkinter' et un serveur utilisant 'socket' avec les idées pour développer des systèmes de sécurité supplémentaires suivants: <br><br>1) Crypter les messages avant de les envoyer.  <br><br>2) Cryptage de connexion1.  <br><br>3) Authentification d'utilisateur.  <br><br>4) Stockage des messages.",
 			"sources": "https://github.com/Viet281101/SmallChatApp2Securite",
-			"imgs": ["chat_app"]
+			"imgs": ["chat_app/1"]
 		},
 		"detec_app": {
 			"title": "Applications de Détection de Caméra",
 			"details": "L'objectif de ce projet est de fournir une application versatile capable de reconnaître différents types d'objets ou de personnes à travers l'objectif d'une caméra, en utilisant la puissance de traitement d'image d'OpenCV. Cela inclut le développement de plusieurs algorithmes spécialisés pour traiter et interpréter efficacement les données visuelles en temps réel.<br><br>Bien que le projet soit principalement éducatif, les applications pratiques de << Camera Detection Apps >> sont vastes, allant de la sécurité améliorée avec la reconnaissance faciale à des applications ludiques comme la reconnaissance de mouvements pour contrôler des personnages dans les jeux vidéo. En partageant les codes et les méthodologies développés, le projet vise également à contribuer à la communauté OpenCV et à ceux qui s'intéressent à l'apprentissage de la vision par ordinateur et de la reconnaissance d'objets.",
 			"sources": "",
-			"imgs": ["screen_detection"]
+			"imgs": ["detection_apps/1"]
 		},
 		"music_virap": {
 			"title": "Lecteur de Musique Mobile App - Virap",
 			"details": "Le projet << ViRap Music Player >> est une application mobile développée en Kotlin pour le système d'exploitation Android. Créée par la collaboration entre Viet et Raphael, ViRap n'est pas juste un lecteur de musique mais également une solution pour écouter de la musique hors ligne gratuitement et sans publicité, offrant une expérience utilisateur fluide et centrée sur la musique. Avec une interface utilisateur conviviale et facile à utiliser, ViRap supporte une variété de formats de fichiers musicaux, permettant aux utilisateurs de profiter de leurs chansons préférées sans interruption par des publicités ou le besoin d'une connexion internet. Les fonctionnalités clés incluent la gestion de playlists, une recherche rapide de musique, et la personnalisation de la qualité sonore, offrant une expérience d'écoute de musique hautement personnalisée.",
 			"sources": "https://github.com/Viet281101/MusicPlayerVirap",
-			"imgs": ["music_player_virap"]
+			"imgs": ["virap/1"]
 		},
 		"colt_express": {
 			"title": "Colt Express",
@@ -126,7 +126,7 @@
 			"title": "Pavages de Polyominos",
 			"details": "Le projet << Pavages de Polyominos >> utilise JavaScript pur pour explorer le monde fascinant des tuiles géométriques et des polyominos à travers 2D Canvas et 3D ThreeJs. L'objectif principal est de créer un outil éducatif et ludique, permettant aux utilisateurs d'interagir directement pour créer, transformer et explorer des motifs de pavage complexes en 2D et 3D. La combinaison de 2D Canvas et ThreeJs offre non seulement des capacités graphiques puissantes mais enrichit également l'expérience utilisateur avec des effets visuels intuitifs et compréhensibles. Ce projet ne présente pas seulement des concepts mathématiques de manière vivante, mais encourage également la créativité et la pensée logique à travers le défi de créer de nouveaux modèles de pavage.",
 			"sources": "https://github.com/Viet281101/PavagesPolyominosJS",
-			"imgs": ["polyominos"]
+			"imgs": ["polyominos/1"]
 		},
 		"teleporter": {
 			"title": "Téléporteur",
@@ -138,13 +138,13 @@
 			"title": "Site Web du Film",
 			"details": "L'objectif de ce projet est double : d'une part, il sert de terrain d'entraînement pour l'apprentissage du développement web front-end, et d'autre part, il offre aux utilisateurs une expérience agréable pour découvrir et explorer divers films. Malgré sa simplicité, le site est conçu pour être responsive, assurant ainsi une navigation fluide sur différents appareils, du bureau aux mobiles.<br><br>Bien que principalement éducatif, le projet << Movies Website >> illustre comment les technologies web de base peuvent être utilisées pour créer des interfaces utilisateur engageantes et fonctionnelles. Grâce à l'utilisation de bibliothèques populaires comme jQuery et l'intégration d'Owl Carousel, les étudiants peuvent acquérir des compétences pratiques tout en développant un projet intéressant et visuellement attrayant.",
 			"sources": "https://github.com/Viet281101/movie-website",
-			"imgs": ["movies_web"]
+			"imgs": ["movies_web/1"]
 		},
 		"compilator": {
 			"title": "MiniC - MISP Compilateur",
 			"details": "Le projet << MiniC - MISP Compilator >> représente une initiative créative visant à développer un compilateur pour un langage de programmation fait maison, structuré avec une syntaxe similaire à celle du langage C, mais conçu pour être traduit en code MISP, un langage d'assemblage. Utilisant Ocaml, un puissant langage de programmation fonctionnel, ce projet se concentre sur le traitement des fichiers sémantiques, lexer et parser, les convertissant en code MISP. L'objectif est de créer un compilateur complet capable de prendre le code source MiniC et de le traduire en code MISP, qui peut ensuite être assemblé et exécuté pour générer le résultat correct du programme écrit dans ce langage.",
 			"sources": "https://github.com/Viet281101/MiniC-MISP_compiler",
-			"imgs": ["compiler"]
+			"imgs": ["compiler/1"]
 		}
 	}
 }

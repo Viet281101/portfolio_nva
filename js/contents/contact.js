@@ -67,10 +67,10 @@ class Contact {
 		const index = this.icons.indexOf(name);
 		if (index !== -1) { actions[index].call(this, this.lang); }
 	};
-	phoneClickInfo(lang) { const phonePopup = new PhoneInfoPopup(lang); phonePopup.createPhonePopup(); };
-	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang, this.contentData[this.lang].mail_name, this.contentData[this.lang].mail_adr, this.contentData[this.lang].mail_text, this.contentData[this.lang].send_btn); mailPopup.createPopup(); };
-	mapClickInfo(lang) { new MapInfoPopup(lang, this.contentData[this.lang].address); };
-	plusClickInfo(lang) { new OrtherInfoPopup(lang, this.contentData[this.lang].orther); };
+	phoneClickInfo(lang) { const phonePopup = new PhoneInfoPopup(lang); phonePopup.createPhonePopup(); app.setScrollable(false); };
+	mailClickInfo(lang) { const mailPopup = new MailInfoPopup(lang, this.contentData[this.lang].mail_name, this.contentData[this.lang].mail_adr, this.contentData[this.lang].mail_text, this.contentData[this.lang].send_btn); mailPopup.createPopup(); app.setScrollable(false); };
+	mapClickInfo(lang) { new MapInfoPopup(lang, this.contentData[this.lang].address); app.setScrollable(false); };
+	plusClickInfo(lang) { new OrtherInfoPopup(lang, this.contentData[this.lang].orther); app.setScrollable(false); };
 };
 class PhoneInfoPopup {
 	constructor(lang) {
@@ -100,7 +100,7 @@ class PhoneInfoPopup {
 		closeButton.src = this.x_close; closeButton.alt = closeButton.title = 'Close'; closeButton.loading = "lazy";
 		Object.assign(closeButton.style, { position: 'absolute', top: '5px', right: '5px', cursor: 'pointer', });
 		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
-		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
+		closeButton.addEventListener('click', () => {overlay.remove(); app.setScrollable(true);}); return closeButton;
 	};
 	createPhoneTable() {
 		const ic = "./assets/icons/";
@@ -155,7 +155,7 @@ class OrtherInfoPopup {
 		closeButton.src = this.x_close; closeButton.alt = closeButton.title = 'Close';
 		Object.assign(closeButton.style, { position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', });
 		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
-		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
+		closeButton.addEventListener('click', () => {overlay.remove(); app.setScrollable(true);}); return closeButton;
 	};
 	createIconsTable() {
 		const ic = "./assets/icons/";
@@ -243,7 +243,7 @@ class MailInfoPopup {
 		closeButton.src = "./assets/icons/x_close.png"; closeButton.alt = closeButton.title = 'Close'; closeButton.loading = "lazy";
 		Object.assign(closeButton.style, { position: 'absolute', top: '5px', right: '5px', cursor: 'pointer', zIndex: '9999'});
 		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
-		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
+		closeButton.addEventListener('click', () => {overlay.remove(); app.setScrollable(true);}); return closeButton;
 	};
 };
 class MapInfoPopup {
@@ -293,6 +293,6 @@ class MapInfoPopup {
 		closeButton.src = "./assets/icons/x_close.png"; closeButton.alt = closeButton.title = 'Close'; closeButton.loading = "lazy";
 		Object.assign(closeButton.style, { position: 'absolute', top: '5px', right: '5px', cursor: 'pointer', zIndex: '9999'});
 		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
-		closeButton.addEventListener('click', () => overlay.remove()); return closeButton;
+		closeButton.addEventListener('click', () => {overlay.remove(); app.setScrollable(true);}); return closeButton;
 	};
 };

@@ -3,8 +3,7 @@ class Project {
 	constructor(lang) {
 		this.section = document.getElementById('projects');
 		Object.assign(this.section.style, { width: '100%', });
-		this.contentData = {}; this.infoData = {};
-		this.lang = lang;
+		this.contentData = {}; this.infoData = {}; this.lang = lang;
 		this.prev_slide = 'nav_left'; this.next_slide = 'nav_right';
 		this.loadContentData();
 		this.boundHandleProjectClick = this.handleProjectClick.bind(this);
@@ -157,7 +156,7 @@ class Project {
 					try { 
 						if (typeof ProjectPopupInfo === "undefined") { throw new Error("ProjectPopupInfo class is not defined."); }
 						const projectPopup = new ProjectPopupInfo(projectInfoData.title, projectInfoData.details, projectInfoData.sources, projectInfoData.imgs);
-						projectPopup.createPopupWindow();
+						projectPopup.createPopupWindow(); app.setScrollable(false);
 					} catch (error) {
 						console.error(error);
 						alert('An error occurred while initializing components, reloading...');
@@ -251,7 +250,7 @@ class ProjectPopupInfo {
 		closeBtn.src = this.x_close; closeBtn.loading = "lazy";
 		Object.assign(closeBtn.style, {position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', });
 		closeBtn.style.width = closeBtn.style.height = window.innerWidth > 900 ? '50px' : '40px';
-		closeBtn.addEventListener('click', () => { popupContainer.remove(); }); return closeBtn;
+		closeBtn.addEventListener('click', () => { popupContainer.remove(); app.setScrollable(true); }); return closeBtn;
 	};
 	autoScroll(container, delay) {
 		const stepSize = window.innerWidth - (window.innerWidth / 10);
