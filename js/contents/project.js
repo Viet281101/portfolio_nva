@@ -64,9 +64,8 @@ class Project {
 	createProjectElement(projectName, projectData, buttonText, buttonTitle) {
 		let project = document.createElement('div');
 		project.className = "card";
-		Object.assign(project.style, { width: '240px', margin: '16px', overflow: 'hidden',
-			boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', transition: '0.3s',
-			border: '1px solid #f1f1f1', borderRadius: '10px', 
+		Object.assign(project.style, { width: '240px', margin: '16px', overflow: 'hidden', transition: '0.3s',
+			boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', border: '1px solid #f1f1f1', borderRadius: '10px', 
 			mozBoxSize: 'border-box', webkitBoxSize: 'border-box', boxSizing: 'border-box', });
 		project.setAttribute('data-project-id', projectData.id);
 
@@ -191,16 +190,13 @@ class ProjectPopupInfo {
 	createPopupWindow() {
 		const popupContainer = document.createElement('div');
 		popupContainer.className = "popupContainer";
-		Object.assign(popupContainer.style, {
-			position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
-			backgroundColor: 'rgba(0,0,0,0.9)', zIndex: '20',
-			display: 'flex', justifyContent: 'center', alignItems: 'center', });
+		Object.assign(popupContainer.style, { position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
+			backgroundColor: 'rgba(0,0,0,0.9)', zIndex: '20', display: 'flex', justifyContent: 'center', alignItems: 'center', });
 
 		const popupContent = document.createElement('div');
 		popupContent.style.maxWidth = popupContent.style.maxHeight = window.innerWidth > 900 ? "70%" : "90%";
 		popupContent.style.fontSize = window.innerWidth > 900 ? "large" : "inherit";
-		Object.assign(popupContent.style, {
-			backgroundColor: '#000', borderRadius: '5px', border: '3px solid #fff',
+		Object.assign(popupContent.style, { backgroundColor: '#000', borderRadius: '5px', border: '3px solid #fff',
 			padding: '20px', overflowY: 'auto', position: 'relative', });
 
 		const closeBtn = this.closeButton(popupContainer);
@@ -210,19 +206,14 @@ class ProjectPopupInfo {
 		popupContent.appendChild(title);
 
 		const imgContainer = this.createImagesContainer();
-		if (this.imgs && this.imgs.length > 1) {
-			popupContent.appendChild(imgContainer);
-			this.autoScroll(imgContainer, 1000);
-		}
+		if (this.imgs && this.imgs.length > 1) {popupContent.appendChild(imgContainer); this.autoScroll(imgContainer, 1000); }
 
 		const details = document.createElement('p');
 		details.innerHTML = this.details;
 		Object.assign(details.style, { textAlign: 'justify', marginTop: '20px', });
 
 		const sources = document.createElement('a');
-		sources.href = this.sources;
-		sources.textContent = "Source";
-		sources.target = "_blank";
+		sources.href = this.sources; sources.textContent = `Source`; sources.target = "_blank";
 		Object.assign(sources.style, { display: 'block', marginTop: '20px', textDecoration: 'none', color: '#007bff', });
 
 		popupContent.appendChild(closeBtn);
@@ -245,16 +236,14 @@ class ProjectPopupInfo {
 		this.imgs.forEach(imgName => {
 			if (imgName) {
 				const img = document.createElement('img');
-				img.title = imgName;
-				img.alt = imgName;
+				img.title = imgName; img.alt = imgName;
 				img.src = `./assets/project/${imgName}.png`;
 				img.loading = "lazy";
 				Object.assign(img.style, { maxWidth: '100%', maxHeight: '250px', flex: '0 0 auto', 
 					border: '1px solid #fff', borderRadius: '5px', objectFit: 'contain', });
 				container.appendChild(img);
 			}
-		});
-		return container;
+		}); return container;
 	};
 	closeButton(popupContainer) {
 		const closeBtn = document.createElement('img');
@@ -262,8 +251,7 @@ class ProjectPopupInfo {
 		closeBtn.src = this.x_close; closeBtn.loading = "lazy";
 		Object.assign(closeBtn.style, {position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', });
 		closeBtn.style.width = closeBtn.style.height = window.innerWidth > 900 ? '50px' : '40px';
-		closeBtn.addEventListener('click', () => { popupContainer.remove(); });
-		return closeBtn;
+		closeBtn.addEventListener('click', () => { popupContainer.remove(); }); return closeBtn;
 	};
 	autoScroll(container, delay) {
 		const stepSize = window.innerWidth - (window.innerWidth / 10);

@@ -4,17 +4,14 @@ class MainApp {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];
 		const ct = "contents/";
 		this.jsFiles = ['background.js', 'particles.js', 'navbar.js', 'box_btns.js',
-			ct+'home.js', ct+'about.js', ct+'project.js', ct+'courses.js', ct+'contact.js',
-		];
-		this.sidebar = null; this.navBar = null;
-		this.background = null;
+			ct+'home.js', ct+'about.js', ct+'project.js', ct+'courses.js', ct+'contact.js'];
+		this.sidebar = null; this.navBar = null; this.background = null;
 		this.home = null; this.about = null; this.project = null; this.courses = null; this.contact = null;
 		this.langBox = null; this.btnOnTop = null;
 		this.currentSection = 0;
 		this.mouseMarkEnabled = true; this.animationActive = true;
 		this.lang = 'en';
-		this.loadFiles();
-		this.addEventListeners();
+		this.loadFiles(); this.addEventListeners();
 	};
 	loadFiles() {
 		let loadErrors = false;
