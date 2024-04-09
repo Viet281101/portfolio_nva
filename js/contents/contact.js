@@ -125,7 +125,7 @@ class PhoneInfoPopup {
 };
 class OrtherInfoPopup {
 	constructor(lang, subtitle) {
-		this.icons = [ "github", "gitlab", "twitter", "instagram", "snapchat", "kaggle", "linkedin", "mattermost", "facebook", "skype", "discord", "youtube", "hackMD", "figma", "codepen", "codesandbox"];
+		this.icons = [ "github", "gitlab", "twitter", "instagram", "snapchat", "kaggle", "linkedin", "mattermost", "facebook", "leetcode", "discord", "youtube", "hackMD", "figma", "codepen", "codesandbox"];
 		this.x_close = "./assets/icons/x_close.png";
 		this.lang = lang; this.subtitle = subtitle;
 		this.urlData = {}; this.loadData();
@@ -153,7 +153,9 @@ class OrtherInfoPopup {
 	createCloseBtn(overlay) {
 		const closeButton = document.createElement('img');
 		closeButton.src = this.x_close; closeButton.alt = closeButton.title = 'Close';
-		Object.assign(closeButton.style, { position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', });
+		Object.assign(closeButton.style, { position: 'fixed', cursor: 'pointer', });
+		closeButton.style.top = window.innerWidth > 900 ? '240px' : '110px';
+		closeButton.style.right = window.innerWidth > 900 ? '380px' : '10px';
 		closeButton.style.width = closeButton.style.height = window.innerWidth > 900 ? '50px' : '40px';
 		closeButton.addEventListener('click', () => {overlay.remove(); app.setScrollable(true);}); return closeButton;
 	};
