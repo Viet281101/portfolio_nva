@@ -125,7 +125,7 @@ class PhoneInfoPopup {
 };
 class OrtherInfoPopup {
 	constructor(lang, subtitle) {
-		this.icons = [ "github", "gitlab", "twitter", "instagram", "snapchat", "kaggle", "linkedin", "mattermost", "facebook", "leetcode", "discord", "youtube", "hackMD", "figma", "codepen", "codesandbox"];
+		this.icons = [ "github", "gitlab", "twitter", "instagram", "snapchat", "kaggle", "linkedin", "mattermost", "facebook", "skype", "leetcode", "discord", "youtube", "hackMD", "figma", "codepen", "codesandbox", "codedex", "wikipedia", "w3schools"];
 		this.x_close = "./assets/icons/x_close.png";
 		this.lang = lang; this.subtitle = subtitle;
 		this.urlData = {}; this.loadData();

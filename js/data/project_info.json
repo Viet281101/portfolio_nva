@@ -52,7 +52,7 @@
 			"title": "Polyomino Tilings",
 			"details": "The << Polyomino Tiling >> project leverages pure JavaScript to delve into the captivating world of geometric tiling and polyominos through 2D Canvas and 3D ThreeJs. The primary goal is to create an educational and entertaining tool, allowing users to directly interact to create, transform, and explore complex tiling patterns in both 2D and 3D spaces. The integration of 2D Canvas and ThreeJs not only brings powerful graphic capabilities but also enhances user experience with intuitive and understandable graphic effects. This project not only brings mathematical concepts to life but also encourages creativity and logical thinking through the challenge of creating innovative tiling patterns.",
 			"sources": "https://github.com/Viet281101/PavagesPolyominosJS",
-			"imgs": ["polyominos/1"]
+			"imgs": ["polyominos/1", "polyominos/2", "polyominos/3"]
 		},
 		"teleporter": {
 			"title": "Teleporter",
@@ -126,7 +126,7 @@
 			"title": "Pavages de Polyominos",
 			"details": "Le projet << Pavages de Polyominos >> utilise JavaScript pur pour explorer le monde fascinant des tuiles géométriques et des polyominos à travers 2D Canvas et 3D ThreeJs. L'objectif principal est de créer un outil éducatif et ludique, permettant aux utilisateurs d'interagir directement pour créer, transformer et explorer des motifs de pavage complexes en 2D et 3D. La combinaison de 2D Canvas et ThreeJs offre non seulement des capacités graphiques puissantes mais enrichit également l'expérience utilisateur avec des effets visuels intuitifs et compréhensibles. Ce projet ne présente pas seulement des concepts mathématiques de manière vivante, mais encourage également la créativité et la pensée logique à travers le défi de créer de nouveaux modèles de pavage.",
 			"sources": "https://github.com/Viet281101/PavagesPolyominosJS",
-			"imgs": ["polyominos/1"]
+			"imgs": ["polyominos/1", "polyominos/2", "polyominos/3"]
 		},
 		"teleporter": {
 			"title": "Téléporteur",
