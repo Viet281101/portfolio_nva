@@ -1,4 +1,3 @@
-// Purpose: Background class to handle the background layers and mouse events.
 class Background {
 	constructor() {
 		this.radius = 70;
@@ -104,4 +103,3 @@ class Background {
 		this.backgroundLayer1.style.backgroundImage = 'url(' + this.sectionBgs[sectionIndex - 1] + '.png)';
 	};
 };
-

@@ -1,4 +1,3 @@
-// Dependencies: jquery, fullpage.js
 class Sidebar {
 	constructor(lang) {
 		this.lang = lang;
@@ -289,4 +288,3 @@ class NavBar {
 		});
 	};
 };
-

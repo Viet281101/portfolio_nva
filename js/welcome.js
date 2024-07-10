@@ -1,4 +1,3 @@
-
 class WelcomeStartUpPopUp {
 	constructor() {
 		const key_src = "./assets/key/keyboard_";

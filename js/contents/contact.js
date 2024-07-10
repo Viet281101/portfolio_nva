@@ -1,4 +1,3 @@
-
 class Contact {
 	constructor(lang) {
 		this.section = document.getElementById('contact');

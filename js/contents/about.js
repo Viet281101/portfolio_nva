@@ -1,4 +1,3 @@
-
 class About {
 	constructor(lang) {
 		this.section = document.getElementById('about');
