@@ -1,4 +1,3 @@
-// Author: Viet NGUYEN
 class MainApp {
 	constructor() {
 		this.sections = ['home', 'about', 'projects', 'courses', 'contact'];

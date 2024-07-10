@@ -1,4 +1,3 @@
-
 class Courses {
 	constructor(lang) {
 		this.section = document.getElementById('courses');

@@ -1,4 +1,3 @@
-// Dependencies: owl.carousel.css, owl.carousel.js
 class Project {
 	constructor(lang) {
 		this.section = document.getElementById('projects');
@@ -273,4 +272,3 @@ class ProjectPopupInfo {
 		if (!this.userInteracted) { setTimeout(() => startAutoScroll(), delay); }
 	};
 };
-

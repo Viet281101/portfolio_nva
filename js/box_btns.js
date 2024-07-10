@@ -1,4 +1,3 @@
-
 class LangBox {
 	constructor(lang) {
 		this.lang = lang;
